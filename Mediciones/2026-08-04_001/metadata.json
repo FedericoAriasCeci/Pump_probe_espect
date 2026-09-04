@@ -1,0 +1,90 @@
+{
+  "acquired_points": 2424,
+  "aux_column_meaning": "AUX promedio usado para normalizacion",
+  "average_aux_by_lambda": {
+    "645.0": 0.02725,
+    "650.0": 0.033667,
+    "655.0": 0.027407,
+    "660.0": 0.022222,
+    "665.0": 0.01637,
+    "670.0": 0.012852,
+    "675.0": 0.012037,
+    "680.0": 0.014481,
+    "685.0": 0.014296,
+    "690.0": 0.015852,
+    "695.0": 0.016111,
+    "700.0": 0.024074
+  },
+  "average_aux_value": 0.024074,
+  "cancelled": false,
+  "config": {
+    "auto_gain_enabled": true,
+    "auto_gain_mode": "manual_sens_only",
+    "average_aux": true,
+    "average_aux_seconds": 1.0,
+    "average_repetitions": true,
+    "bbd_sections": [
+      [
+        162.0,
+        163.0,
+        0.01
+      ]
+    ],
+    "channels": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "integration_time_override": null,
+    "lambda_sections": [
+      [
+        645.0,
+        700.0,
+        5.0
+      ]
+    ],
+    "longitud_onda_fija_nm": 650.0,
+    "measurement_type": "double",
+    "plot_channels": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "plot_scale": "Lineal",
+    "posicion_fija_bbd_mm": 220.0,
+    "repetitions": 2,
+    "simulation_delay_scale": 0.05,
+    "simulation_mode": false,
+    "use_monochromator": true,
+    "x_axis": "Distancia"
+  },
+  "error_message": "",
+  "finished_at": "2026-08-04 19:39:58",
+  "hardware_status": {
+    "bbd_connected": true,
+    "bbd_homed": true,
+    "bbd_position": 163.0,
+    "integration_time": 0.3,
+    "lockin_connected": true,
+    "mono_connected": true,
+    "mono_position": 700.0,
+    "simulation_mode": false
+  },
+  "plot_channels_saved": [
+    "X",
+    "R",
+    "X/AUX",
+    "R/AUX"
+  ],
+  "saved_at": "2026-08-04 19:41:45",
+  "session_path": "C:\\Users\\LEC\\Desktop\\Tomas\\CodigoV3\\Mediciones\\2026-08-04_001",
+  "started_at": "2026-08-04 18:42:10",
+  "total_points": 2424,
+  "version_gui": "pyqt_v1"
+}

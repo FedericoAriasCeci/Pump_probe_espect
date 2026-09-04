@@ -1,0 +1,2432 @@
+[16:36:46] Aplicacion iniciada en modo simulacion
+[16:36:55] Modo hardware real activo
+[16:36:59] Error conectando SMS en COM9: No se pudo abrir COM9. Perfil original: could not open port 'COM9': FileNotFoundError(2, 'El sistema no puede encontrar el archivo especificado.', None, 2). Perfil alternativo sin DSR/DTR: could not open port 'COM9': FileNotFoundError(2, 'El sistema no puede encontrar el archivo especificado.', None, 2)
+[16:37:29] SMS conectado en COM3 (default)
+[16:37:50] Lock-in conectado en 8
+[16:38:22] BBD conectado
+[16:39:04] Home BBD completado
+[16:39:28] Home BBD completado
+[16:40:19] Inicio solicitado
+[16:40:19] Inicio de medicion
+[16:40:19] Repeticion 1 de 1
+[16:40:19] Lambda -> 500.0 nm
+[16:40:38] BBD -> 160.0 mm
+[16:40:40] Punto 1/124 adquirido
+[16:40:40] BBD -> 160.1 mm
+[16:40:41] Punto 2/124 adquirido
+[16:40:41] BBD -> 160.2 mm
+[16:40:42] Punto 3/124 adquirido
+[16:40:42] BBD -> 160.3 mm
+[16:40:44] Punto 4/124 adquirido
+[16:40:44] BBD -> 160.4 mm
+[16:40:45] Punto 5/124 adquirido
+[16:40:45] BBD -> 160.5 mm
+[16:40:47] Punto 6/124 adquirido
+[16:40:47] BBD -> 160.6 mm
+[16:40:48] Punto 7/124 adquirido
+[16:40:48] BBD -> 160.7 mm
+[16:40:50] Punto 8/124 adquirido
+[16:40:50] BBD -> 160.8 mm
+[16:40:51] Punto 9/124 adquirido
+[16:40:51] BBD -> 160.9 mm
+[16:40:52] Punto 10/124 adquirido
+[16:40:52] BBD -> 161.0 mm
+[16:40:54] Punto 11/124 adquirido
+[16:40:54] BBD -> 161.1 mm
+[16:40:55] Punto 12/124 adquirido
+[16:40:55] BBD -> 161.2 mm
+[16:40:57] Punto 13/124 adquirido
+[16:40:57] BBD -> 161.3 mm
+[16:40:58] Punto 14/124 adquirido
+[16:40:58] BBD -> 161.4 mm
+[16:40:59] Punto 15/124 adquirido
+[16:40:59] BBD -> 161.5 mm
+[16:41:01] Punto 16/124 adquirido
+[16:41:01] BBD -> 161.6 mm
+[16:41:02] Punto 17/124 adquirido
+[16:41:02] BBD -> 161.7 mm
+[16:41:04] Punto 18/124 adquirido
+[16:41:04] BBD -> 161.8 mm
+[16:41:05] Punto 19/124 adquirido
+[16:41:05] BBD -> 161.9 mm
+[16:41:06] Punto 20/124 adquirido
+[16:41:07] BBD -> 162.0 mm
+[16:41:08] Punto 21/124 adquirido
+[16:41:08] BBD -> 162.1 mm
+[16:41:09] Punto 22/124 adquirido
+[16:41:09] BBD -> 162.2 mm
+[16:41:11] Punto 23/124 adquirido
+[16:41:11] BBD -> 162.3 mm
+[16:41:12] Punto 24/124 adquirido
+[16:41:12] BBD -> 162.4 mm
+[16:41:14] Punto 25/124 adquirido
+[16:41:14] BBD -> 162.5 mm
+[16:41:15] Punto 26/124 adquirido
+[16:41:15] BBD -> 162.6 mm
+[16:41:16] Punto 27/124 adquirido
+[16:41:16] BBD -> 162.7 mm
+[16:41:18] Punto 28/124 adquirido
+[16:41:18] BBD -> 162.8 mm
+[16:41:19] Punto 29/124 adquirido
+[16:41:19] BBD -> 162.9 mm
+[16:41:21] Punto 30/124 adquirido
+[16:41:21] BBD -> 163.0 mm
+[16:41:22] Punto 31/124 adquirido
+[16:41:22] Lambda -> 550.0 nm
+[16:41:29] BBD -> 160.0 mm
+[16:41:30] Punto 32/124 adquirido
+[16:41:30] BBD -> 160.1 mm
+[16:41:32] Punto 33/124 adquirido
+[16:41:32] BBD -> 160.2 mm
+[16:41:33] Punto 34/124 adquirido
+[16:41:33] BBD -> 160.3 mm
+[16:41:34] Punto 35/124 adquirido
+[16:41:35] BBD -> 160.4 mm
+[16:41:36] Punto 36/124 adquirido
+[16:41:36] BBD -> 160.5 mm
+[16:41:37] Punto 37/124 adquirido
+[16:41:37] BBD -> 160.6 mm
+[16:41:37] Cancelacion solicitada
+[16:41:37] Medicion cancelada
+[16:41:37] Resultado parcial listo en memoria
+[16:41:49] Inicio solicitado
+[16:41:49] Inicio de medicion
+[16:41:49] Repeticion 1 de 1
+[16:41:49] Lambda -> 600.0 nm
+[16:41:56] BBD -> 160.0 mm
+[16:41:57] Punto 1/806 adquirido
+[16:41:57] BBD -> 160.1 mm
+[16:41:59] Punto 2/806 adquirido
+[16:41:59] BBD -> 160.2 mm
+[16:42:00] Punto 3/806 adquirido
+[16:42:00] BBD -> 160.3 mm
+[16:42:02] Punto 4/806 adquirido
+[16:42:02] BBD -> 160.4 mm
+[16:42:03] Punto 5/806 adquirido
+[16:42:03] BBD -> 160.5 mm
+[16:42:04] Punto 6/806 adquirido
+[16:42:04] BBD -> 160.6 mm
+[16:42:06] Punto 7/806 adquirido
+[16:42:06] BBD -> 160.7 mm
+[16:42:07] Punto 8/806 adquirido
+[16:42:07] BBD -> 160.8 mm
+[16:42:09] Punto 9/806 adquirido
+[16:42:09] BBD -> 160.9 mm
+[16:42:10] Punto 10/806 adquirido
+[16:42:10] BBD -> 161.0 mm
+[16:42:11] Punto 11/806 adquirido
+[16:42:11] BBD -> 161.1 mm
+[16:42:13] Punto 12/806 adquirido
+[16:42:13] BBD -> 161.2 mm
+[16:42:14] Punto 13/806 adquirido
+[16:42:14] BBD -> 161.3 mm
+[16:42:16] Punto 14/806 adquirido
+[16:42:16] BBD -> 161.4 mm
+[16:42:17] Punto 15/806 adquirido
+[16:42:17] BBD -> 161.5 mm
+[16:42:18] Punto 16/806 adquirido
+[16:42:19] BBD -> 161.6 mm
+[16:42:20] Punto 17/806 adquirido
+[16:42:20] BBD -> 161.7 mm
+[16:42:21] Punto 18/806 adquirido
+[16:42:21] BBD -> 161.8 mm
+[16:42:23] Punto 19/806 adquirido
+[16:42:23] BBD -> 161.9 mm
+[16:42:24] Punto 20/806 adquirido
+[16:42:24] BBD -> 162.0 mm
+[16:42:26] Punto 21/806 adquirido
+[16:42:26] BBD -> 162.1 mm
+[16:42:27] Punto 22/806 adquirido
+[16:42:27] BBD -> 162.2 mm
+[16:42:28] Punto 23/806 adquirido
+[16:42:28] BBD -> 162.3 mm
+[16:42:30] Punto 24/806 adquirido
+[16:42:30] BBD -> 162.4 mm
+[16:42:31] Punto 25/806 adquirido
+[16:42:31] BBD -> 162.5 mm
+[16:42:33] Punto 26/806 adquirido
+[16:42:33] BBD -> 162.6 mm
+[16:42:34] Punto 27/806 adquirido
+[16:42:34] BBD -> 162.7 mm
+[16:42:35] Punto 28/806 adquirido
+[16:42:35] BBD -> 162.8 mm
+[16:42:37] Punto 29/806 adquirido
+[16:42:37] BBD -> 162.9 mm
+[16:42:38] Punto 30/806 adquirido
+[16:42:38] BBD -> 163.0 mm
+[16:42:40] Punto 31/806 adquirido
+[16:42:40] Lambda -> 602.0 nm
+[16:42:41] BBD -> 160.0 mm
+[16:42:42] Punto 32/806 adquirido
+[16:42:42] BBD -> 160.1 mm
+[16:42:44] Punto 33/806 adquirido
+[16:42:44] BBD -> 160.2 mm
+[16:42:45] Punto 34/806 adquirido
+[16:42:45] BBD -> 160.3 mm
+[16:42:47] Punto 35/806 adquirido
+[16:42:47] BBD -> 160.4 mm
+[16:42:48] Punto 36/806 adquirido
+[16:42:48] BBD -> 160.5 mm
+[16:42:49] Punto 37/806 adquirido
+[16:42:49] BBD -> 160.6 mm
+[16:42:51] Punto 38/806 adquirido
+[16:42:51] BBD -> 160.7 mm
+[16:42:52] Punto 39/806 adquirido
+[16:42:52] BBD -> 160.8 mm
+[16:42:54] Punto 40/806 adquirido
+[16:42:54] BBD -> 160.9 mm
+[16:42:55] Punto 41/806 adquirido
+[16:42:55] BBD -> 161.0 mm
+[16:42:57] Punto 42/806 adquirido
+[16:42:57] BBD -> 161.1 mm
+[16:42:58] Punto 43/806 adquirido
+[16:42:58] BBD -> 161.2 mm
+[16:42:59] Punto 44/806 adquirido
+[16:42:59] BBD -> 161.3 mm
+[16:43:01] Punto 45/806 adquirido
+[16:43:01] BBD -> 161.4 mm
+[16:43:02] Punto 46/806 adquirido
+[16:43:02] BBD -> 161.5 mm
+[16:43:04] Punto 47/806 adquirido
+[16:43:04] BBD -> 161.6 mm
+[16:43:05] Punto 48/806 adquirido
+[16:43:05] BBD -> 161.7 mm
+[16:43:06] Punto 49/806 adquirido
+[16:43:07] BBD -> 161.8 mm
+[16:43:08] Punto 50/806 adquirido
+[16:43:08] BBD -> 161.9 mm
+[16:43:09] Punto 51/806 adquirido
+[16:43:09] BBD -> 162.0 mm
+[16:43:11] Punto 52/806 adquirido
+[16:43:11] BBD -> 162.1 mm
+[16:43:12] Punto 53/806 adquirido
+[16:43:12] BBD -> 162.2 mm
+[16:43:14] Punto 54/806 adquirido
+[16:43:14] BBD -> 162.3 mm
+[16:43:15] Punto 55/806 adquirido
+[16:43:15] BBD -> 162.4 mm
+[16:43:16] Punto 56/806 adquirido
+[16:43:16] BBD -> 162.5 mm
+[16:43:18] Punto 57/806 adquirido
+[16:43:18] BBD -> 162.6 mm
+[16:43:19] Punto 58/806 adquirido
+[16:43:19] BBD -> 162.7 mm
+[16:43:21] Punto 59/806 adquirido
+[16:43:21] BBD -> 162.8 mm
+[16:43:22] Punto 60/806 adquirido
+[16:43:22] BBD -> 162.9 mm
+[16:43:23] Punto 61/806 adquirido
+[16:43:23] BBD -> 163.0 mm
+[16:43:25] Punto 62/806 adquirido
+[16:43:25] Lambda -> 604.0 nm
+[16:43:26] BBD -> 160.0 mm
+[16:43:28] Punto 63/806 adquirido
+[16:43:28] BBD -> 160.1 mm
+[16:43:29] Punto 64/806 adquirido
+[16:43:29] BBD -> 160.2 mm
+[16:43:30] Punto 65/806 adquirido
+[16:43:30] BBD -> 160.3 mm
+[16:43:32] Punto 66/806 adquirido
+[16:43:32] BBD -> 160.4 mm
+[16:43:33] Punto 67/806 adquirido
+[16:43:33] BBD -> 160.5 mm
+[16:43:35] Punto 68/806 adquirido
+[16:43:35] BBD -> 160.6 mm
+[16:43:36] Punto 69/806 adquirido
+[16:43:36] BBD -> 160.7 mm
+[16:43:37] Punto 70/806 adquirido
+[16:43:38] BBD -> 160.8 mm
+[16:43:39] Punto 71/806 adquirido
+[16:43:39] BBD -> 160.9 mm
+[16:43:40] Punto 72/806 adquirido
+[16:43:40] BBD -> 161.0 mm
+[16:43:42] Punto 73/806 adquirido
+[16:43:42] BBD -> 161.1 mm
+[16:43:43] Punto 74/806 adquirido
+[16:43:43] BBD -> 161.2 mm
+[16:43:45] Punto 75/806 adquirido
+[16:43:45] BBD -> 161.3 mm
+[16:43:46] Punto 76/806 adquirido
+[16:43:46] BBD -> 161.4 mm
+[16:43:47] Punto 77/806 adquirido
+[16:43:47] BBD -> 161.5 mm
+[16:43:49] Punto 78/806 adquirido
+[16:43:49] BBD -> 161.6 mm
+[16:43:50] Punto 79/806 adquirido
+[16:43:50] BBD -> 161.7 mm
+[16:43:52] Punto 80/806 adquirido
+[16:43:52] BBD -> 161.8 mm
+[16:43:53] Punto 81/806 adquirido
+[16:43:53] BBD -> 161.9 mm
+[16:43:54] Punto 82/806 adquirido
+[16:43:54] BBD -> 162.0 mm
+[16:43:56] Punto 83/806 adquirido
+[16:43:56] BBD -> 162.1 mm
+[16:43:57] Punto 84/806 adquirido
+[16:43:57] BBD -> 162.2 mm
+[16:43:59] Punto 85/806 adquirido
+[16:43:59] BBD -> 162.3 mm
+[16:44:00] Punto 86/806 adquirido
+[16:44:00] BBD -> 162.4 mm
+[16:44:02] Punto 87/806 adquirido
+[16:44:02] BBD -> 162.5 mm
+[16:44:03] Punto 88/806 adquirido
+[16:44:03] BBD -> 162.6 mm
+[16:44:04] Punto 89/806 adquirido
+[16:44:04] BBD -> 162.7 mm
+[16:44:06] Punto 90/806 adquirido
+[16:44:06] BBD -> 162.8 mm
+[16:44:07] Punto 91/806 adquirido
+[16:44:07] BBD -> 162.9 mm
+[16:44:09] Punto 92/806 adquirido
+[16:44:09] BBD -> 163.0 mm
+[16:44:10] Punto 93/806 adquirido
+[16:44:10] Lambda -> 606.0 nm
+[16:44:11] BBD -> 160.0 mm
+[16:44:13] Punto 94/806 adquirido
+[16:44:13] BBD -> 160.1 mm
+[16:44:14] Punto 95/806 adquirido
+[16:44:14] BBD -> 160.2 mm
+[16:44:16] Punto 96/806 adquirido
+[16:44:16] BBD -> 160.3 mm
+[16:44:17] Punto 97/806 adquirido
+[16:44:17] BBD -> 160.4 mm
+[16:44:18] Punto 98/806 adquirido
+[16:44:18] BBD -> 160.5 mm
+[16:44:20] Punto 99/806 adquirido
+[16:44:20] BBD -> 160.6 mm
+[16:44:21] Punto 100/806 adquirido
+[16:44:21] BBD -> 160.7 mm
+[16:44:23] Punto 101/806 adquirido
+[16:44:23] BBD -> 160.8 mm
+[16:44:24] Punto 102/806 adquirido
+[16:44:24] BBD -> 160.9 mm
+[16:44:25] Punto 103/806 adquirido
+[16:44:25] BBD -> 161.0 mm
+[16:44:27] Punto 104/806 adquirido
+[16:44:27] BBD -> 161.1 mm
+[16:44:28] Punto 105/806 adquirido
+[16:44:28] BBD -> 161.2 mm
+[16:44:30] Punto 106/806 adquirido
+[16:44:30] BBD -> 161.3 mm
+[16:44:31] Punto 107/806 adquirido
+[16:44:31] BBD -> 161.4 mm
+[16:44:32] Punto 108/806 adquirido
+[16:44:32] BBD -> 161.5 mm
+[16:44:34] Punto 109/806 adquirido
+[16:44:34] BBD -> 161.6 mm
+[16:44:35] Punto 110/806 adquirido
+[16:44:35] BBD -> 161.7 mm
+[16:44:37] Punto 111/806 adquirido
+[16:44:37] BBD -> 161.8 mm
+[16:44:38] Punto 112/806 adquirido
+[16:44:38] BBD -> 161.9 mm
+[16:44:40] Punto 113/806 adquirido
+[16:44:40] BBD -> 162.0 mm
+[16:44:41] Punto 114/806 adquirido
+[16:44:41] BBD -> 162.1 mm
+[16:44:42] Punto 115/806 adquirido
+[16:44:42] BBD -> 162.2 mm
+[16:44:44] Punto 116/806 adquirido
+[16:44:44] BBD -> 162.3 mm
+[16:44:45] Punto 117/806 adquirido
+[16:44:45] BBD -> 162.4 mm
+[16:44:47] Punto 118/806 adquirido
+[16:44:47] BBD -> 162.5 mm
+[16:44:48] Punto 119/806 adquirido
+[16:44:48] BBD -> 162.6 mm
+[16:44:49] Punto 120/806 adquirido
+[16:44:49] BBD -> 162.7 mm
+[16:44:51] Punto 121/806 adquirido
+[16:44:51] BBD -> 162.8 mm
+[16:44:52] Punto 122/806 adquirido
+[16:44:52] BBD -> 162.9 mm
+[16:44:54] Punto 123/806 adquirido
+[16:44:54] BBD -> 163.0 mm
+[16:44:55] Punto 124/806 adquirido
+[16:44:55] Lambda -> 608.0 nm
+[16:44:56] BBD -> 160.0 mm
+[16:44:58] Punto 125/806 adquirido
+[16:44:58] BBD -> 160.1 mm
+[16:44:59] Punto 126/806 adquirido
+[16:44:59] BBD -> 160.2 mm
+[16:45:01] Punto 127/806 adquirido
+[16:45:01] BBD -> 160.3 mm
+[16:45:02] Punto 128/806 adquirido
+[16:45:02] BBD -> 160.4 mm
+[16:45:03] Punto 129/806 adquirido
+[16:45:03] BBD -> 160.5 mm
+[16:45:05] Punto 130/806 adquirido
+[16:45:05] BBD -> 160.6 mm
+[16:45:06] Punto 131/806 adquirido
+[16:45:06] BBD -> 160.7 mm
+[16:45:08] Punto 132/806 adquirido
+[16:45:08] BBD -> 160.8 mm
+[16:45:09] Punto 133/806 adquirido
+[16:45:09] BBD -> 160.9 mm
+[16:45:11] Punto 134/806 adquirido
+[16:45:11] BBD -> 161.0 mm
+[16:45:12] Punto 135/806 adquirido
+[16:45:12] BBD -> 161.1 mm
+[16:45:13] Punto 136/806 adquirido
+[16:45:13] BBD -> 161.2 mm
+[16:45:15] Punto 137/806 adquirido
+[16:45:15] BBD -> 161.3 mm
+[16:45:16] Punto 138/806 adquirido
+[16:45:16] BBD -> 161.4 mm
+[16:45:18] Punto 139/806 adquirido
+[16:45:18] BBD -> 161.5 mm
+[16:45:19] Punto 140/806 adquirido
+[16:45:19] BBD -> 161.6 mm
+[16:45:20] Punto 141/806 adquirido
+[16:45:20] BBD -> 161.7 mm
+[16:45:22] Punto 142/806 adquirido
+[16:45:22] BBD -> 161.8 mm
+[16:45:23] Punto 143/806 adquirido
+[16:45:23] BBD -> 161.9 mm
+[16:45:25] Punto 144/806 adquirido
+[16:45:25] BBD -> 162.0 mm
+[16:45:26] Punto 145/806 adquirido
+[16:45:26] BBD -> 162.1 mm
+[16:45:28] Punto 146/806 adquirido
+[16:45:28] BBD -> 162.2 mm
+[16:45:29] Punto 147/806 adquirido
+[16:45:29] BBD -> 162.3 mm
+[16:45:30] Punto 148/806 adquirido
+[16:45:30] BBD -> 162.4 mm
+[16:45:32] Punto 149/806 adquirido
+[16:45:32] BBD -> 162.5 mm
+[16:45:33] Punto 150/806 adquirido
+[16:45:33] BBD -> 162.6 mm
+[16:45:35] Punto 151/806 adquirido
+[16:45:35] BBD -> 162.7 mm
+[16:45:36] Punto 152/806 adquirido
+[16:45:36] BBD -> 162.8 mm
+[16:45:37] Punto 153/806 adquirido
+[16:45:37] BBD -> 162.9 mm
+[16:45:39] Punto 154/806 adquirido
+[16:45:39] BBD -> 163.0 mm
+[16:45:40] Punto 155/806 adquirido
+[16:45:40] Lambda -> 610.0 nm
+[16:45:42] BBD -> 160.0 mm
+[16:45:43] Punto 156/806 adquirido
+[16:45:43] BBD -> 160.1 mm
+[16:45:44] Punto 157/806 adquirido
+[16:45:44] BBD -> 160.2 mm
+[16:45:46] Punto 158/806 adquirido
+[16:45:46] BBD -> 160.3 mm
+[16:45:47] Punto 159/806 adquirido
+[16:45:47] BBD -> 160.4 mm
+[16:45:49] Punto 160/806 adquirido
+[16:45:49] BBD -> 160.5 mm
+[16:45:50] Punto 161/806 adquirido
+[16:45:50] BBD -> 160.6 mm
+[16:45:52] Punto 162/806 adquirido
+[16:45:52] BBD -> 160.7 mm
+[16:45:53] Punto 163/806 adquirido
+[16:45:53] BBD -> 160.8 mm
+[16:45:54] Punto 164/806 adquirido
+[16:45:54] BBD -> 160.9 mm
+[16:45:56] Punto 165/806 adquirido
+[16:45:56] BBD -> 161.0 mm
+[16:45:57] Punto 166/806 adquirido
+[16:45:57] BBD -> 161.1 mm
+[16:45:59] Punto 167/806 adquirido
+[16:45:59] BBD -> 161.2 mm
+[16:46:00] Punto 168/806 adquirido
+[16:46:00] BBD -> 161.3 mm
+[16:46:01] Punto 169/806 adquirido
+[16:46:01] BBD -> 161.4 mm
+[16:46:03] Punto 170/806 adquirido
+[16:46:03] BBD -> 161.5 mm
+[16:46:04] Punto 171/806 adquirido
+[16:46:04] BBD -> 161.6 mm
+[16:46:06] Punto 172/806 adquirido
+[16:46:06] BBD -> 161.7 mm
+[16:46:07] Punto 173/806 adquirido
+[16:46:07] BBD -> 161.8 mm
+[16:46:08] Punto 174/806 adquirido
+[16:46:08] BBD -> 161.9 mm
+[16:46:10] Punto 175/806 adquirido
+[16:46:10] BBD -> 162.0 mm
+[16:46:11] Punto 176/806 adquirido
+[16:46:11] BBD -> 162.1 mm
+[16:46:13] Punto 177/806 adquirido
+[16:46:13] BBD -> 162.2 mm
+[16:46:14] Punto 178/806 adquirido
+[16:46:14] BBD -> 162.3 mm
+[16:46:15] Punto 179/806 adquirido
+[16:46:16] BBD -> 162.4 mm
+[16:46:17] Punto 180/806 adquirido
+[16:46:17] BBD -> 162.5 mm
+[16:46:18] Punto 181/806 adquirido
+[16:46:18] BBD -> 162.6 mm
+[16:46:20] Punto 182/806 adquirido
+[16:46:20] BBD -> 162.7 mm
+[16:46:21] Punto 183/806 adquirido
+[16:46:21] BBD -> 162.8 mm
+[16:46:23] Punto 184/806 adquirido
+[16:46:23] BBD -> 162.9 mm
+[16:46:24] Punto 185/806 adquirido
+[16:46:24] BBD -> 163.0 mm
+[16:46:25] Punto 186/806 adquirido
+[16:46:25] Lambda -> 612.0 nm
+[16:46:27] BBD -> 160.0 mm
+[16:46:28] Punto 187/806 adquirido
+[16:46:28] BBD -> 160.1 mm
+[16:46:30] Punto 188/806 adquirido
+[16:46:30] BBD -> 160.2 mm
+[16:46:31] Punto 189/806 adquirido
+[16:46:31] BBD -> 160.3 mm
+[16:46:32] Punto 190/806 adquirido
+[16:46:32] BBD -> 160.4 mm
+[16:46:34] Punto 191/806 adquirido
+[16:46:34] BBD -> 160.5 mm
+[16:46:35] Punto 192/806 adquirido
+[16:46:35] BBD -> 160.6 mm
+[16:46:37] Punto 193/806 adquirido
+[16:46:37] BBD -> 160.7 mm
+[16:46:38] Punto 194/806 adquirido
+[16:46:38] BBD -> 160.8 mm
+[16:46:39] Punto 195/806 adquirido
+[16:46:39] BBD -> 160.9 mm
+[16:46:41] Punto 196/806 adquirido
+[16:46:41] BBD -> 161.0 mm
+[16:46:42] Punto 197/806 adquirido
+[16:46:42] BBD -> 161.1 mm
+[16:46:44] Punto 198/806 adquirido
+[16:46:44] BBD -> 161.2 mm
+[16:46:45] Punto 199/806 adquirido
+[16:46:45] BBD -> 161.3 mm
+[16:46:46] Punto 200/806 adquirido
+[16:46:46] BBD -> 161.4 mm
+[16:46:48] Punto 201/806 adquirido
+[16:46:48] BBD -> 161.5 mm
+[16:46:49] Punto 202/806 adquirido
+[16:46:49] BBD -> 161.6 mm
+[16:46:51] Punto 203/806 adquirido
+[16:46:51] BBD -> 161.7 mm
+[16:46:52] Punto 204/806 adquirido
+[16:46:52] BBD -> 161.8 mm
+[16:46:53] Punto 205/806 adquirido
+[16:46:54] BBD -> 161.9 mm
+[16:46:55] Punto 206/806 adquirido
+[16:46:55] BBD -> 162.0 mm
+[16:46:56] Punto 207/806 adquirido
+[16:46:56] BBD -> 162.1 mm
+[16:46:58] Punto 208/806 adquirido
+[16:46:58] BBD -> 162.2 mm
+[16:46:59] Punto 209/806 adquirido
+[16:46:59] BBD -> 162.3 mm
+[16:47:01] Punto 210/806 adquirido
+[16:47:01] BBD -> 162.4 mm
+[16:47:02] Punto 211/806 adquirido
+[16:47:02] BBD -> 162.5 mm
+[16:47:03] Punto 212/806 adquirido
+[16:47:03] BBD -> 162.6 mm
+[16:47:05] Punto 213/806 adquirido
+[16:47:05] BBD -> 162.7 mm
+[16:47:06] Punto 214/806 adquirido
+[16:47:06] BBD -> 162.8 mm
+[16:47:08] Punto 215/806 adquirido
+[16:47:08] BBD -> 162.9 mm
+[16:47:09] Punto 216/806 adquirido
+[16:47:09] BBD -> 163.0 mm
+[16:47:10] Punto 217/806 adquirido
+[16:47:10] Lambda -> 614.0 nm
+[16:47:12] BBD -> 160.0 mm
+[16:47:13] Punto 218/806 adquirido
+[16:47:13] BBD -> 160.1 mm
+[16:47:15] Punto 219/806 adquirido
+[16:47:15] BBD -> 160.2 mm
+[16:47:16] Punto 220/806 adquirido
+[16:47:16] BBD -> 160.3 mm
+[16:47:17] Punto 221/806 adquirido
+[16:47:17] BBD -> 160.4 mm
+[16:47:19] Punto 222/806 adquirido
+[16:47:19] BBD -> 160.5 mm
+[16:47:20] Punto 223/806 adquirido
+[16:47:20] BBD -> 160.6 mm
+[16:47:22] Punto 224/806 adquirido
+[16:47:22] BBD -> 160.7 mm
+[16:47:23] Punto 225/806 adquirido
+[16:47:23] BBD -> 160.8 mm
+[16:47:25] Punto 226/806 adquirido
+[16:47:25] BBD -> 160.9 mm
+[16:47:26] Punto 227/806 adquirido
+[16:47:26] BBD -> 161.0 mm
+[16:47:27] Punto 228/806 adquirido
+[16:47:27] BBD -> 161.1 mm
+[16:47:29] Punto 229/806 adquirido
+[16:47:29] BBD -> 161.2 mm
+[16:47:30] Punto 230/806 adquirido
+[16:47:30] BBD -> 161.3 mm
+[16:47:32] Punto 231/806 adquirido
+[16:47:32] BBD -> 161.4 mm
+[16:47:33] Punto 232/806 adquirido
+[16:47:33] BBD -> 161.5 mm
+[16:47:34] Punto 233/806 adquirido
+[16:47:34] BBD -> 161.6 mm
+[16:47:36] Punto 234/806 adquirido
+[16:47:36] BBD -> 161.7 mm
+[16:47:37] Punto 235/806 adquirido
+[16:47:37] BBD -> 161.8 mm
+[16:47:39] Punto 236/806 adquirido
+[16:47:39] BBD -> 161.9 mm
+[16:47:40] Punto 237/806 adquirido
+[16:47:40] BBD -> 162.0 mm
+[16:47:41] Punto 238/806 adquirido
+[16:47:41] BBD -> 162.1 mm
+[16:47:43] Punto 239/806 adquirido
+[16:47:43] BBD -> 162.2 mm
+[16:47:44] Punto 240/806 adquirido
+[16:47:44] BBD -> 162.3 mm
+[16:47:46] Punto 241/806 adquirido
+[16:47:46] BBD -> 162.4 mm
+[16:47:47] Punto 242/806 adquirido
+[16:47:47] BBD -> 162.5 mm
+[16:47:49] Punto 243/806 adquirido
+[16:47:49] BBD -> 162.6 mm
+[16:47:50] Punto 244/806 adquirido
+[16:47:50] BBD -> 162.7 mm
+[16:47:51] Punto 245/806 adquirido
+[16:47:51] BBD -> 162.8 mm
+[16:47:53] Punto 246/806 adquirido
+[16:47:53] BBD -> 162.9 mm
+[16:47:54] Punto 247/806 adquirido
+[16:47:54] BBD -> 163.0 mm
+[16:47:56] Punto 248/806 adquirido
+[16:47:56] Lambda -> 616.0 nm
+[16:47:57] BBD -> 160.0 mm
+[16:47:58] Punto 249/806 adquirido
+[16:47:58] BBD -> 160.1 mm
+[16:48:00] Punto 250/806 adquirido
+[16:48:00] BBD -> 160.2 mm
+[16:48:01] Punto 251/806 adquirido
+[16:48:01] BBD -> 160.3 mm
+[16:48:03] Punto 252/806 adquirido
+[16:48:03] BBD -> 160.4 mm
+[16:48:04] Punto 253/806 adquirido
+[16:48:04] BBD -> 160.5 mm
+[16:48:05] Punto 254/806 adquirido
+[16:48:05] BBD -> 160.6 mm
+[16:48:07] Punto 255/806 adquirido
+[16:48:07] BBD -> 160.7 mm
+[16:48:08] Punto 256/806 adquirido
+[16:48:08] BBD -> 160.8 mm
+[16:48:10] Punto 257/806 adquirido
+[16:48:10] BBD -> 160.9 mm
+[16:48:11] Punto 258/806 adquirido
+[16:48:11] BBD -> 161.0 mm
+[16:48:12] Punto 259/806 adquirido
+[16:48:12] BBD -> 161.1 mm
+[16:48:14] Punto 260/806 adquirido
+[16:48:14] BBD -> 161.2 mm
+[16:48:15] Punto 261/806 adquirido
+[16:48:15] BBD -> 161.3 mm
+[16:48:17] Punto 262/806 adquirido
+[16:48:17] BBD -> 161.4 mm
+[16:48:18] Punto 263/806 adquirido
+[16:48:18] BBD -> 161.5 mm
+[16:48:19] Punto 264/806 adquirido
+[16:48:19] BBD -> 161.6 mm
+[16:48:21] Punto 265/806 adquirido
+[16:48:21] BBD -> 161.7 mm
+[16:48:22] Punto 266/806 adquirido
+[16:48:22] BBD -> 161.8 mm
+[16:48:24] Punto 267/806 adquirido
+[16:48:24] BBD -> 161.9 mm
+[16:48:25] Punto 268/806 adquirido
+[16:48:25] BBD -> 162.0 mm
+[16:48:26] Punto 269/806 adquirido
+[16:48:27] BBD -> 162.1 mm
+[16:48:28] Punto 270/806 adquirido
+[16:48:28] BBD -> 162.2 mm
+[16:48:29] Punto 271/806 adquirido
+[16:48:29] BBD -> 162.3 mm
+[16:48:31] Punto 272/806 adquirido
+[16:48:31] BBD -> 162.4 mm
+[16:48:32] Punto 273/806 adquirido
+[16:48:32] BBD -> 162.5 mm
+[16:48:34] Punto 274/806 adquirido
+[16:48:34] BBD -> 162.6 mm
+[16:48:35] Punto 275/806 adquirido
+[16:48:35] BBD -> 162.7 mm
+[16:48:36] Punto 276/806 adquirido
+[16:48:36] BBD -> 162.8 mm
+[16:48:38] Punto 277/806 adquirido
+[16:48:38] BBD -> 162.9 mm
+[16:48:39] Punto 278/806 adquirido
+[16:48:39] BBD -> 163.0 mm
+[16:48:41] Punto 279/806 adquirido
+[16:48:41] Lambda -> 618.0 nm
+[16:48:42] BBD -> 160.0 mm
+[16:48:43] Punto 280/806 adquirido
+[16:48:43] BBD -> 160.1 mm
+[16:48:45] Punto 281/806 adquirido
+[16:48:45] BBD -> 160.2 mm
+[16:48:46] Punto 282/806 adquirido
+[16:48:46] BBD -> 160.3 mm
+[16:48:48] Punto 283/806 adquirido
+[16:48:48] BBD -> 160.4 mm
+[16:48:49] Punto 284/806 adquirido
+[16:48:49] BBD -> 160.5 mm
+[16:48:50] Punto 285/806 adquirido
+[16:48:50] BBD -> 160.6 mm
+[16:48:52] Punto 286/806 adquirido
+[16:48:52] BBD -> 160.7 mm
+[16:48:53] Punto 287/806 adquirido
+[16:48:53] BBD -> 160.8 mm
+[16:48:55] Punto 288/806 adquirido
+[16:48:55] BBD -> 160.9 mm
+[16:48:56] Punto 289/806 adquirido
+[16:48:56] BBD -> 161.0 mm
+[16:48:57] Punto 290/806 adquirido
+[16:48:57] BBD -> 161.1 mm
+[16:48:59] Punto 291/806 adquirido
+[16:48:59] BBD -> 161.2 mm
+[16:49:00] Punto 292/806 adquirido
+[16:49:00] BBD -> 161.3 mm
+[16:49:02] Punto 293/806 adquirido
+[16:49:02] BBD -> 161.4 mm
+[16:49:03] Punto 294/806 adquirido
+[16:49:03] BBD -> 161.5 mm
+[16:49:04] Punto 295/806 adquirido
+[16:49:05] BBD -> 161.6 mm
+[16:49:06] Punto 296/806 adquirido
+[16:49:06] BBD -> 161.7 mm
+[16:49:07] Punto 297/806 adquirido
+[16:49:07] BBD -> 161.8 mm
+[16:49:09] Punto 298/806 adquirido
+[16:49:09] BBD -> 161.9 mm
+[16:49:10] Punto 299/806 adquirido
+[16:49:10] BBD -> 162.0 mm
+[16:49:12] Punto 300/806 adquirido
+[16:49:12] BBD -> 162.1 mm
+[16:49:13] Punto 301/806 adquirido
+[16:49:13] BBD -> 162.2 mm
+[16:49:14] Punto 302/806 adquirido
+[16:49:14] BBD -> 162.3 mm
+[16:49:16] Punto 303/806 adquirido
+[16:49:16] BBD -> 162.4 mm
+[16:49:17] Punto 304/806 adquirido
+[16:49:17] BBD -> 162.5 mm
+[16:49:19] Punto 305/806 adquirido
+[16:49:19] BBD -> 162.6 mm
+[16:49:20] Punto 306/806 adquirido
+[16:49:20] BBD -> 162.7 mm
+[16:49:21] Punto 307/806 adquirido
+[16:49:21] BBD -> 162.8 mm
+[16:49:23] Punto 308/806 adquirido
+[16:49:23] BBD -> 162.9 mm
+[16:49:24] Punto 309/806 adquirido
+[16:49:24] BBD -> 163.0 mm
+[16:49:26] Punto 310/806 adquirido
+[16:49:26] Lambda -> 620.0 nm
+[16:49:27] BBD -> 160.0 mm
+[16:49:28] Punto 311/806 adquirido
+[16:49:28] BBD -> 160.1 mm
+[16:49:30] Punto 312/806 adquirido
+[16:49:30] BBD -> 160.2 mm
+[16:49:31] Punto 313/806 adquirido
+[16:49:31] BBD -> 160.3 mm
+[16:49:33] Punto 314/806 adquirido
+[16:49:33] BBD -> 160.4 mm
+[16:49:34] Punto 315/806 adquirido
+[16:49:34] BBD -> 160.5 mm
+[16:49:35] Punto 316/806 adquirido
+[16:49:36] BBD -> 160.6 mm
+[16:49:37] Punto 317/806 adquirido
+[16:49:37] BBD -> 160.7 mm
+[16:49:38] Punto 318/806 adquirido
+[16:49:38] BBD -> 160.8 mm
+[16:49:40] Punto 319/806 adquirido
+[16:49:40] BBD -> 160.9 mm
+[16:49:41] Punto 320/806 adquirido
+[16:49:41] BBD -> 161.0 mm
+[16:49:43] Punto 321/806 adquirido
+[16:49:43] BBD -> 161.1 mm
+[16:49:44] Punto 322/806 adquirido
+[16:49:44] BBD -> 161.2 mm
+[16:49:45] Punto 323/806 adquirido
+[16:49:45] BBD -> 161.3 mm
+[16:49:47] Punto 324/806 adquirido
+[16:49:47] BBD -> 161.4 mm
+[16:49:48] Punto 325/806 adquirido
+[16:49:48] BBD -> 161.5 mm
+[16:49:50] Punto 326/806 adquirido
+[16:49:50] BBD -> 161.6 mm
+[16:49:51] Punto 327/806 adquirido
+[16:49:51] BBD -> 161.7 mm
+[16:49:52] Punto 328/806 adquirido
+[16:49:52] BBD -> 161.8 mm
+[16:49:54] Punto 329/806 adquirido
+[16:49:54] BBD -> 161.9 mm
+[16:49:55] Punto 330/806 adquirido
+[16:49:55] BBD -> 162.0 mm
+[16:49:57] Punto 331/806 adquirido
+[16:49:57] BBD -> 162.1 mm
+[16:49:58] Punto 332/806 adquirido
+[16:49:58] BBD -> 162.2 mm
+[16:49:59] Punto 333/806 adquirido
+[16:50:00] BBD -> 162.3 mm
+[16:50:01] Punto 334/806 adquirido
+[16:50:01] BBD -> 162.4 mm
+[16:50:02] Punto 335/806 adquirido
+[16:50:02] BBD -> 162.5 mm
+[16:50:04] Punto 336/806 adquirido
+[16:50:04] BBD -> 162.6 mm
+[16:50:05] Punto 337/806 adquirido
+[16:50:05] BBD -> 162.7 mm
+[16:50:07] Punto 338/806 adquirido
+[16:50:07] BBD -> 162.8 mm
+[16:50:08] Punto 339/806 adquirido
+[16:50:08] BBD -> 162.9 mm
+[16:50:09] Punto 340/806 adquirido
+[16:50:09] BBD -> 163.0 mm
+[16:50:11] Punto 341/806 adquirido
+[16:50:11] Lambda -> 622.0 nm
+[16:50:12] BBD -> 160.0 mm
+[16:50:14] Punto 342/806 adquirido
+[16:50:14] BBD -> 160.1 mm
+[16:50:15] Punto 343/806 adquirido
+[16:50:15] BBD -> 160.2 mm
+[16:50:16] Punto 344/806 adquirido
+[16:50:16] BBD -> 160.3 mm
+[16:50:18] Punto 345/806 adquirido
+[16:50:18] BBD -> 160.4 mm
+[16:50:19] Punto 346/806 adquirido
+[16:50:19] BBD -> 160.5 mm
+[16:50:21] Punto 347/806 adquirido
+[16:50:21] BBD -> 160.6 mm
+[16:50:22] Punto 348/806 adquirido
+[16:50:22] BBD -> 160.7 mm
+[16:50:23] Punto 349/806 adquirido
+[16:50:24] BBD -> 160.8 mm
+[16:50:25] Punto 350/806 adquirido
+[16:50:25] BBD -> 160.9 mm
+[16:50:26] Punto 351/806 adquirido
+[16:50:26] BBD -> 161.0 mm
+[16:50:28] Punto 352/806 adquirido
+[16:50:28] BBD -> 161.1 mm
+[16:50:29] Punto 353/806 adquirido
+[16:50:29] BBD -> 161.2 mm
+[16:50:31] Punto 354/806 adquirido
+[16:50:31] BBD -> 161.3 mm
+[16:50:32] Punto 355/806 adquirido
+[16:50:32] BBD -> 161.4 mm
+[16:50:33] Punto 356/806 adquirido
+[16:50:33] BBD -> 161.5 mm
+[16:50:35] Punto 357/806 adquirido
+[16:50:35] BBD -> 161.6 mm
+[16:50:36] Punto 358/806 adquirido
+[16:50:36] BBD -> 161.7 mm
+[16:50:38] Punto 359/806 adquirido
+[16:50:38] BBD -> 161.8 mm
+[16:50:39] Punto 360/806 adquirido
+[16:50:39] BBD -> 161.9 mm
+[16:50:40] Punto 361/806 adquirido
+[16:50:40] BBD -> 162.0 mm
+[16:50:42] Punto 362/806 adquirido
+[16:50:42] BBD -> 162.1 mm
+[16:50:43] Punto 363/806 adquirido
+[16:50:43] BBD -> 162.2 mm
+[16:50:45] Punto 364/806 adquirido
+[16:50:45] BBD -> 162.3 mm
+[16:50:46] Punto 365/806 adquirido
+[16:50:46] BBD -> 162.4 mm
+[16:50:47] Punto 366/806 adquirido
+[16:50:47] BBD -> 162.5 mm
+[16:50:49] Punto 367/806 adquirido
+[16:50:49] BBD -> 162.6 mm
+[16:50:50] Punto 368/806 adquirido
+[16:50:50] BBD -> 162.7 mm
+[16:50:52] Punto 369/806 adquirido
+[16:50:52] BBD -> 162.8 mm
+[16:50:53] Punto 370/806 adquirido
+[16:50:53] BBD -> 162.9 mm
+[16:50:55] Punto 371/806 adquirido
+[16:50:55] BBD -> 163.0 mm
+[16:50:56] Punto 372/806 adquirido
+[16:50:56] Lambda -> 624.0 nm
+[16:50:57] BBD -> 160.0 mm
+[16:50:59] Punto 373/806 adquirido
+[16:50:59] BBD -> 160.1 mm
+[16:51:00] Punto 374/806 adquirido
+[16:51:00] BBD -> 160.2 mm
+[16:51:02] Punto 375/806 adquirido
+[16:51:02] BBD -> 160.3 mm
+[16:51:03] Punto 376/806 adquirido
+[16:51:03] BBD -> 160.4 mm
+[16:51:04] Punto 377/806 adquirido
+[16:51:04] BBD -> 160.5 mm
+[16:51:06] Punto 378/806 adquirido
+[16:51:06] BBD -> 160.6 mm
+[16:51:07] Punto 379/806 adquirido
+[16:51:07] BBD -> 160.7 mm
+[16:51:09] Punto 380/806 adquirido
+[16:51:09] BBD -> 160.8 mm
+[16:51:10] Punto 381/806 adquirido
+[16:51:10] BBD -> 160.9 mm
+[16:51:11] Punto 382/806 adquirido
+[16:51:11] BBD -> 161.0 mm
+[16:51:13] Punto 383/806 adquirido
+[16:51:13] BBD -> 161.1 mm
+[16:51:14] Punto 384/806 adquirido
+[16:51:14] BBD -> 161.2 mm
+[16:51:16] Punto 385/806 adquirido
+[16:51:16] BBD -> 161.3 mm
+[16:51:17] Punto 386/806 adquirido
+[16:51:17] BBD -> 161.4 mm
+[16:51:18] Punto 387/806 adquirido
+[16:51:18] BBD -> 161.5 mm
+[16:51:20] Punto 388/806 adquirido
+[16:51:20] BBD -> 161.6 mm
+[16:51:21] Punto 389/806 adquirido
+[16:51:21] BBD -> 161.7 mm
+[16:51:23] Punto 390/806 adquirido
+[16:51:23] BBD -> 161.8 mm
+[16:51:24] Punto 391/806 adquirido
+[16:51:24] BBD -> 161.9 mm
+[16:51:26] Punto 392/806 adquirido
+[16:51:26] BBD -> 162.0 mm
+[16:51:27] Punto 393/806 adquirido
+[16:51:27] BBD -> 162.1 mm
+[16:51:28] Punto 394/806 adquirido
+[16:51:28] BBD -> 162.2 mm
+[16:51:30] Punto 395/806 adquirido
+[16:51:30] BBD -> 162.3 mm
+[16:51:31] Punto 396/806 adquirido
+[16:51:31] BBD -> 162.4 mm
+[16:51:33] Punto 397/806 adquirido
+[16:51:33] BBD -> 162.5 mm
+[16:51:34] Punto 398/806 adquirido
+[16:51:34] BBD -> 162.6 mm
+[16:51:35] Punto 399/806 adquirido
+[16:51:35] BBD -> 162.7 mm
+[16:51:37] Punto 400/806 adquirido
+[16:51:37] BBD -> 162.8 mm
+[16:51:38] Punto 401/806 adquirido
+[16:51:38] BBD -> 162.9 mm
+[16:51:40] Punto 402/806 adquirido
+[16:51:40] BBD -> 163.0 mm
+[16:51:41] Punto 403/806 adquirido
+[16:51:41] Lambda -> 626.0 nm
+[16:51:42] BBD -> 160.0 mm
+[16:51:44] Punto 404/806 adquirido
+[16:51:44] BBD -> 160.1 mm
+[16:51:45] Punto 405/806 adquirido
+[16:51:45] BBD -> 160.2 mm
+[16:51:47] Punto 406/806 adquirido
+[16:51:47] BBD -> 160.3 mm
+[16:51:48] Punto 407/806 adquirido
+[16:51:48] BBD -> 160.4 mm
+[16:51:49] Punto 408/806 adquirido
+[16:51:49] BBD -> 160.5 mm
+[16:51:51] Punto 409/806 adquirido
+[16:51:51] BBD -> 160.6 mm
+[16:51:52] Punto 410/806 adquirido
+[16:51:52] BBD -> 160.7 mm
+[16:51:54] Punto 411/806 adquirido
+[16:51:54] BBD -> 160.8 mm
+[16:51:55] Punto 412/806 adquirido
+[16:51:55] BBD -> 160.9 mm
+[16:51:56] Punto 413/806 adquirido
+[16:51:56] BBD -> 161.0 mm
+[16:51:58] Punto 414/806 adquirido
+[16:51:58] BBD -> 161.1 mm
+[16:51:59] Punto 415/806 adquirido
+[16:51:59] BBD -> 161.2 mm
+[16:52:01] Punto 416/806 adquirido
+[16:52:01] BBD -> 161.3 mm
+[16:52:02] Punto 417/806 adquirido
+[16:52:02] BBD -> 161.4 mm
+[16:52:04] Punto 418/806 adquirido
+[16:52:04] BBD -> 161.5 mm
+[16:52:05] Punto 419/806 adquirido
+[16:52:05] BBD -> 161.6 mm
+[16:52:06] Punto 420/806 adquirido
+[16:52:06] BBD -> 161.7 mm
+[16:52:08] Punto 421/806 adquirido
+[16:52:08] BBD -> 161.8 mm
+[16:52:09] Punto 422/806 adquirido
+[16:52:09] BBD -> 161.9 mm
+[16:52:11] Punto 423/806 adquirido
+[16:52:11] BBD -> 162.0 mm
+[16:52:12] Punto 424/806 adquirido
+[16:52:12] BBD -> 162.1 mm
+[16:52:13] Punto 425/806 adquirido
+[16:52:13] BBD -> 162.2 mm
+[16:52:15] Punto 426/806 adquirido
+[16:52:15] BBD -> 162.3 mm
+[16:52:16] Punto 427/806 adquirido
+[16:52:16] BBD -> 162.4 mm
+[16:52:18] Punto 428/806 adquirido
+[16:52:18] BBD -> 162.5 mm
+[16:52:19] Punto 429/806 adquirido
+[16:52:19] BBD -> 162.6 mm
+[16:52:20] Punto 430/806 adquirido
+[16:52:20] BBD -> 162.7 mm
+[16:52:22] Punto 431/806 adquirido
+[16:52:22] BBD -> 162.8 mm
+[16:52:23] Punto 432/806 adquirido
+[16:52:23] BBD -> 162.9 mm
+[16:52:25] Punto 433/806 adquirido
+[16:52:25] BBD -> 163.0 mm
+[16:52:26] Punto 434/806 adquirido
+[16:52:26] Lambda -> 628.0 nm
+[16:52:27] BBD -> 160.0 mm
+[16:52:29] Punto 435/806 adquirido
+[16:52:29] BBD -> 160.1 mm
+[16:52:30] Punto 436/806 adquirido
+[16:52:30] BBD -> 160.2 mm
+[16:52:32] Punto 437/806 adquirido
+[16:52:32] BBD -> 160.3 mm
+[16:52:33] Punto 438/806 adquirido
+[16:52:33] BBD -> 160.4 mm
+[16:52:34] Punto 439/806 adquirido
+[16:52:35] BBD -> 160.5 mm
+[16:52:36] Punto 440/806 adquirido
+[16:52:36] BBD -> 160.6 mm
+[16:52:37] Punto 441/806 adquirido
+[16:52:37] BBD -> 160.7 mm
+[16:52:39] Punto 442/806 adquirido
+[16:52:39] BBD -> 160.8 mm
+[16:52:40] Punto 443/806 adquirido
+[16:52:40] BBD -> 160.9 mm
+[16:52:42] Punto 444/806 adquirido
+[16:52:42] BBD -> 161.0 mm
+[16:52:43] Punto 445/806 adquirido
+[16:52:43] BBD -> 161.1 mm
+[16:52:44] Punto 446/806 adquirido
+[16:52:44] BBD -> 161.2 mm
+[16:52:46] Punto 447/806 adquirido
+[16:52:46] BBD -> 161.3 mm
+[16:52:47] Punto 448/806 adquirido
+[16:52:47] BBD -> 161.4 mm
+[16:52:49] Punto 449/806 adquirido
+[16:52:49] BBD -> 161.5 mm
+[16:52:50] Punto 450/806 adquirido
+[16:52:50] BBD -> 161.6 mm
+[16:52:51] Punto 451/806 adquirido
+[16:52:51] BBD -> 161.7 mm
+[16:52:53] Punto 452/806 adquirido
+[16:52:53] BBD -> 161.8 mm
+[16:52:54] Punto 453/806 adquirido
+[16:52:54] BBD -> 161.9 mm
+[16:52:56] Punto 454/806 adquirido
+[16:52:56] BBD -> 162.0 mm
+[16:52:57] Punto 455/806 adquirido
+[16:52:57] BBD -> 162.1 mm
+[16:52:59] Punto 456/806 adquirido
+[16:52:59] BBD -> 162.2 mm
+[16:53:00] Punto 457/806 adquirido
+[16:53:00] BBD -> 162.3 mm
+[16:53:01] Punto 458/806 adquirido
+[16:53:01] BBD -> 162.4 mm
+[16:53:03] Punto 459/806 adquirido
+[16:53:03] BBD -> 162.5 mm
+[16:53:04] Punto 460/806 adquirido
+[16:53:04] BBD -> 162.6 mm
+[16:53:06] Punto 461/806 adquirido
+[16:53:06] BBD -> 162.7 mm
+[16:53:07] Punto 462/806 adquirido
+[16:53:07] BBD -> 162.8 mm
+[16:53:08] Punto 463/806 adquirido
+[16:53:09] BBD -> 162.9 mm
+[16:53:10] Punto 464/806 adquirido
+[16:53:10] BBD -> 163.0 mm
+[16:53:11] Punto 465/806 adquirido
+[16:53:11] Lambda -> 630.0 nm
+[16:53:13] BBD -> 160.0 mm
+[16:53:14] Punto 466/806 adquirido
+[16:53:14] BBD -> 160.1 mm
+[16:53:15] Punto 467/806 adquirido
+[16:53:15] BBD -> 160.2 mm
+[16:53:17] Punto 468/806 adquirido
+[16:53:17] BBD -> 160.3 mm
+[16:53:18] Punto 469/806 adquirido
+[16:53:18] BBD -> 160.4 mm
+[16:53:20] Punto 470/806 adquirido
+[16:53:20] BBD -> 160.5 mm
+[16:53:21] Punto 471/806 adquirido
+[16:53:21] BBD -> 160.6 mm
+[16:53:22] Punto 472/806 adquirido
+[16:53:23] BBD -> 160.7 mm
+[16:53:24] Punto 473/806 adquirido
+[16:53:24] BBD -> 160.8 mm
+[16:53:25] Punto 474/806 adquirido
+[16:53:25] BBD -> 160.9 mm
+[16:53:27] Punto 475/806 adquirido
+[16:53:27] BBD -> 161.0 mm
+[16:53:28] Punto 476/806 adquirido
+[16:53:28] BBD -> 161.1 mm
+[16:53:30] Punto 477/806 adquirido
+[16:53:30] BBD -> 161.2 mm
+[16:53:31] Punto 478/806 adquirido
+[16:53:31] BBD -> 161.3 mm
+[16:53:32] Punto 479/806 adquirido
+[16:53:32] BBD -> 161.4 mm
+[16:53:34] Punto 480/806 adquirido
+[16:53:34] BBD -> 161.5 mm
+[16:53:35] Punto 481/806 adquirido
+[16:53:35] BBD -> 161.6 mm
+[16:53:37] Punto 482/806 adquirido
+[16:53:37] BBD -> 161.7 mm
+[16:53:38] Punto 483/806 adquirido
+[16:53:38] BBD -> 161.8 mm
+[16:53:39] Punto 484/806 adquirido
+[16:53:39] BBD -> 161.9 mm
+[16:53:41] Punto 485/806 adquirido
+[16:53:41] BBD -> 162.0 mm
+[16:53:42] Punto 486/806 adquirido
+[16:53:42] BBD -> 162.1 mm
+[16:53:44] Punto 487/806 adquirido
+[16:53:44] BBD -> 162.2 mm
+[16:53:45] Punto 488/806 adquirido
+[16:53:45] BBD -> 162.3 mm
+[16:53:46] Punto 489/806 adquirido
+[16:53:47] BBD -> 162.4 mm
+[16:53:48] Punto 490/806 adquirido
+[16:53:48] BBD -> 162.5 mm
+[16:53:49] Punto 491/806 adquirido
+[16:53:49] BBD -> 162.6 mm
+[16:53:51] Punto 492/806 adquirido
+[16:53:51] BBD -> 162.7 mm
+[16:53:52] Punto 493/806 adquirido
+[16:53:52] BBD -> 162.8 mm
+[16:53:54] Punto 494/806 adquirido
+[16:53:54] BBD -> 162.9 mm
+[16:53:55] Punto 495/806 adquirido
+[16:53:55] BBD -> 163.0 mm
+[16:53:56] Punto 496/806 adquirido
+[16:53:56] Lambda -> 632.0 nm
+[16:53:58] BBD -> 160.0 mm
+[16:53:59] Punto 497/806 adquirido
+[16:53:59] BBD -> 160.1 mm
+[16:54:01] Punto 498/806 adquirido
+[16:54:01] BBD -> 160.2 mm
+[16:54:02] Punto 499/806 adquirido
+[16:54:02] BBD -> 160.3 mm
+[16:54:03] Punto 500/806 adquirido
+[16:54:03] BBD -> 160.4 mm
+[16:54:05] Punto 501/806 adquirido
+[16:54:05] BBD -> 160.5 mm
+[16:54:06] Punto 502/806 adquirido
+[16:54:06] BBD -> 160.6 mm
+[16:54:08] Punto 503/806 adquirido
+[16:54:08] BBD -> 160.7 mm
+[16:54:09] Punto 504/806 adquirido
+[16:54:09] BBD -> 160.8 mm
+[16:54:10] Punto 505/806 adquirido
+[16:54:10] BBD -> 160.9 mm
+[16:54:12] Punto 506/806 adquirido
+[16:54:12] BBD -> 161.0 mm
+[16:54:13] Punto 507/806 adquirido
+[16:54:13] BBD -> 161.1 mm
+[16:54:15] Punto 508/806 adquirido
+[16:54:15] BBD -> 161.2 mm
+[16:54:16] Punto 509/806 adquirido
+[16:54:16] BBD -> 161.3 mm
+[16:54:17] Punto 510/806 adquirido
+[16:54:18] BBD -> 161.4 mm
+[16:54:19] Punto 511/806 adquirido
+[16:54:19] BBD -> 161.5 mm
+[16:54:20] Punto 512/806 adquirido
+[16:54:20] BBD -> 161.6 mm
+[16:54:22] Punto 513/806 adquirido
+[16:54:22] BBD -> 161.7 mm
+[16:54:23] Punto 514/806 adquirido
+[16:54:23] BBD -> 161.8 mm
+[16:54:25] Punto 515/806 adquirido
+[16:54:25] BBD -> 161.9 mm
+[16:54:26] Punto 516/806 adquirido
+[16:54:26] BBD -> 162.0 mm
+[16:54:27] Punto 517/806 adquirido
+[16:54:27] BBD -> 162.1 mm
+[16:54:29] Punto 518/806 adquirido
+[16:54:29] BBD -> 162.2 mm
+[16:54:30] Punto 519/806 adquirido
+[16:54:30] BBD -> 162.3 mm
+[16:54:32] Punto 520/806 adquirido
+[16:54:32] BBD -> 162.4 mm
+[16:54:33] Punto 521/806 adquirido
+[16:54:33] BBD -> 162.5 mm
+[16:54:34] Punto 522/806 adquirido
+[16:54:34] BBD -> 162.6 mm
+[16:54:36] Punto 523/806 adquirido
+[16:54:36] BBD -> 162.7 mm
+[16:54:37] Punto 524/806 adquirido
+[16:54:37] BBD -> 162.8 mm
+[16:54:39] Punto 525/806 adquirido
+[16:54:39] BBD -> 162.9 mm
+[16:54:40] Punto 526/806 adquirido
+[16:54:40] BBD -> 163.0 mm
+[16:54:41] Punto 527/806 adquirido
+[16:54:41] Lambda -> 634.0 nm
+[16:54:43] BBD -> 160.0 mm
+[16:54:44] Punto 528/806 adquirido
+[16:54:44] BBD -> 160.1 mm
+[16:54:46] Punto 529/806 adquirido
+[16:54:46] BBD -> 160.2 mm
+[16:54:47] Punto 530/806 adquirido
+[16:54:47] BBD -> 160.3 mm
+[16:54:48] Punto 531/806 adquirido
+[16:54:48] BBD -> 160.4 mm
+[16:54:50] Punto 532/806 adquirido
+[16:54:50] BBD -> 160.5 mm
+[16:54:51] Punto 533/806 adquirido
+[16:54:51] BBD -> 160.6 mm
+[16:54:53] Punto 534/806 adquirido
+[16:54:53] BBD -> 160.7 mm
+[16:54:54] Punto 535/806 adquirido
+[16:54:54] BBD -> 160.8 mm
+[16:54:56] Punto 536/806 adquirido
+[16:54:56] BBD -> 160.9 mm
+[16:54:57] Punto 537/806 adquirido
+[16:54:57] BBD -> 161.0 mm
+[16:54:58] Punto 538/806 adquirido
+[16:54:58] BBD -> 161.1 mm
+[16:55:00] Punto 539/806 adquirido
+[16:55:00] BBD -> 161.2 mm
+[16:55:01] Punto 540/806 adquirido
+[16:55:01] BBD -> 161.3 mm
+[16:55:03] Punto 541/806 adquirido
+[16:55:03] BBD -> 161.4 mm
+[16:55:04] Punto 542/806 adquirido
+[16:55:04] BBD -> 161.5 mm
+[16:55:05] Punto 543/806 adquirido
+[16:55:05] BBD -> 161.6 mm
+[16:55:07] Punto 544/806 adquirido
+[16:55:07] BBD -> 161.7 mm
+[16:55:08] Punto 545/806 adquirido
+[16:55:08] BBD -> 161.8 mm
+[16:55:10] Punto 546/806 adquirido
+[16:55:10] BBD -> 161.9 mm
+[16:55:11] Punto 547/806 adquirido
+[16:55:11] BBD -> 162.0 mm
+[16:55:12] Punto 548/806 adquirido
+[16:55:12] BBD -> 162.1 mm
+[16:55:14] Punto 549/806 adquirido
+[16:55:14] BBD -> 162.2 mm
+[16:55:15] Punto 550/806 adquirido
+[16:55:15] BBD -> 162.3 mm
+[16:55:17] Punto 551/806 adquirido
+[16:55:17] BBD -> 162.4 mm
+[16:55:18] Punto 552/806 adquirido
+[16:55:18] BBD -> 162.5 mm
+[16:55:20] Punto 553/806 adquirido
+[16:55:20] BBD -> 162.6 mm
+[16:55:21] Punto 554/806 adquirido
+[16:55:21] BBD -> 162.7 mm
+[16:55:22] Punto 555/806 adquirido
+[16:55:22] BBD -> 162.8 mm
+[16:55:24] Punto 556/806 adquirido
+[16:55:24] BBD -> 162.9 mm
+[16:55:25] Punto 557/806 adquirido
+[16:55:25] BBD -> 163.0 mm
+[16:55:27] Punto 558/806 adquirido
+[16:55:27] Lambda -> 636.0 nm
+[16:55:28] BBD -> 160.0 mm
+[16:55:29] Punto 559/806 adquirido
+[16:55:29] BBD -> 160.1 mm
+[16:55:31] Punto 560/806 adquirido
+[16:55:31] BBD -> 160.2 mm
+[16:55:32] Punto 561/806 adquirido
+[16:55:32] BBD -> 160.3 mm
+[16:55:34] Punto 562/806 adquirido
+[16:55:34] BBD -> 160.4 mm
+[16:55:35] Punto 563/806 adquirido
+[16:55:35] BBD -> 160.5 mm
+[16:55:36] Punto 564/806 adquirido
+[16:55:36] BBD -> 160.6 mm
+[16:55:38] Punto 565/806 adquirido
+[16:55:38] BBD -> 160.7 mm
+[16:55:39] Punto 566/806 adquirido
+[16:55:39] BBD -> 160.8 mm
+[16:55:41] Punto 567/806 adquirido
+[16:55:41] BBD -> 160.9 mm
+[16:55:42] Punto 568/806 adquirido
+[16:55:42] BBD -> 161.0 mm
+[16:55:43] Punto 569/806 adquirido
+[16:55:43] BBD -> 161.1 mm
+[16:55:45] Punto 570/806 adquirido
+[16:55:45] BBD -> 161.2 mm
+[16:55:46] Punto 571/806 adquirido
+[16:55:46] BBD -> 161.3 mm
+[16:55:48] Punto 572/806 adquirido
+[16:55:48] BBD -> 161.4 mm
+[16:55:49] Punto 573/806 adquirido
+[16:55:49] BBD -> 161.5 mm
+[16:55:51] Punto 574/806 adquirido
+[16:55:51] BBD -> 161.6 mm
+[16:55:52] Punto 575/806 adquirido
+[16:55:52] BBD -> 161.7 mm
+[16:55:53] Punto 576/806 adquirido
+[16:55:53] BBD -> 161.8 mm
+[16:55:55] Punto 577/806 adquirido
+[16:55:55] BBD -> 161.9 mm
+[16:55:56] Punto 578/806 adquirido
+[16:55:56] BBD -> 162.0 mm
+[16:55:58] Punto 579/806 adquirido
+[16:55:58] BBD -> 162.1 mm
+[16:55:59] Punto 580/806 adquirido
+[16:55:59] BBD -> 162.2 mm
+[16:56:00] Punto 581/806 adquirido
+[16:56:00] BBD -> 162.3 mm
+[16:56:02] Punto 582/806 adquirido
+[16:56:02] BBD -> 162.4 mm
+[16:56:03] Punto 583/806 adquirido
+[16:56:03] BBD -> 162.5 mm
+[16:56:05] Punto 584/806 adquirido
+[16:56:05] BBD -> 162.6 mm
+[16:56:06] Punto 585/806 adquirido
+[16:56:06] BBD -> 162.7 mm
+[16:56:07] Punto 586/806 adquirido
+[16:56:07] BBD -> 162.8 mm
+[16:56:09] Punto 587/806 adquirido
+[16:56:09] BBD -> 162.9 mm
+[16:56:10] Punto 588/806 adquirido
+[16:56:10] BBD -> 163.0 mm
+[16:56:12] Punto 589/806 adquirido
+[16:56:12] Lambda -> 638.0 nm
+[16:56:13] BBD -> 160.0 mm
+[16:56:14] Punto 590/806 adquirido
+[16:56:14] BBD -> 160.1 mm
+[16:56:16] Punto 591/806 adquirido
+[16:56:16] BBD -> 160.2 mm
+[16:56:17] Punto 592/806 adquirido
+[16:56:17] BBD -> 160.3 mm
+[16:56:19] Punto 593/806 adquirido
+[16:56:19] BBD -> 160.4 mm
+[16:56:20] Punto 594/806 adquirido
+[16:56:20] BBD -> 160.5 mm
+[16:56:21] Punto 595/806 adquirido
+[16:56:21] BBD -> 160.6 mm
+[16:56:23] Punto 596/806 adquirido
+[16:56:23] BBD -> 160.7 mm
+[16:56:24] Punto 597/806 adquirido
+[16:56:24] BBD -> 160.8 mm
+[16:56:26] Punto 598/806 adquirido
+[16:56:26] BBD -> 160.9 mm
+[16:56:27] Punto 599/806 adquirido
+[16:56:27] BBD -> 161.0 mm
+[16:56:28] Punto 600/806 adquirido
+[16:56:28] BBD -> 161.1 mm
+[16:56:30] Punto 601/806 adquirido
+[16:56:30] BBD -> 161.2 mm
+[16:56:31] Punto 602/806 adquirido
+[16:56:31] BBD -> 161.3 mm
+[16:56:33] Punto 603/806 adquirido
+[16:56:33] BBD -> 161.4 mm
+[16:56:34] Punto 604/806 adquirido
+[16:56:34] BBD -> 161.5 mm
+[16:56:35] Punto 605/806 adquirido
+[16:56:36] BBD -> 161.6 mm
+[16:56:37] Punto 606/806 adquirido
+[16:56:37] BBD -> 161.7 mm
+[16:56:38] Punto 607/806 adquirido
+[16:56:38] BBD -> 161.8 mm
+[16:56:40] Punto 608/806 adquirido
+[16:56:40] BBD -> 161.9 mm
+[16:56:41] Punto 609/806 adquirido
+[16:56:41] BBD -> 162.0 mm
+[16:56:43] Punto 610/806 adquirido
+[16:56:43] BBD -> 162.1 mm
+[16:56:44] Punto 611/806 adquirido
+[16:56:44] BBD -> 162.2 mm
+[16:56:45] Punto 612/806 adquirido
+[16:56:45] BBD -> 162.3 mm
+[16:56:47] Punto 613/806 adquirido
+[16:56:47] BBD -> 162.4 mm
+[16:56:48] Punto 614/806 adquirido
+[16:56:48] BBD -> 162.5 mm
+[16:56:50] Punto 615/806 adquirido
+[16:56:50] BBD -> 162.6 mm
+[16:56:51] Punto 616/806 adquirido
+[16:56:51] BBD -> 162.7 mm
+[16:56:52] Punto 617/806 adquirido
+[16:56:52] BBD -> 162.8 mm
+[16:56:54] Punto 618/806 adquirido
+[16:56:54] BBD -> 162.9 mm
+[16:56:55] Punto 619/806 adquirido
+[16:56:55] BBD -> 163.0 mm
+[16:56:57] Punto 620/806 adquirido
+[16:56:57] Lambda -> 640.0 nm
+[16:56:58] BBD -> 160.0 mm
+[16:56:59] Punto 621/806 adquirido
+[16:56:59] BBD -> 160.1 mm
+[16:57:01] Punto 622/806 adquirido
+[16:57:01] BBD -> 160.2 mm
+[16:57:02] Punto 623/806 adquirido
+[16:57:02] BBD -> 160.3 mm
+[16:57:04] Punto 624/806 adquirido
+[16:57:04] BBD -> 160.4 mm
+[16:57:05] Punto 625/806 adquirido
+[16:57:05] BBD -> 160.5 mm
+[16:57:06] Punto 626/806 adquirido
+[16:57:06] BBD -> 160.6 mm
+[16:57:08] Punto 627/806 adquirido
+[16:57:08] BBD -> 160.7 mm
+[16:57:09] Punto 628/806 adquirido
+[16:57:09] BBD -> 160.8 mm
+[16:57:11] Punto 629/806 adquirido
+[16:57:11] BBD -> 160.9 mm
+[16:57:12] Punto 630/806 adquirido
+[16:57:12] BBD -> 161.0 mm
+[16:57:13] Punto 631/806 adquirido
+[16:57:13] BBD -> 161.1 mm
+[16:57:15] Punto 632/806 adquirido
+[16:57:15] BBD -> 161.2 mm
+[16:57:16] Punto 633/806 adquirido
+[16:57:16] BBD -> 161.3 mm
+[16:57:18] Punto 634/806 adquirido
+[16:57:18] BBD -> 161.4 mm
+[16:57:19] Punto 635/806 adquirido
+[16:57:19] BBD -> 161.5 mm
+[16:57:20] Punto 636/806 adquirido
+[16:57:21] BBD -> 161.6 mm
+[16:57:22] Punto 637/806 adquirido
+[16:57:22] BBD -> 161.7 mm
+[16:57:23] Punto 638/806 adquirido
+[16:57:23] BBD -> 161.8 mm
+[16:57:25] Punto 639/806 adquirido
+[16:57:25] BBD -> 161.9 mm
+[16:57:26] Punto 640/806 adquirido
+[16:57:26] BBD -> 162.0 mm
+[16:57:28] Punto 641/806 adquirido
+[16:57:28] BBD -> 162.1 mm
+[16:57:29] Punto 642/806 adquirido
+[16:57:29] BBD -> 162.2 mm
+[16:57:30] Punto 643/806 adquirido
+[16:57:30] BBD -> 162.3 mm
+[16:57:32] Punto 644/806 adquirido
+[16:57:32] BBD -> 162.4 mm
+[16:57:33] Punto 645/806 adquirido
+[16:57:33] BBD -> 162.5 mm
+[16:57:35] Punto 646/806 adquirido
+[16:57:35] BBD -> 162.6 mm
+[16:57:36] Punto 647/806 adquirido
+[16:57:36] BBD -> 162.7 mm
+[16:57:37] Punto 648/806 adquirido
+[16:57:37] BBD -> 162.8 mm
+[16:57:39] Punto 649/806 adquirido
+[16:57:39] BBD -> 162.9 mm
+[16:57:40] Punto 650/806 adquirido
+[16:57:40] BBD -> 163.0 mm
+[16:57:42] Punto 651/806 adquirido
+[16:57:42] Lambda -> 642.0 nm
+[16:57:43] BBD -> 160.0 mm
+[16:57:44] Punto 652/806 adquirido
+[16:57:44] BBD -> 160.1 mm
+[16:57:46] Punto 653/806 adquirido
+[16:57:46] BBD -> 160.2 mm
+[16:57:47] Punto 654/806 adquirido
+[16:57:47] BBD -> 160.3 mm
+[16:57:49] Punto 655/806 adquirido
+[16:57:49] BBD -> 160.4 mm
+[16:57:50] Punto 656/806 adquirido
+[16:57:50] BBD -> 160.5 mm
+[16:57:51] Punto 657/806 adquirido
+[16:57:51] BBD -> 160.6 mm
+[16:57:53] Punto 658/806 adquirido
+[16:57:53] BBD -> 160.7 mm
+[16:57:54] Punto 659/806 adquirido
+[16:57:54] BBD -> 160.8 mm
+[16:57:56] Punto 660/806 adquirido
+[16:57:56] BBD -> 160.9 mm
+[16:57:57] Punto 661/806 adquirido
+[16:57:57] BBD -> 161.0 mm
+[16:57:59] Punto 662/806 adquirido
+[16:57:59] BBD -> 161.1 mm
+[16:58:00] Punto 663/806 adquirido
+[16:58:00] BBD -> 161.2 mm
+[16:58:01] Punto 664/806 adquirido
+[16:58:01] BBD -> 161.3 mm
+[16:58:03] Punto 665/806 adquirido
+[16:58:03] BBD -> 161.4 mm
+[16:58:04] Punto 666/806 adquirido
+[16:58:04] BBD -> 161.5 mm
+[16:58:06] Punto 667/806 adquirido
+[16:58:06] BBD -> 161.6 mm
+[16:58:07] Punto 668/806 adquirido
+[16:58:07] BBD -> 161.7 mm
+[16:58:08] Punto 669/806 adquirido
+[16:58:08] BBD -> 161.8 mm
+[16:58:10] Punto 670/806 adquirido
+[16:58:10] BBD -> 161.9 mm
+[16:58:11] Punto 671/806 adquirido
+[16:58:11] BBD -> 162.0 mm
+[16:58:13] Punto 672/806 adquirido
+[16:58:13] BBD -> 162.1 mm
+[16:58:14] Punto 673/806 adquirido
+[16:58:14] BBD -> 162.2 mm
+[16:58:15] Punto 674/806 adquirido
+[16:58:16] BBD -> 162.3 mm
+[16:58:17] Punto 675/806 adquirido
+[16:58:17] BBD -> 162.4 mm
+[16:58:18] Punto 676/806 adquirido
+[16:58:18] BBD -> 162.5 mm
+[16:58:20] Punto 677/806 adquirido
+[16:58:20] BBD -> 162.6 mm
+[16:58:21] Punto 678/806 adquirido
+[16:58:21] BBD -> 162.7 mm
+[16:58:23] Punto 679/806 adquirido
+[16:58:23] BBD -> 162.8 mm
+[16:58:24] Punto 680/806 adquirido
+[16:58:24] BBD -> 162.9 mm
+[16:58:25] Punto 681/806 adquirido
+[16:58:25] BBD -> 163.0 mm
+[16:58:27] Punto 682/806 adquirido
+[16:58:27] Lambda -> 644.0 nm
+[16:58:28] BBD -> 160.0 mm
+[16:58:30] Punto 683/806 adquirido
+[16:58:30] BBD -> 160.1 mm
+[16:58:31] Punto 684/806 adquirido
+[16:58:31] BBD -> 160.2 mm
+[16:58:32] Punto 685/806 adquirido
+[16:58:32] BBD -> 160.3 mm
+[16:58:34] Punto 686/806 adquirido
+[16:58:34] BBD -> 160.4 mm
+[16:58:35] Punto 687/806 adquirido
+[16:58:35] BBD -> 160.5 mm
+[16:58:37] Punto 688/806 adquirido
+[16:58:37] BBD -> 160.6 mm
+[16:58:38] Punto 689/806 adquirido
+[16:58:38] BBD -> 160.7 mm
+[16:58:39] Punto 690/806 adquirido
+[16:58:39] BBD -> 160.8 mm
+[16:58:41] Punto 691/806 adquirido
+[16:58:41] BBD -> 160.9 mm
+[16:58:42] Punto 692/806 adquirido
+[16:58:42] BBD -> 161.0 mm
+[16:58:44] Punto 693/806 adquirido
+[16:58:44] BBD -> 161.1 mm
+[16:58:45] Punto 694/806 adquirido
+[16:58:45] BBD -> 161.2 mm
+[16:58:47] Punto 695/806 adquirido
+[16:58:47] BBD -> 161.3 mm
+[16:58:48] Punto 696/806 adquirido
+[16:58:48] BBD -> 161.4 mm
+[16:58:49] Punto 697/806 adquirido
+[16:58:49] BBD -> 161.5 mm
+[16:58:51] Punto 698/806 adquirido
+[16:58:51] BBD -> 161.6 mm
+[16:58:52] Punto 699/806 adquirido
+[16:58:52] BBD -> 161.7 mm
+[16:58:54] Punto 700/806 adquirido
+[16:58:54] BBD -> 161.8 mm
+[16:58:55] Punto 701/806 adquirido
+[16:58:55] BBD -> 161.9 mm
+[16:58:56] Punto 702/806 adquirido
+[16:58:56] BBD -> 162.0 mm
+[16:58:58] Punto 703/806 adquirido
+[16:58:58] BBD -> 162.1 mm
+[16:58:59] Punto 704/806 adquirido
+[16:58:59] BBD -> 162.2 mm
+[16:59:01] Punto 705/806 adquirido
+[16:59:01] BBD -> 162.3 mm
+[16:59:02] Punto 706/806 adquirido
+[16:59:02] BBD -> 162.4 mm
+[16:59:03] Punto 707/806 adquirido
+[16:59:03] BBD -> 162.5 mm
+[16:59:05] Punto 708/806 adquirido
+[16:59:05] BBD -> 162.6 mm
+[16:59:06] Punto 709/806 adquirido
+[16:59:06] BBD -> 162.7 mm
+[16:59:08] Punto 710/806 adquirido
+[16:59:08] BBD -> 162.8 mm
+[16:59:09] Punto 711/806 adquirido
+[16:59:09] BBD -> 162.9 mm
+[16:59:11] Punto 712/806 adquirido
+[16:59:11] BBD -> 163.0 mm
+[16:59:12] Punto 713/806 adquirido
+[16:59:12] Lambda -> 646.0 nm
+[16:59:13] BBD -> 160.0 mm
+[16:59:15] Punto 714/806 adquirido
+[16:59:15] BBD -> 160.1 mm
+[16:59:16] Punto 715/806 adquirido
+[16:59:16] BBD -> 160.2 mm
+[16:59:17] Punto 716/806 adquirido
+[16:59:18] BBD -> 160.3 mm
+[16:59:19] Punto 717/806 adquirido
+[16:59:19] BBD -> 160.4 mm
+[16:59:20] Punto 718/806 adquirido
+[16:59:20] BBD -> 160.5 mm
+[16:59:22] Punto 719/806 adquirido
+[16:59:22] BBD -> 160.6 mm
+[16:59:23] Punto 720/806 adquirido
+[16:59:23] BBD -> 160.7 mm
+[16:59:25] Punto 721/806 adquirido
+[16:59:25] BBD -> 160.8 mm
+[16:59:26] Punto 722/806 adquirido
+[16:59:26] BBD -> 160.9 mm
+[16:59:27] Punto 723/806 adquirido
+[16:59:27] BBD -> 161.0 mm
+[16:59:29] Punto 724/806 adquirido
+[16:59:29] BBD -> 161.1 mm
+[16:59:30] Punto 725/806 adquirido
+[16:59:30] BBD -> 161.2 mm
+[16:59:32] Punto 726/806 adquirido
+[16:59:32] BBD -> 161.3 mm
+[16:59:33] Punto 727/806 adquirido
+[16:59:33] BBD -> 161.4 mm
+[16:59:34] Punto 728/806 adquirido
+[16:59:34] BBD -> 161.5 mm
+[16:59:36] Punto 729/806 adquirido
+[16:59:36] BBD -> 161.6 mm
+[16:59:37] Punto 730/806 adquirido
+[16:59:37] BBD -> 161.7 mm
+[16:59:39] Punto 731/806 adquirido
+[16:59:39] BBD -> 161.8 mm
+[16:59:40] Punto 732/806 adquirido
+[16:59:40] BBD -> 161.9 mm
+[16:59:41] Punto 733/806 adquirido
+[16:59:42] BBD -> 162.0 mm
+[16:59:43] Punto 734/806 adquirido
+[16:59:43] BBD -> 162.1 mm
+[16:59:44] Punto 735/806 adquirido
+[16:59:44] BBD -> 162.2 mm
+[16:59:46] Punto 736/806 adquirido
+[16:59:46] BBD -> 162.3 mm
+[16:59:47] Punto 737/806 adquirido
+[16:59:47] BBD -> 162.4 mm
+[16:59:49] Punto 738/806 adquirido
+[16:59:49] BBD -> 162.5 mm
+[16:59:50] Punto 739/806 adquirido
+[16:59:50] BBD -> 162.6 mm
+[16:59:51] Punto 740/806 adquirido
+[16:59:51] BBD -> 162.7 mm
+[16:59:53] Punto 741/806 adquirido
+[16:59:53] BBD -> 162.8 mm
+[16:59:54] Punto 742/806 adquirido
+[16:59:54] BBD -> 162.9 mm
+[16:59:56] Punto 743/806 adquirido
+[16:59:56] BBD -> 163.0 mm
+[16:59:57] Punto 744/806 adquirido
+[16:59:57] Lambda -> 648.0 nm
+[16:59:58] BBD -> 160.0 mm
+[17:00:00] Punto 745/806 adquirido
+[17:00:00] BBD -> 160.1 mm
+[17:00:01] Punto 746/806 adquirido
+[17:00:01] BBD -> 160.2 mm
+[17:00:03] Punto 747/806 adquirido
+[17:00:03] BBD -> 160.3 mm
+[17:00:04] Punto 748/806 adquirido
+[17:00:04] BBD -> 160.4 mm
+[17:00:05] Punto 749/806 adquirido
+[17:00:05] BBD -> 160.5 mm
+[17:00:07] Punto 750/806 adquirido
+[17:00:07] BBD -> 160.6 mm
+[17:00:08] Punto 751/806 adquirido
+[17:00:08] BBD -> 160.7 mm
+[17:00:10] Punto 752/806 adquirido
+[17:00:10] BBD -> 160.8 mm
+[17:00:11] Punto 753/806 adquirido
+[17:00:11] BBD -> 160.9 mm
+[17:00:13] Punto 754/806 adquirido
+[17:00:13] BBD -> 161.0 mm
+[17:00:14] Punto 755/806 adquirido
+[17:00:14] BBD -> 161.1 mm
+[17:00:15] Punto 756/806 adquirido
+[17:00:15] BBD -> 161.2 mm
+[17:00:17] Punto 757/806 adquirido
+[17:00:17] BBD -> 161.3 mm
+[17:00:18] Punto 758/806 adquirido
+[17:00:18] BBD -> 161.4 mm
+[17:00:20] Punto 759/806 adquirido
+[17:00:20] BBD -> 161.5 mm
+[17:00:21] Punto 760/806 adquirido
+[17:00:21] BBD -> 161.6 mm
+[17:00:22] Punto 761/806 adquirido
+[17:00:22] BBD -> 161.7 mm
+[17:00:24] Punto 762/806 adquirido
+[17:00:24] BBD -> 161.8 mm
+[17:00:25] Punto 763/806 adquirido
+[17:00:25] BBD -> 161.9 mm
+[17:00:27] Punto 764/806 adquirido
+[17:00:27] BBD -> 162.0 mm
+[17:00:28] Punto 765/806 adquirido
+[17:00:28] BBD -> 162.1 mm
+[17:00:30] Punto 766/806 adquirido
+[17:00:30] BBD -> 162.2 mm
+[17:00:31] Punto 767/806 adquirido
+[17:00:31] BBD -> 162.3 mm
+[17:00:32] Punto 768/806 adquirido
+[17:00:32] BBD -> 162.4 mm
+[17:00:34] Punto 769/806 adquirido
+[17:00:34] BBD -> 162.5 mm
+[17:00:35] Punto 770/806 adquirido
+[17:00:35] BBD -> 162.6 mm
+[17:00:37] Punto 771/806 adquirido
+[17:00:37] BBD -> 162.7 mm
+[17:00:38] Punto 772/806 adquirido
+[17:00:38] BBD -> 162.8 mm
+[17:00:39] Punto 773/806 adquirido
+[17:00:39] BBD -> 162.9 mm
+[17:00:41] Punto 774/806 adquirido
+[17:00:41] BBD -> 163.0 mm
+[17:00:42] Punto 775/806 adquirido
+[17:00:42] Lambda -> 650.0 nm
+[17:00:44] BBD -> 160.0 mm
+[17:00:45] Punto 776/806 adquirido
+[17:00:45] BBD -> 160.1 mm
+[17:00:46] Punto 777/806 adquirido
+[17:00:46] BBD -> 160.2 mm
+[17:00:48] Punto 778/806 adquirido
+[17:00:48] BBD -> 160.3 mm
+[17:00:49] Punto 779/806 adquirido
+[17:00:49] BBD -> 160.4 mm
+[17:00:51] Punto 780/806 adquirido
+[17:00:51] BBD -> 160.5 mm
+[17:00:52] Punto 781/806 adquirido
+[17:00:52] BBD -> 160.6 mm
+[17:00:53] Punto 782/806 adquirido
+[17:00:53] BBD -> 160.7 mm
+[17:00:55] Punto 783/806 adquirido
+[17:00:55] BBD -> 160.8 mm
+[17:00:56] Punto 784/806 adquirido
+[17:00:56] BBD -> 160.9 mm
+[17:00:58] Punto 785/806 adquirido
+[17:00:58] BBD -> 161.0 mm
+[17:00:59] Punto 786/806 adquirido
+[17:00:59] BBD -> 161.1 mm
+[17:01:00] Punto 787/806 adquirido
+[17:01:01] BBD -> 161.2 mm
+[17:01:02] Punto 788/806 adquirido
+[17:01:02] BBD -> 161.3 mm
+[17:01:03] Punto 789/806 adquirido
+[17:01:03] BBD -> 161.4 mm
+[17:01:05] Punto 790/806 adquirido
+[17:01:05] BBD -> 161.5 mm
+[17:01:06] Punto 791/806 adquirido
+[17:01:06] BBD -> 161.6 mm
+[17:01:08] Punto 792/806 adquirido
+[17:01:08] BBD -> 161.7 mm
+[17:01:09] Punto 793/806 adquirido
+[17:01:09] BBD -> 161.8 mm
+[17:01:10] Punto 794/806 adquirido
+[17:01:10] BBD -> 161.9 mm
+[17:01:12] Punto 795/806 adquirido
+[17:01:12] BBD -> 162.0 mm
+[17:01:13] Punto 796/806 adquirido
+[17:01:13] BBD -> 162.1 mm
+[17:01:15] Punto 797/806 adquirido
+[17:01:15] BBD -> 162.2 mm
+[17:01:16] Punto 798/806 adquirido
+[17:01:16] BBD -> 162.3 mm
+[17:01:17] Punto 799/806 adquirido
+[17:01:17] BBD -> 162.4 mm
+[17:01:19] Punto 800/806 adquirido
+[17:01:19] BBD -> 162.5 mm
+[17:01:20] Punto 801/806 adquirido
+[17:01:20] BBD -> 162.6 mm
+[17:01:22] Punto 802/806 adquirido
+[17:01:22] BBD -> 162.7 mm
+[17:01:23] Punto 803/806 adquirido
+[17:01:23] BBD -> 162.8 mm
+[17:01:24] Punto 804/806 adquirido
+[17:01:24] BBD -> 162.9 mm
+[17:01:26] Punto 805/806 adquirido
+[17:01:26] BBD -> 163.0 mm
+[17:01:27] Punto 806/806 adquirido
+[17:01:27] Medicion finalizada
+[17:01:27] Resultado listo en memoria
+[17:11:23] Inicio solicitado
+[17:11:23] Inicio de medicion
+[17:11:23] Repeticion 1 de 1
+[17:11:23] Lambda -> 640.0 nm
+[17:11:26] BBD -> 160.0 mm
+[17:11:27] Punto 1/341 adquirido
+[17:11:27] BBD -> 160.1 mm
+[17:11:28] Punto 2/341 adquirido
+[17:11:28] BBD -> 160.2 mm
+[17:11:30] Punto 3/341 adquirido
+[17:11:30] BBD -> 160.3 mm
+[17:11:31] Punto 4/341 adquirido
+[17:11:31] BBD -> 160.4 mm
+[17:11:33] Punto 5/341 adquirido
+[17:11:33] BBD -> 160.5 mm
+[17:11:34] Punto 6/341 adquirido
+[17:11:34] BBD -> 160.6 mm
+[17:11:36] Punto 7/341 adquirido
+[17:11:36] BBD -> 160.7 mm
+[17:11:37] Punto 8/341 adquirido
+[17:11:37] BBD -> 160.8 mm
+[17:11:39] Punto 9/341 adquirido
+[17:11:39] BBD -> 160.9 mm
+[17:11:40] Punto 10/341 adquirido
+[17:11:40] BBD -> 161.0 mm
+[17:11:41] Punto 11/341 adquirido
+[17:11:41] BBD -> 161.1 mm
+[17:11:43] Punto 12/341 adquirido
+[17:11:43] BBD -> 161.2 mm
+[17:11:44] Punto 13/341 adquirido
+[17:11:44] BBD -> 161.3 mm
+[17:11:46] Punto 14/341 adquirido
+[17:11:46] BBD -> 161.4 mm
+[17:11:47] Punto 15/341 adquirido
+[17:11:47] BBD -> 161.5 mm
+[17:11:49] Punto 16/341 adquirido
+[17:11:49] BBD -> 161.6 mm
+[17:11:50] Punto 17/341 adquirido
+[17:11:50] BBD -> 161.7 mm
+[17:11:51] Punto 18/341 adquirido
+[17:11:51] BBD -> 161.8 mm
+[17:11:53] Punto 19/341 adquirido
+[17:11:53] BBD -> 161.9 mm
+[17:11:54] Punto 20/341 adquirido
+[17:11:54] BBD -> 162.0 mm
+[17:11:56] Punto 21/341 adquirido
+[17:11:56] BBD -> 162.1 mm
+[17:11:57] Punto 22/341 adquirido
+[17:11:57] BBD -> 162.2 mm
+[17:11:58] Punto 23/341 adquirido
+[17:11:58] BBD -> 162.3 mm
+[17:12:00] Punto 24/341 adquirido
+[17:12:00] BBD -> 162.4 mm
+[17:12:01] Punto 25/341 adquirido
+[17:12:01] BBD -> 162.5 mm
+[17:12:03] Punto 26/341 adquirido
+[17:12:03] BBD -> 162.6 mm
+[17:12:04] Punto 27/341 adquirido
+[17:12:04] BBD -> 162.7 mm
+[17:12:05] Punto 28/341 adquirido
+[17:12:06] BBD -> 162.8 mm
+[17:12:07] Punto 29/341 adquirido
+[17:12:07] BBD -> 162.9 mm
+[17:12:08] Punto 30/341 adquirido
+[17:12:08] BBD -> 163.0 mm
+[17:12:10] Punto 31/341 adquirido
+[17:12:10] Lambda -> 642.0 nm
+[17:12:11] BBD -> 160.0 mm
+[17:12:12] Punto 32/341 adquirido
+[17:12:12] BBD -> 160.1 mm
+[17:12:14] Punto 33/341 adquirido
+[17:12:14] BBD -> 160.2 mm
+[17:12:15] Punto 34/341 adquirido
+[17:12:15] BBD -> 160.3 mm
+[17:12:17] Punto 35/341 adquirido
+[17:12:17] BBD -> 160.4 mm
+[17:12:18] Punto 36/341 adquirido
+[17:12:18] BBD -> 160.5 mm
+[17:12:19] Punto 37/341 adquirido
+[17:12:20] BBD -> 160.6 mm
+[17:12:21] Punto 38/341 adquirido
+[17:12:21] BBD -> 160.7 mm
+[17:12:22] Punto 39/341 adquirido
+[17:12:22] BBD -> 160.8 mm
+[17:12:24] Punto 40/341 adquirido
+[17:12:24] BBD -> 160.9 mm
+[17:12:25] Punto 41/341 adquirido
+[17:12:25] BBD -> 161.0 mm
+[17:12:27] Punto 42/341 adquirido
+[17:12:27] BBD -> 161.1 mm
+[17:12:28] Punto 43/341 adquirido
+[17:12:28] BBD -> 161.2 mm
+[17:12:29] Punto 44/341 adquirido
+[17:12:29] BBD -> 161.3 mm
+[17:12:31] Punto 45/341 adquirido
+[17:12:31] BBD -> 161.4 mm
+[17:12:32] Punto 46/341 adquirido
+[17:12:32] BBD -> 161.5 mm
+[17:12:34] Punto 47/341 adquirido
+[17:12:34] BBD -> 161.6 mm
+[17:12:35] Punto 48/341 adquirido
+[17:12:35] BBD -> 161.7 mm
+[17:12:36] Punto 49/341 adquirido
+[17:12:36] BBD -> 161.8 mm
+[17:12:38] Punto 50/341 adquirido
+[17:12:38] BBD -> 161.9 mm
+[17:12:39] Punto 51/341 adquirido
+[17:12:39] BBD -> 162.0 mm
+[17:12:41] Punto 52/341 adquirido
+[17:12:41] BBD -> 162.1 mm
+[17:12:42] Punto 53/341 adquirido
+[17:12:42] BBD -> 162.2 mm
+[17:12:43] Punto 54/341 adquirido
+[17:12:44] BBD -> 162.3 mm
+[17:12:45] Punto 55/341 adquirido
+[17:12:45] BBD -> 162.4 mm
+[17:12:46] Punto 56/341 adquirido
+[17:12:46] BBD -> 162.5 mm
+[17:12:48] Punto 57/341 adquirido
+[17:12:48] BBD -> 162.6 mm
+[17:12:49] Punto 58/341 adquirido
+[17:12:49] BBD -> 162.7 mm
+[17:12:51] Punto 59/341 adquirido
+[17:12:51] BBD -> 162.8 mm
+[17:12:52] Punto 60/341 adquirido
+[17:12:52] BBD -> 162.9 mm
+[17:12:53] Punto 61/341 adquirido
+[17:12:53] BBD -> 163.0 mm
+[17:12:55] Punto 62/341 adquirido
+[17:12:55] Lambda -> 644.0 nm
+[17:12:56] BBD -> 160.0 mm
+[17:12:58] Punto 63/341 adquirido
+[17:12:58] BBD -> 160.1 mm
+[17:12:59] Punto 64/341 adquirido
+[17:12:59] BBD -> 160.2 mm
+[17:13:00] Punto 65/341 adquirido
+[17:13:00] BBD -> 160.3 mm
+[17:13:02] Punto 66/341 adquirido
+[17:13:02] BBD -> 160.4 mm
+[17:13:03] Punto 67/341 adquirido
+[17:13:03] BBD -> 160.5 mm
+[17:13:05] Punto 68/341 adquirido
+[17:13:05] BBD -> 160.6 mm
+[17:13:06] Punto 69/341 adquirido
+[17:13:06] BBD -> 160.7 mm
+[17:13:07] Punto 70/341 adquirido
+[17:13:07] BBD -> 160.8 mm
+[17:13:09] Punto 71/341 adquirido
+[17:13:09] BBD -> 160.9 mm
+[17:13:10] Punto 72/341 adquirido
+[17:13:10] BBD -> 161.0 mm
+[17:13:12] Punto 73/341 adquirido
+[17:13:12] BBD -> 161.1 mm
+[17:13:13] Punto 74/341 adquirido
+[17:13:13] BBD -> 161.2 mm
+[17:13:15] Punto 75/341 adquirido
+[17:13:15] BBD -> 161.3 mm
+[17:13:16] Punto 76/341 adquirido
+[17:13:16] BBD -> 161.4 mm
+[17:13:17] Punto 77/341 adquirido
+[17:13:17] BBD -> 161.5 mm
+[17:13:19] Punto 78/341 adquirido
+[17:13:19] BBD -> 161.6 mm
+[17:13:20] Punto 79/341 adquirido
+[17:13:20] BBD -> 161.7 mm
+[17:13:22] Punto 80/341 adquirido
+[17:13:22] BBD -> 161.8 mm
+[17:13:23] Punto 81/341 adquirido
+[17:13:23] BBD -> 161.9 mm
+[17:13:24] Punto 82/341 adquirido
+[17:13:24] BBD -> 162.0 mm
+[17:13:26] Punto 83/341 adquirido
+[17:13:26] BBD -> 162.1 mm
+[17:13:27] Punto 84/341 adquirido
+[17:13:27] BBD -> 162.2 mm
+[17:13:29] Punto 85/341 adquirido
+[17:13:29] BBD -> 162.3 mm
+[17:13:30] Punto 86/341 adquirido
+[17:13:30] BBD -> 162.4 mm
+[17:13:31] Punto 87/341 adquirido
+[17:13:32] BBD -> 162.5 mm
+[17:13:33] Punto 88/341 adquirido
+[17:13:33] BBD -> 162.6 mm
+[17:13:34] Punto 89/341 adquirido
+[17:13:34] BBD -> 162.7 mm
+[17:13:36] Punto 90/341 adquirido
+[17:13:36] BBD -> 162.8 mm
+[17:13:37] Punto 91/341 adquirido
+[17:13:37] BBD -> 162.9 mm
+[17:13:39] Punto 92/341 adquirido
+[17:13:39] BBD -> 163.0 mm
+[17:13:40] Punto 93/341 adquirido
+[17:13:40] Lambda -> 646.0 nm
+[17:13:41] BBD -> 160.0 mm
+[17:13:43] Punto 94/341 adquirido
+[17:13:43] BBD -> 160.1 mm
+[17:13:44] Punto 95/341 adquirido
+[17:13:44] BBD -> 160.2 mm
+[17:13:46] Punto 96/341 adquirido
+[17:13:46] BBD -> 160.3 mm
+[17:13:47] Punto 97/341 adquirido
+[17:13:47] BBD -> 160.4 mm
+[17:13:48] Punto 98/341 adquirido
+[17:13:48] BBD -> 160.5 mm
+[17:13:50] Punto 99/341 adquirido
+[17:13:50] BBD -> 160.6 mm
+[17:13:51] Punto 100/341 adquirido
+[17:13:51] BBD -> 160.7 mm
+[17:13:53] Punto 101/341 adquirido
+[17:13:53] BBD -> 160.8 mm
+[17:13:54] Punto 102/341 adquirido
+[17:13:54] BBD -> 160.9 mm
+[17:13:55] Punto 103/341 adquirido
+[17:13:55] BBD -> 161.0 mm
+[17:13:57] Punto 104/341 adquirido
+[17:13:57] BBD -> 161.1 mm
+[17:13:58] Punto 105/341 adquirido
+[17:13:58] BBD -> 161.2 mm
+[17:14:00] Punto 106/341 adquirido
+[17:14:00] BBD -> 161.3 mm
+[17:14:01] Punto 107/341 adquirido
+[17:14:01] BBD -> 161.4 mm
+[17:14:02] Punto 108/341 adquirido
+[17:14:03] BBD -> 161.5 mm
+[17:14:04] Punto 109/341 adquirido
+[17:14:04] BBD -> 161.6 mm
+[17:14:05] Punto 110/341 adquirido
+[17:14:05] BBD -> 161.7 mm
+[17:14:07] Punto 111/341 adquirido
+[17:14:07] BBD -> 161.8 mm
+[17:14:08] Punto 112/341 adquirido
+[17:14:08] BBD -> 161.9 mm
+[17:14:10] Punto 113/341 adquirido
+[17:14:10] BBD -> 162.0 mm
+[17:14:11] Punto 114/341 adquirido
+[17:14:11] BBD -> 162.1 mm
+[17:14:12] Punto 115/341 adquirido
+[17:14:12] BBD -> 162.2 mm
+[17:14:14] Punto 116/341 adquirido
+[17:14:14] BBD -> 162.3 mm
+[17:14:15] Punto 117/341 adquirido
+[17:14:15] BBD -> 162.4 mm
+[17:14:17] Punto 118/341 adquirido
+[17:14:17] BBD -> 162.5 mm
+[17:14:18] Punto 119/341 adquirido
+[17:14:18] BBD -> 162.6 mm
+[17:14:19] Punto 120/341 adquirido
+[17:14:19] BBD -> 162.7 mm
+[17:14:21] Punto 121/341 adquirido
+[17:14:21] BBD -> 162.8 mm
+[17:14:22] Punto 122/341 adquirido
+[17:14:22] BBD -> 162.9 mm
+[17:14:24] Punto 123/341 adquirido
+[17:14:24] BBD -> 163.0 mm
+[17:14:25] Punto 124/341 adquirido
+[17:14:25] Lambda -> 648.0 nm
+[17:14:26] BBD -> 160.0 mm
+[17:14:28] Punto 125/341 adquirido
+[17:14:28] BBD -> 160.1 mm
+[17:14:29] Punto 126/341 adquirido
+[17:14:29] BBD -> 160.2 mm
+[17:14:31] Punto 127/341 adquirido
+[17:14:31] BBD -> 160.3 mm
+[17:14:32] Punto 128/341 adquirido
+[17:14:32] BBD -> 160.4 mm
+[17:14:33] Punto 129/341 adquirido
+[17:14:34] BBD -> 160.5 mm
+[17:14:35] Punto 130/341 adquirido
+[17:14:35] BBD -> 160.6 mm
+[17:14:36] Punto 131/341 adquirido
+[17:14:36] BBD -> 160.7 mm
+[17:14:38] Punto 132/341 adquirido
+[17:14:38] BBD -> 160.8 mm
+[17:14:39] Punto 133/341 adquirido
+[17:14:39] BBD -> 160.9 mm
+[17:14:41] Punto 134/341 adquirido
+[17:14:41] BBD -> 161.0 mm
+[17:14:42] Punto 135/341 adquirido
+[17:14:42] BBD -> 161.1 mm
+[17:14:43] Punto 136/341 adquirido
+[17:14:43] BBD -> 161.2 mm
+[17:14:45] Punto 137/341 adquirido
+[17:14:45] BBD -> 161.3 mm
+[17:14:46] Punto 138/341 adquirido
+[17:14:46] BBD -> 161.4 mm
+[17:14:48] Punto 139/341 adquirido
+[17:14:48] BBD -> 161.5 mm
+[17:14:49] Punto 140/341 adquirido
+[17:14:49] BBD -> 161.6 mm
+[17:14:50] Punto 141/341 adquirido
+[17:14:50] BBD -> 161.7 mm
+[17:14:52] Punto 142/341 adquirido
+[17:14:52] BBD -> 161.8 mm
+[17:14:53] Punto 143/341 adquirido
+[17:14:53] BBD -> 161.9 mm
+[17:14:55] Punto 144/341 adquirido
+[17:14:55] BBD -> 162.0 mm
+[17:14:56] Punto 145/341 adquirido
+[17:14:56] BBD -> 162.1 mm
+[17:14:58] Punto 146/341 adquirido
+[17:14:58] BBD -> 162.2 mm
+[17:14:59] Punto 147/341 adquirido
+[17:14:59] BBD -> 162.3 mm
+[17:15:00] Punto 148/341 adquirido
+[17:15:00] BBD -> 162.4 mm
+[17:15:02] Punto 149/341 adquirido
+[17:15:02] BBD -> 162.5 mm
+[17:15:03] Punto 150/341 adquirido
+[17:15:03] BBD -> 162.6 mm
+[17:15:05] Punto 151/341 adquirido
+[17:15:05] BBD -> 162.7 mm
+[17:15:06] Punto 152/341 adquirido
+[17:15:06] BBD -> 162.8 mm
+[17:15:07] Punto 153/341 adquirido
+[17:15:07] BBD -> 162.9 mm
+[17:15:09] Punto 154/341 adquirido
+[17:15:09] BBD -> 163.0 mm
+[17:15:10] Punto 155/341 adquirido
+[17:15:10] Lambda -> 650.0 nm
+[17:15:12] BBD -> 160.0 mm
+[17:15:13] Punto 156/341 adquirido
+[17:15:13] BBD -> 160.1 mm
+[17:15:14] Punto 157/341 adquirido
+[17:15:14] BBD -> 160.2 mm
+[17:15:16] Punto 158/341 adquirido
+[17:15:16] BBD -> 160.3 mm
+[17:15:17] Punto 159/341 adquirido
+[17:15:17] BBD -> 160.4 mm
+[17:15:19] Punto 160/341 adquirido
+[17:15:19] BBD -> 160.5 mm
+[17:15:20] Punto 161/341 adquirido
+[17:15:20] BBD -> 160.6 mm
+[17:15:21] Punto 162/341 adquirido
+[17:15:21] BBD -> 160.7 mm
+[17:15:23] Punto 163/341 adquirido
+[17:15:23] BBD -> 160.8 mm
+[17:15:24] Punto 164/341 adquirido
+[17:15:24] BBD -> 160.9 mm
+[17:15:26] Punto 165/341 adquirido
+[17:15:26] BBD -> 161.0 mm
+[17:15:27] Punto 166/341 adquirido
+[17:15:27] BBD -> 161.1 mm
+[17:15:29] Punto 167/341 adquirido
+[17:15:29] BBD -> 161.2 mm
+[17:15:30] Punto 168/341 adquirido
+[17:15:30] BBD -> 161.3 mm
+[17:15:31] Punto 169/341 adquirido
+[17:15:31] BBD -> 161.4 mm
+[17:15:33] Punto 170/341 adquirido
+[17:15:33] BBD -> 161.5 mm
+[17:15:34] Punto 171/341 adquirido
+[17:15:34] BBD -> 161.6 mm
+[17:15:36] Punto 172/341 adquirido
+[17:15:36] BBD -> 161.7 mm
+[17:15:37] Punto 173/341 adquirido
+[17:15:37] BBD -> 161.8 mm
+[17:15:38] Punto 174/341 adquirido
+[17:15:38] BBD -> 161.9 mm
+[17:15:40] Punto 175/341 adquirido
+[17:15:40] BBD -> 162.0 mm
+[17:15:41] Punto 176/341 adquirido
+[17:15:41] BBD -> 162.1 mm
+[17:15:43] Punto 177/341 adquirido
+[17:15:43] BBD -> 162.2 mm
+[17:15:44] Punto 178/341 adquirido
+[17:15:44] BBD -> 162.3 mm
+[17:15:45] Punto 179/341 adquirido
+[17:15:45] BBD -> 162.4 mm
+[17:15:47] Punto 180/341 adquirido
+[17:15:47] BBD -> 162.5 mm
+[17:15:48] Punto 181/341 adquirido
+[17:15:48] BBD -> 162.6 mm
+[17:15:50] Punto 182/341 adquirido
+[17:15:50] BBD -> 162.7 mm
+[17:15:51] Punto 183/341 adquirido
+[17:15:51] BBD -> 162.8 mm
+[17:15:52] Punto 184/341 adquirido
+[17:15:53] BBD -> 162.9 mm
+[17:15:54] Punto 185/341 adquirido
+[17:15:54] BBD -> 163.0 mm
+[17:15:55] Punto 186/341 adquirido
+[17:15:55] Lambda -> 652.0 nm
+[17:15:57] BBD -> 160.0 mm
+[17:15:58] Punto 187/341 adquirido
+[17:15:58] BBD -> 160.1 mm
+[17:15:59] Punto 188/341 adquirido
+[17:16:00] BBD -> 160.2 mm
+[17:16:01] Punto 189/341 adquirido
+[17:16:01] BBD -> 160.3 mm
+[17:16:02] Punto 190/341 adquirido
+[17:16:02] BBD -> 160.4 mm
+[17:16:04] Punto 191/341 adquirido
+[17:16:04] BBD -> 160.5 mm
+[17:16:05] Punto 192/341 adquirido
+[17:16:05] BBD -> 160.6 mm
+[17:16:06] Punto 193/341 adquirido
+[17:16:07] BBD -> 160.7 mm
+[17:16:08] Punto 194/341 adquirido
+[17:16:08] BBD -> 160.8 mm
+[17:16:09] Punto 195/341 adquirido
+[17:16:09] BBD -> 160.9 mm
+[17:16:11] Punto 196/341 adquirido
+[17:16:11] BBD -> 161.0 mm
+[17:16:12] Punto 197/341 adquirido
+[17:16:12] BBD -> 161.1 mm
+[17:16:14] Punto 198/341 adquirido
+[17:16:14] BBD -> 161.2 mm
+[17:16:15] Punto 199/341 adquirido
+[17:16:15] BBD -> 161.3 mm
+[17:16:16] Punto 200/341 adquirido
+[17:16:16] BBD -> 161.4 mm
+[17:16:18] Punto 201/341 adquirido
+[17:16:18] BBD -> 161.5 mm
+[17:16:19] Punto 202/341 adquirido
+[17:16:19] BBD -> 161.6 mm
+[17:16:21] Punto 203/341 adquirido
+[17:16:21] BBD -> 161.7 mm
+[17:16:22] Punto 204/341 adquirido
+[17:16:22] BBD -> 161.8 mm
+[17:16:23] Punto 205/341 adquirido
+[17:16:23] BBD -> 161.9 mm
+[17:16:25] Punto 206/341 adquirido
+[17:16:25] BBD -> 162.0 mm
+[17:16:26] Punto 207/341 adquirido
+[17:16:26] BBD -> 162.1 mm
+[17:16:28] Punto 208/341 adquirido
+[17:16:28] BBD -> 162.2 mm
+[17:16:29] Punto 209/341 adquirido
+[17:16:29] BBD -> 162.3 mm
+[17:16:30] Punto 210/341 adquirido
+[17:16:31] BBD -> 162.4 mm
+[17:16:32] Punto 211/341 adquirido
+[17:16:32] BBD -> 162.5 mm
+[17:16:33] Punto 212/341 adquirido
+[17:16:33] BBD -> 162.6 mm
+[17:16:35] Punto 213/341 adquirido
+[17:16:35] BBD -> 162.7 mm
+[17:16:36] Punto 214/341 adquirido
+[17:16:36] BBD -> 162.8 mm
+[17:16:38] Punto 215/341 adquirido
+[17:16:38] BBD -> 162.9 mm
+[17:16:39] Punto 216/341 adquirido
+[17:16:39] BBD -> 163.0 mm
+[17:16:40] Punto 217/341 adquirido
+[17:16:40] Lambda -> 654.0 nm
+[17:16:42] BBD -> 160.0 mm
+[17:16:43] Punto 218/341 adquirido
+[17:16:43] BBD -> 160.1 mm
+[17:16:44] Punto 219/341 adquirido
+[17:16:45] BBD -> 160.2 mm
+[17:16:46] Punto 220/341 adquirido
+[17:16:46] BBD -> 160.3 mm
+[17:16:47] Punto 221/341 adquirido
+[17:16:47] BBD -> 160.4 mm
+[17:16:49] Punto 222/341 adquirido
+[17:16:49] BBD -> 160.5 mm
+[17:16:50] Punto 223/341 adquirido
+[17:16:50] BBD -> 160.6 mm
+[17:16:52] Punto 224/341 adquirido
+[17:16:52] BBD -> 160.7 mm
+[17:16:53] Punto 225/341 adquirido
+[17:16:53] BBD -> 160.8 mm
+[17:16:54] Punto 226/341 adquirido
+[17:16:54] BBD -> 160.9 mm
+[17:16:56] Punto 227/341 adquirido
+[17:16:56] BBD -> 161.0 mm
+[17:16:57] Punto 228/341 adquirido
+[17:16:57] BBD -> 161.1 mm
+[17:16:59] Punto 229/341 adquirido
+[17:16:59] BBD -> 161.2 mm
+[17:17:00] Punto 230/341 adquirido
+[17:17:00] BBD -> 161.3 mm
+[17:17:01] Punto 231/341 adquirido
+[17:17:01] BBD -> 161.4 mm
+[17:17:03] Punto 232/341 adquirido
+[17:17:03] BBD -> 161.5 mm
+[17:17:04] Punto 233/341 adquirido
+[17:17:04] BBD -> 161.6 mm
+[17:17:06] Punto 234/341 adquirido
+[17:17:06] BBD -> 161.7 mm
+[17:17:07] Punto 235/341 adquirido
+[17:17:07] BBD -> 161.8 mm
+[17:17:08] Punto 236/341 adquirido
+[17:17:09] BBD -> 161.9 mm
+[17:17:10] Punto 237/341 adquirido
+[17:17:10] BBD -> 162.0 mm
+[17:17:11] Punto 238/341 adquirido
+[17:17:11] BBD -> 162.1 mm
+[17:17:13] Punto 239/341 adquirido
+[17:17:13] BBD -> 162.2 mm
+[17:17:14] Punto 240/341 adquirido
+[17:17:14] BBD -> 162.3 mm
+[17:17:16] Punto 241/341 adquirido
+[17:17:16] BBD -> 162.4 mm
+[17:17:17] Punto 242/341 adquirido
+[17:17:17] BBD -> 162.5 mm
+[17:17:18] Punto 243/341 adquirido
+[17:17:18] BBD -> 162.6 mm
+[17:17:20] Punto 244/341 adquirido
+[17:17:20] BBD -> 162.7 mm
+[17:17:21] Punto 245/341 adquirido
+[17:17:21] BBD -> 162.8 mm
+[17:17:23] Punto 246/341 adquirido
+[17:17:23] BBD -> 162.9 mm
+[17:17:24] Punto 247/341 adquirido
+[17:17:24] BBD -> 163.0 mm
+[17:17:25] Punto 248/341 adquirido
+[17:17:25] Lambda -> 656.0 nm
+[17:17:27] BBD -> 160.0 mm
+[17:17:28] Punto 249/341 adquirido
+[17:17:28] BBD -> 160.1 mm
+[17:17:30] Punto 250/341 adquirido
+[17:17:30] BBD -> 160.2 mm
+[17:17:31] Punto 251/341 adquirido
+[17:17:31] BBD -> 160.3 mm
+[17:17:32] Punto 252/341 adquirido
+[17:17:32] BBD -> 160.4 mm
+[17:17:34] Punto 253/341 adquirido
+[17:17:34] BBD -> 160.5 mm
+[17:17:35] Punto 254/341 adquirido
+[17:17:35] BBD -> 160.6 mm
+[17:17:37] Punto 255/341 adquirido
+[17:17:37] BBD -> 160.7 mm
+[17:17:38] Punto 256/341 adquirido
+[17:17:38] BBD -> 160.8 mm
+[17:17:39] Punto 257/341 adquirido
+[17:17:40] BBD -> 160.9 mm
+[17:17:41] Punto 258/341 adquirido
+[17:17:41] BBD -> 161.0 mm
+[17:17:42] Punto 259/341 adquirido
+[17:17:42] BBD -> 161.1 mm
+[17:17:44] Punto 260/341 adquirido
+[17:17:44] BBD -> 161.2 mm
+[17:17:45] Punto 261/341 adquirido
+[17:17:45] BBD -> 161.3 mm
+[17:17:47] Punto 262/341 adquirido
+[17:17:47] BBD -> 161.4 mm
+[17:17:48] Punto 263/341 adquirido
+[17:17:48] BBD -> 161.5 mm
+[17:17:49] Punto 264/341 adquirido
+[17:17:49] BBD -> 161.6 mm
+[17:17:51] Punto 265/341 adquirido
+[17:17:51] BBD -> 161.7 mm
+[17:17:52] Punto 266/341 adquirido
+[17:17:52] BBD -> 161.8 mm
+[17:17:54] Punto 267/341 adquirido
+[17:17:54] BBD -> 161.9 mm
+[17:17:55] Punto 268/341 adquirido
+[17:17:55] BBD -> 162.0 mm
+[17:17:57] Punto 269/341 adquirido
+[17:17:57] BBD -> 162.1 mm
+[17:17:58] Punto 270/341 adquirido
+[17:17:58] BBD -> 162.2 mm
+[17:17:59] Punto 271/341 adquirido
+[17:17:59] BBD -> 162.3 mm
+[17:18:01] Punto 272/341 adquirido
+[17:18:01] BBD -> 162.4 mm
+[17:18:02] Punto 273/341 adquirido
+[17:18:02] BBD -> 162.5 mm
+[17:18:04] Punto 274/341 adquirido
+[17:18:04] BBD -> 162.6 mm
+[17:18:05] Punto 275/341 adquirido
+[17:18:05] BBD -> 162.7 mm
+[17:18:06] Punto 276/341 adquirido
+[17:18:06] BBD -> 162.8 mm
+[17:18:08] Punto 277/341 adquirido
+[17:18:08] BBD -> 162.9 mm
+[17:18:09] Punto 278/341 adquirido
+[17:18:09] BBD -> 163.0 mm
+[17:18:11] Punto 279/341 adquirido
+[17:18:11] Lambda -> 658.0 nm
+[17:18:12] BBD -> 160.0 mm
+[17:18:13] Punto 280/341 adquirido
+[17:18:13] BBD -> 160.1 mm
+[17:18:15] Punto 281/341 adquirido
+[17:18:15] BBD -> 160.2 mm
+[17:18:16] Punto 282/341 adquirido
+[17:18:16] BBD -> 160.3 mm
+[17:18:18] Punto 283/341 adquirido
+[17:18:18] BBD -> 160.4 mm
+[17:18:19] Punto 284/341 adquirido
+[17:18:19] BBD -> 160.5 mm
+[17:18:20] Punto 285/341 adquirido
+[17:18:20] BBD -> 160.6 mm
+[17:18:22] Punto 286/341 adquirido
+[17:18:22] BBD -> 160.7 mm
+[17:18:23] Punto 287/341 adquirido
+[17:18:23] BBD -> 160.8 mm
+[17:18:25] Punto 288/341 adquirido
+[17:18:25] BBD -> 160.9 mm
+[17:18:26] Punto 289/341 adquirido
+[17:18:26] BBD -> 161.0 mm
+[17:18:28] Punto 290/341 adquirido
+[17:18:28] BBD -> 161.1 mm
+[17:18:29] Punto 291/341 adquirido
+[17:18:29] BBD -> 161.2 mm
+[17:18:30] Punto 292/341 adquirido
+[17:18:30] BBD -> 161.3 mm
+[17:18:32] Punto 293/341 adquirido
+[17:18:32] BBD -> 161.4 mm
+[17:18:33] Punto 294/341 adquirido
+[17:18:33] BBD -> 161.5 mm
+[17:18:35] Punto 295/341 adquirido
+[17:18:35] BBD -> 161.6 mm
+[17:18:36] Punto 296/341 adquirido
+[17:18:36] BBD -> 161.7 mm
+[17:18:37] Punto 297/341 adquirido
+[17:18:37] BBD -> 161.8 mm
+[17:18:39] Punto 298/341 adquirido
+[17:18:39] BBD -> 161.9 mm
+[17:18:40] Punto 299/341 adquirido
+[17:18:40] BBD -> 162.0 mm
+[17:18:42] Punto 300/341 adquirido
+[17:18:42] BBD -> 162.1 mm
+[17:18:43] Punto 301/341 adquirido
+[17:18:43] BBD -> 162.2 mm
+[17:18:44] Punto 302/341 adquirido
+[17:18:45] BBD -> 162.3 mm
+[17:18:46] Punto 303/341 adquirido
+[17:18:46] BBD -> 162.4 mm
+[17:18:47] Punto 304/341 adquirido
+[17:18:47] BBD -> 162.5 mm
+[17:18:49] Punto 305/341 adquirido
+[17:18:49] BBD -> 162.6 mm
+[17:18:50] Punto 306/341 adquirido
+[17:18:50] BBD -> 162.7 mm
+[17:18:52] Punto 307/341 adquirido
+[17:18:52] BBD -> 162.8 mm
+[17:18:53] Punto 308/341 adquirido
+[17:18:53] BBD -> 162.9 mm
+[17:18:54] Punto 309/341 adquirido
+[17:18:54] BBD -> 163.0 mm
+[17:18:56] Punto 310/341 adquirido
+[17:18:56] Lambda -> 660.0 nm
+[17:18:57] BBD -> 160.0 mm
+[17:18:59] Punto 311/341 adquirido
+[17:18:59] BBD -> 160.1 mm
+[17:19:00] Punto 312/341 adquirido
+[17:19:00] BBD -> 160.2 mm
+[17:19:01] Punto 313/341 adquirido
+[17:19:01] BBD -> 160.3 mm
+[17:19:03] Punto 314/341 adquirido
+[17:19:03] BBD -> 160.4 mm
+[17:19:04] Punto 315/341 adquirido
+[17:19:04] BBD -> 160.5 mm
+[17:19:06] Punto 316/341 adquirido
+[17:19:06] BBD -> 160.6 mm
+[17:19:07] Punto 317/341 adquirido
+[17:19:07] BBD -> 160.7 mm
+[17:19:08] Punto 318/341 adquirido
+[17:19:08] BBD -> 160.8 mm
+[17:19:10] Punto 319/341 adquirido
+[17:19:10] BBD -> 160.9 mm
+[17:19:11] Punto 320/341 adquirido
+[17:19:11] BBD -> 161.0 mm
+[17:19:13] Punto 321/341 adquirido
+[17:19:13] BBD -> 161.1 mm
+[17:19:14] Punto 322/341 adquirido
+[17:19:14] BBD -> 161.2 mm
+[17:19:15] Punto 323/341 adquirido
+[17:19:16] BBD -> 161.3 mm
+[17:19:17] Punto 324/341 adquirido
+[17:19:17] BBD -> 161.4 mm
+[17:19:18] Punto 325/341 adquirido
+[17:19:18] BBD -> 161.5 mm
+[17:19:20] Punto 326/341 adquirido
+[17:19:20] BBD -> 161.6 mm
+[17:19:21] Punto 327/341 adquirido
+[17:19:21] BBD -> 161.7 mm
+[17:19:23] Punto 328/341 adquirido
+[17:19:23] BBD -> 161.8 mm
+[17:19:24] Punto 329/341 adquirido
+[17:19:24] BBD -> 161.9 mm
+[17:19:25] Punto 330/341 adquirido
+[17:19:25] BBD -> 162.0 mm
+[17:19:27] Punto 331/341 adquirido
+[17:19:27] BBD -> 162.1 mm
+[17:19:28] Punto 332/341 adquirido
+[17:19:28] BBD -> 162.2 mm
+[17:19:30] Punto 333/341 adquirido
+[17:19:30] BBD -> 162.3 mm
+[17:19:31] Punto 334/341 adquirido
+[17:19:31] BBD -> 162.4 mm
+[17:19:32] Punto 335/341 adquirido
+[17:19:32] BBD -> 162.5 mm
+[17:19:34] Punto 336/341 adquirido
+[17:19:34] BBD -> 162.6 mm
+[17:19:35] Punto 337/341 adquirido
+[17:19:35] BBD -> 162.7 mm
+[17:19:37] Punto 338/341 adquirido
+[17:19:37] BBD -> 162.8 mm
+[17:19:38] Punto 339/341 adquirido
+[17:19:38] BBD -> 162.9 mm
+[17:19:39] Punto 340/341 adquirido
+[17:19:39] BBD -> 163.0 mm
+[17:19:41] Punto 341/341 adquirido
+[17:19:41] Medicion finalizada
+[17:19:41] Resultado listo en memoria

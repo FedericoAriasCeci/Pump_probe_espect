@@ -1,0 +1,2478 @@
+[17:05:48] Aplicacion iniciada en modo simulacion
+[17:05:51] Modo hardware real activo
+[17:05:52] Error conectando SMS en COM3: No se pudo abrir COM3. Perfil heredado: Cannot configure port, something went wrong. Original message: PermissionError(13, 'Uno de los dispositivos conectados al sistema no funciona.', None, 31) Perfil minimo: Cannot configure port, something went wrong. Original message: PermissionError(13, 'Uno de los dispositivos conectados al sistema no funciona.', None, 31) Perfil sin control de lineas: Cannot configure port, something went wrong. Original message: PermissionError(13, 'Uno de los dispositivos conectados al sistema no funciona.', None, 31) Sugerencias: cerrar otros programas que puedan usar el puerto, reconectar el USB, probar otro cable/puerto USB, o reinstalar el driver CH340.
+[17:06:36] BBD conectado
+[17:07:05] Home BBD completado
+[17:07:16] SMS conectado en COM3 (heredado)
+[17:07:16] Lock-in: abriendo recurso 8
+[17:07:16] Lock-in: recurso abierto
+[17:07:16] Lock-in: identificando
+[17:07:16] Lock-in: configurando
+[17:07:18] Lock-in: leyendo constante de tiempo
+[17:07:18] Lock-in conectado en 8
+[17:07:18] Chequeo de conexion completo
+[17:07:51] Inicio solicitado
+[17:07:51] Inicio de medicion
+[17:07:51] Repeticion 1 de 1
+[17:07:51] Lambda -> 920.0 nm
+[17:08:22] Auto rango sensibilidad para lambda 920.0 nm
+[17:08:22] Sensibilidad Lock-in sin cambios
+[17:08:22] BBD -> 162.0 mm
+[17:08:24] Punto 1/143 adquirido
+[17:08:24] BBD -> 162.25 mm
+[17:08:26] Punto 2/143 adquirido
+[17:08:26] BBD -> 162.5 mm
+[17:08:27] Punto 3/143 adquirido
+[17:08:27] BBD -> 162.75 mm
+[17:08:29] Punto 4/143 adquirido
+[17:08:29] BBD -> 163.0 mm
+[17:08:30] Punto 5/143 adquirido
+[17:08:30] BBD -> 163.25 mm
+[17:08:31] Punto 6/143 adquirido
+[17:08:32] BBD -> 163.5 mm
+[17:08:33] Punto 7/143 adquirido
+[17:08:33] BBD -> 163.75 mm
+[17:08:34] Punto 8/143 adquirido
+[17:08:34] BBD -> 164.0 mm
+[17:08:36] Punto 9/143 adquirido
+[17:08:36] BBD -> 164.25 mm
+[17:08:37] Punto 10/143 adquirido
+[17:08:37] BBD -> 164.5 mm
+[17:08:39] Punto 11/143 adquirido
+[17:08:39] BBD -> 164.75 mm
+[17:08:40] Punto 12/143 adquirido
+[17:08:40] BBD -> 165.0 mm
+[17:08:41] Punto 13/143 adquirido
+[17:08:41] Lambda -> 925.0 nm
+[17:08:43] Auto rango sensibilidad para lambda 925.0 nm
+[17:08:43] Sensibilidad Lock-in sin cambios
+[17:08:43] BBD -> 162.0 mm
+[17:08:45] Punto 14/143 adquirido
+[17:08:45] BBD -> 162.25 mm
+[17:08:46] Punto 15/143 adquirido
+[17:08:46] BBD -> 162.5 mm
+[17:08:47] Punto 16/143 adquirido
+[17:08:47] BBD -> 162.75 mm
+[17:08:49] Punto 17/143 adquirido
+[17:08:49] BBD -> 163.0 mm
+[17:08:50] Punto 18/143 adquirido
+[17:08:50] BBD -> 163.25 mm
+[17:08:52] Punto 19/143 adquirido
+[17:08:52] BBD -> 163.5 mm
+[17:08:53] Punto 20/143 adquirido
+[17:08:53] BBD -> 163.75 mm
+[17:08:54] Punto 21/143 adquirido
+[17:08:55] BBD -> 164.0 mm
+[17:08:56] Punto 22/143 adquirido
+[17:08:56] BBD -> 164.25 mm
+[17:08:57] Punto 23/143 adquirido
+[17:08:57] BBD -> 164.5 mm
+[17:08:59] Punto 24/143 adquirido
+[17:08:59] BBD -> 164.75 mm
+[17:09:00] Punto 25/143 adquirido
+[17:09:00] BBD -> 165.0 mm
+[17:09:02] Punto 26/143 adquirido
+[17:09:02] Lambda -> 930.0 nm
+[17:09:03] Auto rango sensibilidad para lambda 930.0 nm
+[17:09:03] Sensibilidad Lock-in sin cambios
+[17:09:03] BBD -> 162.0 mm
+[17:09:05] Punto 27/143 adquirido
+[17:09:05] BBD -> 162.25 mm
+[17:09:06] Punto 28/143 adquirido
+[17:09:06] BBD -> 162.5 mm
+[17:09:08] Punto 29/143 adquirido
+[17:09:08] BBD -> 162.75 mm
+[17:09:09] Punto 30/143 adquirido
+[17:09:09] BBD -> 163.0 mm
+[17:09:10] Punto 31/143 adquirido
+[17:09:11] BBD -> 163.25 mm
+[17:09:12] Punto 32/143 adquirido
+[17:09:12] BBD -> 163.5 mm
+[17:09:13] Punto 33/143 adquirido
+[17:09:13] BBD -> 163.75 mm
+[17:09:15] Punto 34/143 adquirido
+[17:09:15] BBD -> 164.0 mm
+[17:09:16] Punto 35/143 adquirido
+[17:09:16] BBD -> 164.25 mm
+[17:09:18] Punto 36/143 adquirido
+[17:09:18] BBD -> 164.5 mm
+[17:09:19] Punto 37/143 adquirido
+[17:09:19] BBD -> 164.75 mm
+[17:09:20] Punto 38/143 adquirido
+[17:09:21] BBD -> 165.0 mm
+[17:09:22] Punto 39/143 adquirido
+[17:09:22] Lambda -> 935.0 nm
+[17:09:23] Auto rango sensibilidad para lambda 935.0 nm
+[17:09:23] Sensibilidad Lock-in sin cambios
+[17:09:24] BBD -> 162.0 mm
+[17:09:25] Punto 40/143 adquirido
+[17:09:25] BBD -> 162.25 mm
+[17:09:26] Punto 41/143 adquirido
+[17:09:27] BBD -> 162.5 mm
+[17:09:28] Punto 42/143 adquirido
+[17:09:28] BBD -> 162.75 mm
+[17:09:29] Punto 43/143 adquirido
+[17:09:29] BBD -> 163.0 mm
+[17:09:31] Punto 44/143 adquirido
+[17:09:31] BBD -> 163.25 mm
+[17:09:32] Punto 45/143 adquirido
+[17:09:32] BBD -> 163.5 mm
+[17:09:34] Punto 46/143 adquirido
+[17:09:34] BBD -> 163.75 mm
+[17:09:35] Punto 47/143 adquirido
+[17:09:35] BBD -> 164.0 mm
+[17:09:36] Punto 48/143 adquirido
+[17:09:36] BBD -> 164.25 mm
+[17:09:38] Punto 49/143 adquirido
+[17:09:38] BBD -> 164.5 mm
+[17:09:39] Punto 50/143 adquirido
+[17:09:39] BBD -> 164.75 mm
+[17:09:41] Punto 51/143 adquirido
+[17:09:41] BBD -> 165.0 mm
+[17:09:42] Punto 52/143 adquirido
+[17:09:42] Lambda -> 940.0 nm
+[17:09:44] Auto rango sensibilidad para lambda 940.0 nm
+[17:09:44] Sensibilidad Lock-in sin cambios
+[17:09:44] BBD -> 162.0 mm
+[17:09:45] Punto 53/143 adquirido
+[17:09:45] BBD -> 162.25 mm
+[17:09:47] Punto 54/143 adquirido
+[17:09:47] BBD -> 162.5 mm
+[17:09:48] Punto 55/143 adquirido
+[17:09:48] BBD -> 162.75 mm
+[17:09:50] Punto 56/143 adquirido
+[17:09:50] BBD -> 163.0 mm
+[17:09:51] Punto 57/143 adquirido
+[17:09:51] BBD -> 163.25 mm
+[17:09:52] Punto 58/143 adquirido
+[17:09:52] BBD -> 163.5 mm
+[17:09:54] Punto 59/143 adquirido
+[17:09:54] BBD -> 163.75 mm
+[17:09:55] Punto 60/143 adquirido
+[17:09:55] BBD -> 164.0 mm
+[17:09:57] Punto 61/143 adquirido
+[17:09:57] BBD -> 164.25 mm
+[17:09:58] Punto 62/143 adquirido
+[17:09:58] BBD -> 164.5 mm
+[17:10:00] Punto 63/143 adquirido
+[17:10:00] BBD -> 164.75 mm
+[17:10:01] Punto 64/143 adquirido
+[17:10:01] BBD -> 165.0 mm
+[17:10:02] Punto 65/143 adquirido
+[17:10:02] Lambda -> 945.0 nm
+[17:10:04] Auto rango sensibilidad para lambda 945.0 nm
+[17:10:04] Sensibilidad Lock-in sin cambios
+[17:10:04] BBD -> 162.0 mm
+[17:10:06] Punto 66/143 adquirido
+[17:10:06] BBD -> 162.25 mm
+[17:10:07] Punto 67/143 adquirido
+[17:10:07] BBD -> 162.5 mm
+[17:10:08] Punto 68/143 adquirido
+[17:10:08] BBD -> 162.75 mm
+[17:10:10] Punto 69/143 adquirido
+[17:10:10] BBD -> 163.0 mm
+[17:10:11] Punto 70/143 adquirido
+[17:10:11] BBD -> 163.25 mm
+[17:10:13] Punto 71/143 adquirido
+[17:10:13] BBD -> 163.5 mm
+[17:10:14] Punto 72/143 adquirido
+[17:10:14] BBD -> 163.75 mm
+[17:10:15] Punto 73/143 adquirido
+[17:10:16] BBD -> 164.0 mm
+[17:10:17] Punto 74/143 adquirido
+[17:10:17] BBD -> 164.25 mm
+[17:10:18] Punto 75/143 adquirido
+[17:10:18] BBD -> 164.5 mm
+[17:10:20] Punto 76/143 adquirido
+[17:10:20] BBD -> 164.75 mm
+[17:10:21] Punto 77/143 adquirido
+[17:10:21] BBD -> 165.0 mm
+[17:10:23] Punto 78/143 adquirido
+[17:10:23] Lambda -> 950.0 nm
+[17:10:24] Auto rango sensibilidad para lambda 950.0 nm
+[17:10:24] Sensibilidad Lock-in sin cambios
+[17:10:24] BBD -> 162.0 mm
+[17:10:26] Punto 79/143 adquirido
+[17:10:26] BBD -> 162.25 mm
+[17:10:27] Punto 80/143 adquirido
+[17:10:27] BBD -> 162.5 mm
+[17:10:29] Punto 81/143 adquirido
+[17:10:29] BBD -> 162.75 mm
+[17:10:30] Punto 82/143 adquirido
+[17:10:30] BBD -> 163.0 mm
+[17:10:31] Punto 83/143 adquirido
+[17:10:32] BBD -> 163.25 mm
+[17:10:33] Punto 84/143 adquirido
+[17:10:33] BBD -> 163.5 mm
+[17:10:34] Punto 85/143 adquirido
+[17:10:34] BBD -> 163.75 mm
+[17:10:36] Punto 86/143 adquirido
+[17:10:36] BBD -> 164.0 mm
+[17:10:37] Punto 87/143 adquirido
+[17:10:37] BBD -> 164.25 mm
+[17:10:39] Punto 88/143 adquirido
+[17:10:39] BBD -> 164.5 mm
+[17:10:40] Punto 89/143 adquirido
+[17:10:40] BBD -> 164.75 mm
+[17:10:41] Punto 90/143 adquirido
+[17:10:41] BBD -> 165.0 mm
+[17:10:43] Punto 91/143 adquirido
+[17:10:43] Lambda -> 955.0 nm
+[17:10:44] Auto rango sensibilidad para lambda 955.0 nm
+[17:10:44] Sensibilidad Lock-in sin cambios
+[17:10:45] BBD -> 162.0 mm
+[17:10:46] Punto 92/143 adquirido
+[17:10:46] BBD -> 162.25 mm
+[17:10:47] Punto 93/143 adquirido
+[17:10:47] BBD -> 162.5 mm
+[17:10:49] Punto 94/143 adquirido
+[17:10:49] BBD -> 162.75 mm
+[17:10:50] Punto 95/143 adquirido
+[17:10:50] BBD -> 163.0 mm
+[17:10:52] Punto 96/143 adquirido
+[17:10:52] BBD -> 163.25 mm
+[17:10:53] Punto 97/143 adquirido
+[17:10:53] BBD -> 163.5 mm
+[17:10:54] Punto 98/143 adquirido
+[17:10:55] BBD -> 163.75 mm
+[17:10:56] Punto 99/143 adquirido
+[17:10:56] BBD -> 164.0 mm
+[17:10:57] Punto 100/143 adquirido
+[17:10:57] BBD -> 164.25 mm
+[17:10:59] Punto 101/143 adquirido
+[17:10:59] BBD -> 164.5 mm
+[17:11:00] Punto 102/143 adquirido
+[17:11:00] BBD -> 164.75 mm
+[17:11:02] Punto 103/143 adquirido
+[17:11:02] BBD -> 165.0 mm
+[17:11:03] Punto 104/143 adquirido
+[17:11:03] Lambda -> 960.0 nm
+[17:11:05] Auto rango sensibilidad para lambda 960.0 nm
+[17:11:05] Sensibilidad Lock-in sin cambios
+[17:11:05] BBD -> 162.0 mm
+[17:11:06] Punto 105/143 adquirido
+[17:11:06] BBD -> 162.25 mm
+[17:11:08] Punto 106/143 adquirido
+[17:11:08] BBD -> 162.5 mm
+[17:11:09] Punto 107/143 adquirido
+[17:11:09] BBD -> 162.75 mm
+[17:11:10] Punto 108/143 adquirido
+[17:11:11] BBD -> 163.0 mm
+[17:11:12] Punto 109/143 adquirido
+[17:11:12] BBD -> 163.25 mm
+[17:11:13] Punto 110/143 adquirido
+[17:11:13] BBD -> 163.5 mm
+[17:11:15] Punto 111/143 adquirido
+[17:11:15] BBD -> 163.75 mm
+[17:11:16] Punto 112/143 adquirido
+[17:11:16] BBD -> 164.0 mm
+[17:11:18] Punto 113/143 adquirido
+[17:11:18] BBD -> 164.25 mm
+[17:11:19] Punto 114/143 adquirido
+[17:11:19] BBD -> 164.5 mm
+[17:11:20] Punto 115/143 adquirido
+[17:11:20] BBD -> 164.75 mm
+[17:11:22] Punto 116/143 adquirido
+[17:11:22] BBD -> 165.0 mm
+[17:11:23] Punto 117/143 adquirido
+[17:11:23] Lambda -> 965.0 nm
+[17:11:25] Auto rango sensibilidad para lambda 965.0 nm
+[17:11:25] Sensibilidad Lock-in sin cambios
+[17:11:25] BBD -> 162.0 mm
+[17:11:26] Punto 118/143 adquirido
+[17:11:26] BBD -> 162.25 mm
+[17:11:28] Punto 119/143 adquirido
+[17:11:28] BBD -> 162.5 mm
+[17:11:29] Punto 120/143 adquirido
+[17:11:29] BBD -> 162.75 mm
+[17:11:31] Punto 121/143 adquirido
+[17:11:31] BBD -> 163.0 mm
+[17:11:32] Punto 122/143 adquirido
+[17:11:32] BBD -> 163.25 mm
+[17:11:33] Punto 123/143 adquirido
+[17:11:34] BBD -> 163.5 mm
+[17:11:35] Punto 124/143 adquirido
+[17:11:35] BBD -> 163.75 mm
+[17:11:36] Punto 125/143 adquirido
+[17:11:36] BBD -> 164.0 mm
+[17:11:38] Punto 126/143 adquirido
+[17:11:38] BBD -> 164.25 mm
+[17:11:39] Punto 127/143 adquirido
+[17:11:39] BBD -> 164.5 mm
+[17:11:41] Punto 128/143 adquirido
+[17:11:41] BBD -> 164.75 mm
+[17:11:42] Punto 129/143 adquirido
+[17:11:42] BBD -> 165.0 mm
+[17:11:43] Punto 130/143 adquirido
+[17:11:43] Lambda -> 970.0 nm
+[17:11:45] Auto rango sensibilidad para lambda 970.0 nm
+[17:11:45] Sensibilidad Lock-in sin cambios
+[17:11:45] BBD -> 162.0 mm
+[17:11:47] Punto 131/143 adquirido
+[17:11:47] BBD -> 162.25 mm
+[17:11:48] Punto 132/143 adquirido
+[17:11:48] BBD -> 162.5 mm
+[17:11:49] Punto 133/143 adquirido
+[17:11:50] BBD -> 162.75 mm
+[17:11:51] Punto 134/143 adquirido
+[17:11:51] BBD -> 163.0 mm
+[17:11:52] Punto 135/143 adquirido
+[17:11:52] BBD -> 163.25 mm
+[17:11:54] Punto 136/143 adquirido
+[17:11:54] BBD -> 163.5 mm
+[17:11:55] Punto 137/143 adquirido
+[17:11:55] BBD -> 163.75 mm
+[17:11:57] Punto 138/143 adquirido
+[17:11:57] BBD -> 164.0 mm
+[17:11:58] Punto 139/143 adquirido
+[17:11:58] BBD -> 164.25 mm
+[17:11:59] Punto 140/143 adquirido
+[17:12:00] BBD -> 164.5 mm
+[17:12:01] Punto 141/143 adquirido
+[17:12:01] BBD -> 164.75 mm
+[17:12:02] Punto 142/143 adquirido
+[17:12:02] BBD -> 165.0 mm
+[17:12:04] Punto 143/143 adquirido
+[17:12:04] Medicion finalizada
+[17:12:04] Resultado listo en memoria
+[17:12:38] Inicio solicitado
+[17:12:38] AUX promedio: 0.0
+[17:12:38] Inicio de medicion
+[17:12:38] Repeticion 1 de 4
+[17:12:38] Lambda -> 930.0 nm
+[17:12:40] Cancelacion solicitada
+[17:12:40] Medicion cancelada
+[17:12:40] Resultado parcial listo en memoria
+[17:12:52] Inicio solicitado
+[17:12:52] AUX promedio: 0.0
+[17:12:52] Inicio de medicion
+[17:12:52] Repeticion 1 de 4
+[17:12:53] Lambda -> 930.0 nm
+[17:12:53] Auto rango sensibilidad para lambda 930.0 nm
+[17:12:53] Sensibilidad Lock-in sin cambios
+[17:12:53] Promediando AUX para lambda 930.0 nm
+[17:12:54] AUX promedio: 0.009333
+[17:12:54] AUX promedio lambda 930.0 nm = 0.009333
+[17:12:54] BBD -> 158.0 mm
+[17:12:56] Punto 1/116 adquirido
+[17:12:56] BBD -> 158.25 mm
+[17:12:57] Punto 2/116 adquirido
+[17:12:57] BBD -> 158.5 mm
+[17:12:58] Punto 3/116 adquirido
+[17:12:58] BBD -> 158.75 mm
+[17:13:00] Punto 4/116 adquirido
+[17:13:00] BBD -> 159.0 mm
+[17:13:01] Punto 5/116 adquirido
+[17:13:01] BBD -> 159.25 mm
+[17:13:03] Punto 6/116 adquirido
+[17:13:03] BBD -> 159.5 mm
+[17:13:04] Punto 7/116 adquirido
+[17:13:04] BBD -> 159.75 mm
+[17:13:05] Punto 8/116 adquirido
+[17:13:06] BBD -> 160.0 mm
+[17:13:07] Punto 9/116 adquirido
+[17:13:07] BBD -> 160.25 mm
+[17:13:08] Punto 10/116 adquirido
+[17:13:08] BBD -> 160.5 mm
+[17:13:10] Punto 11/116 adquirido
+[17:13:10] BBD -> 160.75 mm
+[17:13:11] Punto 12/116 adquirido
+[17:13:11] BBD -> 161.0 mm
+[17:13:13] Punto 13/116 adquirido
+[17:13:13] BBD -> 161.25 mm
+[17:13:14] Punto 14/116 adquirido
+[17:13:14] BBD -> 161.5 mm
+[17:13:15] Punto 15/116 adquirido
+[17:13:16] BBD -> 161.75 mm
+[17:13:17] Punto 16/116 adquirido
+[17:13:17] BBD -> 162.0 mm
+[17:13:18] Punto 17/116 adquirido
+[17:13:18] BBD -> 162.25 mm
+[17:13:20] Punto 18/116 adquirido
+[17:13:20] BBD -> 162.5 mm
+[17:13:21] Punto 19/116 adquirido
+[17:13:21] BBD -> 162.75 mm
+[17:13:23] Punto 20/116 adquirido
+[17:13:23] BBD -> 163.0 mm
+[17:13:24] Punto 21/116 adquirido
+[17:13:24] BBD -> 163.25 mm
+[17:13:25] Punto 22/116 adquirido
+[17:13:26] BBD -> 163.5 mm
+[17:13:27] Punto 23/116 adquirido
+[17:13:27] BBD -> 163.75 mm
+[17:13:28] Punto 24/116 adquirido
+[17:13:28] BBD -> 164.0 mm
+[17:13:30] Punto 25/116 adquirido
+[17:13:30] BBD -> 164.25 mm
+[17:13:31] Punto 26/116 adquirido
+[17:13:31] BBD -> 164.5 mm
+[17:13:32] Punto 27/116 adquirido
+[17:13:33] BBD -> 164.75 mm
+[17:13:34] Punto 28/116 adquirido
+[17:13:34] BBD -> 165.0 mm
+[17:13:35] Punto 29/116 adquirido
+[17:13:35] Repeticion 2 de 4
+[17:13:36] Lambda -> 930.0 nm
+[17:13:36] Auto rango sensibilidad para lambda 930.0 nm
+[17:13:36] Sensibilidad Lock-in sin cambios
+[17:13:36] Promediando AUX para lambda 930.0 nm
+[17:13:38] AUX promedio: 0.009481
+[17:13:38] AUX promedio lambda 930.0 nm = 0.009481
+[17:13:38] BBD -> 158.0 mm
+[17:13:39] Punto 30/116 adquirido
+[17:13:39] BBD -> 158.25 mm
+[17:13:41] Punto 31/116 adquirido
+[17:13:41] BBD -> 158.5 mm
+[17:13:42] Punto 32/116 adquirido
+[17:13:42] BBD -> 158.75 mm
+[17:13:43] Punto 33/116 adquirido
+[17:13:44] BBD -> 159.0 mm
+[17:13:45] Punto 34/116 adquirido
+[17:13:45] BBD -> 159.25 mm
+[17:13:46] Punto 35/116 adquirido
+[17:13:46] BBD -> 159.5 mm
+[17:13:48] Punto 36/116 adquirido
+[17:13:48] BBD -> 159.75 mm
+[17:13:49] Punto 37/116 adquirido
+[17:13:49] BBD -> 160.0 mm
+[17:13:51] Punto 38/116 adquirido
+[17:13:51] BBD -> 160.25 mm
+[17:13:52] Punto 39/116 adquirido
+[17:13:52] BBD -> 160.5 mm
+[17:13:53] Punto 40/116 adquirido
+[17:13:54] BBD -> 160.75 mm
+[17:13:55] Punto 41/116 adquirido
+[17:13:55] BBD -> 161.0 mm
+[17:13:56] Punto 42/116 adquirido
+[17:13:56] BBD -> 161.25 mm
+[17:13:58] Punto 43/116 adquirido
+[17:13:58] BBD -> 161.5 mm
+[17:13:59] Punto 44/116 adquirido
+[17:13:59] BBD -> 161.75 mm
+[17:14:01] Punto 45/116 adquirido
+[17:14:01] BBD -> 162.0 mm
+[17:14:02] Punto 46/116 adquirido
+[17:14:02] BBD -> 162.25 mm
+[17:14:03] Punto 47/116 adquirido
+[17:14:04] BBD -> 162.5 mm
+[17:14:05] Punto 48/116 adquirido
+[17:14:05] BBD -> 162.75 mm
+[17:14:06] Punto 49/116 adquirido
+[17:14:06] BBD -> 163.0 mm
+[17:14:08] Punto 50/116 adquirido
+[17:14:08] BBD -> 163.25 mm
+[17:14:09] Punto 51/116 adquirido
+[17:14:09] BBD -> 163.5 mm
+[17:14:11] Punto 52/116 adquirido
+[17:14:11] BBD -> 163.75 mm
+[17:14:12] Punto 53/116 adquirido
+[17:14:12] BBD -> 164.0 mm
+[17:14:13] Punto 54/116 adquirido
+[17:14:14] BBD -> 164.25 mm
+[17:14:15] Punto 55/116 adquirido
+[17:14:15] BBD -> 164.5 mm
+[17:14:16] Punto 56/116 adquirido
+[17:14:16] BBD -> 164.75 mm
+[17:14:18] Punto 57/116 adquirido
+[17:14:18] BBD -> 165.0 mm
+[17:14:19] Punto 58/116 adquirido
+[17:14:19] Repeticion 3 de 4
+[17:14:20] Lambda -> 930.0 nm
+[17:14:20] Auto rango sensibilidad para lambda 930.0 nm
+[17:14:20] Sensibilidad Lock-in sin cambios
+[17:14:20] Promediando AUX para lambda 930.0 nm
+[17:14:21] AUX promedio: 0.010222
+[17:14:21] AUX promedio lambda 930.0 nm = 0.010222
+[17:14:21] BBD -> 158.0 mm
+[17:14:23] Punto 59/116 adquirido
+[17:14:23] BBD -> 158.25 mm
+[17:14:24] Punto 60/116 adquirido
+[17:14:24] BBD -> 158.5 mm
+[17:14:26] Punto 61/116 adquirido
+[17:14:26] BBD -> 158.75 mm
+[17:14:27] Punto 62/116 adquirido
+[17:14:27] BBD -> 159.0 mm
+[17:14:29] Punto 63/116 adquirido
+[17:14:29] BBD -> 159.25 mm
+[17:14:30] Punto 64/116 adquirido
+[17:14:30] BBD -> 159.5 mm
+[17:14:31] Punto 65/116 adquirido
+[17:14:32] BBD -> 159.75 mm
+[17:14:33] Punto 66/116 adquirido
+[17:14:33] BBD -> 160.0 mm
+[17:14:34] Punto 67/116 adquirido
+[17:14:34] BBD -> 160.25 mm
+[17:14:36] Punto 68/116 adquirido
+[17:14:36] BBD -> 160.5 mm
+[17:14:37] Punto 69/116 adquirido
+[17:14:37] BBD -> 160.75 mm
+[17:14:39] Punto 70/116 adquirido
+[17:14:39] BBD -> 161.0 mm
+[17:14:40] Punto 71/116 adquirido
+[17:14:40] BBD -> 161.25 mm
+[17:14:41] Punto 72/116 adquirido
+[17:14:42] BBD -> 161.5 mm
+[17:14:43] Punto 73/116 adquirido
+[17:14:43] BBD -> 161.75 mm
+[17:14:44] Punto 74/116 adquirido
+[17:14:44] BBD -> 162.0 mm
+[17:14:46] Punto 75/116 adquirido
+[17:14:46] BBD -> 162.25 mm
+[17:14:47] Punto 76/116 adquirido
+[17:14:47] BBD -> 162.5 mm
+[17:14:49] Punto 77/116 adquirido
+[17:14:49] BBD -> 162.75 mm
+[17:14:50] Punto 78/116 adquirido
+[17:14:50] BBD -> 163.0 mm
+[17:14:51] Punto 79/116 adquirido
+[17:14:52] BBD -> 163.25 mm
+[17:14:53] Punto 80/116 adquirido
+[17:14:53] BBD -> 163.5 mm
+[17:14:54] Punto 81/116 adquirido
+[17:14:54] BBD -> 163.75 mm
+[17:14:56] Punto 82/116 adquirido
+[17:14:56] BBD -> 164.0 mm
+[17:14:57] Punto 83/116 adquirido
+[17:14:57] BBD -> 164.25 mm
+[17:14:58] Punto 84/116 adquirido
+[17:14:59] BBD -> 164.5 mm
+[17:15:00] Punto 85/116 adquirido
+[17:15:00] BBD -> 164.75 mm
+[17:15:01] Punto 86/116 adquirido
+[17:15:01] BBD -> 165.0 mm
+[17:15:03] Punto 87/116 adquirido
+[17:15:03] Repeticion 4 de 4
+[17:15:04] Lambda -> 930.0 nm
+[17:15:04] Auto rango sensibilidad para lambda 930.0 nm
+[17:15:04] Sensibilidad Lock-in sin cambios
+[17:15:04] Promediando AUX para lambda 930.0 nm
+[17:15:05] AUX promedio: 0.007667
+[17:15:05] AUX promedio lambda 930.0 nm = 0.007667
+[17:15:05] BBD -> 158.0 mm
+[17:15:07] Punto 88/116 adquirido
+[17:15:07] BBD -> 158.25 mm
+[17:15:08] Punto 89/116 adquirido
+[17:15:08] BBD -> 158.5 mm
+[17:15:09] Punto 90/116 adquirido
+[17:15:10] BBD -> 158.75 mm
+[17:15:11] Punto 91/116 adquirido
+[17:15:11] BBD -> 159.0 mm
+[17:15:12] Punto 92/116 adquirido
+[17:15:12] BBD -> 159.25 mm
+[17:15:14] Punto 93/116 adquirido
+[17:15:14] BBD -> 159.5 mm
+[17:15:15] Punto 94/116 adquirido
+[17:15:15] BBD -> 159.75 mm
+[17:15:17] Punto 95/116 adquirido
+[17:15:17] BBD -> 160.0 mm
+[17:15:18] Punto 96/116 adquirido
+[17:15:18] BBD -> 160.25 mm
+[17:15:19] Punto 97/116 adquirido
+[17:15:20] BBD -> 160.5 mm
+[17:15:21] Punto 98/116 adquirido
+[17:15:21] BBD -> 160.75 mm
+[17:15:22] Punto 99/116 adquirido
+[17:15:22] BBD -> 161.0 mm
+[17:15:24] Punto 100/116 adquirido
+[17:15:24] BBD -> 161.25 mm
+[17:15:25] Punto 101/116 adquirido
+[17:15:25] BBD -> 161.5 mm
+[17:15:26] Punto 102/116 adquirido
+[17:15:27] BBD -> 161.75 mm
+[17:15:28] Punto 103/116 adquirido
+[17:15:28] BBD -> 162.0 mm
+[17:15:29] Punto 104/116 adquirido
+[17:15:29] BBD -> 162.25 mm
+[17:15:31] Punto 105/116 adquirido
+[17:15:31] BBD -> 162.5 mm
+[17:15:32] Punto 106/116 adquirido
+[17:15:32] BBD -> 162.75 mm
+[17:15:34] Punto 107/116 adquirido
+[17:15:34] BBD -> 163.0 mm
+[17:15:35] Punto 108/116 adquirido
+[17:15:35] BBD -> 163.25 mm
+[17:15:36] Punto 109/116 adquirido
+[17:15:37] BBD -> 163.5 mm
+[17:15:38] Punto 110/116 adquirido
+[17:15:38] BBD -> 163.75 mm
+[17:15:39] Punto 111/116 adquirido
+[17:15:39] BBD -> 164.0 mm
+[17:15:41] Punto 112/116 adquirido
+[17:15:41] BBD -> 164.25 mm
+[17:15:42] Punto 113/116 adquirido
+[17:15:42] BBD -> 164.5 mm
+[17:15:44] Punto 114/116 adquirido
+[17:15:44] BBD -> 164.75 mm
+[17:15:45] Punto 115/116 adquirido
+[17:15:45] BBD -> 165.0 mm
+[17:15:46] Punto 116/116 adquirido
+[17:15:46] Promedio calculado
+[17:15:46] Medicion finalizada
+[17:15:47] Resultado listo en memoria
+[17:19:44] Inicio solicitado
+[17:19:44] AUX promedio: 0.0
+[17:19:44] Inicio de medicion
+[17:19:44] Repeticion 1 de 4
+[17:19:44] Lambda -> 640.0 nm
+[17:20:17] Auto rango sensibilidad para lambda 640.0 nm
+[17:20:17] Sensibilidad Lock-in sin cambios
+[17:20:17] Promediando AUX para lambda 640.0 nm
+[17:20:18] AUX promedio: 0.011148
+[17:20:18] AUX promedio lambda 640.0 nm = 0.011148
+[17:20:18] BBD -> 158.0 mm
+[17:20:20] Punto 1/116 adquirido
+[17:20:20] BBD -> 158.25 mm
+[17:20:21] Punto 2/116 adquirido
+[17:20:21] BBD -> 158.5 mm
+[17:20:23] Punto 3/116 adquirido
+[17:20:23] BBD -> 158.75 mm
+[17:20:24] Punto 4/116 adquirido
+[17:20:24] BBD -> 159.0 mm
+[17:20:26] Punto 5/116 adquirido
+[17:20:26] BBD -> 159.25 mm
+[17:20:27] Punto 6/116 adquirido
+[17:20:27] BBD -> 159.5 mm
+[17:20:28] Punto 7/116 adquirido
+[17:20:29] BBD -> 159.75 mm
+[17:20:30] Punto 8/116 adquirido
+[17:20:30] BBD -> 160.0 mm
+[17:20:31] Punto 9/116 adquirido
+[17:20:31] BBD -> 160.25 mm
+[17:20:33] Punto 10/116 adquirido
+[17:20:33] BBD -> 160.5 mm
+[17:20:34] Punto 11/116 adquirido
+[17:20:34] BBD -> 160.75 mm
+[17:20:36] Punto 12/116 adquirido
+[17:20:36] BBD -> 161.0 mm
+[17:20:37] Punto 13/116 adquirido
+[17:20:37] BBD -> 161.25 mm
+[17:20:38] Punto 14/116 adquirido
+[17:20:39] BBD -> 161.5 mm
+[17:20:40] Punto 15/116 adquirido
+[17:20:40] BBD -> 161.75 mm
+[17:20:41] Punto 16/116 adquirido
+[17:20:41] BBD -> 162.0 mm
+[17:20:43] Punto 17/116 adquirido
+[17:20:43] BBD -> 162.25 mm
+[17:20:44] Punto 18/116 adquirido
+[17:20:44] BBD -> 162.5 mm
+[17:20:46] Punto 19/116 adquirido
+[17:20:46] BBD -> 162.75 mm
+[17:20:47] Punto 20/116 adquirido
+[17:20:47] BBD -> 163.0 mm
+[17:20:48] Punto 21/116 adquirido
+[17:20:49] BBD -> 163.25 mm
+[17:20:50] Punto 22/116 adquirido
+[17:20:50] BBD -> 163.5 mm
+[17:20:51] Punto 23/116 adquirido
+[17:20:51] BBD -> 163.75 mm
+[17:20:53] Punto 24/116 adquirido
+[17:20:53] BBD -> 164.0 mm
+[17:20:54] Punto 25/116 adquirido
+[17:20:54] BBD -> 164.25 mm
+[17:20:55] Punto 26/116 adquirido
+[17:20:56] BBD -> 164.5 mm
+[17:20:57] Punto 27/116 adquirido
+[17:20:57] BBD -> 164.75 mm
+[17:20:58] Punto 28/116 adquirido
+[17:20:58] BBD -> 165.0 mm
+[17:21:00] Punto 29/116 adquirido
+[17:21:00] Repeticion 2 de 4
+[17:21:01] Lambda -> 640.0 nm
+[17:21:01] Auto rango sensibilidad para lambda 640.0 nm
+[17:21:01] Sensibilidad Lock-in sin cambios
+[17:21:01] Promediando AUX para lambda 640.0 nm
+[17:21:02] AUX promedio: 0.01
+[17:21:02] AUX promedio lambda 640.0 nm = 0.01
+[17:21:02] BBD -> 158.0 mm
+[17:21:04] Punto 30/116 adquirido
+[17:21:04] BBD -> 158.25 mm
+[17:21:05] Punto 31/116 adquirido
+[17:21:05] BBD -> 158.5 mm
+[17:21:06] Punto 32/116 adquirido
+[17:21:07] BBD -> 158.75 mm
+[17:21:08] Punto 33/116 adquirido
+[17:21:08] BBD -> 159.0 mm
+[17:21:09] Punto 34/116 adquirido
+[17:21:09] BBD -> 159.25 mm
+[17:21:11] Punto 35/116 adquirido
+[17:21:11] BBD -> 159.5 mm
+[17:21:12] Punto 36/116 adquirido
+[17:21:12] BBD -> 159.75 mm
+[17:21:14] Punto 37/116 adquirido
+[17:21:14] BBD -> 160.0 mm
+[17:21:15] Punto 38/116 adquirido
+[17:21:15] BBD -> 160.25 mm
+[17:21:16] Punto 39/116 adquirido
+[17:21:17] BBD -> 160.5 mm
+[17:21:18] Punto 40/116 adquirido
+[17:21:18] BBD -> 160.75 mm
+[17:21:19] Punto 41/116 adquirido
+[17:21:19] BBD -> 161.0 mm
+[17:21:21] Punto 42/116 adquirido
+[17:21:21] BBD -> 161.25 mm
+[17:21:22] Punto 43/116 adquirido
+[17:21:22] BBD -> 161.5 mm
+[17:21:23] Punto 44/116 adquirido
+[17:21:24] BBD -> 161.75 mm
+[17:21:25] Punto 45/116 adquirido
+[17:21:25] BBD -> 162.0 mm
+[17:21:26] Punto 46/116 adquirido
+[17:21:26] BBD -> 162.25 mm
+[17:21:28] Punto 47/116 adquirido
+[17:21:28] BBD -> 162.5 mm
+[17:21:29] Punto 48/116 adquirido
+[17:21:29] BBD -> 162.75 mm
+[17:21:31] Punto 49/116 adquirido
+[17:21:31] BBD -> 163.0 mm
+[17:21:32] Punto 50/116 adquirido
+[17:21:32] BBD -> 163.25 mm
+[17:21:33] Punto 51/116 adquirido
+[17:21:34] BBD -> 163.5 mm
+[17:21:35] Punto 52/116 adquirido
+[17:21:35] BBD -> 163.75 mm
+[17:21:36] Punto 53/116 adquirido
+[17:21:36] BBD -> 164.0 mm
+[17:21:38] Punto 54/116 adquirido
+[17:21:38] BBD -> 164.25 mm
+[17:21:39] Punto 55/116 adquirido
+[17:21:39] BBD -> 164.5 mm
+[17:21:41] Punto 56/116 adquirido
+[17:21:41] BBD -> 164.75 mm
+[17:21:42] Punto 57/116 adquirido
+[17:21:42] BBD -> 165.0 mm
+[17:21:43] Punto 58/116 adquirido
+[17:21:43] Repeticion 3 de 4
+[17:21:44] Lambda -> 640.0 nm
+[17:21:44] Auto rango sensibilidad para lambda 640.0 nm
+[17:21:45] Sensibilidad Lock-in sin cambios
+[17:21:45] Promediando AUX para lambda 640.0 nm
+[17:21:46] AUX promedio: 0.009556
+[17:21:46] AUX promedio lambda 640.0 nm = 0.009556
+[17:21:46] BBD -> 158.0 mm
+[17:21:47] Punto 59/116 adquirido
+[17:21:47] BBD -> 158.25 mm
+[17:21:49] Punto 60/116 adquirido
+[17:21:49] BBD -> 158.5 mm
+[17:21:50] Punto 61/116 adquirido
+[17:21:50] BBD -> 158.75 mm
+[17:21:52] Punto 62/116 adquirido
+[17:21:52] BBD -> 159.0 mm
+[17:21:53] Punto 63/116 adquirido
+[17:21:53] BBD -> 159.25 mm
+[17:21:54] Punto 64/116 adquirido
+[17:21:55] BBD -> 159.5 mm
+[17:21:56] Punto 65/116 adquirido
+[17:21:56] BBD -> 159.75 mm
+[17:21:57] Punto 66/116 adquirido
+[17:21:57] BBD -> 160.0 mm
+[17:21:59] Punto 67/116 adquirido
+[17:21:59] BBD -> 160.25 mm
+[17:22:00] Punto 68/116 adquirido
+[17:22:00] BBD -> 160.5 mm
+[17:22:02] Punto 69/116 adquirido
+[17:22:02] BBD -> 160.75 mm
+[17:22:03] Punto 70/116 adquirido
+[17:22:03] BBD -> 161.0 mm
+[17:22:04] Punto 71/116 adquirido
+[17:22:05] BBD -> 161.25 mm
+[17:22:06] Punto 72/116 adquirido
+[17:22:06] BBD -> 161.5 mm
+[17:22:07] Punto 73/116 adquirido
+[17:22:07] BBD -> 161.75 mm
+[17:22:09] Punto 74/116 adquirido
+[17:22:09] BBD -> 162.0 mm
+[17:22:10] Punto 75/116 adquirido
+[17:22:10] BBD -> 162.25 mm
+[17:22:12] Punto 76/116 adquirido
+[17:22:12] BBD -> 162.5 mm
+[17:22:13] Punto 77/116 adquirido
+[17:22:13] BBD -> 162.75 mm
+[17:22:14] Punto 78/116 adquirido
+[17:22:15] BBD -> 163.0 mm
+[17:22:16] Punto 79/116 adquirido
+[17:22:16] BBD -> 163.25 mm
+[17:22:17] Punto 80/116 adquirido
+[17:22:17] BBD -> 163.5 mm
+[17:22:19] Punto 81/116 adquirido
+[17:22:19] BBD -> 163.75 mm
+[17:22:20] Punto 82/116 adquirido
+[17:22:20] BBD -> 164.0 mm
+[17:22:21] Punto 83/116 adquirido
+[17:22:22] BBD -> 164.25 mm
+[17:22:23] Punto 84/116 adquirido
+[17:22:23] BBD -> 164.5 mm
+[17:22:24] Punto 85/116 adquirido
+[17:22:24] BBD -> 164.75 mm
+[17:22:26] Punto 86/116 adquirido
+[17:22:26] BBD -> 165.0 mm
+[17:22:27] Punto 87/116 adquirido
+[17:22:27] Repeticion 4 de 4
+[17:22:28] Lambda -> 640.0 nm
+[17:22:28] Auto rango sensibilidad para lambda 640.0 nm
+[17:22:28] Sensibilidad Lock-in: 13 -> 9 (R=3.95e-07)
+[17:22:29] Promediando AUX para lambda 640.0 nm
+[17:22:30] AUX promedio: 0.009037
+[17:22:30] AUX promedio lambda 640.0 nm = 0.009037
+[17:22:30] BBD -> 158.0 mm
+[17:22:32] Punto 88/116 adquirido
+[17:22:32] BBD -> 158.25 mm
+[17:22:33] Punto 89/116 adquirido
+[17:22:33] BBD -> 158.5 mm
+[17:22:34] Punto 90/116 adquirido
+[17:22:35] BBD -> 158.75 mm
+[17:22:36] Punto 91/116 adquirido
+[17:22:36] BBD -> 159.0 mm
+[17:22:37] Punto 92/116 adquirido
+[17:22:37] BBD -> 159.25 mm
+[17:22:39] Punto 93/116 adquirido
+[17:22:39] BBD -> 159.5 mm
+[17:22:40] Punto 94/116 adquirido
+[17:22:40] BBD -> 159.75 mm
+[17:22:42] Punto 95/116 adquirido
+[17:22:42] BBD -> 160.0 mm
+[17:22:43] Punto 96/116 adquirido
+[17:22:43] BBD -> 160.25 mm
+[17:22:44] Punto 97/116 adquirido
+[17:22:45] BBD -> 160.5 mm
+[17:22:46] Punto 98/116 adquirido
+[17:22:46] BBD -> 160.75 mm
+[17:22:47] Punto 99/116 adquirido
+[17:22:47] BBD -> 161.0 mm
+[17:22:49] Punto 100/116 adquirido
+[17:22:49] BBD -> 161.25 mm
+[17:22:50] Punto 101/116 adquirido
+[17:22:50] BBD -> 161.5 mm
+[17:22:52] Punto 102/116 adquirido
+[17:22:52] BBD -> 161.75 mm
+[17:22:53] Punto 103/116 adquirido
+[17:22:53] BBD -> 162.0 mm
+[17:22:54] Punto 104/116 adquirido
+[17:22:55] BBD -> 162.25 mm
+[17:22:56] Punto 105/116 adquirido
+[17:22:56] BBD -> 162.5 mm
+[17:22:57] Punto 106/116 adquirido
+[17:22:57] BBD -> 162.75 mm
+[17:22:59] Punto 107/116 adquirido
+[17:22:59] BBD -> 163.0 mm
+[17:23:00] Punto 108/116 adquirido
+[17:23:00] BBD -> 163.25 mm
+[17:23:02] Punto 109/116 adquirido
+[17:23:02] BBD -> 163.5 mm
+[17:23:03] Punto 110/116 adquirido
+[17:23:03] BBD -> 163.75 mm
+[17:23:04] Punto 111/116 adquirido
+[17:23:05] BBD -> 164.0 mm
+[17:23:06] Punto 112/116 adquirido
+[17:23:06] BBD -> 164.25 mm
+[17:23:07] Punto 113/116 adquirido
+[17:23:07] BBD -> 164.5 mm
+[17:23:09] Punto 114/116 adquirido
+[17:23:09] BBD -> 164.75 mm
+[17:23:10] Punto 115/116 adquirido
+[17:23:10] BBD -> 165.0 mm
+[17:23:11] Punto 116/116 adquirido
+[17:23:11] Promedio calculado
+[17:23:11] Medicion finalizada
+[17:23:11] Resultado listo en memoria
+[17:23:24] Inicio solicitado
+[17:23:24] AUX promedio: 0.0
+[17:23:24] Inicio de medicion
+[17:23:24] Repeticion 1 de 4
+[17:23:25] Lambda -> 640.0 nm
+[17:23:25] Auto rango sensibilidad para lambda 640.0 nm
+[17:23:25] Sensibilidad Lock-in sin cambios
+[17:23:25] Promediando AUX para lambda 640.0 nm
+[17:23:26] AUX promedio: 0.008148
+[17:23:26] AUX promedio lambda 640.0 nm = 0.008148
+[17:23:26] BBD -> 162.0 mm
+[17:23:28] Punto 1/84 adquirido
+[17:23:28] BBD -> 162.1 mm
+[17:23:29] Punto 2/84 adquirido
+[17:23:29] BBD -> 162.2 mm
+[17:23:30] Punto 3/84 adquirido
+[17:23:31] BBD -> 162.3 mm
+[17:23:32] Punto 4/84 adquirido
+[17:23:32] BBD -> 162.4 mm
+[17:23:33] Punto 5/84 adquirido
+[17:23:33] BBD -> 162.5 mm
+[17:23:35] Punto 6/84 adquirido
+[17:23:35] BBD -> 162.6 mm
+[17:23:36] Punto 7/84 adquirido
+[17:23:36] BBD -> 162.7 mm
+[17:23:38] Punto 8/84 adquirido
+[17:23:38] BBD -> 162.8 mm
+[17:23:39] Punto 9/84 adquirido
+[17:23:39] BBD -> 162.9 mm
+[17:23:40] Punto 10/84 adquirido
+[17:23:40] BBD -> 163.0 mm
+[17:23:42] Punto 11/84 adquirido
+[17:23:42] BBD -> 163.1 mm
+[17:23:43] Punto 12/84 adquirido
+[17:23:43] BBD -> 163.2 mm
+[17:23:45] Punto 13/84 adquirido
+[17:23:45] BBD -> 163.3 mm
+[17:23:46] Punto 14/84 adquirido
+[17:23:46] BBD -> 163.4 mm
+[17:23:47] Punto 15/84 adquirido
+[17:23:48] BBD -> 163.5 mm
+[17:23:49] Punto 16/84 adquirido
+[17:23:49] BBD -> 163.6 mm
+[17:23:50] Punto 17/84 adquirido
+[17:23:50] BBD -> 163.7 mm
+[17:23:52] Punto 18/84 adquirido
+[17:23:52] BBD -> 163.8 mm
+[17:23:53] Punto 19/84 adquirido
+[17:23:53] BBD -> 163.9 mm
+[17:23:54] Punto 20/84 adquirido
+[17:23:55] BBD -> 164.0 mm
+[17:23:56] Punto 21/84 adquirido
+[17:23:56] Repeticion 2 de 4
+[17:23:57] Lambda -> 640.0 nm
+[17:23:57] Auto rango sensibilidad para lambda 640.0 nm
+[17:23:57] Sensibilidad Lock-in sin cambios
+[17:23:57] Promediando AUX para lambda 640.0 nm
+[17:23:58] AUX promedio: 0.008185
+[17:23:58] AUX promedio lambda 640.0 nm = 0.008185
+[17:23:58] BBD -> 162.0 mm
+[17:24:00] Punto 22/84 adquirido
+[17:24:00] BBD -> 162.1 mm
+[17:24:01] Punto 23/84 adquirido
+[17:24:01] BBD -> 162.2 mm
+[17:24:02] Punto 24/84 adquirido
+[17:24:03] BBD -> 162.3 mm
+[17:24:04] Punto 25/84 adquirido
+[17:24:04] BBD -> 162.4 mm
+[17:24:05] Punto 26/84 adquirido
+[17:24:05] BBD -> 162.5 mm
+[17:24:07] Punto 27/84 adquirido
+[17:24:07] BBD -> 162.6 mm
+[17:24:08] Punto 28/84 adquirido
+[17:24:08] BBD -> 162.7 mm
+[17:24:09] Punto 29/84 adquirido
+[17:24:10] BBD -> 162.8 mm
+[17:24:11] Punto 30/84 adquirido
+[17:24:11] BBD -> 162.9 mm
+[17:24:12] Punto 31/84 adquirido
+[17:24:12] BBD -> 163.0 mm
+[17:24:14] Punto 32/84 adquirido
+[17:24:14] BBD -> 163.1 mm
+[17:24:15] Punto 33/84 adquirido
+[17:24:15] BBD -> 163.2 mm
+[17:24:17] Punto 34/84 adquirido
+[17:24:17] BBD -> 163.3 mm
+[17:24:18] Punto 35/84 adquirido
+[17:24:18] BBD -> 163.4 mm
+[17:24:19] Punto 36/84 adquirido
+[17:24:20] BBD -> 163.5 mm
+[17:24:21] Punto 37/84 adquirido
+[17:24:21] BBD -> 163.6 mm
+[17:24:22] Punto 38/84 adquirido
+[17:24:22] BBD -> 163.7 mm
+[17:24:24] Punto 39/84 adquirido
+[17:24:24] BBD -> 163.8 mm
+[17:24:25] Punto 40/84 adquirido
+[17:24:25] BBD -> 163.9 mm
+[17:24:26] Punto 41/84 adquirido
+[17:24:27] BBD -> 164.0 mm
+[17:24:28] Punto 42/84 adquirido
+[17:24:28] Repeticion 3 de 4
+[17:24:29] Lambda -> 640.0 nm
+[17:24:29] Auto rango sensibilidad para lambda 640.0 nm
+[17:24:29] Sensibilidad Lock-in sin cambios
+[17:24:29] Promediando AUX para lambda 640.0 nm
+[17:24:30] AUX promedio: 0.010704
+[17:24:30] AUX promedio lambda 640.0 nm = 0.010704
+[17:24:30] BBD -> 162.0 mm
+[17:24:32] Punto 43/84 adquirido
+[17:24:32] BBD -> 162.1 mm
+[17:24:33] Punto 44/84 adquirido
+[17:24:33] BBD -> 162.2 mm
+[17:24:34] Punto 45/84 adquirido
+[17:24:35] BBD -> 162.3 mm
+[17:24:36] Punto 46/84 adquirido
+[17:24:36] BBD -> 162.4 mm
+[17:24:37] Punto 47/84 adquirido
+[17:24:37] BBD -> 162.5 mm
+[17:24:39] Punto 48/84 adquirido
+[17:24:39] BBD -> 162.6 mm
+[17:24:40] Punto 49/84 adquirido
+[17:24:40] BBD -> 162.7 mm
+[17:24:41] Punto 50/84 adquirido
+[17:24:42] BBD -> 162.8 mm
+[17:24:43] Punto 51/84 adquirido
+[17:24:43] BBD -> 162.9 mm
+[17:24:44] Punto 52/84 adquirido
+[17:24:44] BBD -> 163.0 mm
+[17:24:46] Punto 53/84 adquirido
+[17:24:46] BBD -> 163.1 mm
+[17:24:47] Punto 54/84 adquirido
+[17:24:47] BBD -> 163.2 mm
+[17:24:48] Punto 55/84 adquirido
+[17:24:49] BBD -> 163.3 mm
+[17:24:50] Punto 56/84 adquirido
+[17:24:50] BBD -> 163.4 mm
+[17:24:51] Punto 57/84 adquirido
+[17:24:51] BBD -> 163.5 mm
+[17:24:53] Punto 58/84 adquirido
+[17:24:53] BBD -> 163.6 mm
+[17:24:54] Punto 59/84 adquirido
+[17:24:54] BBD -> 163.7 mm
+[17:24:56] Punto 60/84 adquirido
+[17:24:56] BBD -> 163.8 mm
+[17:24:57] Punto 61/84 adquirido
+[17:24:57] BBD -> 163.9 mm
+[17:24:58] Punto 62/84 adquirido
+[17:24:59] BBD -> 164.0 mm
+[17:25:00] Punto 63/84 adquirido
+[17:25:00] Repeticion 4 de 4
+[17:25:01] Lambda -> 640.0 nm
+[17:25:01] Auto rango sensibilidad para lambda 640.0 nm
+[17:25:01] Sensibilidad Lock-in sin cambios
+[17:25:01] Promediando AUX para lambda 640.0 nm
+[17:25:02] AUX promedio: 0.010222
+[17:25:02] AUX promedio lambda 640.0 nm = 0.010222
+[17:25:02] BBD -> 162.0 mm
+[17:25:03] Punto 64/84 adquirido
+[17:25:04] BBD -> 162.1 mm
+[17:25:05] Punto 65/84 adquirido
+[17:25:05] BBD -> 162.2 mm
+[17:25:06] Punto 66/84 adquirido
+[17:25:06] BBD -> 162.3 mm
+[17:25:08] Punto 67/84 adquirido
+[17:25:08] BBD -> 162.4 mm
+[17:25:09] Punto 68/84 adquirido
+[17:25:09] BBD -> 162.5 mm
+[17:25:10] Punto 69/84 adquirido
+[17:25:11] BBD -> 162.6 mm
+[17:25:12] Punto 70/84 adquirido
+[17:25:12] BBD -> 162.7 mm
+[17:25:13] Punto 71/84 adquirido
+[17:25:14] BBD -> 162.8 mm
+[17:25:15] Punto 72/84 adquirido
+[17:25:15] BBD -> 162.9 mm
+[17:25:16] Punto 73/84 adquirido
+[17:25:16] BBD -> 163.0 mm
+[17:25:18] Punto 74/84 adquirido
+[17:25:18] BBD -> 163.1 mm
+[17:25:19] Punto 75/84 adquirido
+[17:25:19] BBD -> 163.2 mm
+[17:25:20] Punto 76/84 adquirido
+[17:25:21] BBD -> 163.3 mm
+[17:25:22] Punto 77/84 adquirido
+[17:25:22] BBD -> 163.4 mm
+[17:25:23] Punto 78/84 adquirido
+[17:25:23] BBD -> 163.5 mm
+[17:25:25] Punto 79/84 adquirido
+[17:25:25] BBD -> 163.6 mm
+[17:25:26] Punto 80/84 adquirido
+[17:25:26] BBD -> 163.7 mm
+[17:25:28] Punto 81/84 adquirido
+[17:25:28] BBD -> 163.8 mm
+[17:25:29] Punto 82/84 adquirido
+[17:25:29] BBD -> 163.9 mm
+[17:25:30] Punto 83/84 adquirido
+[17:25:31] BBD -> 164.0 mm
+[17:25:32] Punto 84/84 adquirido
+[17:25:32] Promedio calculado
+[17:25:32] Medicion finalizada
+[17:25:32] Resultado listo en memoria
+[17:26:42] Inicio solicitado
+[17:26:42] AUX promedio: 0.0
+[17:26:42] Inicio de medicion
+[17:26:42] Repeticion 1 de 4
+[17:26:42] Lambda -> 645.0 nm
+[17:26:43] Auto rango sensibilidad para lambda 645.0 nm
+[17:26:43] Sensibilidad Lock-in sin cambios
+[17:26:43] Promediando AUX para lambda 645.0 nm
+[17:26:45] AUX promedio: 0.011889
+[17:26:45] AUX promedio lambda 645.0 nm = 0.011889
+[17:26:45] BBD -> 162.0 mm
+[17:26:46] Punto 1/84 adquirido
+[17:26:46] BBD -> 162.1 mm
+[17:26:47] Punto 2/84 adquirido
+[17:26:48] BBD -> 162.2 mm
+[17:26:49] Punto 3/84 adquirido
+[17:26:49] BBD -> 162.3 mm
+[17:26:50] Punto 4/84 adquirido
+[17:26:50] BBD -> 162.4 mm
+[17:26:52] Punto 5/84 adquirido
+[17:26:52] BBD -> 162.5 mm
+[17:26:53] Punto 6/84 adquirido
+[17:26:53] BBD -> 162.6 mm
+[17:26:55] Punto 7/84 adquirido
+[17:26:55] BBD -> 162.7 mm
+[17:26:56] Punto 8/84 adquirido
+[17:26:56] BBD -> 162.8 mm
+[17:26:57] Punto 9/84 adquirido
+[17:26:57] BBD -> 162.9 mm
+[17:26:59] Punto 10/84 adquirido
+[17:26:59] BBD -> 163.0 mm
+[17:27:00] Punto 11/84 adquirido
+[17:27:00] BBD -> 163.1 mm
+[17:27:02] Punto 12/84 adquirido
+[17:27:02] BBD -> 163.2 mm
+[17:27:03] Punto 13/84 adquirido
+[17:27:03] BBD -> 163.3 mm
+[17:27:04] Punto 14/84 adquirido
+[17:27:05] BBD -> 163.4 mm
+[17:27:06] Punto 15/84 adquirido
+[17:27:06] BBD -> 163.5 mm
+[17:27:07] Punto 16/84 adquirido
+[17:27:07] BBD -> 163.6 mm
+[17:27:09] Punto 17/84 adquirido
+[17:27:09] BBD -> 163.7 mm
+[17:27:10] Punto 18/84 adquirido
+[17:27:10] BBD -> 163.8 mm
+[17:27:11] Punto 19/84 adquirido
+[17:27:12] BBD -> 163.9 mm
+[17:27:13] Punto 20/84 adquirido
+[17:27:13] BBD -> 164.0 mm
+[17:27:14] Punto 21/84 adquirido
+[17:27:14] Repeticion 2 de 4
+[17:27:15] Lambda -> 645.0 nm
+[17:27:15] Auto rango sensibilidad para lambda 645.0 nm
+[17:27:15] Sensibilidad Lock-in sin cambios
+[17:27:15] Promediando AUX para lambda 645.0 nm
+[17:27:16] AUX promedio: 0.012259
+[17:27:16] AUX promedio lambda 645.0 nm = 0.012259
+[17:27:17] BBD -> 162.0 mm
+[17:27:18] Punto 22/84 adquirido
+[17:27:18] BBD -> 162.1 mm
+[17:27:19] Punto 23/84 adquirido
+[17:27:20] BBD -> 162.2 mm
+[17:27:21] Punto 24/84 adquirido
+[17:27:21] BBD -> 162.3 mm
+[17:27:22] Punto 25/84 adquirido
+[17:27:22] BBD -> 162.4 mm
+[17:27:24] Punto 26/84 adquirido
+[17:27:24] BBD -> 162.5 mm
+[17:27:25] Punto 27/84 adquirido
+[17:27:25] BBD -> 162.6 mm
+[17:27:26] Punto 28/84 adquirido
+[17:27:27] BBD -> 162.7 mm
+[17:27:28] Punto 29/84 adquirido
+[17:27:28] BBD -> 162.8 mm
+[17:27:29] Punto 30/84 adquirido
+[17:27:29] BBD -> 162.9 mm
+[17:27:31] Punto 31/84 adquirido
+[17:27:31] BBD -> 163.0 mm
+[17:27:32] Punto 32/84 adquirido
+[17:27:32] BBD -> 163.1 mm
+[17:27:34] Punto 33/84 adquirido
+[17:27:34] BBD -> 163.2 mm
+[17:27:35] Punto 34/84 adquirido
+[17:27:35] BBD -> 163.3 mm
+[17:27:36] Punto 35/84 adquirido
+[17:27:36] BBD -> 163.4 mm
+[17:27:38] Punto 36/84 adquirido
+[17:27:38] BBD -> 163.5 mm
+[17:27:39] Punto 37/84 adquirido
+[17:27:39] BBD -> 163.6 mm
+[17:27:41] Punto 38/84 adquirido
+[17:27:41] BBD -> 163.7 mm
+[17:27:42] Punto 39/84 adquirido
+[17:27:42] BBD -> 163.8 mm
+[17:27:43] Punto 40/84 adquirido
+[17:27:44] BBD -> 163.9 mm
+[17:27:45] Punto 41/84 adquirido
+[17:27:45] BBD -> 164.0 mm
+[17:27:46] Punto 42/84 adquirido
+[17:27:46] Repeticion 3 de 4
+[17:27:47] Lambda -> 645.0 nm
+[17:27:47] Auto rango sensibilidad para lambda 645.0 nm
+[17:27:47] Sensibilidad Lock-in sin cambios
+[17:27:47] Promediando AUX para lambda 645.0 nm
+[17:27:48] AUX promedio: 0.011593
+[17:27:48] AUX promedio lambda 645.0 nm = 0.011593
+[17:27:49] BBD -> 162.0 mm
+[17:27:50] Punto 43/84 adquirido
+[17:27:50] BBD -> 162.1 mm
+[17:27:51] Punto 44/84 adquirido
+[17:27:52] BBD -> 162.2 mm
+[17:27:53] Punto 45/84 adquirido
+[17:27:53] BBD -> 162.3 mm
+[17:27:54] Punto 46/84 adquirido
+[17:27:54] BBD -> 162.4 mm
+[17:27:56] Punto 47/84 adquirido
+[17:27:56] BBD -> 162.5 mm
+[17:27:57] Punto 48/84 adquirido
+[17:27:57] BBD -> 162.6 mm
+[17:27:58] Punto 49/84 adquirido
+[17:27:59] BBD -> 162.7 mm
+[17:28:00] Punto 50/84 adquirido
+[17:28:00] BBD -> 162.8 mm
+[17:28:01] Punto 51/84 adquirido
+[17:28:01] BBD -> 162.9 mm
+[17:28:03] Punto 52/84 adquirido
+[17:28:03] BBD -> 163.0 mm
+[17:28:04] Punto 53/84 adquirido
+[17:28:04] BBD -> 163.1 mm
+[17:28:06] Punto 54/84 adquirido
+[17:28:06] BBD -> 163.2 mm
+[17:28:07] Punto 55/84 adquirido
+[17:28:07] BBD -> 163.3 mm
+[17:28:08] Punto 56/84 adquirido
+[17:28:08] BBD -> 163.4 mm
+[17:28:10] Punto 57/84 adquirido
+[17:28:10] BBD -> 163.5 mm
+[17:28:11] Punto 58/84 adquirido
+[17:28:11] BBD -> 163.6 mm
+[17:28:13] Punto 59/84 adquirido
+[17:28:13] BBD -> 163.7 mm
+[17:28:14] Punto 60/84 adquirido
+[17:28:14] BBD -> 163.8 mm
+[17:28:15] Punto 61/84 adquirido
+[17:28:16] BBD -> 163.9 mm
+[17:28:17] Punto 62/84 adquirido
+[17:28:17] BBD -> 164.0 mm
+[17:28:18] Punto 63/84 adquirido
+[17:28:18] Repeticion 4 de 4
+[17:28:19] Lambda -> 645.0 nm
+[17:28:19] Auto rango sensibilidad para lambda 645.0 nm
+[17:28:19] Sensibilidad Lock-in sin cambios
+[17:28:19] Promediando AUX para lambda 645.0 nm
+[17:28:20] AUX promedio: 0.011185
+[17:28:20] AUX promedio lambda 645.0 nm = 0.011185
+[17:28:20] BBD -> 162.0 mm
+[17:28:22] Punto 64/84 adquirido
+[17:28:22] BBD -> 162.1 mm
+[17:28:23] Punto 65/84 adquirido
+[17:28:23] BBD -> 162.2 mm
+[17:28:25] Punto 66/84 adquirido
+[17:28:25] BBD -> 162.3 mm
+[17:28:26] Punto 67/84 adquirido
+[17:28:26] BBD -> 162.4 mm
+[17:28:28] Punto 68/84 adquirido
+[17:28:28] BBD -> 162.5 mm
+[17:28:29] Punto 69/84 adquirido
+[17:28:29] BBD -> 162.6 mm
+[17:28:30] Punto 70/84 adquirido
+[17:28:31] BBD -> 162.7 mm
+[17:28:32] Punto 71/84 adquirido
+[17:28:32] BBD -> 162.8 mm
+[17:28:33] Punto 72/84 adquirido
+[17:28:33] BBD -> 162.9 mm
+[17:28:35] Punto 73/84 adquirido
+[17:28:35] BBD -> 163.0 mm
+[17:28:36] Punto 74/84 adquirido
+[17:28:36] BBD -> 163.1 mm
+[17:28:37] Punto 75/84 adquirido
+[17:28:38] BBD -> 163.2 mm
+[17:28:39] Punto 76/84 adquirido
+[17:28:39] BBD -> 163.3 mm
+[17:28:40] Punto 77/84 adquirido
+[17:28:40] BBD -> 163.4 mm
+[17:28:42] Punto 78/84 adquirido
+[17:28:42] BBD -> 163.5 mm
+[17:28:43] Punto 79/84 adquirido
+[17:28:43] BBD -> 163.6 mm
+[17:28:45] Punto 80/84 adquirido
+[17:28:45] BBD -> 163.7 mm
+[17:28:46] Punto 81/84 adquirido
+[17:28:46] BBD -> 163.8 mm
+[17:28:47] Punto 82/84 adquirido
+[17:28:48] BBD -> 163.9 mm
+[17:28:49] Punto 83/84 adquirido
+[17:28:49] BBD -> 164.0 mm
+[17:28:50] Punto 84/84 adquirido
+[17:28:50] Promedio calculado
+[17:28:50] Medicion finalizada
+[17:28:50] Resultado listo en memoria
+[17:32:28] Inicio solicitado
+[17:32:28] AUX promedio: 0.0
+[17:32:28] Inicio de medicion
+[17:32:28] Repeticion 1 de 4
+[17:32:29] Lambda -> 645.0 nm
+[17:32:29] Promediando AUX para lambda 645.0 nm
+[17:32:30] AUX promedio: 0.012259
+[17:32:30] AUX promedio lambda 645.0 nm = 0.012259
+[17:32:30] BBD -> 162.0 mm
+[17:32:32] Punto 1/84 adquirido
+[17:32:32] BBD -> 162.1 mm
+[17:32:33] Punto 2/84 adquirido
+[17:32:33] BBD -> 162.2 mm
+[17:32:34] Punto 3/84 adquirido
+[17:32:35] BBD -> 162.3 mm
+[17:32:36] Punto 4/84 adquirido
+[17:32:36] BBD -> 162.4 mm
+[17:32:37] Punto 5/84 adquirido
+[17:32:37] BBD -> 162.5 mm
+[17:32:39] Punto 6/84 adquirido
+[17:32:39] BBD -> 162.6 mm
+[17:32:40] Punto 7/84 adquirido
+[17:32:40] BBD -> 162.7 mm
+[17:32:41] Punto 8/84 adquirido
+[17:32:42] BBD -> 162.8 mm
+[17:32:43] Punto 9/84 adquirido
+[17:32:43] BBD -> 162.9 mm
+[17:32:44] Punto 10/84 adquirido
+[17:32:44] BBD -> 163.0 mm
+[17:32:46] Punto 11/84 adquirido
+[17:32:46] BBD -> 163.1 mm
+[17:32:47] Punto 12/84 adquirido
+[17:32:47] BBD -> 163.2 mm
+[17:32:49] Punto 13/84 adquirido
+[17:32:49] BBD -> 163.3 mm
+[17:32:50] Punto 14/84 adquirido
+[17:32:50] BBD -> 163.4 mm
+[17:32:51] Punto 15/84 adquirido
+[17:32:51] BBD -> 163.5 mm
+[17:32:53] Punto 16/84 adquirido
+[17:32:53] BBD -> 163.6 mm
+[17:32:54] Punto 17/84 adquirido
+[17:32:54] BBD -> 163.7 mm
+[17:32:56] Punto 18/84 adquirido
+[17:32:56] BBD -> 163.8 mm
+[17:32:57] Punto 19/84 adquirido
+[17:32:57] BBD -> 163.9 mm
+[17:32:58] Punto 20/84 adquirido
+[17:32:59] BBD -> 164.0 mm
+[17:33:00] Punto 21/84 adquirido
+[17:33:00] Repeticion 2 de 4
+[17:33:01] Lambda -> 645.0 nm
+[17:33:01] Promediando AUX para lambda 645.0 nm
+[17:33:02] AUX promedio: 0.01263
+[17:33:02] AUX promedio lambda 645.0 nm = 0.01263
+[17:33:02] BBD -> 162.0 mm
+[17:33:03] Punto 22/84 adquirido
+[17:33:04] BBD -> 162.1 mm
+[17:33:05] Punto 23/84 adquirido
+[17:33:05] BBD -> 162.2 mm
+[17:33:06] Punto 24/84 adquirido
+[17:33:06] BBD -> 162.3 mm
+[17:33:08] Punto 25/84 adquirido
+[17:33:08] BBD -> 162.4 mm
+[17:33:09] Punto 26/84 adquirido
+[17:33:09] BBD -> 162.5 mm
+[17:33:11] Punto 27/84 adquirido
+[17:33:11] BBD -> 162.6 mm
+[17:33:12] Punto 28/84 adquirido
+[17:33:12] BBD -> 162.7 mm
+[17:33:13] Punto 29/84 adquirido
+[17:33:14] BBD -> 162.8 mm
+[17:33:15] Punto 30/84 adquirido
+[17:33:15] BBD -> 162.9 mm
+[17:33:16] Punto 31/84 adquirido
+[17:33:16] BBD -> 163.0 mm
+[17:33:18] Punto 32/84 adquirido
+[17:33:18] BBD -> 163.1 mm
+[17:33:19] Punto 33/84 adquirido
+[17:33:19] BBD -> 163.2 mm
+[17:33:20] Punto 34/84 adquirido
+[17:33:21] BBD -> 163.3 mm
+[17:33:22] Punto 35/84 adquirido
+[17:33:22] BBD -> 163.4 mm
+[17:33:23] Punto 36/84 adquirido
+[17:33:23] BBD -> 163.5 mm
+[17:33:25] Punto 37/84 adquirido
+[17:33:25] BBD -> 163.6 mm
+[17:33:26] Punto 38/84 adquirido
+[17:33:26] BBD -> 163.7 mm
+[17:33:27] Punto 39/84 adquirido
+[17:33:28] BBD -> 163.8 mm
+[17:33:29] Punto 40/84 adquirido
+[17:33:29] BBD -> 163.9 mm
+[17:33:30] Punto 41/84 adquirido
+[17:33:30] BBD -> 164.0 mm
+[17:33:32] Punto 42/84 adquirido
+[17:33:32] Repeticion 3 de 4
+[17:33:33] Lambda -> 645.0 nm
+[17:33:33] Promediando AUX para lambda 645.0 nm
+[17:33:34] AUX promedio: 0.013
+[17:33:34] AUX promedio lambda 645.0 nm = 0.013
+[17:33:34] BBD -> 162.0 mm
+[17:33:35] Punto 43/84 adquirido
+[17:33:36] BBD -> 162.1 mm
+[17:33:37] Punto 44/84 adquirido
+[17:33:37] BBD -> 162.2 mm
+[17:33:38] Punto 45/84 adquirido
+[17:33:38] BBD -> 162.3 mm
+[17:33:40] Punto 46/84 adquirido
+[17:33:40] BBD -> 162.4 mm
+[17:33:41] Punto 47/84 adquirido
+[17:33:41] BBD -> 162.5 mm
+[17:33:42] Punto 48/84 adquirido
+[17:33:43] BBD -> 162.6 mm
+[17:33:44] Punto 49/84 adquirido
+[17:33:44] BBD -> 162.7 mm
+[17:33:45] Punto 50/84 adquirido
+[17:33:45] BBD -> 162.8 mm
+[17:33:47] Punto 51/84 adquirido
+[17:33:47] BBD -> 162.9 mm
+[17:33:48] Punto 52/84 adquirido
+[17:33:48] BBD -> 163.0 mm
+[17:33:49] Punto 53/84 adquirido
+[17:33:50] BBD -> 163.1 mm
+[17:33:51] Punto 54/84 adquirido
+[17:33:51] BBD -> 163.2 mm
+[17:33:52] Punto 55/84 adquirido
+[17:33:52] BBD -> 163.3 mm
+[17:33:54] Punto 56/84 adquirido
+[17:33:54] BBD -> 163.4 mm
+[17:33:55] Punto 57/84 adquirido
+[17:33:55] BBD -> 163.5 mm
+[17:33:56] Punto 58/84 adquirido
+[17:33:57] BBD -> 163.6 mm
+[17:33:58] Punto 59/84 adquirido
+[17:33:58] BBD -> 163.7 mm
+[17:33:59] Punto 60/84 adquirido
+[17:33:59] BBD -> 163.8 mm
+[17:34:01] Punto 61/84 adquirido
+[17:34:01] BBD -> 163.9 mm
+[17:34:02] Punto 62/84 adquirido
+[17:34:02] BBD -> 164.0 mm
+[17:34:04] Punto 63/84 adquirido
+[17:34:04] Repeticion 4 de 4
+[17:34:05] Lambda -> 645.0 nm
+[17:34:05] Promediando AUX para lambda 645.0 nm
+[17:34:06] AUX promedio: 0.011519
+[17:34:06] AUX promedio lambda 645.0 nm = 0.011519
+[17:34:06] BBD -> 162.0 mm
+[17:34:07] Punto 64/84 adquirido
+[17:34:07] BBD -> 162.1 mm
+[17:34:09] Punto 65/84 adquirido
+[17:34:09] BBD -> 162.2 mm
+[17:34:10] Punto 66/84 adquirido
+[17:34:10] BBD -> 162.3 mm
+[17:34:11] Punto 67/84 adquirido
+[17:34:12] BBD -> 162.4 mm
+[17:34:13] Punto 68/84 adquirido
+[17:34:13] BBD -> 162.5 mm
+[17:34:14] Punto 69/84 adquirido
+[17:34:14] BBD -> 162.6 mm
+[17:34:16] Punto 70/84 adquirido
+[17:34:16] BBD -> 162.7 mm
+[17:34:17] Punto 71/84 adquirido
+[17:34:17] BBD -> 162.8 mm
+[17:34:18] Punto 72/84 adquirido
+[17:34:19] BBD -> 162.9 mm
+[17:34:20] Punto 73/84 adquirido
+[17:34:20] BBD -> 163.0 mm
+[17:34:21] Punto 74/84 adquirido
+[17:34:21] BBD -> 163.1 mm
+[17:34:23] Punto 75/84 adquirido
+[17:34:23] BBD -> 163.2 mm
+[17:34:24] Punto 76/84 adquirido
+[17:34:24] BBD -> 163.3 mm
+[17:34:25] Punto 77/84 adquirido
+[17:34:26] BBD -> 163.4 mm
+[17:34:27] Punto 78/84 adquirido
+[17:34:27] BBD -> 163.5 mm
+[17:34:28] Punto 79/84 adquirido
+[17:34:28] BBD -> 163.6 mm
+[17:34:30] Punto 80/84 adquirido
+[17:34:30] BBD -> 163.7 mm
+[17:34:31] Punto 81/84 adquirido
+[17:34:31] BBD -> 163.8 mm
+[17:34:33] Punto 82/84 adquirido
+[17:34:33] BBD -> 163.9 mm
+[17:34:34] Punto 83/84 adquirido
+[17:34:34] BBD -> 164.0 mm
+[17:34:35] Punto 84/84 adquirido
+[17:34:35] Promedio calculado
+[17:34:35] Medicion finalizada
+[17:34:35] Resultado listo en memoria
+[17:35:13] Inicio solicitado
+[17:35:13] AUX promedio: 0.0
+[17:35:13] Inicio de medicion
+[17:35:13] Repeticion 1 de 4
+[17:35:14] Lambda -> 645.0 nm
+[17:35:14] Promediando AUX para lambda 645.0 nm
+[17:35:15] AUX promedio: 0.011963
+[17:35:15] AUX promedio lambda 645.0 nm = 0.011963
+[17:35:15] BBD -> 162.0 mm
+[17:35:17] Punto 1/164 adquirido
+[17:35:17] BBD -> 162.05 mm
+[17:35:18] Punto 2/164 adquirido
+[17:35:18] BBD -> 162.1 mm
+[17:35:19] Punto 3/164 adquirido
+[17:35:20] BBD -> 162.15 mm
+[17:35:21] Punto 4/164 adquirido
+[17:35:21] BBD -> 162.2 mm
+[17:35:22] Punto 5/164 adquirido
+[17:35:22] BBD -> 162.25 mm
+[17:35:24] Punto 6/164 adquirido
+[17:35:24] BBD -> 162.3 mm
+[17:35:25] Punto 7/164 adquirido
+[17:35:25] BBD -> 162.35 mm
+[17:35:27] Punto 8/164 adquirido
+[17:35:27] BBD -> 162.4 mm
+[17:35:28] Punto 9/164 adquirido
+[17:35:28] BBD -> 162.45 mm
+[17:35:29] Punto 10/164 adquirido
+[17:35:29] BBD -> 162.5 mm
+[17:35:31] Punto 11/164 adquirido
+[17:35:31] BBD -> 162.55 mm
+[17:35:32] Punto 12/164 adquirido
+[17:35:32] BBD -> 162.6 mm
+[17:35:34] Punto 13/164 adquirido
+[17:35:34] BBD -> 162.65 mm
+[17:35:35] Punto 14/164 adquirido
+[17:35:35] BBD -> 162.7 mm
+[17:35:36] Punto 15/164 adquirido
+[17:35:37] BBD -> 162.75 mm
+[17:35:38] Punto 16/164 adquirido
+[17:35:38] BBD -> 162.8 mm
+[17:35:39] Punto 17/164 adquirido
+[17:35:39] BBD -> 162.85 mm
+[17:35:41] Punto 18/164 adquirido
+[17:35:41] BBD -> 162.9 mm
+[17:35:42] Punto 19/164 adquirido
+[17:35:42] BBD -> 162.95 mm
+[17:35:44] Punto 20/164 adquirido
+[17:35:44] BBD -> 163.0 mm
+[17:35:45] Punto 21/164 adquirido
+[17:35:45] BBD -> 163.05 mm
+[17:35:46] Punto 22/164 adquirido
+[17:35:46] BBD -> 163.1 mm
+[17:35:48] Punto 23/164 adquirido
+[17:35:48] BBD -> 163.15 mm
+[17:35:49] Punto 24/164 adquirido
+[17:35:49] BBD -> 163.2 mm
+[17:35:51] Punto 25/164 adquirido
+[17:35:51] BBD -> 163.25 mm
+[17:35:52] Punto 26/164 adquirido
+[17:35:52] BBD -> 163.3 mm
+[17:35:53] Punto 27/164 adquirido
+[17:35:53] BBD -> 163.35 mm
+[17:35:55] Punto 28/164 adquirido
+[17:35:55] BBD -> 163.4 mm
+[17:35:56] Punto 29/164 adquirido
+[17:35:56] BBD -> 163.45 mm
+[17:35:58] Punto 30/164 adquirido
+[17:35:58] BBD -> 163.5 mm
+[17:35:59] Punto 31/164 adquirido
+[17:35:59] BBD -> 163.55 mm
+[17:36:00] Punto 32/164 adquirido
+[17:36:01] BBD -> 163.6 mm
+[17:36:02] Punto 33/164 adquirido
+[17:36:02] BBD -> 163.65 mm
+[17:36:03] Punto 34/164 adquirido
+[17:36:03] BBD -> 163.7 mm
+[17:36:05] Punto 35/164 adquirido
+[17:36:05] BBD -> 163.75 mm
+[17:36:06] Punto 36/164 adquirido
+[17:36:06] BBD -> 163.8 mm
+[17:36:07] Punto 37/164 adquirido
+[17:36:08] BBD -> 163.85 mm
+[17:36:09] Punto 38/164 adquirido
+[17:36:09] BBD -> 163.9 mm
+[17:36:10] Punto 39/164 adquirido
+[17:36:10] BBD -> 163.95 mm
+[17:36:12] Punto 40/164 adquirido
+[17:36:12] BBD -> 164.0 mm
+[17:36:13] Punto 41/164 adquirido
+[17:36:13] Repeticion 2 de 4
+[17:36:14] Lambda -> 645.0 nm
+[17:36:14] Promediando AUX para lambda 645.0 nm
+[17:36:15] AUX promedio: 0.013667
+[17:36:15] AUX promedio lambda 645.0 nm = 0.013667
+[17:36:15] BBD -> 162.0 mm
+[17:36:17] Punto 42/164 adquirido
+[17:36:17] BBD -> 162.05 mm
+[17:36:18] Punto 43/164 adquirido
+[17:36:18] BBD -> 162.1 mm
+[17:36:19] Punto 44/164 adquirido
+[17:36:20] BBD -> 162.15 mm
+[17:36:21] Punto 45/164 adquirido
+[17:36:21] BBD -> 162.2 mm
+[17:36:22] Punto 46/164 adquirido
+[17:36:22] BBD -> 162.25 mm
+[17:36:24] Punto 47/164 adquirido
+[17:36:24] BBD -> 162.3 mm
+[17:36:25] Punto 48/164 adquirido
+[17:36:25] BBD -> 162.35 mm
+[17:36:26] Punto 49/164 adquirido
+[17:36:27] BBD -> 162.4 mm
+[17:36:28] Punto 50/164 adquirido
+[17:36:28] BBD -> 162.45 mm
+[17:36:29] Punto 51/164 adquirido
+[17:36:29] BBD -> 162.5 mm
+[17:36:31] Punto 52/164 adquirido
+[17:36:31] BBD -> 162.55 mm
+[17:36:32] Punto 53/164 adquirido
+[17:36:32] BBD -> 162.6 mm
+[17:36:33] Punto 54/164 adquirido
+[17:36:34] BBD -> 162.65 mm
+[17:36:35] Punto 55/164 adquirido
+[17:36:35] BBD -> 162.7 mm
+[17:36:36] Punto 56/164 adquirido
+[17:36:36] BBD -> 162.75 mm
+[17:36:38] Punto 57/164 adquirido
+[17:36:38] BBD -> 162.8 mm
+[17:36:39] Punto 58/164 adquirido
+[17:36:39] BBD -> 162.85 mm
+[17:36:41] Punto 59/164 adquirido
+[17:36:41] BBD -> 162.9 mm
+[17:36:42] Punto 60/164 adquirido
+[17:36:42] BBD -> 162.95 mm
+[17:36:43] Punto 61/164 adquirido
+[17:36:44] BBD -> 163.0 mm
+[17:36:45] Punto 62/164 adquirido
+[17:36:45] BBD -> 163.05 mm
+[17:36:46] Punto 63/164 adquirido
+[17:36:46] BBD -> 163.1 mm
+[17:36:48] Punto 64/164 adquirido
+[17:36:48] BBD -> 163.15 mm
+[17:36:49] Punto 65/164 adquirido
+[17:36:49] BBD -> 163.2 mm
+[17:36:50] Punto 66/164 adquirido
+[17:36:51] BBD -> 163.25 mm
+[17:36:52] Punto 67/164 adquirido
+[17:36:52] BBD -> 163.3 mm
+[17:36:53] Punto 68/164 adquirido
+[17:36:53] BBD -> 163.35 mm
+[17:36:55] Punto 69/164 adquirido
+[17:36:55] BBD -> 163.4 mm
+[17:36:56] Punto 70/164 adquirido
+[17:36:56] BBD -> 163.45 mm
+[17:36:57] Punto 71/164 adquirido
+[17:36:58] BBD -> 163.5 mm
+[17:36:59] Punto 72/164 adquirido
+[17:36:59] BBD -> 163.55 mm
+[17:37:00] Punto 73/164 adquirido
+[17:37:00] BBD -> 163.6 mm
+[17:37:02] Punto 74/164 adquirido
+[17:37:02] BBD -> 163.65 mm
+[17:37:03] Punto 75/164 adquirido
+[17:37:03] BBD -> 163.7 mm
+[17:37:04] Punto 76/164 adquirido
+[17:37:05] BBD -> 163.75 mm
+[17:37:06] Punto 77/164 adquirido
+[17:37:06] BBD -> 163.8 mm
+[17:37:07] Punto 78/164 adquirido
+[17:37:07] BBD -> 163.85 mm
+[17:37:09] Punto 79/164 adquirido
+[17:37:09] BBD -> 163.9 mm
+[17:37:10] Punto 80/164 adquirido
+[17:37:10] BBD -> 163.95 mm
+[17:37:12] Punto 81/164 adquirido
+[17:37:12] BBD -> 164.0 mm
+[17:37:13] Punto 82/164 adquirido
+[17:37:13] Repeticion 3 de 4
+[17:37:14] Lambda -> 645.0 nm
+[17:37:14] Promediando AUX para lambda 645.0 nm
+[17:37:15] AUX promedio: 0.011111
+[17:37:15] AUX promedio lambda 645.0 nm = 0.011111
+[17:37:15] BBD -> 162.0 mm
+[17:37:17] Punto 83/164 adquirido
+[17:37:17] BBD -> 162.05 mm
+[17:37:18] Punto 84/164 adquirido
+[17:37:18] BBD -> 162.1 mm
+[17:37:19] Punto 85/164 adquirido
+[17:37:20] BBD -> 162.15 mm
+[17:37:21] Punto 86/164 adquirido
+[17:37:21] BBD -> 162.2 mm
+[17:37:22] Punto 87/164 adquirido
+[17:37:22] BBD -> 162.25 mm
+[17:37:24] Punto 88/164 adquirido
+[17:37:24] BBD -> 162.3 mm
+[17:37:25] Punto 89/164 adquirido
+[17:37:25] BBD -> 162.35 mm
+[17:37:26] Punto 90/164 adquirido
+[17:37:27] BBD -> 162.4 mm
+[17:37:28] Punto 91/164 adquirido
+[17:37:28] BBD -> 162.45 mm
+[17:37:29] Punto 92/164 adquirido
+[17:37:29] BBD -> 162.5 mm
+[17:37:31] Punto 93/164 adquirido
+[17:37:31] BBD -> 162.55 mm
+[17:37:32] Punto 94/164 adquirido
+[17:37:32] BBD -> 162.6 mm
+[17:37:33] Punto 95/164 adquirido
+[17:37:34] BBD -> 162.65 mm
+[17:37:35] Punto 96/164 adquirido
+[17:37:35] BBD -> 162.7 mm
+[17:37:36] Punto 97/164 adquirido
+[17:37:36] BBD -> 162.75 mm
+[17:37:38] Punto 98/164 adquirido
+[17:37:38] BBD -> 162.8 mm
+[17:37:39] Punto 99/164 adquirido
+[17:37:39] BBD -> 162.85 mm
+[17:37:41] Punto 100/164 adquirido
+[17:37:41] BBD -> 162.9 mm
+[17:37:42] Punto 101/164 adquirido
+[17:37:42] BBD -> 162.95 mm
+[17:37:43] Punto 102/164 adquirido
+[17:37:43] BBD -> 163.0 mm
+[17:37:45] Punto 103/164 adquirido
+[17:37:45] BBD -> 163.05 mm
+[17:37:46] Punto 104/164 adquirido
+[17:37:46] BBD -> 163.1 mm
+[17:37:48] Punto 105/164 adquirido
+[17:37:48] BBD -> 163.15 mm
+[17:37:49] Punto 106/164 adquirido
+[17:37:49] BBD -> 163.2 mm
+[17:37:50] Punto 107/164 adquirido
+[17:37:51] BBD -> 163.25 mm
+[17:37:52] Punto 108/164 adquirido
+[17:37:52] BBD -> 163.3 mm
+[17:37:53] Punto 109/164 adquirido
+[17:37:53] BBD -> 163.35 mm
+[17:37:55] Punto 110/164 adquirido
+[17:37:55] BBD -> 163.4 mm
+[17:37:56] Punto 111/164 adquirido
+[17:37:56] BBD -> 163.45 mm
+[17:37:57] Punto 112/164 adquirido
+[17:37:58] BBD -> 163.5 mm
+[17:37:59] Punto 113/164 adquirido
+[17:37:59] BBD -> 163.55 mm
+[17:38:00] Punto 114/164 adquirido
+[17:38:00] BBD -> 163.6 mm
+[17:38:02] Punto 115/164 adquirido
+[17:38:02] BBD -> 163.65 mm
+[17:38:03] Punto 116/164 adquirido
+[17:38:03] BBD -> 163.7 mm
+[17:38:04] Punto 117/164 adquirido
+[17:38:05] BBD -> 163.75 mm
+[17:38:06] Punto 118/164 adquirido
+[17:38:06] BBD -> 163.8 mm
+[17:38:07] Punto 119/164 adquirido
+[17:38:07] BBD -> 163.85 mm
+[17:38:09] Punto 120/164 adquirido
+[17:38:09] BBD -> 163.9 mm
+[17:38:10] Punto 121/164 adquirido
+[17:38:10] BBD -> 163.95 mm
+[17:38:11] Punto 122/164 adquirido
+[17:38:12] BBD -> 164.0 mm
+[17:38:13] Punto 123/164 adquirido
+[17:38:13] Repeticion 4 de 4
+[17:38:14] Lambda -> 645.0 nm
+[17:38:14] Promediando AUX para lambda 645.0 nm
+[17:38:15] AUX promedio: 0.011037
+[17:38:15] AUX promedio lambda 645.0 nm = 0.011037
+[17:38:15] BBD -> 162.0 mm
+[17:38:16] Punto 124/164 adquirido
+[17:38:17] BBD -> 162.05 mm
+[17:38:18] Punto 125/164 adquirido
+[17:38:18] BBD -> 162.1 mm
+[17:38:19] Punto 126/164 adquirido
+[17:38:19] BBD -> 162.15 mm
+[17:38:21] Punto 127/164 adquirido
+[17:38:21] BBD -> 162.2 mm
+[17:38:22] Punto 128/164 adquirido
+[17:38:22] BBD -> 162.25 mm
+[17:38:23] Punto 129/164 adquirido
+[17:38:24] BBD -> 162.3 mm
+[17:38:25] Punto 130/164 adquirido
+[17:38:25] BBD -> 162.35 mm
+[17:38:26] Punto 131/164 adquirido
+[17:38:26] BBD -> 162.4 mm
+[17:38:28] Punto 132/164 adquirido
+[17:38:28] BBD -> 162.45 mm
+[17:38:29] Punto 133/164 adquirido
+[17:38:29] BBD -> 162.5 mm
+[17:38:30] Punto 134/164 adquirido
+[17:38:31] BBD -> 162.55 mm
+[17:38:32] Cancelacion solicitada
+[17:38:32] Medicion cancelada
+[17:38:32] Resultado parcial listo en memoria
+[17:38:45] Inicio solicitado
+[17:38:45] AUX promedio: 0.0
+[17:38:45] Inicio de medicion
+[17:38:45] Repeticion 1 de 4
+[17:38:45] Lambda -> 640.0 nm
+[17:38:47] Promediando AUX para lambda 640.0 nm
+[17:38:48] AUX promedio: 0.011125
+[17:38:48] AUX promedio lambda 640.0 nm = 0.011125
+[17:38:48] BBD -> 162.0 mm
+[17:38:49] Punto 1/164 adquirido
+[17:38:49] BBD -> 162.05 mm
+[17:38:51] Punto 2/164 adquirido
+[17:38:51] BBD -> 162.1 mm
+[17:38:52] Punto 3/164 adquirido
+[17:38:52] BBD -> 162.15 mm
+[17:38:54] Punto 4/164 adquirido
+[17:38:54] BBD -> 162.2 mm
+[17:38:55] Punto 5/164 adquirido
+[17:38:55] BBD -> 162.25 mm
+[17:38:56] Punto 6/164 adquirido
+[17:38:56] BBD -> 162.3 mm
+[17:38:58] Punto 7/164 adquirido
+[17:38:58] BBD -> 162.35 mm
+[17:38:59] Punto 8/164 adquirido
+[17:38:59] BBD -> 162.4 mm
+[17:39:01] Punto 9/164 adquirido
+[17:39:01] BBD -> 162.45 mm
+[17:39:02] Punto 10/164 adquirido
+[17:39:02] BBD -> 162.5 mm
+[17:39:03] Punto 11/164 adquirido
+[17:39:03] BBD -> 162.55 mm
+[17:39:05] Punto 12/164 adquirido
+[17:39:05] BBD -> 162.6 mm
+[17:39:06] Punto 13/164 adquirido
+[17:39:06] BBD -> 162.65 mm
+[17:39:08] Punto 14/164 adquirido
+[17:39:08] BBD -> 162.7 mm
+[17:39:09] Punto 15/164 adquirido
+[17:39:09] BBD -> 162.75 mm
+[17:39:10] Punto 16/164 adquirido
+[17:39:10] BBD -> 162.8 mm
+[17:39:12] Punto 17/164 adquirido
+[17:39:12] BBD -> 162.85 mm
+[17:39:13] Punto 18/164 adquirido
+[17:39:13] BBD -> 162.9 mm
+[17:39:15] Punto 19/164 adquirido
+[17:39:15] BBD -> 162.95 mm
+[17:39:16] Punto 20/164 adquirido
+[17:39:16] BBD -> 163.0 mm
+[17:39:17] Punto 21/164 adquirido
+[17:39:18] BBD -> 163.05 mm
+[17:39:19] Punto 22/164 adquirido
+[17:39:19] BBD -> 163.1 mm
+[17:39:20] Punto 23/164 adquirido
+[17:39:20] BBD -> 163.15 mm
+[17:39:22] Punto 24/164 adquirido
+[17:39:22] BBD -> 163.2 mm
+[17:39:23] Punto 25/164 adquirido
+[17:39:23] BBD -> 163.25 mm
+[17:39:24] Punto 26/164 adquirido
+[17:39:25] BBD -> 163.3 mm
+[17:39:26] Punto 27/164 adquirido
+[17:39:26] BBD -> 163.35 mm
+[17:39:27] Punto 28/164 adquirido
+[17:39:27] BBD -> 163.4 mm
+[17:39:29] Punto 29/164 adquirido
+[17:39:29] BBD -> 163.45 mm
+[17:39:30] Punto 30/164 adquirido
+[17:39:30] BBD -> 163.5 mm
+[17:39:31] Punto 31/164 adquirido
+[17:39:32] BBD -> 163.55 mm
+[17:39:33] Punto 32/164 adquirido
+[17:39:33] BBD -> 163.6 mm
+[17:39:34] Punto 33/164 adquirido
+[17:39:34] BBD -> 163.65 mm
+[17:39:36] Punto 34/164 adquirido
+[17:39:36] BBD -> 163.7 mm
+[17:39:37] Punto 35/164 adquirido
+[17:39:37] BBD -> 163.75 mm
+[17:39:38] Punto 36/164 adquirido
+[17:39:39] BBD -> 163.8 mm
+[17:39:40] Punto 37/164 adquirido
+[17:39:40] BBD -> 163.85 mm
+[17:39:41] Punto 38/164 adquirido
+[17:39:41] BBD -> 163.9 mm
+[17:39:43] Punto 39/164 adquirido
+[17:39:43] BBD -> 163.95 mm
+[17:39:44] Punto 40/164 adquirido
+[17:39:44] BBD -> 164.0 mm
+[17:39:46] Punto 41/164 adquirido
+[17:39:46] Repeticion 2 de 4
+[17:39:47] Lambda -> 640.0 nm
+[17:39:47] Promediando AUX para lambda 640.0 nm
+[17:39:48] AUX promedio: 0.010222
+[17:39:48] AUX promedio lambda 640.0 nm = 0.010222
+[17:39:48] BBD -> 162.0 mm
+[17:39:49] Punto 42/164 adquirido
+[17:39:49] BBD -> 162.05 mm
+[17:39:51] Punto 43/164 adquirido
+[17:39:51] BBD -> 162.1 mm
+[17:39:52] Punto 44/164 adquirido
+[17:39:52] BBD -> 162.15 mm
+[17:39:53] Punto 45/164 adquirido
+[17:39:54] BBD -> 162.2 mm
+[17:39:55] Punto 46/164 adquirido
+[17:39:55] BBD -> 162.25 mm
+[17:39:56] Punto 47/164 adquirido
+[17:39:56] BBD -> 162.3 mm
+[17:39:58] Punto 48/164 adquirido
+[17:39:58] BBD -> 162.35 mm
+[17:39:59] Punto 49/164 adquirido
+[17:39:59] BBD -> 162.4 mm
+[17:40:00] Punto 50/164 adquirido
+[17:40:01] BBD -> 162.45 mm
+[17:40:02] Punto 51/164 adquirido
+[17:40:02] BBD -> 162.5 mm
+[17:40:03] Punto 52/164 adquirido
+[17:40:03] BBD -> 162.55 mm
+[17:40:05] Punto 53/164 adquirido
+[17:40:05] BBD -> 162.6 mm
+[17:40:06] Punto 54/164 adquirido
+[17:40:06] BBD -> 162.65 mm
+[17:40:07] Punto 55/164 adquirido
+[17:40:08] BBD -> 162.7 mm
+[17:40:09] Punto 56/164 adquirido
+[17:40:09] BBD -> 162.75 mm
+[17:40:10] Punto 57/164 adquirido
+[17:40:10] BBD -> 162.8 mm
+[17:40:12] Punto 58/164 adquirido
+[17:40:12] BBD -> 162.85 mm
+[17:40:13] Punto 59/164 adquirido
+[17:40:13] BBD -> 162.9 mm
+[17:40:14] Punto 60/164 adquirido
+[17:40:15] BBD -> 162.95 mm
+[17:40:16] Punto 61/164 adquirido
+[17:40:16] BBD -> 163.0 mm
+[17:40:17] Punto 62/164 adquirido
+[17:40:17] BBD -> 163.05 mm
+[17:40:19] Punto 63/164 adquirido
+[17:40:19] BBD -> 163.1 mm
+[17:40:20] Punto 64/164 adquirido
+[17:40:20] BBD -> 163.15 mm
+[17:40:22] Punto 65/164 adquirido
+[17:40:22] BBD -> 163.2 mm
+[17:40:23] Punto 66/164 adquirido
+[17:40:23] BBD -> 163.25 mm
+[17:40:24] Punto 67/164 adquirido
+[17:40:25] BBD -> 163.3 mm
+[17:40:26] Punto 68/164 adquirido
+[17:40:26] BBD -> 163.35 mm
+[17:40:27] Punto 69/164 adquirido
+[17:40:27] BBD -> 163.4 mm
+[17:40:29] Punto 70/164 adquirido
+[17:40:29] BBD -> 163.45 mm
+[17:40:30] Punto 71/164 adquirido
+[17:40:30] BBD -> 163.5 mm
+[17:40:31] Punto 72/164 adquirido
+[17:40:32] BBD -> 163.55 mm
+[17:40:33] Punto 73/164 adquirido
+[17:40:33] BBD -> 163.6 mm
+[17:40:34] Punto 74/164 adquirido
+[17:40:34] BBD -> 163.65 mm
+[17:40:36] Punto 75/164 adquirido
+[17:40:36] BBD -> 163.7 mm
+[17:40:37] Punto 76/164 adquirido
+[17:40:37] BBD -> 163.75 mm
+[17:40:38] Punto 77/164 adquirido
+[17:40:39] BBD -> 163.8 mm
+[17:40:40] Punto 78/164 adquirido
+[17:40:40] BBD -> 163.85 mm
+[17:40:41] Punto 79/164 adquirido
+[17:40:41] BBD -> 163.9 mm
+[17:40:43] Punto 80/164 adquirido
+[17:40:43] BBD -> 163.95 mm
+[17:40:44] Punto 81/164 adquirido
+[17:40:44] BBD -> 164.0 mm
+[17:40:45] Punto 82/164 adquirido
+[17:40:45] Repeticion 3 de 4
+[17:40:46] Lambda -> 640.0 nm
+[17:40:46] Promediando AUX para lambda 640.0 nm
+[17:40:48] AUX promedio: 0.017208
+[17:40:48] AUX promedio lambda 640.0 nm = 0.017208
+[17:40:48] BBD -> 162.0 mm
+[17:40:49] Punto 83/164 adquirido
+[17:40:49] BBD -> 162.05 mm
+[17:40:50] Punto 84/164 adquirido
+[17:40:51] BBD -> 162.1 mm
+[17:40:52] Punto 85/164 adquirido
+[17:40:52] BBD -> 162.15 mm
+[17:40:53] Punto 86/164 adquirido
+[17:40:53] BBD -> 162.2 mm
+[17:40:55] Punto 87/164 adquirido
+[17:40:55] BBD -> 162.25 mm
+[17:40:56] Punto 88/164 adquirido
+[17:40:56] BBD -> 162.3 mm
+[17:40:57] Punto 89/164 adquirido
+[17:40:58] BBD -> 162.35 mm
+[17:40:59] Punto 90/164 adquirido
+[17:40:59] BBD -> 162.4 mm
+[17:41:00] Punto 91/164 adquirido
+[17:41:00] BBD -> 162.45 mm
+[17:41:02] Punto 92/164 adquirido
+[17:41:02] BBD -> 162.5 mm
+[17:41:03] Punto 93/164 adquirido
+[17:41:03] BBD -> 162.55 mm
+[17:41:05] Punto 94/164 adquirido
+[17:41:05] BBD -> 162.6 mm
+[17:41:06] Punto 95/164 adquirido
+[17:41:06] BBD -> 162.65 mm
+[17:41:07] Punto 96/164 adquirido
+[17:41:08] BBD -> 162.7 mm
+[17:41:09] Punto 97/164 adquirido
+[17:41:09] BBD -> 162.75 mm
+[17:41:10] Punto 98/164 adquirido
+[17:41:10] BBD -> 162.8 mm
+[17:41:12] Punto 99/164 adquirido
+[17:41:12] BBD -> 162.85 mm
+[17:41:13] Punto 100/164 adquirido
+[17:41:13] BBD -> 162.9 mm
+[17:41:14] Punto 101/164 adquirido
+[17:41:15] BBD -> 162.95 mm
+[17:41:16] Punto 102/164 adquirido
+[17:41:16] BBD -> 163.0 mm
+[17:41:17] Punto 103/164 adquirido
+[17:41:17] BBD -> 163.05 mm
+[17:41:19] Punto 104/164 adquirido
+[17:41:19] BBD -> 163.1 mm
+[17:41:20] Punto 105/164 adquirido
+[17:41:20] BBD -> 163.15 mm
+[17:41:21] Punto 106/164 adquirido
+[17:41:22] BBD -> 163.2 mm
+[17:41:23] Punto 107/164 adquirido
+[17:41:23] BBD -> 163.25 mm
+[17:41:24] Punto 108/164 adquirido
+[17:41:24] BBD -> 163.3 mm
+[17:41:26] Punto 109/164 adquirido
+[17:41:26] BBD -> 163.35 mm
+[17:41:27] Punto 110/164 adquirido
+[17:41:27] BBD -> 163.4 mm
+[17:41:28] Punto 111/164 adquirido
+[17:41:29] BBD -> 163.45 mm
+[17:41:30] Punto 112/164 adquirido
+[17:41:30] BBD -> 163.5 mm
+[17:41:31] Punto 113/164 adquirido
+[17:41:31] BBD -> 163.55 mm
+[17:41:33] Punto 114/164 adquirido
+[17:41:33] BBD -> 163.6 mm
+[17:41:34] Punto 115/164 adquirido
+[17:41:34] BBD -> 163.65 mm
+[17:41:35] Punto 116/164 adquirido
+[17:41:36] BBD -> 163.7 mm
+[17:41:37] Punto 117/164 adquirido
+[17:41:37] BBD -> 163.75 mm
+[17:41:38] Punto 118/164 adquirido
+[17:41:38] BBD -> 163.8 mm
+[17:41:40] Punto 119/164 adquirido
+[17:41:40] BBD -> 163.85 mm
+[17:41:41] Punto 120/164 adquirido
+[17:41:41] BBD -> 163.9 mm
+[17:41:43] Punto 121/164 adquirido
+[17:41:43] BBD -> 163.95 mm
+[17:41:44] Punto 122/164 adquirido
+[17:41:44] BBD -> 164.0 mm
+[17:41:45] Punto 123/164 adquirido
+[17:41:45] Repeticion 4 de 4
+[17:41:46] Lambda -> 640.0 nm
+[17:41:46] Promediando AUX para lambda 640.0 nm
+[17:41:47] AUX promedio: 0.013889
+[17:41:47] AUX promedio lambda 640.0 nm = 0.013889
+[17:41:48] BBD -> 162.0 mm
+[17:41:49] Punto 124/164 adquirido
+[17:41:49] BBD -> 162.05 mm
+[17:41:50] Punto 125/164 adquirido
+[17:41:51] BBD -> 162.1 mm
+[17:41:52] Punto 126/164 adquirido
+[17:41:52] BBD -> 162.15 mm
+[17:41:53] Punto 127/164 adquirido
+[17:41:53] BBD -> 162.2 mm
+[17:41:55] Punto 128/164 adquirido
+[17:41:55] BBD -> 162.25 mm
+[17:41:56] Punto 129/164 adquirido
+[17:41:56] BBD -> 162.3 mm
+[17:41:58] Punto 130/164 adquirido
+[17:41:58] BBD -> 162.35 mm
+[17:41:59] Punto 131/164 adquirido
+[17:41:59] BBD -> 162.4 mm
+[17:42:00] Punto 132/164 adquirido
+[17:42:01] BBD -> 162.45 mm
+[17:42:02] Punto 133/164 adquirido
+[17:42:02] BBD -> 162.5 mm
+[17:42:03] Punto 134/164 adquirido
+[17:42:03] BBD -> 162.55 mm
+[17:42:05] Punto 135/164 adquirido
+[17:42:05] BBD -> 162.6 mm
+[17:42:06] Punto 136/164 adquirido
+[17:42:06] BBD -> 162.65 mm
+[17:42:07] Punto 137/164 adquirido
+[17:42:08] BBD -> 162.7 mm
+[17:42:09] Punto 138/164 adquirido
+[17:42:09] BBD -> 162.75 mm
+[17:42:10] Punto 139/164 adquirido
+[17:42:10] BBD -> 162.8 mm
+[17:42:12] Punto 140/164 adquirido
+[17:42:12] BBD -> 162.85 mm
+[17:42:13] Punto 141/164 adquirido
+[17:42:13] BBD -> 162.9 mm
+[17:42:14] Punto 142/164 adquirido
+[17:42:15] BBD -> 162.95 mm
+[17:42:16] Punto 143/164 adquirido
+[17:42:16] BBD -> 163.0 mm
+[17:42:17] Punto 144/164 adquirido
+[17:42:17] BBD -> 163.05 mm
+[17:42:19] Punto 145/164 adquirido
+[17:42:19] BBD -> 163.1 mm
+[17:42:20] Punto 146/164 adquirido
+[17:42:20] BBD -> 163.15 mm
+[17:42:21] Punto 147/164 adquirido
+[17:42:22] BBD -> 163.2 mm
+[17:42:23] Punto 148/164 adquirido
+[17:42:23] BBD -> 163.25 mm
+[17:42:24] Punto 149/164 adquirido
+[17:42:25] BBD -> 163.3 mm
+[17:42:26] Punto 150/164 adquirido
+[17:42:26] BBD -> 163.35 mm
+[17:42:27] Punto 151/164 adquirido
+[17:42:27] BBD -> 163.4 mm
+[17:42:29] Punto 152/164 adquirido
+[17:42:29] BBD -> 163.45 mm
+[17:42:30] Punto 153/164 adquirido
+[17:42:30] BBD -> 163.5 mm
+[17:42:31] Punto 154/164 adquirido
+[17:42:32] BBD -> 163.55 mm
+[17:42:33] Punto 155/164 adquirido
+[17:42:33] BBD -> 163.6 mm
+[17:42:34] Punto 156/164 adquirido
+[17:42:34] BBD -> 163.65 mm
+[17:42:36] Punto 157/164 adquirido
+[17:42:36] BBD -> 163.7 mm
+[17:42:37] Punto 158/164 adquirido
+[17:42:37] BBD -> 163.75 mm
+[17:42:38] Punto 159/164 adquirido
+[17:42:39] BBD -> 163.8 mm
+[17:42:40] Punto 160/164 adquirido
+[17:42:40] BBD -> 163.85 mm
+[17:42:41] Punto 161/164 adquirido
+[17:42:41] BBD -> 163.9 mm
+[17:42:43] Punto 162/164 adquirido
+[17:42:43] BBD -> 163.95 mm
+[17:42:44] Punto 163/164 adquirido
+[17:42:44] BBD -> 164.0 mm
+[17:42:45] Punto 164/164 adquirido
+[17:42:45] Promedio calculado
+[17:42:45] Medicion finalizada
+[17:42:45] Resultado listo en memoria
+[17:44:50] Inicio solicitado
+[17:44:50] AUX promedio: 0.0
+[17:44:50] Inicio de medicion
+[17:44:50] Repeticion 1 de 4
+[17:44:51] Lambda -> 640.0 nm
+[17:44:51] Promediando AUX para lambda 640.0 nm
+[17:44:52] AUX promedio: 0.011259
+[17:44:52] AUX promedio lambda 640.0 nm = 0.011259
+[17:44:52] BBD -> 162.0 mm
+[17:44:53] Punto 1/164 adquirido
+[17:44:54] BBD -> 162.05 mm
+[17:44:55] Punto 2/164 adquirido
+[17:44:55] BBD -> 162.1 mm
+[17:44:56] Punto 3/164 adquirido
+[17:44:56] BBD -> 162.15 mm
+[17:44:58] Punto 4/164 adquirido
+[17:44:58] BBD -> 162.2 mm
+[17:44:59] Punto 5/164 adquirido
+[17:44:59] BBD -> 162.25 mm
+[17:45:00] Punto 6/164 adquirido
+[17:45:01] BBD -> 162.3 mm
+[17:45:02] Punto 7/164 adquirido
+[17:45:02] BBD -> 162.35 mm
+[17:45:03] Punto 8/164 adquirido
+[17:45:03] BBD -> 162.4 mm
+[17:45:05] Punto 9/164 adquirido
+[17:45:05] BBD -> 162.45 mm
+[17:45:06] Punto 10/164 adquirido
+[17:45:06] BBD -> 162.5 mm
+[17:45:08] Punto 11/164 adquirido
+[17:45:08] BBD -> 162.55 mm
+[17:45:09] Punto 12/164 adquirido
+[17:45:09] BBD -> 162.6 mm
+[17:45:10] Punto 13/164 adquirido
+[17:45:10] BBD -> 162.65 mm
+[17:45:12] Punto 14/164 adquirido
+[17:45:12] BBD -> 162.7 mm
+[17:45:13] Punto 15/164 adquirido
+[17:45:13] BBD -> 162.75 mm
+[17:45:15] Punto 16/164 adquirido
+[17:45:15] BBD -> 162.8 mm
+[17:45:16] Punto 17/164 adquirido
+[17:45:16] BBD -> 162.85 mm
+[17:45:17] Punto 18/164 adquirido
+[17:45:18] BBD -> 162.9 mm
+[17:45:19] Punto 19/164 adquirido
+[17:45:19] BBD -> 162.95 mm
+[17:45:20] Punto 20/164 adquirido
+[17:45:20] BBD -> 163.0 mm
+[17:45:22] Punto 21/164 adquirido
+[17:45:22] BBD -> 163.05 mm
+[17:45:23] Punto 22/164 adquirido
+[17:45:23] BBD -> 163.1 mm
+[17:45:24] Punto 23/164 adquirido
+[17:45:25] BBD -> 163.15 mm
+[17:45:26] Punto 24/164 adquirido
+[17:45:26] BBD -> 163.2 mm
+[17:45:27] Punto 25/164 adquirido
+[17:45:27] BBD -> 163.25 mm
+[17:45:29] Punto 26/164 adquirido
+[17:45:29] BBD -> 163.3 mm
+[17:45:30] Punto 27/164 adquirido
+[17:45:30] BBD -> 163.35 mm
+[17:45:31] Punto 28/164 adquirido
+[17:45:32] BBD -> 163.4 mm
+[17:45:33] Punto 29/164 adquirido
+[17:45:33] BBD -> 163.45 mm
+[17:45:34] Punto 30/164 adquirido
+[17:45:34] BBD -> 163.5 mm
+[17:45:36] Punto 31/164 adquirido
+[17:45:36] BBD -> 163.55 mm
+[17:45:37] Punto 32/164 adquirido
+[17:45:37] BBD -> 163.6 mm
+[17:45:39] Punto 33/164 adquirido
+[17:45:39] BBD -> 163.65 mm
+[17:45:40] Punto 34/164 adquirido
+[17:45:40] BBD -> 163.7 mm
+[17:45:41] Punto 35/164 adquirido
+[17:45:41] BBD -> 163.75 mm
+[17:45:43] Punto 36/164 adquirido
+[17:45:43] BBD -> 163.8 mm
+[17:45:44] Punto 37/164 adquirido
+[17:45:44] BBD -> 163.85 mm
+[17:45:45] Punto 38/164 adquirido
+[17:45:46] BBD -> 163.9 mm
+[17:45:47] Punto 39/164 adquirido
+[17:45:47] BBD -> 163.95 mm
+[17:45:48] Punto 40/164 adquirido
+[17:45:48] BBD -> 164.0 mm
+[17:45:50] Punto 41/164 adquirido
+[17:45:50] Repeticion 2 de 4
+[17:45:51] Lambda -> 640.0 nm
+[17:45:51] Promediando AUX para lambda 640.0 nm
+[17:45:52] AUX promedio: 0.010926
+[17:45:52] AUX promedio lambda 640.0 nm = 0.010926
+[17:45:52] BBD -> 162.0 mm
+[17:45:53] Punto 42/164 adquirido
+[17:45:54] BBD -> 162.05 mm
+[17:45:55] Punto 43/164 adquirido
+[17:45:55] BBD -> 162.1 mm
+[17:45:56] Punto 44/164 adquirido
+[17:45:56] BBD -> 162.15 mm
+[17:45:58] Punto 45/164 adquirido
+[17:45:58] BBD -> 162.2 mm
+[17:45:59] Punto 46/164 adquirido
+[17:45:59] BBD -> 162.25 mm
+[17:46:00] Punto 47/164 adquirido
+[17:46:01] BBD -> 162.3 mm
+[17:46:02] Punto 48/164 adquirido
+[17:46:02] BBD -> 162.35 mm
+[17:46:03] Punto 49/164 adquirido
+[17:46:03] BBD -> 162.4 mm
+[17:46:05] Punto 50/164 adquirido
+[17:46:05] BBD -> 162.45 mm
+[17:46:06] Punto 51/164 adquirido
+[17:46:06] BBD -> 162.5 mm
+[17:46:07] Punto 52/164 adquirido
+[17:46:08] BBD -> 162.55 mm
+[17:46:09] Punto 53/164 adquirido
+[17:46:09] BBD -> 162.6 mm
+[17:46:10] Punto 54/164 adquirido
+[17:46:10] BBD -> 162.65 mm
+[17:46:12] Punto 55/164 adquirido
+[17:46:12] BBD -> 162.7 mm
+[17:46:13] Punto 56/164 adquirido
+[17:46:13] BBD -> 162.75 mm
+[17:46:14] Punto 57/164 adquirido
+[17:46:15] BBD -> 162.8 mm
+[17:46:16] Punto 58/164 adquirido
+[17:46:16] BBD -> 162.85 mm
+[17:46:17] Punto 59/164 adquirido
+[17:46:17] BBD -> 162.9 mm
+[17:46:19] Punto 60/164 adquirido
+[17:46:19] BBD -> 162.95 mm
+[17:46:20] Punto 61/164 adquirido
+[17:46:20] BBD -> 163.0 mm
+[17:46:21] Punto 62/164 adquirido
+[17:46:22] BBD -> 163.05 mm
+[17:46:23] Punto 63/164 adquirido
+[17:46:23] BBD -> 163.1 mm
+[17:46:24] Punto 64/164 adquirido
+[17:46:24] BBD -> 163.15 mm
+[17:46:26] Punto 65/164 adquirido
+[17:46:26] BBD -> 163.2 mm
+[17:46:27] Punto 66/164 adquirido
+[17:46:27] BBD -> 163.25 mm
+[17:46:28] Punto 67/164 adquirido
+[17:46:29] BBD -> 163.3 mm
+[17:46:30] Punto 68/164 adquirido
+[17:46:30] BBD -> 163.35 mm
+[17:46:31] Punto 69/164 adquirido
+[17:46:31] BBD -> 163.4 mm
+[17:46:33] Punto 70/164 adquirido
+[17:46:33] BBD -> 163.45 mm
+[17:46:34] Punto 71/164 adquirido
+[17:46:34] BBD -> 163.5 mm
+[17:46:35] Punto 72/164 adquirido
+[17:46:36] BBD -> 163.55 mm
+[17:46:37] Punto 73/164 adquirido
+[17:46:37] BBD -> 163.6 mm
+[17:46:38] Punto 74/164 adquirido
+[17:46:38] BBD -> 163.65 mm
+[17:46:40] Punto 75/164 adquirido
+[17:46:40] BBD -> 163.7 mm
+[17:46:41] Punto 76/164 adquirido
+[17:46:41] BBD -> 163.75 mm
+[17:46:42] Punto 77/164 adquirido
+[17:46:43] BBD -> 163.8 mm
+[17:46:44] Punto 78/164 adquirido
+[17:46:44] BBD -> 163.85 mm
+[17:46:45] Punto 79/164 adquirido
+[17:46:45] BBD -> 163.9 mm
+[17:46:47] Punto 80/164 adquirido
+[17:46:47] BBD -> 163.95 mm
+[17:46:48] Punto 81/164 adquirido
+[17:46:48] BBD -> 164.0 mm
+[17:46:50] Punto 82/164 adquirido
+[17:46:50] Repeticion 3 de 4
+[17:46:51] Lambda -> 640.0 nm
+[17:46:51] Promediando AUX para lambda 640.0 nm
+[17:46:52] AUX promedio: 0.014222
+[17:46:52] AUX promedio lambda 640.0 nm = 0.014222
+[17:46:52] BBD -> 162.0 mm
+[17:46:53] Punto 83/164 adquirido
+[17:46:53] BBD -> 162.05 mm
+[17:46:55] Punto 84/164 adquirido
+[17:46:55] BBD -> 162.1 mm
+[17:46:56] Punto 85/164 adquirido
+[17:46:56] BBD -> 162.15 mm
+[17:46:57] Punto 86/164 adquirido
+[17:46:58] BBD -> 162.2 mm
+[17:46:59] Punto 87/164 adquirido
+[17:46:59] BBD -> 162.25 mm
+[17:47:00] Punto 88/164 adquirido
+[17:47:00] BBD -> 162.3 mm
+[17:47:02] Punto 89/164 adquirido
+[17:47:02] BBD -> 162.35 mm
+[17:47:03] Punto 90/164 adquirido
+[17:47:03] BBD -> 162.4 mm
+[17:47:04] Punto 91/164 adquirido
+[17:47:05] BBD -> 162.45 mm
+[17:47:06] Punto 92/164 adquirido
+[17:47:06] BBD -> 162.5 mm
+[17:47:07] Punto 93/164 adquirido
+[17:47:07] BBD -> 162.55 mm
+[17:47:09] Punto 94/164 adquirido
+[17:47:09] BBD -> 162.6 mm
+[17:47:10] Punto 95/164 adquirido
+[17:47:10] BBD -> 162.65 mm
+[17:47:11] Punto 96/164 adquirido
+[17:47:12] BBD -> 162.7 mm
+[17:47:13] Punto 97/164 adquirido
+[17:47:13] BBD -> 162.75 mm
+[17:47:14] Punto 98/164 adquirido
+[17:47:14] BBD -> 162.8 mm
+[17:47:16] Punto 99/164 adquirido
+[17:47:16] BBD -> 162.85 mm
+[17:47:17] Punto 100/164 adquirido
+[17:47:17] BBD -> 162.9 mm
+[17:47:18] Punto 101/164 adquirido
+[17:47:19] BBD -> 162.95 mm
+[17:47:20] Punto 102/164 adquirido
+[17:47:20] BBD -> 163.0 mm
+[17:47:21] Punto 103/164 adquirido
+[17:47:21] BBD -> 163.05 mm
+[17:47:23] Punto 104/164 adquirido
+[17:47:23] BBD -> 163.1 mm
+[17:47:24] Punto 105/164 adquirido
+[17:47:24] BBD -> 163.15 mm
+[17:47:26] Punto 106/164 adquirido
+[17:47:26] BBD -> 163.2 mm
+[17:47:27] Punto 107/164 adquirido
+[17:47:27] BBD -> 163.25 mm
+[17:47:28] Punto 108/164 adquirido
+[17:47:28] BBD -> 163.3 mm
+[17:47:30] Punto 109/164 adquirido
+[17:47:30] BBD -> 163.35 mm
+[17:47:31] Punto 110/164 adquirido
+[17:47:31] BBD -> 163.4 mm
+[17:47:33] Punto 111/164 adquirido
+[17:47:33] BBD -> 163.45 mm
+[17:47:34] Punto 112/164 adquirido
+[17:47:34] BBD -> 163.5 mm
+[17:47:35] Punto 113/164 adquirido
+[17:47:36] BBD -> 163.55 mm
+[17:47:37] Punto 114/164 adquirido
+[17:47:37] BBD -> 163.6 mm
+[17:47:38] Punto 115/164 adquirido
+[17:47:38] BBD -> 163.65 mm
+[17:47:40] Punto 116/164 adquirido
+[17:47:40] BBD -> 163.7 mm
+[17:47:41] Punto 117/164 adquirido
+[17:47:41] BBD -> 163.75 mm
+[17:47:42] Punto 118/164 adquirido
+[17:47:43] BBD -> 163.8 mm
+[17:47:44] Punto 119/164 adquirido
+[17:47:44] BBD -> 163.85 mm
+[17:47:45] Punto 120/164 adquirido
+[17:47:45] BBD -> 163.9 mm
+[17:47:47] Punto 121/164 adquirido
+[17:47:47] BBD -> 163.95 mm
+[17:47:48] Punto 122/164 adquirido
+[17:47:48] BBD -> 164.0 mm
+[17:47:49] Punto 123/164 adquirido
+[17:47:49] Repeticion 4 de 4
+[17:47:50] Lambda -> 640.0 nm
+[17:47:50] Promediando AUX para lambda 640.0 nm
+[17:47:51] AUX promedio: 0.012083
+[17:47:51] AUX promedio lambda 640.0 nm = 0.012083
+[17:47:51] BBD -> 162.0 mm
+[17:47:53] Punto 124/164 adquirido
+[17:47:53] BBD -> 162.05 mm
+[17:47:54] Punto 125/164 adquirido
+[17:47:54] BBD -> 162.1 mm
+[17:47:56] Punto 126/164 adquirido
+[17:47:56] BBD -> 162.15 mm
+[17:47:57] Punto 127/164 adquirido
+[17:47:57] BBD -> 162.2 mm
+[17:47:58] Punto 128/164 adquirido
+[17:47:59] BBD -> 162.25 mm
+[17:48:00] Punto 129/164 adquirido
+[17:48:00] BBD -> 162.3 mm
+[17:48:01] Punto 130/164 adquirido
+[17:48:01] BBD -> 162.35 mm
+[17:48:03] Punto 131/164 adquirido
+[17:48:03] BBD -> 162.4 mm
+[17:48:04] Punto 132/164 adquirido
+[17:48:04] BBD -> 162.45 mm
+[17:48:06] Punto 133/164 adquirido
+[17:48:06] BBD -> 162.5 mm
+[17:48:07] Punto 134/164 adquirido
+[17:48:07] BBD -> 162.55 mm
+[17:48:08] Punto 135/164 adquirido
+[17:48:09] BBD -> 162.6 mm
+[17:48:10] Punto 136/164 adquirido
+[17:48:10] BBD -> 162.65 mm
+[17:48:11] Punto 137/164 adquirido
+[17:48:11] BBD -> 162.7 mm
+[17:48:13] Punto 138/164 adquirido
+[17:48:13] BBD -> 162.75 mm
+[17:48:14] Punto 139/164 adquirido
+[17:48:14] BBD -> 162.8 mm
+[17:48:15] Punto 140/164 adquirido
+[17:48:16] BBD -> 162.85 mm
+[17:48:17] Punto 141/164 adquirido
+[17:48:17] BBD -> 162.9 mm
+[17:48:18] Punto 142/164 adquirido
+[17:48:18] BBD -> 162.95 mm
+[17:48:20] Punto 143/164 adquirido
+[17:48:20] BBD -> 163.0 mm
+[17:48:21] Punto 144/164 adquirido
+[17:48:21] BBD -> 163.05 mm
+[17:48:22] Punto 145/164 adquirido
+[17:48:23] BBD -> 163.1 mm
+[17:48:24] Punto 146/164 adquirido
+[17:48:24] BBD -> 163.15 mm
+[17:48:25] Punto 147/164 adquirido
+[17:48:25] BBD -> 163.2 mm
+[17:48:27] Punto 148/164 adquirido
+[17:48:27] BBD -> 163.25 mm
+[17:48:28] Punto 149/164 adquirido
+[17:48:28] BBD -> 163.3 mm
+[17:48:29] Punto 150/164 adquirido
+[17:48:30] BBD -> 163.35 mm
+[17:48:31] Punto 151/164 adquirido
+[17:48:31] BBD -> 163.4 mm
+[17:48:32] Punto 152/164 adquirido
+[17:48:32] BBD -> 163.45 mm
+[17:48:34] Punto 153/164 adquirido
+[17:48:34] BBD -> 163.5 mm
+[17:48:35] Punto 154/164 adquirido
+[17:48:35] BBD -> 163.55 mm
+[17:48:37] Punto 155/164 adquirido
+[17:48:37] BBD -> 163.6 mm
+[17:48:38] Punto 156/164 adquirido
+[17:48:38] BBD -> 163.65 mm
+[17:48:39] Punto 157/164 adquirido
+[17:48:40] BBD -> 163.7 mm
+[17:48:41] Punto 158/164 adquirido
+[17:48:41] BBD -> 163.75 mm
+[17:48:42] Punto 159/164 adquirido
+[17:48:42] BBD -> 163.8 mm
+[17:48:44] Punto 160/164 adquirido
+[17:48:44] BBD -> 163.85 mm
+[17:48:45] Punto 161/164 adquirido
+[17:48:45] BBD -> 163.9 mm
+[17:48:46] Punto 162/164 adquirido
+[17:48:47] BBD -> 163.95 mm
+[17:48:48] Punto 163/164 adquirido
+[17:48:48] BBD -> 164.0 mm
+[17:48:49] Punto 164/164 adquirido
+[17:48:49] Promedio calculado
+[17:48:49] Medicion finalizada
+[17:48:49] Resultado listo en memoria
