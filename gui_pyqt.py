@@ -887,7 +887,8 @@ if QT_IMPORT_ERROR is None:
             self.connect_bbd()
             self.home_bbd()
             if self.mono_required_for_current_ui():
-                self.connect_mono()
+                self.log("SMS omitido para lambda fija manual")
+                # self.connect_mono()
             else:
                 self.log("SMS omitido para lambda fija manual")
             self.connect_lockin()

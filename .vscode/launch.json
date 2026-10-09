@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "gui_pyqt.py (pump_probe_gui)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\gui_pyqt.py",
+            "console": "integratedTerminal",
+            "python": "C:\\Users\\LEC\\.conda\\envs\\pump_probe_gui\\python.exe",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
