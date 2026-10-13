@@ -40,6 +40,8 @@ class MeasurementConfig:
         self.x_axis = "Distancia"
         self.plot_scale = PLOT_SCALE_LINEAR
         self.repetitions = 1
+        self.lockin_constants = 1
+        self.lockin_time_constant_index = None  # None keeps the instrument setting.
         self.average_repetitions = False
         self.auto_gain_enabled = True
         self.average_aux = False
@@ -77,6 +79,8 @@ class MeasurementConfig:
             "x_axis": self.x_axis,
             "plot_scale": self.plot_scale,
             "repetitions": self.repetitions,
+            "lockin_constants": self.lockin_constants,
+            "lockin_time_constant_index": self.lockin_time_constant_index,
             "average_repetitions": self.average_repetitions,
             "auto_gain_enabled": self.auto_gain_enabled,
             "auto_gain_mode": "manual_sens_only",
@@ -177,6 +181,12 @@ def validate_measurement_config(config, hardware_status):
         errors.append("Seleccionar al menos un canal para graficar.")
     if config.repetitions < 1:
         errors.append("La cantidad de repeticiones debe ser mayor o igual a 1.")
+    if config.lockin_constants < 1:
+        errors.append("La cantidad de constantes Lock-in debe ser mayor o igual a 1.")
+    if config.lockin_time_constant_index is not None:
+        index = config.lockin_time_constant_index
+        if isinstance(index, bool) or not isinstance(index, int) or not 0 <= index < 20:
+            errors.append("El tiempo de integracion debe ser uno de los 20 valores permitidos por el SR830.")
     if config.average_aux and config.average_aux_seconds <= 0:
         errors.append("Promediar AUX requiere un tiempo mayor a cero.")
 
@@ -261,6 +271,7 @@ def build_preview(config, hardware_status, session_manager=None):
         "puntos_totales": point_count * config.repetitions,
         "tiempo_estimado_s": estimated,
         "tiempo_estimado_texto": format_seconds(estimated),
+        "lockin_wait_s": config.integration_time_override if config.integration_time_override is not None else hardware_status.get("integration_time", 0.0),
         "bbd_puntos": len(bbd_points),
         "lambda_puntos": len(lambda_points),
         "carpeta_sesion": session_path,
@@ -596,7 +607,12 @@ class AcquisitionRunner:
             if self.cancel_requested:
                 result.cancelled = True
             else:
+                if self.config.lockin_time_constant_index is not None:
+                    self.hardware.set_lockin_time_constant_index(self.config.lockin_time_constant_index)
+                self.hardware.set_lockin_constants(self.config.lockin_constants)
                 metadata_base = self.build_metadata(result)
+                self.emit("log", "Lock-in: " + str(self.config.lockin_constants)
+                          + " constantes; espera por punto " + str(self.hardware.integration_time()) + " s")
                 self.emit("log", "Inicio de medicion")
                 self.emit("progress", 0, result.total_points)
 
@@ -648,14 +664,21 @@ class AcquisitionRunner:
                     return
             else:
                 self.emit("log", "SMS desactivado: se usa lambda fija manual " + str(self.config.longitud_onda_fija_nm) + " nm")
+            if not bbd_points:
+                return
+            # Complete the return at the start of every repetition before
+            # autoranging, AUX averaging, or integrating the first point.
+            if not self.move_bbd(bbd_points[0]):
+                self.cancel()
+                return
             if not self.maybe_auto_gain_for_lambda(self.config.longitud_onda_fija_nm):
                 self.cancel()
                 return
             if not self.update_average_aux_for_lambda(result, self.config.longitud_onda_fija_nm):
                 self.cancel()
                 return
-            for position in bbd_points:
-                if not self.move_bbd(position):
+            for point_index, position in enumerate(bbd_points):
+                if point_index > 0 and not self.move_bbd(position):
                     self.cancel()
                     return
                 if not self.acquire_point(result, repetition, 0, result.total_points):

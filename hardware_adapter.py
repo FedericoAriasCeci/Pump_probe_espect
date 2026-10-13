@@ -3,6 +3,27 @@ import time
 from simulated_hardware import SimulatedHardwareBundle
 
 
+# SR830 manual, Remote Programming, OFLT: the item index is the command value.
+SR830_TIME_CONSTANTS = (
+    ("10 us", 10e-6), ("30 us", 30e-6),
+    ("100 us", 100e-6), ("300 us", 300e-6),
+    ("1 ms", 1e-3), ("3 ms", 3e-3),
+    ("10 ms", 10e-3), ("30 ms", 30e-3),
+    ("100 ms", 100e-3), ("300 ms", 300e-3),
+    ("1 s", 1.0), ("3 s", 3.0),
+    ("10 s", 10.0), ("30 s", 30.0),
+    ("100 s", 100.0), ("300 s", 300.0),
+    ("1 ks", 1000.0), ("3 ks", 3000.0),
+    ("10 ks", 10000.0), ("30 ks", 30000.0),
+)
+
+
+def validate_lockin_time_constant_index(index):
+    if isinstance(index, bool) or not isinstance(index, int) or not 0 <= index < len(SR830_TIME_CONSTANTS):
+        raise ValueError("El tiempo de integracion debe ser uno de los 20 valores permitidos por el SR830.")
+    return index
+
+
 SR830_SENSITIVITY_VALUES = [
     2e-9,
     5e-9,
@@ -307,6 +328,43 @@ class BaseHardwareAdapter:
     def set_lockin_constants(self, constants):
         self.bundle.lockin.SetearNumeroDeConstantesDeIntegracion(constants)
 
+    def query_lockin_time_constant_index(self):
+        lockin = self.bundle.lockin
+        if self.simulation_mode:
+            index = lockin.time_constant_index
+        else:
+            address = getattr(lockin, "address", None)
+            if address is None:
+                raise RuntimeError("Lock-in no conectado")
+            index = int(str(address.query("OFLT?")).strip())
+        index = validate_lockin_time_constant_index(index)
+        lockin.time_constant_index = index
+        return index
+
+    def set_lockin_time_constant_index(self, index):
+        index = validate_lockin_time_constant_index(index)
+        lockin = self.bundle.lockin
+        if self.simulation_mode:
+            lockin.time_constant_index = index
+            lockin.time_constant_s = SR830_TIME_CONSTANTS[index][1]
+        else:
+            address = getattr(lockin, "address", None)
+            if address is None:
+                raise RuntimeError("Lock-in no conectado")
+            address.write("OFLT " + str(index))
+        actual = self.query_lockin_time_constant_index()
+        lockin.TiempoDeIntegracionTotal = (
+            SR830_TIME_CONSTANTS[actual][1]
+            * float(getattr(lockin, "numeroDeConstantesDeTiempo", 1))
+        )
+        if actual != index:
+            raise RuntimeError(
+                "El SR830 no acepto " + SR830_TIME_CONSTANTS[index][0]
+                + "; confirmo " + SR830_TIME_CONSTANTS[actual][0]
+                + ". Revise la frecuencia y la configuracion de filtros y reserva dinamica."
+            )
+        return actual
+
     def auto_gain_lockin(self):
         return self.autorange_lockin_sensitivity()
 
@@ -526,9 +584,10 @@ class SimulatedHardwareAdapter(BaseHardwareAdapter):
 
 class RealHardwareBundle:
     def __init__(self):
-        from hardware_tier import BBD301, SMS, LockIn
+        from hardware_tier import BBD301, SMS, LockIn, tiempoAgregadoPlataforma
 
         self.bbd = BBD301()
+        self.bbd_settle_time_s = float(tiempoAgregadoPlataforma)
         self.mono = SMS()
         self.lockin = LockIn()
 
@@ -561,6 +620,14 @@ class RealHardwareAdapter(BaseHardwareAdapter):
     def __init__(self):
         BaseHardwareAdapter.__init__(self, False)
         self.bundle = RealHardwareBundle()
+
+    def calculate_bbd_sleep(self, position_mm):
+        # BBD301.Mover uses the blocking MoveTo(position, timeout) overload.
+        # Its travel time has elapsed when it returns. Retain the existing
+        # mechanical settling margin, followed by the full N * tau wait.
+        if float(position_mm) == float(self.bundle.bbd.posicion):
+            return 0.1
+        return self.bundle.bbd_settle_time_s
 
 
 def create_hardware_adapter(simulation_mode):

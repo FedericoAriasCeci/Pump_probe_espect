@@ -31,7 +31,7 @@ from acquisition_service import (
     x_label_for_config,
     x_value_for_row,
 )
-from hardware_adapter import create_hardware_adapter, guess_sms_port, list_serial_ports, normalize_sms_port
+from hardware_adapter import SR830_TIME_CONSTANTS, create_hardware_adapter, guess_sms_port, list_serial_ports, normalize_sms_port
 from session_manager import SessionManager
 
 
@@ -348,9 +348,9 @@ if QT_IMPORT_ERROR is None:
             self.simulation_check.toggled.connect(self.on_simulation_changed)
             layout.addWidget(self.simulation_check, 0, 0, 1, 2)
 
-            self.use_mono_check = QCheckBox("Usar SMS en lambda fija")
+            self.use_mono_check = QCheckBox("Lambda fija manual (sin SMS)")
             self.use_mono_check.setChecked(True)
-            self.use_mono_check.setToolTip("Si esta desactivado, en lambda fija no se exige ni se mueve el monocromador")
+            self.use_mono_check.setToolTip("Marcada: la lambda se fija a mano y no se exige ni se mueve el SMS. Desmarcada: se usa el SMS.")
             layout.addWidget(self.use_mono_check, 1, 0, 1, 3)
 
             layout.addWidget(QLabel("Puerto SMS"), 2, 0)
@@ -366,40 +366,50 @@ if QT_IMPORT_ERROR is None:
             self.lockin_port_edit = QLineEdit(self.default_lockin_port)
             layout.addWidget(self.lockin_port_edit, 3, 1, 1, 2)
 
-            layout.addWidget(QLabel("Constantes Lock-in"), 4, 0)
+            layout.addWidget(QLabel("Integracion (τ)"), 4, 0)
+            self.lockin_time_constant_combo = QComboBox()
+            self.lockin_time_constant_combo.addItem("Leer del equipo", None)
+            for index, (label, seconds) in enumerate(SR830_TIME_CONSTANTS):
+                self.lockin_time_constant_combo.addItem(label, index)
+            layout.addWidget(self.lockin_time_constant_combo, 4, 1)
+            self.apply_lockin_button = QPushButton("Aplicar")
+            self.apply_lockin_button.clicked.connect(self.apply_lockin_from_ui)
+            layout.addWidget(self.apply_lockin_button, 4, 2)
+
+            layout.addWidget(QLabel("Constantes (N)"), 5, 0)
             self.lockin_constants_spin = QSpinBox()
             self.lockin_constants_spin.setRange(1, 100)
             self.lockin_constants_spin.setValue(1)
-            layout.addWidget(self.lockin_constants_spin, 4, 1, 1, 2)
+            layout.addWidget(self.lockin_constants_spin, 5, 1, 1, 2)
 
             self.auto_gain_check = QCheckBox("Auto rango sensibilidad")
             self.auto_gain_check.setChecked(True)
             self.auto_gain_check.setToolTip("Ajusta solo SENS del SR830 al cambiar de lambda. No ejecuta Auto Phase.")
-            layout.addWidget(self.auto_gain_check, 5, 0, 1, 3)
+            layout.addWidget(self.auto_gain_check, 6, 0, 1, 3)
 
             self.connect_bbd_button = QPushButton("Conectar BBD")
             self.connect_bbd_button.clicked.connect(self.connect_bbd)
-            layout.addWidget(self.connect_bbd_button, 6, 0)
+            layout.addWidget(self.connect_bbd_button, 7, 0)
 
             self.home_bbd_button = QPushButton("Home BBD")
             self.home_bbd_button.clicked.connect(self.home_bbd)
-            layout.addWidget(self.home_bbd_button, 6, 1)
+            layout.addWidget(self.home_bbd_button, 7, 1)
 
             self.connect_mono_button = QPushButton("Conectar SMS")
             self.connect_mono_button.clicked.connect(self.connect_mono)
-            layout.addWidget(self.connect_mono_button, 7, 0)
+            layout.addWidget(self.connect_mono_button, 8, 0)
 
             self.connect_lockin_button = QPushButton("Conectar Lock-in")
             self.connect_lockin_button.clicked.connect(self.connect_lockin)
-            layout.addWidget(self.connect_lockin_button, 7, 1)
+            layout.addWidget(self.connect_lockin_button, 8, 1)
 
             self.connect_all_button = QPushButton("Conectar todo")
             self.connect_all_button.clicked.connect(self.connect_all_hardware)
-            layout.addWidget(self.connect_all_button, 8, 0, 1, 3)
+            layout.addWidget(self.connect_all_button, 9, 0, 1, 3)
 
             self.release_hardware_button = QPushButton("Liberar hardware")
             self.release_hardware_button.clicked.connect(self.release_hardware)
-            layout.addWidget(self.release_hardware_button, 9, 0, 1, 3)
+            layout.addWidget(self.release_hardware_button, 10, 0, 1, 3)
 
             return group
 
@@ -735,6 +745,9 @@ if QT_IMPORT_ERROR is None:
         def set_controls_busy(self, busy):
             enabled = not busy
             self.simulation_check.setEnabled(enabled)
+            self.lockin_constants_spin.setEnabled(enabled)
+            self.lockin_time_constant_combo.setEnabled(enabled)
+            self.apply_lockin_button.setEnabled(enabled)
             self.use_mono_check.setEnabled(enabled and self.measurement_type_combo.currentData() == MEASUREMENT_LAMBDA_FIXED)
             self.measurement_type_combo.setEnabled(enabled)
             self.x_axis_combo.setEnabled(enabled and self.measurement_type_combo.currentData() != MEASUREMENT_POSITION_FIXED)
@@ -768,12 +781,10 @@ if QT_IMPORT_ERROR is None:
             self.x_axis_combo.setEnabled(not position_fixed)
             self.plot_scale_combo.setEnabled(double_mode)
             self.use_mono_check.setEnabled(lambda_fixed)
-            if not lambda_fixed:
-                self.use_mono_check.setChecked(True)
 
         def mono_required_for_current_ui(self):
             mode = self.measurement_type_combo.currentData()
-            if mode == MEASUREMENT_LAMBDA_FIXED and not self.use_mono_check.isChecked():
+            if mode == MEASUREMENT_LAMBDA_FIXED and self.use_mono_check.isChecked():
                 return False
             return True
 
@@ -851,6 +862,29 @@ if QT_IMPORT_ERROR is None:
                 self.show_message("Error conectando SMS", detail, QMessageBox.Warning)
             self.update_status_labels()
 
+        def apply_lockin_timing(self, time_constant_index, constants):
+            if not self.hardware_status().get("lockin_connected", False):
+                raise RuntimeError("Conecte el Lock-in antes de aplicar el tiempo de integracion.")
+            if time_constant_index is None:
+                actual = self.hardware.query_lockin_time_constant_index()
+            else:
+                actual = self.hardware.set_lockin_time_constant_index(time_constant_index)
+            self.hardware.set_lockin_constants(constants)
+            self.lockin_time_constant_combo.setCurrentIndex(self.lockin_time_constant_combo.findData(actual))
+            return actual
+
+        def apply_lockin_from_ui(self):
+            try:
+                actual = self.apply_lockin_timing(
+                    self.lockin_time_constant_combo.currentData(), self.lockin_constants_spin.value()
+                )
+                self.update_status_labels()
+                self.log("Lock-in: tau = " + SR830_TIME_CONSTANTS[actual][0]
+                         + "; espera por punto = " + str(self.hardware.integration_time()) + " s")
+            except Exception as exc:
+                self.log("Error configurando el tiempo de integracion: " + str(exc))
+                self.show_message("Tiempo de integracion Lock-in", str(exc), QMessageBox.Warning)
+
         def connect_lockin(self):
             port = self.lockin_port_edit.text().strip()
             if self.simulation_check.isChecked():
@@ -865,7 +899,7 @@ if QT_IMPORT_ERROR is None:
                 self.log("Lock-in: configurando")
                 self.hardware.configure_lockin()
                 self.log("Lock-in: leyendo constante de tiempo")
-                self.hardware.set_lockin_constants(self.lockin_constants_spin.value())
+                self.apply_lockin_timing(self.lockin_time_constant_combo.currentData(), self.lockin_constants_spin.value())
                 self.log("Lock-in conectado en " + port)
             except Exception as exc:
                 try:
@@ -947,6 +981,8 @@ if QT_IMPORT_ERROR is None:
             config.longitud_onda_fija_nm = self.fixed_lambda_spin.value()
             config.posicion_fija_bbd_mm = self.fixed_position_spin.value()
             config.repetitions = self.repetitions_spin.value()
+            config.lockin_constants = self.lockin_constants_spin.value()
+            config.lockin_time_constant_index = self.lockin_time_constant_combo.currentData()
             config.average_repetitions = self.average_repetitions_check.isChecked()
             config.auto_gain_enabled = self.auto_gain_check.isChecked()
             config.average_aux = self.average_aux_check.isChecked()
@@ -974,6 +1010,15 @@ if QT_IMPORT_ERROR is None:
             config, errors = self.collect_config()
             status = self.hardware_status()
             errors.extend(validate_measurement_config(config, status))
+            if not errors:
+                try:
+                    config.lockin_time_constant_index = self.apply_lockin_timing(
+                        config.lockin_time_constant_index, config.lockin_constants
+                    )
+                    status = self.hardware_status()
+                    self.update_status_labels()
+                except Exception as exc:
+                    errors.append("No se pudo actualizar el tiempo de integracion del Lock-in: " + str(exc))
             if len(errors) > 0:
                 text = "Hay que corregir:\n\n" + "\n".join("- " + error for error in errors)
                 self.preview_text.setText(text)
@@ -1007,6 +1052,9 @@ if QT_IMPORT_ERROR is None:
                 "Repeticiones: " + str(preview.get("repeticiones")),
                 "Puntos totales: " + str(preview.get("puntos_totales")),
                 "Tiempo estimado: " + str(preview.get("tiempo_estimado_texto")),
+                "Constantes Lock-in por punto: " + str(config.lockin_constants),
+                "Tiempo integracion tau: " + SR830_TIME_CONSTANTS[config.lockin_time_constant_index][0],
+                "Espera nominal Lock-in por punto: " + str(preview.get("lockin_wait_s", 0.0)) + " s",
                 "Monocromador: " + ("se usa" if config.use_monochromator else "omitido, lambda fija manual"),
                 "Auto rango sensibilidad: " + ("activado" if config.auto_gain_enabled else "desactivado"),
                 "AUX: " + ("promedio por lambda de " + str(config.average_aux_seconds) + " s" if config.average_aux else "lectura punto a punto"),

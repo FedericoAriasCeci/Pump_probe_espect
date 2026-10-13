@@ -1,0 +1,536 @@
+[11:37:45] Aplicacion iniciada en modo simulacion
+[11:43:45] BBD conectado
+[11:43:58] Modo hardware real activo
+[12:25:56] BBD conectado
+[12:25:59] Lock-in: abriendo recurso 8
+[12:26:01] Error conectando Lock-in: No se pudo abrir GPIB0::8::INSTR: VI_ERROR_BERR (-1073807304): Bus error occurred during transfer.. No pude listar recursos VISA.
+[12:26:41] Lock-in: abriendo recurso 8
+[12:26:41] Lock-in: recurso abierto
+[12:26:41] Lock-in: identificando
+[12:26:41] Lock-in: configurando
+[12:26:43] Lock-in: leyendo constante de tiempo
+[12:26:43] Lock-in conectado en 8
+[12:27:13] Home BBD completado
+[12:38:31] Inicio solicitado
+[12:38:32] Inicio de medicion
+[12:38:32] Repeticion 1 de 3
+[12:38:32] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:38:32] BBD -> 160.0 mm
+[12:38:34] Punto 1/51 adquirido
+[12:38:34] BBD -> 160.3 mm
+[12:38:35] Punto 2/51 adquirido
+[12:38:35] BBD -> 160.6 mm
+[12:38:36] Punto 3/51 adquirido
+[12:38:36] BBD -> 160.9 mm
+[12:38:38] Punto 4/51 adquirido
+[12:38:38] BBD -> 161.2 mm
+[12:38:39] Punto 5/51 adquirido
+[12:38:39] BBD -> 161.5 mm
+[12:38:41] Punto 6/51 adquirido
+[12:38:41] BBD -> 161.8 mm
+[12:38:42] Punto 7/51 adquirido
+[12:38:42] BBD -> 162.1 mm
+[12:38:44] Punto 8/51 adquirido
+[12:38:44] BBD -> 162.4 mm
+[12:38:45] Punto 9/51 adquirido
+[12:38:45] BBD -> 162.7 mm
+[12:38:46] Punto 10/51 adquirido
+[12:38:46] BBD -> 163.0 mm
+[12:38:48] Punto 11/51 adquirido
+[12:38:48] BBD -> 163.3 mm
+[12:38:49] Punto 12/51 adquirido
+[12:38:49] BBD -> 163.6 mm
+[12:38:51] Punto 13/51 adquirido
+[12:38:51] BBD -> 163.9 mm
+[12:38:52] Punto 14/51 adquirido
+[12:38:52] BBD -> 164.2 mm
+[12:38:54] Punto 15/51 adquirido
+[12:38:54] BBD -> 164.5 mm
+[12:38:55] Punto 16/51 adquirido
+[12:38:55] BBD -> 164.8 mm
+[12:38:56] Punto 17/51 adquirido
+[12:38:56] Repeticion 2 de 3
+[12:38:56] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:38:57] BBD -> 160.0 mm
+[12:38:58] Punto 18/51 adquirido
+[12:38:58] BBD -> 160.3 mm
+[12:38:59] Punto 19/51 adquirido
+[12:38:59] BBD -> 160.6 mm
+[12:39:01] Punto 20/51 adquirido
+[12:39:01] BBD -> 160.9 mm
+[12:39:02] Punto 21/51 adquirido
+[12:39:02] BBD -> 161.2 mm
+[12:39:04] Punto 22/51 adquirido
+[12:39:04] BBD -> 161.5 mm
+[12:39:05] Punto 23/51 adquirido
+[12:39:05] BBD -> 161.8 mm
+[12:39:07] Punto 24/51 adquirido
+[12:39:07] BBD -> 162.1 mm
+[12:39:08] Punto 25/51 adquirido
+[12:39:08] BBD -> 162.4 mm
+[12:39:09] Punto 26/51 adquirido
+[12:39:09] BBD -> 162.7 mm
+[12:39:11] Punto 27/51 adquirido
+[12:39:11] BBD -> 163.0 mm
+[12:39:12] Punto 28/51 adquirido
+[12:39:12] BBD -> 163.3 mm
+[12:39:14] Punto 29/51 adquirido
+[12:39:14] BBD -> 163.6 mm
+[12:39:15] Punto 30/51 adquirido
+[12:39:15] BBD -> 163.9 mm
+[12:39:17] Punto 31/51 adquirido
+[12:39:17] BBD -> 164.2 mm
+[12:39:18] Punto 32/51 adquirido
+[12:39:18] BBD -> 164.5 mm
+[12:39:19] Punto 33/51 adquirido
+[12:39:19] BBD -> 164.8 mm
+[12:39:21] Punto 34/51 adquirido
+[12:39:21] Repeticion 3 de 3
+[12:39:21] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:39:21] BBD -> 160.0 mm
+[12:39:22] Punto 35/51 adquirido
+[12:39:22] BBD -> 160.3 mm
+[12:39:24] Punto 36/51 adquirido
+[12:39:24] BBD -> 160.6 mm
+[12:39:25] Punto 37/51 adquirido
+[12:39:25] BBD -> 160.9 mm
+[12:39:27] Punto 38/51 adquirido
+[12:39:27] BBD -> 161.2 mm
+[12:39:28] Punto 39/51 adquirido
+[12:39:28] BBD -> 161.5 mm
+[12:39:30] Punto 40/51 adquirido
+[12:39:30] BBD -> 161.8 mm
+[12:39:31] Punto 41/51 adquirido
+[12:39:31] BBD -> 162.1 mm
+[12:39:32] Punto 42/51 adquirido
+[12:39:32] BBD -> 162.4 mm
+[12:39:34] Punto 43/51 adquirido
+[12:39:34] BBD -> 162.7 mm
+[12:39:35] Punto 44/51 adquirido
+[12:39:35] BBD -> 163.0 mm
+[12:39:37] Punto 45/51 adquirido
+[12:39:37] BBD -> 163.3 mm
+[12:39:38] Punto 46/51 adquirido
+[12:39:38] BBD -> 163.6 mm
+[12:39:39] Punto 47/51 adquirido
+[12:39:40] BBD -> 163.9 mm
+[12:39:41] Punto 48/51 adquirido
+[12:39:41] BBD -> 164.2 mm
+[12:39:42] Punto 49/51 adquirido
+[12:39:42] BBD -> 164.5 mm
+[12:39:44] Punto 50/51 adquirido
+[12:39:44] BBD -> 164.8 mm
+[12:39:45] Punto 51/51 adquirido
+[12:39:45] Promedio calculado
+[12:39:45] Medicion finalizada
+[12:39:45] Resultado listo en memoria
+[12:40:07] Inicio solicitado
+[12:40:07] Inicio de medicion
+[12:40:07] Repeticion 1 de 1
+[12:40:07] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:40:07] BBD -> 163.0 mm
+[12:40:09] Punto 1/21 adquirido
+[12:40:09] BBD -> 163.1 mm
+[12:40:10] Punto 2/21 adquirido
+[12:40:10] BBD -> 163.2 mm
+[12:40:12] Punto 3/21 adquirido
+[12:40:12] BBD -> 163.3 mm
+[12:40:13] Punto 4/21 adquirido
+[12:40:13] BBD -> 163.4 mm
+[12:40:14] Punto 5/21 adquirido
+[12:40:14] BBD -> 163.5 mm
+[12:40:16] Punto 6/21 adquirido
+[12:40:16] BBD -> 163.6 mm
+[12:40:17] Punto 7/21 adquirido
+[12:40:17] BBD -> 163.7 mm
+[12:40:19] Punto 8/21 adquirido
+[12:40:19] BBD -> 163.8 mm
+[12:40:20] Punto 9/21 adquirido
+[12:40:20] BBD -> 163.9 mm
+[12:40:21] Punto 10/21 adquirido
+[12:40:22] BBD -> 164.0 mm
+[12:40:23] Punto 11/21 adquirido
+[12:40:23] BBD -> 164.1 mm
+[12:40:24] Punto 12/21 adquirido
+[12:40:24] BBD -> 164.2 mm
+[12:40:26] Punto 13/21 adquirido
+[12:40:26] BBD -> 164.3 mm
+[12:40:27] Punto 14/21 adquirido
+[12:40:27] BBD -> 164.4 mm
+[12:40:29] Punto 15/21 adquirido
+[12:40:29] BBD -> 164.5 mm
+[12:40:30] Punto 16/21 adquirido
+[12:40:30] BBD -> 164.6 mm
+[12:40:31] Punto 17/21 adquirido
+[12:40:31] BBD -> 164.7 mm
+[12:40:33] Punto 18/21 adquirido
+[12:40:33] BBD -> 164.8 mm
+[12:40:34] Punto 19/21 adquirido
+[12:40:34] BBD -> 164.9 mm
+[12:40:36] Punto 20/21 adquirido
+[12:40:36] BBD -> 165.0 mm
+[12:40:37] Punto 21/21 adquirido
+[12:40:37] Medicion finalizada
+[12:40:37] Resultado listo en memoria
+[12:40:43] Inicio solicitado
+[12:40:43] Inicio de medicion
+[12:40:43] Repeticion 1 de 4
+[12:40:43] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:40:43] BBD -> 163.0 mm
+[12:40:45] Punto 1/84 adquirido
+[12:40:45] BBD -> 163.1 mm
+[12:40:46] Punto 2/84 adquirido
+[12:40:46] BBD -> 163.2 mm
+[12:40:48] Punto 3/84 adquirido
+[12:40:48] BBD -> 163.3 mm
+[12:40:49] Punto 4/84 adquirido
+[12:40:49] BBD -> 163.4 mm
+[12:40:50] Punto 5/84 adquirido
+[12:40:50] BBD -> 163.5 mm
+[12:40:52] Punto 6/84 adquirido
+[12:40:52] BBD -> 163.6 mm
+[12:40:53] Punto 7/84 adquirido
+[12:40:53] BBD -> 163.7 mm
+[12:40:55] Punto 8/84 adquirido
+[12:40:55] BBD -> 163.8 mm
+[12:40:56] Punto 9/84 adquirido
+[12:40:56] BBD -> 163.9 mm
+[12:40:57] Punto 10/84 adquirido
+[12:40:57] BBD -> 164.0 mm
+[12:40:59] Punto 11/84 adquirido
+[12:40:59] BBD -> 164.1 mm
+[12:41:00] Punto 12/84 adquirido
+[12:41:00] BBD -> 164.2 mm
+[12:41:02] Punto 13/84 adquirido
+[12:41:02] BBD -> 164.3 mm
+[12:41:03] Punto 14/84 adquirido
+[12:41:03] BBD -> 164.4 mm
+[12:41:04] Punto 15/84 adquirido
+[12:41:05] BBD -> 164.5 mm
+[12:41:06] Punto 16/84 adquirido
+[12:41:06] BBD -> 164.6 mm
+[12:41:07] Punto 17/84 adquirido
+[12:41:07] BBD -> 164.7 mm
+[12:41:09] Punto 18/84 adquirido
+[12:41:09] BBD -> 164.8 mm
+[12:41:10] Punto 19/84 adquirido
+[12:41:10] BBD -> 164.9 mm
+[12:41:12] Punto 20/84 adquirido
+[12:41:12] BBD -> 165.0 mm
+[12:41:13] Punto 21/84 adquirido
+[12:41:13] Repeticion 2 de 4
+[12:41:13] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:41:13] BBD -> 163.0 mm
+[12:41:14] Punto 22/84 adquirido
+[12:41:14] BBD -> 163.1 mm
+[12:41:16] Punto 23/84 adquirido
+[12:41:16] BBD -> 163.2 mm
+[12:41:17] Punto 24/84 adquirido
+[12:41:17] BBD -> 163.3 mm
+[12:41:19] Punto 25/84 adquirido
+[12:41:19] BBD -> 163.4 mm
+[12:41:20] Punto 26/84 adquirido
+[12:41:20] BBD -> 163.5 mm
+[12:41:21] Punto 27/84 adquirido
+[12:41:22] BBD -> 163.6 mm
+[12:41:23] Punto 28/84 adquirido
+[12:41:23] BBD -> 163.7 mm
+[12:41:24] Punto 29/84 adquirido
+[12:41:24] BBD -> 163.8 mm
+[12:41:26] Punto 30/84 adquirido
+[12:41:26] BBD -> 163.9 mm
+[12:41:27] Punto 31/84 adquirido
+[12:41:27] BBD -> 164.0 mm
+[12:41:29] Punto 32/84 adquirido
+[12:41:29] BBD -> 164.1 mm
+[12:41:30] Punto 33/84 adquirido
+[12:41:30] BBD -> 164.2 mm
+[12:41:31] Punto 34/84 adquirido
+[12:41:31] BBD -> 164.3 mm
+[12:41:33] Punto 35/84 adquirido
+[12:41:33] BBD -> 164.4 mm
+[12:41:34] Punto 36/84 adquirido
+[12:41:34] BBD -> 164.5 mm
+[12:41:36] Punto 37/84 adquirido
+[12:41:36] BBD -> 164.6 mm
+[12:41:37] Punto 38/84 adquirido
+[12:41:37] BBD -> 164.7 mm
+[12:41:38] Punto 39/84 adquirido
+[12:41:38] BBD -> 164.8 mm
+[12:41:40] Punto 40/84 adquirido
+[12:41:40] BBD -> 164.9 mm
+[12:41:41] Punto 41/84 adquirido
+[12:41:41] BBD -> 165.0 mm
+[12:41:43] Punto 42/84 adquirido
+[12:41:43] Repeticion 3 de 4
+[12:41:43] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:41:43] BBD -> 163.0 mm
+[12:41:44] Punto 43/84 adquirido
+[12:41:44] BBD -> 163.1 mm
+[12:41:46] Punto 44/84 adquirido
+[12:41:46] BBD -> 163.2 mm
+[12:41:47] Punto 45/84 adquirido
+[12:41:47] BBD -> 163.3 mm
+[12:41:48] Punto 46/84 adquirido
+[12:41:48] BBD -> 163.4 mm
+[12:41:50] Punto 47/84 adquirido
+[12:41:50] BBD -> 163.5 mm
+[12:41:51] Punto 48/84 adquirido
+[12:41:51] BBD -> 163.6 mm
+[12:41:53] Punto 49/84 adquirido
+[12:41:53] BBD -> 163.7 mm
+[12:41:54] Punto 50/84 adquirido
+[12:41:54] BBD -> 163.8 mm
+[12:41:55] Punto 51/84 adquirido
+[12:41:55] BBD -> 163.9 mm
+[12:41:57] Punto 52/84 adquirido
+[12:41:57] BBD -> 164.0 mm
+[12:41:58] Punto 53/84 adquirido
+[12:41:58] BBD -> 164.1 mm
+[12:42:00] Punto 54/84 adquirido
+[12:42:00] BBD -> 164.2 mm
+[12:42:01] Punto 55/84 adquirido
+[12:42:01] BBD -> 164.3 mm
+[12:42:02] Punto 56/84 adquirido
+[12:42:03] BBD -> 164.4 mm
+[12:42:04] Punto 57/84 adquirido
+[12:42:04] BBD -> 164.5 mm
+[12:42:05] Punto 58/84 adquirido
+[12:42:05] BBD -> 164.6 mm
+[12:42:07] Punto 59/84 adquirido
+[12:42:07] BBD -> 164.7 mm
+[12:42:08] Punto 60/84 adquirido
+[12:42:08] BBD -> 164.8 mm
+[12:42:10] Punto 61/84 adquirido
+[12:42:10] BBD -> 164.9 mm
+[12:42:11] Punto 62/84 adquirido
+[12:42:11] BBD -> 165.0 mm
+[12:42:12] Punto 63/84 adquirido
+[12:42:12] Repeticion 4 de 4
+[12:42:12] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:42:13] BBD -> 163.0 mm
+[12:42:14] Punto 64/84 adquirido
+[12:42:14] BBD -> 163.1 mm
+[12:42:15] Punto 65/84 adquirido
+[12:42:15] BBD -> 163.2 mm
+[12:42:17] Punto 66/84 adquirido
+[12:42:17] BBD -> 163.3 mm
+[12:42:18] Punto 67/84 adquirido
+[12:42:18] BBD -> 163.4 mm
+[12:42:20] Punto 68/84 adquirido
+[12:42:20] BBD -> 163.5 mm
+[12:42:21] Punto 69/84 adquirido
+[12:42:21] BBD -> 163.6 mm
+[12:42:22] Punto 70/84 adquirido
+[12:42:22] BBD -> 163.7 mm
+[12:42:24] Punto 71/84 adquirido
+[12:42:24] BBD -> 163.8 mm
+[12:42:25] Punto 72/84 adquirido
+[12:42:25] BBD -> 163.9 mm
+[12:42:27] Punto 73/84 adquirido
+[12:42:27] BBD -> 164.0 mm
+[12:42:28] Punto 74/84 adquirido
+[12:42:28] BBD -> 164.1 mm
+[12:42:29] Punto 75/84 adquirido
+[12:42:29] BBD -> 164.2 mm
+[12:42:31] Punto 76/84 adquirido
+[12:42:31] BBD -> 164.3 mm
+[12:42:32] Punto 77/84 adquirido
+[12:42:32] BBD -> 164.4 mm
+[12:42:34] Punto 78/84 adquirido
+[12:42:34] BBD -> 164.5 mm
+[12:42:35] Punto 79/84 adquirido
+[12:42:35] BBD -> 164.6 mm
+[12:42:36] Punto 80/84 adquirido
+[12:42:37] BBD -> 164.7 mm
+[12:42:38] Punto 81/84 adquirido
+[12:42:38] BBD -> 164.8 mm
+[12:42:39] Punto 82/84 adquirido
+[12:42:39] BBD -> 164.9 mm
+[12:42:41] Punto 83/84 adquirido
+[12:42:41] BBD -> 165.0 mm
+[12:42:42] Punto 84/84 adquirido
+[12:42:42] Promedio calculado
+[12:42:42] Medicion finalizada
+[12:42:42] Resultado listo en memoria
+[12:47:04] Inicio solicitado
+[12:47:04] Inicio de medicion
+[12:47:04] Repeticion 1 de 4
+[12:47:04] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:47:04] BBD -> 163.0 mm
+[12:47:06] Punto 1/84 adquirido
+[12:47:06] BBD -> 163.1 mm
+[12:47:07] Punto 2/84 adquirido
+[12:47:07] BBD -> 163.2 mm
+[12:47:09] Punto 3/84 adquirido
+[12:47:09] BBD -> 163.3 mm
+[12:47:10] Punto 4/84 adquirido
+[12:47:10] BBD -> 163.4 mm
+[12:47:11] Punto 5/84 adquirido
+[12:47:12] BBD -> 163.5 mm
+[12:47:13] Punto 6/84 adquirido
+[12:47:13] BBD -> 163.6 mm
+[12:47:14] Punto 7/84 adquirido
+[12:47:14] BBD -> 163.7 mm
+[12:47:16] Punto 8/84 adquirido
+[12:47:16] BBD -> 163.8 mm
+[12:47:17] Punto 9/84 adquirido
+[12:47:17] BBD -> 163.9 mm
+[12:47:18] Punto 10/84 adquirido
+[12:47:19] BBD -> 164.0 mm
+[12:47:20] Punto 11/84 adquirido
+[12:47:20] BBD -> 164.1 mm
+[12:47:21] Punto 12/84 adquirido
+[12:47:21] BBD -> 164.2 mm
+[12:47:23] Punto 13/84 adquirido
+[12:47:23] BBD -> 164.3 mm
+[12:47:24] Punto 14/84 adquirido
+[12:47:24] BBD -> 164.4 mm
+[12:47:26] Punto 15/84 adquirido
+[12:47:26] BBD -> 164.5 mm
+[12:47:27] Punto 16/84 adquirido
+[12:47:27] BBD -> 164.6 mm
+[12:47:28] Punto 17/84 adquirido
+[12:47:28] BBD -> 164.7 mm
+[12:47:30] Punto 18/84 adquirido
+[12:47:30] BBD -> 164.8 mm
+[12:47:31] Punto 19/84 adquirido
+[12:47:31] BBD -> 164.9 mm
+[12:47:33] Punto 20/84 adquirido
+[12:47:33] BBD -> 165.0 mm
+[12:47:34] Punto 21/84 adquirido
+[12:47:34] Repeticion 2 de 4
+[12:47:34] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:47:34] BBD -> 163.0 mm
+[12:47:36] Punto 22/84 adquirido
+[12:47:36] BBD -> 163.1 mm
+[12:47:37] Punto 23/84 adquirido
+[12:47:37] BBD -> 163.2 mm
+[12:47:38] Punto 24/84 adquirido
+[12:47:38] BBD -> 163.3 mm
+[12:47:40] Punto 25/84 adquirido
+[12:47:40] BBD -> 163.4 mm
+[12:47:41] Punto 26/84 adquirido
+[12:47:41] BBD -> 163.5 mm
+[12:47:43] Punto 27/84 adquirido
+[12:47:43] BBD -> 163.6 mm
+[12:47:44] Punto 28/84 adquirido
+[12:47:44] BBD -> 163.7 mm
+[12:47:45] Punto 29/84 adquirido
+[12:47:45] BBD -> 163.8 mm
+[12:47:47] Punto 30/84 adquirido
+[12:47:47] BBD -> 163.9 mm
+[12:47:48] Punto 31/84 adquirido
+[12:47:48] BBD -> 164.0 mm
+[12:47:50] Punto 32/84 adquirido
+[12:47:50] BBD -> 164.1 mm
+[12:47:51] Punto 33/84 adquirido
+[12:47:51] BBD -> 164.2 mm
+[12:47:52] Punto 34/84 adquirido
+[12:47:52] BBD -> 164.3 mm
+[12:47:54] Punto 35/84 adquirido
+[12:47:54] BBD -> 164.4 mm
+[12:47:55] Punto 36/84 adquirido
+[12:47:55] BBD -> 164.5 mm
+[12:47:57] Punto 37/84 adquirido
+[12:47:57] BBD -> 164.6 mm
+[12:47:58] Punto 38/84 adquirido
+[12:47:58] BBD -> 164.7 mm
+[12:47:59] Punto 39/84 adquirido
+[12:47:59] BBD -> 164.8 mm
+[12:48:01] Punto 40/84 adquirido
+[12:48:01] BBD -> 164.9 mm
+[12:48:02] Punto 41/84 adquirido
+[12:48:02] BBD -> 165.0 mm
+[12:48:04] Punto 42/84 adquirido
+[12:48:04] Repeticion 3 de 4
+[12:48:04] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:48:04] BBD -> 163.0 mm
+[12:48:05] Punto 43/84 adquirido
+[12:48:05] BBD -> 163.1 mm
+[12:48:07] Punto 44/84 adquirido
+[12:48:07] BBD -> 163.2 mm
+[12:48:08] Punto 45/84 adquirido
+[12:48:08] BBD -> 163.3 mm
+[12:48:09] Punto 46/84 adquirido
+[12:48:09] BBD -> 163.4 mm
+[12:48:11] Punto 47/84 adquirido
+[12:48:11] BBD -> 163.5 mm
+[12:48:12] Punto 48/84 adquirido
+[12:48:12] BBD -> 163.6 mm
+[12:48:14] Punto 49/84 adquirido
+[12:48:14] BBD -> 163.7 mm
+[12:48:15] Punto 50/84 adquirido
+[12:48:15] BBD -> 163.8 mm
+[12:48:16] Punto 51/84 adquirido
+[12:48:17] BBD -> 163.9 mm
+[12:48:18] Punto 52/84 adquirido
+[12:48:18] BBD -> 164.0 mm
+[12:48:19] Punto 53/84 adquirido
+[12:48:19] BBD -> 164.1 mm
+[12:48:21] Punto 54/84 adquirido
+[12:48:21] BBD -> 164.2 mm
+[12:48:22] Punto 55/84 adquirido
+[12:48:22] BBD -> 164.3 mm
+[12:48:23] Punto 56/84 adquirido
+[12:48:24] BBD -> 164.4 mm
+[12:48:25] Punto 57/84 adquirido
+[12:48:25] BBD -> 164.5 mm
+[12:48:26] Punto 58/84 adquirido
+[12:48:26] BBD -> 164.6 mm
+[12:48:28] Punto 59/84 adquirido
+[12:48:28] BBD -> 164.7 mm
+[12:48:29] Punto 60/84 adquirido
+[12:48:29] BBD -> 164.8 mm
+[12:48:31] Punto 61/84 adquirido
+[12:48:31] BBD -> 164.9 mm
+[12:48:32] Punto 62/84 adquirido
+[12:48:32] BBD -> 165.0 mm
+[12:48:33] Punto 63/84 adquirido
+[12:48:33] Repeticion 4 de 4
+[12:48:33] SMS desactivado: se usa lambda fija manual 650.0 nm
+[12:48:34] BBD -> 163.0 mm
+[12:48:35] Punto 64/84 adquirido
+[12:48:35] BBD -> 163.1 mm
+[12:48:36] Punto 65/84 adquirido
+[12:48:36] BBD -> 163.2 mm
+[12:48:38] Punto 66/84 adquirido
+[12:48:38] BBD -> 163.3 mm
+[12:48:39] Punto 67/84 adquirido
+[12:48:39] BBD -> 163.4 mm
+[12:48:41] Punto 68/84 adquirido
+[12:48:41] BBD -> 163.5 mm
+[12:48:42] Punto 69/84 adquirido
+[12:48:42] BBD -> 163.6 mm
+[12:48:43] Punto 70/84 adquirido
+[12:48:43] BBD -> 163.7 mm
+[12:48:45] Punto 71/84 adquirido
+[12:48:45] BBD -> 163.8 mm
+[12:48:46] Punto 72/84 adquirido
+[12:48:46] BBD -> 163.9 mm
+[12:48:48] Punto 73/84 adquirido
+[12:48:48] BBD -> 164.0 mm
+[12:48:49] Punto 74/84 adquirido
+[12:48:49] BBD -> 164.1 mm
+[12:48:50] Punto 75/84 adquirido
+[12:48:50] BBD -> 164.2 mm
+[12:48:52] Punto 76/84 adquirido
+[12:48:52] BBD -> 164.3 mm
+[12:48:53] Punto 77/84 adquirido
+[12:48:53] BBD -> 164.4 mm
+[12:48:55] Punto 78/84 adquirido
+[12:48:55] BBD -> 164.5 mm
+[12:48:56] Punto 79/84 adquirido
+[12:48:56] BBD -> 164.6 mm
+[12:48:57] Punto 80/84 adquirido
+[12:48:57] BBD -> 164.7 mm
+[12:48:59] Punto 81/84 adquirido
+[12:48:59] BBD -> 164.8 mm
+[12:49:00] Punto 82/84 adquirido
+[12:49:00] BBD -> 164.9 mm
+[12:49:02] Punto 83/84 adquirido
+[12:49:02] BBD -> 165.0 mm
+[12:49:03] Punto 84/84 adquirido
+[12:49:03] Promedio calculado
+[12:49:03] Medicion finalizada
+[12:49:03] Resultado listo en memoria

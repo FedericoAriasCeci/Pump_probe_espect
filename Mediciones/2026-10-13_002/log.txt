@@ -1,0 +1,2450 @@
+[16:42:23] Aplicacion iniciada en modo simulacion
+[16:42:31] Modo hardware real activo
+[16:43:00] BBD conectado
+[16:44:53] Lock-in: abriendo recurso 8
+[16:44:53] Lock-in: recurso abierto
+[16:44:53] Lock-in: identificando
+[16:44:53] Lock-in: configurando
+[16:44:55] Lock-in: leyendo constante de tiempo
+[16:44:55] Lock-in conectado en 8
+[16:51:35] Inicio solicitado
+[16:51:35] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[16:51:35] Inicio de medicion
+[16:51:35] Repeticion 1 de 3
+[16:51:35] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:51:35] BBD -> 160.0 mm
+[16:51:36] Auto rango sensibilidad para lambda 650.0 nm
+[16:51:36] Sensibilidad Lock-in sin cambios
+[16:51:37] Punto 1/87 adquirido
+[16:51:38] BBD -> 160.25 mm
+[16:51:40] Punto 2/87 adquirido
+[16:51:40] BBD -> 160.5 mm
+[16:51:42] Punto 3/87 adquirido
+[16:51:42] BBD -> 160.75 mm
+[16:51:44] Punto 4/87 adquirido
+[16:51:44] BBD -> 161.0 mm
+[16:51:46] Punto 5/87 adquirido
+[16:51:46] BBD -> 161.25 mm
+[16:51:48] Punto 6/87 adquirido
+[16:51:48] BBD -> 161.5 mm
+[16:51:50] Punto 7/87 adquirido
+[16:51:50] BBD -> 161.75 mm
+[16:51:52] Punto 8/87 adquirido
+[16:51:52] BBD -> 162.0 mm
+[16:51:54] Punto 9/87 adquirido
+[16:51:54] BBD -> 162.25 mm
+[16:51:57] Punto 10/87 adquirido
+[16:51:57] BBD -> 162.5 mm
+[16:51:59] Punto 11/87 adquirido
+[16:51:59] BBD -> 162.75 mm
+[16:52:01] Punto 12/87 adquirido
+[16:52:01] BBD -> 163.0 mm
+[16:52:03] Punto 13/87 adquirido
+[16:52:03] BBD -> 163.25 mm
+[16:52:05] Punto 14/87 adquirido
+[16:52:05] BBD -> 163.5 mm
+[16:52:07] Punto 15/87 adquirido
+[16:52:07] BBD -> 163.75 mm
+[16:52:09] Punto 16/87 adquirido
+[16:52:09] BBD -> 164.0 mm
+[16:52:11] Punto 17/87 adquirido
+[16:52:11] BBD -> 164.25 mm
+[16:52:13] Punto 18/87 adquirido
+[16:52:14] BBD -> 164.5 mm
+[16:52:16] Punto 19/87 adquirido
+[16:52:16] BBD -> 164.75 mm
+[16:52:18] Punto 20/87 adquirido
+[16:52:18] BBD -> 165.0 mm
+[16:52:20] Punto 21/87 adquirido
+[16:52:20] BBD -> 165.25 mm
+[16:52:22] Punto 22/87 adquirido
+[16:52:22] BBD -> 165.5 mm
+[16:52:24] Punto 23/87 adquirido
+[16:52:24] BBD -> 165.75 mm
+[16:52:26] Punto 24/87 adquirido
+[16:52:26] BBD -> 166.0 mm
+[16:52:28] Punto 25/87 adquirido
+[16:52:28] BBD -> 166.25 mm
+[16:52:30] Punto 26/87 adquirido
+[16:52:31] BBD -> 166.5 mm
+[16:52:33] Punto 27/87 adquirido
+[16:52:33] BBD -> 166.75 mm
+[16:52:35] Punto 28/87 adquirido
+[16:52:35] BBD -> 167.0 mm
+[16:52:37] Punto 29/87 adquirido
+[16:52:37] Repeticion 2 de 3
+[16:52:37] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:52:37] BBD -> 160.0 mm
+[16:52:38] Auto rango sensibilidad para lambda 650.0 nm
+[16:52:38] Sensibilidad Lock-in sin cambios
+[16:52:39] Punto 30/87 adquirido
+[16:52:39] BBD -> 160.25 mm
+[16:52:41] Punto 31/87 adquirido
+[16:52:41] BBD -> 160.5 mm
+[16:52:43] Punto 32/87 adquirido
+[16:52:43] BBD -> 160.75 mm
+[16:52:45] Punto 33/87 adquirido
+[16:52:46] BBD -> 161.0 mm
+[16:52:46] Cancelacion solicitada
+[16:52:46] Medicion cancelada
+[16:52:46] Resultado parcial listo en memoria
+[16:53:06] Inicio solicitado
+[16:53:06] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[16:53:06] Inicio de medicion
+[16:53:06] Repeticion 1 de 3
+[16:53:06] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:53:06] BBD -> 160.0 mm
+[16:53:07] Auto rango sensibilidad para lambda 650.0 nm
+[16:53:07] Sensibilidad Lock-in sin cambios
+[16:53:08] Punto 1/87 adquirido
+[16:53:09] BBD -> 160.25 mm
+[16:53:11] Punto 2/87 adquirido
+[16:53:11] BBD -> 160.5 mm
+[16:53:13] Punto 3/87 adquirido
+[16:53:13] BBD -> 160.75 mm
+[16:53:15] Punto 4/87 adquirido
+[16:53:15] BBD -> 161.0 mm
+[16:53:17] Punto 5/87 adquirido
+[16:53:17] BBD -> 161.25 mm
+[16:53:19] Punto 6/87 adquirido
+[16:53:19] BBD -> 161.5 mm
+[16:53:21] Punto 7/87 adquirido
+[16:53:21] BBD -> 161.75 mm
+[16:53:23] Punto 8/87 adquirido
+[16:53:23] BBD -> 162.0 mm
+[16:53:25] Punto 9/87 adquirido
+[16:53:26] BBD -> 162.25 mm
+[16:53:28] Punto 10/87 adquirido
+[16:53:28] BBD -> 162.5 mm
+[16:53:30] Punto 11/87 adquirido
+[16:53:30] BBD -> 162.75 mm
+[16:53:32] Punto 12/87 adquirido
+[16:53:32] BBD -> 163.0 mm
+[16:53:34] Punto 13/87 adquirido
+[16:53:34] BBD -> 163.25 mm
+[16:53:36] Punto 14/87 adquirido
+[16:53:36] BBD -> 163.5 mm
+[16:53:38] Punto 15/87 adquirido
+[16:53:38] BBD -> 163.75 mm
+[16:53:40] Punto 16/87 adquirido
+[16:53:40] BBD -> 164.0 mm
+[16:53:42] Punto 17/87 adquirido
+[16:53:42] BBD -> 164.25 mm
+[16:53:45] Punto 18/87 adquirido
+[16:53:45] BBD -> 164.5 mm
+[16:53:47] Punto 19/87 adquirido
+[16:53:47] BBD -> 164.75 mm
+[16:53:49] Punto 20/87 adquirido
+[16:53:49] BBD -> 165.0 mm
+[16:53:51] Punto 21/87 adquirido
+[16:53:51] BBD -> 165.25 mm
+[16:53:53] Punto 22/87 adquirido
+[16:53:53] BBD -> 165.5 mm
+[16:53:55] Punto 23/87 adquirido
+[16:53:55] BBD -> 165.75 mm
+[16:53:57] Punto 24/87 adquirido
+[16:53:57] BBD -> 166.0 mm
+[16:53:59] Punto 25/87 adquirido
+[16:53:59] BBD -> 166.25 mm
+[16:54:02] Punto 26/87 adquirido
+[16:54:02] BBD -> 166.5 mm
+[16:54:04] Punto 27/87 adquirido
+[16:54:04] BBD -> 166.75 mm
+[16:54:06] Punto 28/87 adquirido
+[16:54:06] BBD -> 167.0 mm
+[16:54:08] Punto 29/87 adquirido
+[16:54:08] Repeticion 2 de 3
+[16:54:08] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:54:08] BBD -> 160.0 mm
+[16:54:09] Auto rango sensibilidad para lambda 650.0 nm
+[16:54:09] Sensibilidad Lock-in sin cambios
+[16:54:10] Punto 30/87 adquirido
+[16:54:10] BBD -> 160.25 mm
+[16:54:12] Punto 31/87 adquirido
+[16:54:12] BBD -> 160.5 mm
+[16:54:14] Punto 32/87 adquirido
+[16:54:15] BBD -> 160.75 mm
+[16:54:17] Punto 33/87 adquirido
+[16:54:17] BBD -> 161.0 mm
+[16:54:19] Punto 34/87 adquirido
+[16:54:19] BBD -> 161.25 mm
+[16:54:21] Punto 35/87 adquirido
+[16:54:21] BBD -> 161.5 mm
+[16:54:23] Punto 36/87 adquirido
+[16:54:23] BBD -> 161.75 mm
+[16:54:25] Punto 37/87 adquirido
+[16:54:25] BBD -> 162.0 mm
+[16:54:27] Punto 38/87 adquirido
+[16:54:27] BBD -> 162.25 mm
+[16:54:29] Punto 39/87 adquirido
+[16:54:29] BBD -> 162.5 mm
+[16:54:31] Punto 40/87 adquirido
+[16:54:31] BBD -> 162.75 mm
+[16:54:34] Punto 41/87 adquirido
+[16:54:34] BBD -> 163.0 mm
+[16:54:36] Punto 42/87 adquirido
+[16:54:36] BBD -> 163.25 mm
+[16:54:38] Punto 43/87 adquirido
+[16:54:38] BBD -> 163.5 mm
+[16:54:40] Punto 44/87 adquirido
+[16:54:40] BBD -> 163.75 mm
+[16:54:42] Punto 45/87 adquirido
+[16:54:42] BBD -> 164.0 mm
+[16:54:44] Punto 46/87 adquirido
+[16:54:44] BBD -> 164.25 mm
+[16:54:46] Punto 47/87 adquirido
+[16:54:46] BBD -> 164.5 mm
+[16:54:48] Punto 48/87 adquirido
+[16:54:48] BBD -> 164.75 mm
+[16:54:50] Punto 49/87 adquirido
+[16:54:51] BBD -> 165.0 mm
+[16:54:53] Punto 50/87 adquirido
+[16:54:53] BBD -> 165.25 mm
+[16:54:55] Punto 51/87 adquirido
+[16:54:55] BBD -> 165.5 mm
+[16:54:57] Punto 52/87 adquirido
+[16:54:57] BBD -> 165.75 mm
+[16:54:59] Punto 53/87 adquirido
+[16:54:59] BBD -> 166.0 mm
+[16:55:01] Punto 54/87 adquirido
+[16:55:01] BBD -> 166.25 mm
+[16:55:03] Punto 55/87 adquirido
+[16:55:03] BBD -> 166.5 mm
+[16:55:05] Punto 56/87 adquirido
+[16:55:05] BBD -> 166.75 mm
+[16:55:07] Punto 57/87 adquirido
+[16:55:08] BBD -> 167.0 mm
+[16:55:10] Punto 58/87 adquirido
+[16:55:10] Repeticion 3 de 3
+[16:55:10] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:55:10] BBD -> 160.0 mm
+[16:55:11] Auto rango sensibilidad para lambda 650.0 nm
+[16:55:11] Sensibilidad Lock-in sin cambios
+[16:55:12] Punto 59/87 adquirido
+[16:55:12] BBD -> 160.25 mm
+[16:55:14] Punto 60/87 adquirido
+[16:55:14] BBD -> 160.5 mm
+[16:55:16] Punto 61/87 adquirido
+[16:55:16] BBD -> 160.75 mm
+[16:55:18] Punto 62/87 adquirido
+[16:55:18] BBD -> 161.0 mm
+[16:55:20] Punto 63/87 adquirido
+[16:55:20] BBD -> 161.25 mm
+[16:55:23] Punto 64/87 adquirido
+[16:55:23] BBD -> 161.5 mm
+[16:55:25] Punto 65/87 adquirido
+[16:55:25] BBD -> 161.75 mm
+[16:55:27] Punto 66/87 adquirido
+[16:55:27] BBD -> 162.0 mm
+[16:55:29] Punto 67/87 adquirido
+[16:55:29] BBD -> 162.25 mm
+[16:55:31] Punto 68/87 adquirido
+[16:55:31] BBD -> 162.5 mm
+[16:55:33] Punto 69/87 adquirido
+[16:55:33] BBD -> 162.75 mm
+[16:55:35] Punto 70/87 adquirido
+[16:55:35] BBD -> 163.0 mm
+[16:55:37] Punto 71/87 adquirido
+[16:55:37] BBD -> 163.25 mm
+[16:55:40] Punto 72/87 adquirido
+[16:55:40] BBD -> 163.5 mm
+[16:55:42] Punto 73/87 adquirido
+[16:55:42] BBD -> 163.75 mm
+[16:55:44] Punto 74/87 adquirido
+[16:55:44] BBD -> 164.0 mm
+[16:55:46] Punto 75/87 adquirido
+[16:55:46] BBD -> 164.25 mm
+[16:55:48] Punto 76/87 adquirido
+[16:55:48] BBD -> 164.5 mm
+[16:55:50] Punto 77/87 adquirido
+[16:55:50] BBD -> 164.75 mm
+[16:55:52] Punto 78/87 adquirido
+[16:55:52] BBD -> 165.0 mm
+[16:55:54] Punto 79/87 adquirido
+[16:55:54] BBD -> 165.25 mm
+[16:55:57] Punto 80/87 adquirido
+[16:55:57] BBD -> 165.5 mm
+[16:55:59] Punto 81/87 adquirido
+[16:55:59] BBD -> 165.75 mm
+[16:56:01] Punto 82/87 adquirido
+[16:56:01] BBD -> 166.0 mm
+[16:56:03] Punto 83/87 adquirido
+[16:56:03] BBD -> 166.25 mm
+[16:56:05] Punto 84/87 adquirido
+[16:56:05] BBD -> 166.5 mm
+[16:56:07] Punto 85/87 adquirido
+[16:56:07] BBD -> 166.75 mm
+[16:56:09] Punto 86/87 adquirido
+[16:56:09] BBD -> 167.0 mm
+[16:56:11] Punto 87/87 adquirido
+[16:56:11] Promedio calculado
+[16:56:11] Medicion finalizada
+[16:56:11] Resultado listo en memoria
+[16:56:28] Inicio solicitado
+[16:56:29] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[16:56:29] Inicio de medicion
+[16:56:29] Repeticion 1 de 3
+[16:56:29] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:56:29] BBD -> 160.0 mm
+[16:56:30] Auto rango sensibilidad para lambda 650.0 nm
+[16:56:30] Sensibilidad Lock-in sin cambios
+[16:56:31] Punto 1/87 adquirido
+[16:56:31] BBD -> 160.25 mm
+[16:56:33] Punto 2/87 adquirido
+[16:56:33] BBD -> 160.5 mm
+[16:56:35] Punto 3/87 adquirido
+[16:56:35] BBD -> 160.75 mm
+[16:56:37] Punto 4/87 adquirido
+[16:56:37] BBD -> 161.0 mm
+[16:56:39] Punto 5/87 adquirido
+[16:56:39] BBD -> 161.25 mm
+[16:56:42] Punto 6/87 adquirido
+[16:56:42] BBD -> 161.5 mm
+[16:56:44] Punto 7/87 adquirido
+[16:56:44] BBD -> 161.75 mm
+[16:56:46] Punto 8/87 adquirido
+[16:56:46] BBD -> 162.0 mm
+[16:56:48] Punto 9/87 adquirido
+[16:56:48] BBD -> 162.25 mm
+[16:56:50] Punto 10/87 adquirido
+[16:56:50] BBD -> 162.5 mm
+[16:56:52] Punto 11/87 adquirido
+[16:56:52] BBD -> 162.75 mm
+[16:56:54] Punto 12/87 adquirido
+[16:56:54] BBD -> 163.0 mm
+[16:56:56] Punto 13/87 adquirido
+[16:56:56] BBD -> 163.25 mm
+[16:56:59] Punto 14/87 adquirido
+[16:56:59] BBD -> 163.5 mm
+[16:57:01] Punto 15/87 adquirido
+[16:57:01] BBD -> 163.75 mm
+[16:57:03] Punto 16/87 adquirido
+[16:57:03] BBD -> 164.0 mm
+[16:57:05] Punto 17/87 adquirido
+[16:57:05] BBD -> 164.25 mm
+[16:57:07] Punto 18/87 adquirido
+[16:57:07] BBD -> 164.5 mm
+[16:57:09] Punto 19/87 adquirido
+[16:57:09] BBD -> 164.75 mm
+[16:57:11] Punto 20/87 adquirido
+[16:57:11] BBD -> 165.0 mm
+[16:57:13] Punto 21/87 adquirido
+[16:57:13] BBD -> 165.25 mm
+[16:57:16] Punto 22/87 adquirido
+[16:57:16] BBD -> 165.5 mm
+[16:57:18] Punto 23/87 adquirido
+[16:57:18] BBD -> 165.75 mm
+[16:57:20] Punto 24/87 adquirido
+[16:57:20] BBD -> 166.0 mm
+[16:57:22] Punto 25/87 adquirido
+[16:57:22] BBD -> 166.25 mm
+[16:57:24] Punto 26/87 adquirido
+[16:57:24] BBD -> 166.5 mm
+[16:57:26] Punto 27/87 adquirido
+[16:57:26] BBD -> 166.75 mm
+[16:57:28] Punto 28/87 adquirido
+[16:57:28] BBD -> 167.0 mm
+[16:57:30] Punto 29/87 adquirido
+[16:57:30] Repeticion 2 de 3
+[16:57:30] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:57:31] BBD -> 160.0 mm
+[16:57:32] Auto rango sensibilidad para lambda 650.0 nm
+[16:57:32] Sensibilidad Lock-in sin cambios
+[16:57:33] Punto 30/87 adquirido
+[16:57:33] BBD -> 160.25 mm
+[16:57:35] Punto 31/87 adquirido
+[16:57:35] BBD -> 160.5 mm
+[16:57:37] Punto 32/87 adquirido
+[16:57:37] BBD -> 160.75 mm
+[16:57:39] Punto 33/87 adquirido
+[16:57:39] BBD -> 161.0 mm
+[16:57:41] Punto 34/87 adquirido
+[16:57:41] BBD -> 161.25 mm
+[16:57:43] Punto 35/87 adquirido
+[16:57:43] BBD -> 161.5 mm
+[16:57:45] Punto 36/87 adquirido
+[16:57:46] BBD -> 161.75 mm
+[16:57:48] Punto 37/87 adquirido
+[16:57:48] BBD -> 162.0 mm
+[16:57:50] Punto 38/87 adquirido
+[16:57:50] BBD -> 162.25 mm
+[16:57:52] Punto 39/87 adquirido
+[16:57:52] BBD -> 162.5 mm
+[16:57:54] Punto 40/87 adquirido
+[16:57:54] BBD -> 162.75 mm
+[16:57:56] Punto 41/87 adquirido
+[16:57:56] BBD -> 163.0 mm
+[16:57:58] Punto 42/87 adquirido
+[16:57:58] BBD -> 163.25 mm
+[16:58:00] Punto 43/87 adquirido
+[16:58:00] BBD -> 163.5 mm
+[16:58:02] Punto 44/87 adquirido
+[16:58:03] BBD -> 163.75 mm
+[16:58:05] Punto 45/87 adquirido
+[16:58:05] BBD -> 164.0 mm
+[16:58:07] Punto 46/87 adquirido
+[16:58:07] BBD -> 164.25 mm
+[16:58:09] Punto 47/87 adquirido
+[16:58:09] BBD -> 164.5 mm
+[16:58:11] Punto 48/87 adquirido
+[16:58:11] BBD -> 164.75 mm
+[16:58:13] Punto 49/87 adquirido
+[16:58:13] BBD -> 165.0 mm
+[16:58:15] Punto 50/87 adquirido
+[16:58:15] BBD -> 165.25 mm
+[16:58:17] Punto 51/87 adquirido
+[16:58:17] BBD -> 165.5 mm
+[16:58:19] Punto 52/87 adquirido
+[16:58:19] BBD -> 165.75 mm
+[16:58:22] Punto 53/87 adquirido
+[16:58:22] BBD -> 166.0 mm
+[16:58:24] Punto 54/87 adquirido
+[16:58:24] BBD -> 166.25 mm
+[16:58:26] Punto 55/87 adquirido
+[16:58:26] BBD -> 166.5 mm
+[16:58:28] Punto 56/87 adquirido
+[16:58:28] BBD -> 166.75 mm
+[16:58:30] Punto 57/87 adquirido
+[16:58:30] BBD -> 167.0 mm
+[16:58:32] Punto 58/87 adquirido
+[16:58:32] Repeticion 3 de 3
+[16:58:32] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:58:32] BBD -> 160.0 mm
+[16:58:33] Auto rango sensibilidad para lambda 650.0 nm
+[16:58:33] Sensibilidad Lock-in sin cambios
+[16:58:35] Punto 59/87 adquirido
+[16:58:35] BBD -> 160.25 mm
+[16:58:37] Punto 60/87 adquirido
+[16:58:37] BBD -> 160.5 mm
+[16:58:39] Punto 61/87 adquirido
+[16:58:39] BBD -> 160.75 mm
+[16:58:41] Punto 62/87 adquirido
+[16:58:41] BBD -> 161.0 mm
+[16:58:43] Punto 63/87 adquirido
+[16:58:43] BBD -> 161.25 mm
+[16:58:45] Punto 64/87 adquirido
+[16:58:45] BBD -> 161.5 mm
+[16:58:47] Punto 65/87 adquirido
+[16:58:47] BBD -> 161.75 mm
+[16:58:49] Punto 66/87 adquirido
+[16:58:49] BBD -> 162.0 mm
+[16:58:51] Punto 67/87 adquirido
+[16:58:52] BBD -> 162.25 mm
+[16:58:54] Punto 68/87 adquirido
+[16:58:54] BBD -> 162.5 mm
+[16:58:56] Punto 69/87 adquirido
+[16:58:56] BBD -> 162.75 mm
+[16:58:58] Punto 70/87 adquirido
+[16:58:58] BBD -> 163.0 mm
+[16:59:00] Punto 71/87 adquirido
+[16:59:00] BBD -> 163.25 mm
+[16:59:02] Punto 72/87 adquirido
+[16:59:02] BBD -> 163.5 mm
+[16:59:04] Punto 73/87 adquirido
+[16:59:04] BBD -> 163.75 mm
+[16:59:06] Punto 74/87 adquirido
+[16:59:06] BBD -> 164.0 mm
+[16:59:08] Punto 75/87 adquirido
+[16:59:08] BBD -> 164.25 mm
+[16:59:11] Punto 76/87 adquirido
+[16:59:11] BBD -> 164.5 mm
+[16:59:13] Punto 77/87 adquirido
+[16:59:13] BBD -> 164.75 mm
+[16:59:15] Punto 78/87 adquirido
+[16:59:15] BBD -> 165.0 mm
+[16:59:17] Punto 79/87 adquirido
+[16:59:17] BBD -> 165.25 mm
+[16:59:19] Punto 80/87 adquirido
+[16:59:19] BBD -> 165.5 mm
+[16:59:21] Punto 81/87 adquirido
+[16:59:21] BBD -> 165.75 mm
+[16:59:23] Punto 82/87 adquirido
+[16:59:23] BBD -> 166.0 mm
+[16:59:25] Punto 83/87 adquirido
+[16:59:25] BBD -> 166.25 mm
+[16:59:28] Punto 84/87 adquirido
+[16:59:28] BBD -> 166.5 mm
+[16:59:30] Punto 85/87 adquirido
+[16:59:30] BBD -> 166.75 mm
+[16:59:32] Punto 86/87 adquirido
+[16:59:32] BBD -> 167.0 mm
+[16:59:34] Punto 87/87 adquirido
+[16:59:34] Promedio calculado
+[16:59:34] Medicion finalizada
+[16:59:34] Resultado listo en memoria
+[16:59:48] Inicio solicitado
+[16:59:48] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[16:59:48] Inicio de medicion
+[16:59:48] Repeticion 1 de 3
+[16:59:48] SMS desactivado: se usa lambda fija manual 650.0 nm
+[16:59:48] BBD -> 160.0 mm
+[16:59:49] Auto rango sensibilidad para lambda 650.0 nm
+[16:59:49] Sensibilidad Lock-in sin cambios
+[16:59:50] Punto 1/213 adquirido
+[16:59:50] BBD -> 160.1 mm
+[16:59:52] Punto 2/213 adquirido
+[16:59:52] BBD -> 160.2 mm
+[16:59:55] Punto 3/213 adquirido
+[16:59:55] BBD -> 160.3 mm
+[16:59:57] Punto 4/213 adquirido
+[16:59:57] BBD -> 160.4 mm
+[16:59:59] Punto 5/213 adquirido
+[16:59:59] BBD -> 160.5 mm
+[17:00:01] Punto 6/213 adquirido
+[17:00:01] BBD -> 160.6 mm
+[17:00:03] Punto 7/213 adquirido
+[17:00:03] BBD -> 160.7 mm
+[17:00:05] Punto 8/213 adquirido
+[17:00:05] BBD -> 160.8 mm
+[17:00:07] Punto 9/213 adquirido
+[17:00:07] BBD -> 160.9 mm
+[17:00:09] Punto 10/213 adquirido
+[17:00:09] BBD -> 161.0 mm
+[17:00:11] Punto 11/213 adquirido
+[17:00:11] BBD -> 161.1 mm
+[17:00:14] Punto 12/213 adquirido
+[17:00:14] BBD -> 161.2 mm
+[17:00:16] Punto 13/213 adquirido
+[17:00:16] BBD -> 161.3 mm
+[17:00:18] Punto 14/213 adquirido
+[17:00:18] BBD -> 161.4 mm
+[17:00:20] Punto 15/213 adquirido
+[17:00:20] BBD -> 161.5 mm
+[17:00:22] Punto 16/213 adquirido
+[17:00:22] BBD -> 161.6 mm
+[17:00:24] Punto 17/213 adquirido
+[17:00:24] BBD -> 161.7 mm
+[17:00:26] Punto 18/213 adquirido
+[17:00:26] BBD -> 161.8 mm
+[17:00:28] Punto 19/213 adquirido
+[17:00:28] BBD -> 161.9 mm
+[17:00:30] Punto 20/213 adquirido
+[17:00:30] BBD -> 162.0 mm
+[17:00:33] Punto 21/213 adquirido
+[17:00:33] BBD -> 162.1 mm
+[17:00:35] Punto 22/213 adquirido
+[17:00:35] BBD -> 162.2 mm
+[17:00:37] Punto 23/213 adquirido
+[17:00:37] BBD -> 162.3 mm
+[17:00:39] Punto 24/213 adquirido
+[17:00:39] BBD -> 162.4 mm
+[17:00:41] Punto 25/213 adquirido
+[17:00:41] BBD -> 162.5 mm
+[17:00:43] Punto 26/213 adquirido
+[17:00:43] BBD -> 162.6 mm
+[17:00:45] Punto 27/213 adquirido
+[17:00:45] BBD -> 162.7 mm
+[17:00:47] Punto 28/213 adquirido
+[17:00:47] BBD -> 162.8 mm
+[17:00:49] Punto 29/213 adquirido
+[17:00:49] BBD -> 162.9 mm
+[17:00:52] Punto 30/213 adquirido
+[17:00:52] BBD -> 163.0 mm
+[17:00:54] Punto 31/213 adquirido
+[17:00:54] BBD -> 163.1 mm
+[17:00:56] Punto 32/213 adquirido
+[17:00:56] BBD -> 163.2 mm
+[17:00:58] Punto 33/213 adquirido
+[17:00:58] BBD -> 163.3 mm
+[17:01:00] Punto 34/213 adquirido
+[17:01:00] BBD -> 163.4 mm
+[17:01:02] Punto 35/213 adquirido
+[17:01:02] BBD -> 163.5 mm
+[17:01:04] Punto 36/213 adquirido
+[17:01:04] BBD -> 163.6 mm
+[17:01:06] Punto 37/213 adquirido
+[17:01:06] BBD -> 163.7 mm
+[17:01:08] Punto 38/213 adquirido
+[17:01:08] BBD -> 163.8 mm
+[17:01:11] Punto 39/213 adquirido
+[17:01:11] BBD -> 163.9 mm
+[17:01:13] Punto 40/213 adquirido
+[17:01:13] BBD -> 164.0 mm
+[17:01:15] Punto 41/213 adquirido
+[17:01:15] BBD -> 164.1 mm
+[17:01:17] Punto 42/213 adquirido
+[17:01:17] BBD -> 164.2 mm
+[17:01:19] Punto 43/213 adquirido
+[17:01:19] BBD -> 164.3 mm
+[17:01:21] Punto 44/213 adquirido
+[17:01:21] BBD -> 164.4 mm
+[17:01:23] Punto 45/213 adquirido
+[17:01:23] BBD -> 164.5 mm
+[17:01:25] Punto 46/213 adquirido
+[17:01:25] BBD -> 164.6 mm
+[17:01:27] Punto 47/213 adquirido
+[17:01:27] BBD -> 164.7 mm
+[17:01:30] Punto 48/213 adquirido
+[17:01:30] BBD -> 164.8 mm
+[17:01:32] Punto 49/213 adquirido
+[17:01:32] BBD -> 164.9 mm
+[17:01:34] Punto 50/213 adquirido
+[17:01:34] BBD -> 165.0 mm
+[17:01:36] Punto 51/213 adquirido
+[17:01:36] BBD -> 165.1 mm
+[17:01:38] Punto 52/213 adquirido
+[17:01:38] BBD -> 165.2 mm
+[17:01:40] Punto 53/213 adquirido
+[17:01:40] BBD -> 165.3 mm
+[17:01:42] Punto 54/213 adquirido
+[17:01:42] BBD -> 165.4 mm
+[17:01:44] Punto 55/213 adquirido
+[17:01:44] BBD -> 165.5 mm
+[17:01:46] Punto 56/213 adquirido
+[17:01:46] BBD -> 165.6 mm
+[17:01:49] Punto 57/213 adquirido
+[17:01:49] BBD -> 165.7 mm
+[17:01:51] Punto 58/213 adquirido
+[17:01:51] BBD -> 165.8 mm
+[17:01:53] Punto 59/213 adquirido
+[17:01:53] BBD -> 165.9 mm
+[17:01:55] Punto 60/213 adquirido
+[17:01:55] BBD -> 166.0 mm
+[17:01:57] Punto 61/213 adquirido
+[17:01:57] BBD -> 166.1 mm
+[17:01:59] Punto 62/213 adquirido
+[17:01:59] BBD -> 166.2 mm
+[17:02:01] Punto 63/213 adquirido
+[17:02:01] BBD -> 166.3 mm
+[17:02:03] Punto 64/213 adquirido
+[17:02:03] BBD -> 166.4 mm
+[17:02:05] Punto 65/213 adquirido
+[17:02:05] BBD -> 166.5 mm
+[17:02:08] Punto 66/213 adquirido
+[17:02:08] BBD -> 166.6 mm
+[17:02:10] Punto 67/213 adquirido
+[17:02:10] BBD -> 166.7 mm
+[17:02:12] Punto 68/213 adquirido
+[17:02:12] BBD -> 166.8 mm
+[17:02:14] Punto 69/213 adquirido
+[17:02:14] BBD -> 166.9 mm
+[17:02:16] Punto 70/213 adquirido
+[17:02:16] BBD -> 167.0 mm
+[17:02:18] Punto 71/213 adquirido
+[17:02:18] Repeticion 2 de 3
+[17:02:18] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:02:18] BBD -> 160.0 mm
+[17:02:19] Auto rango sensibilidad para lambda 650.0 nm
+[17:02:19] Sensibilidad Lock-in sin cambios
+[17:02:20] Punto 72/213 adquirido
+[17:02:20] BBD -> 160.1 mm
+[17:02:22] Punto 73/213 adquirido
+[17:02:23] BBD -> 160.2 mm
+[17:02:25] Punto 74/213 adquirido
+[17:02:25] BBD -> 160.3 mm
+[17:02:27] Punto 75/213 adquirido
+[17:02:27] BBD -> 160.4 mm
+[17:02:29] Punto 76/213 adquirido
+[17:02:29] BBD -> 160.5 mm
+[17:02:31] Punto 77/213 adquirido
+[17:02:31] BBD -> 160.6 mm
+[17:02:33] Punto 78/213 adquirido
+[17:02:33] BBD -> 160.7 mm
+[17:02:35] Punto 79/213 adquirido
+[17:02:35] BBD -> 160.8 mm
+[17:02:37] Punto 80/213 adquirido
+[17:02:37] BBD -> 160.9 mm
+[17:02:39] Punto 81/213 adquirido
+[17:02:39] BBD -> 161.0 mm
+[17:02:41] Punto 82/213 adquirido
+[17:02:42] BBD -> 161.1 mm
+[17:02:44] Punto 83/213 adquirido
+[17:02:44] BBD -> 161.2 mm
+[17:02:46] Punto 84/213 adquirido
+[17:02:46] BBD -> 161.3 mm
+[17:02:48] Punto 85/213 adquirido
+[17:02:48] BBD -> 161.4 mm
+[17:02:50] Punto 86/213 adquirido
+[17:02:50] BBD -> 161.5 mm
+[17:02:52] Punto 87/213 adquirido
+[17:02:52] BBD -> 161.6 mm
+[17:02:54] Punto 88/213 adquirido
+[17:02:54] BBD -> 161.7 mm
+[17:02:56] Punto 89/213 adquirido
+[17:02:56] BBD -> 161.8 mm
+[17:02:58] Punto 90/213 adquirido
+[17:02:58] BBD -> 161.9 mm
+[17:03:00] Punto 91/213 adquirido
+[17:03:01] BBD -> 162.0 mm
+[17:03:03] Punto 92/213 adquirido
+[17:03:03] BBD -> 162.1 mm
+[17:03:05] Punto 93/213 adquirido
+[17:03:05] BBD -> 162.2 mm
+[17:03:07] Punto 94/213 adquirido
+[17:03:07] BBD -> 162.3 mm
+[17:03:09] Punto 95/213 adquirido
+[17:03:09] BBD -> 162.4 mm
+[17:03:11] Punto 96/213 adquirido
+[17:03:11] BBD -> 162.5 mm
+[17:03:13] Punto 97/213 adquirido
+[17:03:13] BBD -> 162.6 mm
+[17:03:15] Punto 98/213 adquirido
+[17:03:15] BBD -> 162.7 mm
+[17:03:17] Punto 99/213 adquirido
+[17:03:17] BBD -> 162.8 mm
+[17:03:19] Punto 100/213 adquirido
+[17:03:20] BBD -> 162.9 mm
+[17:03:22] Punto 101/213 adquirido
+[17:03:22] BBD -> 163.0 mm
+[17:03:24] Punto 102/213 adquirido
+[17:03:24] BBD -> 163.1 mm
+[17:03:26] Punto 103/213 adquirido
+[17:03:26] BBD -> 163.2 mm
+[17:03:28] Punto 104/213 adquirido
+[17:03:28] BBD -> 163.3 mm
+[17:03:30] Punto 105/213 adquirido
+[17:03:30] BBD -> 163.4 mm
+[17:03:32] Punto 106/213 adquirido
+[17:03:32] BBD -> 163.5 mm
+[17:03:34] Punto 107/213 adquirido
+[17:03:34] BBD -> 163.6 mm
+[17:03:36] Punto 108/213 adquirido
+[17:03:36] BBD -> 163.7 mm
+[17:03:38] Punto 109/213 adquirido
+[17:03:39] BBD -> 163.8 mm
+[17:03:41] Punto 110/213 adquirido
+[17:03:41] BBD -> 163.9 mm
+[17:03:43] Punto 111/213 adquirido
+[17:03:43] BBD -> 164.0 mm
+[17:03:45] Punto 112/213 adquirido
+[17:03:45] BBD -> 164.1 mm
+[17:03:47] Punto 113/213 adquirido
+[17:03:47] BBD -> 164.2 mm
+[17:03:49] Punto 114/213 adquirido
+[17:03:49] BBD -> 164.3 mm
+[17:03:51] Punto 115/213 adquirido
+[17:03:51] BBD -> 164.4 mm
+[17:03:53] Punto 116/213 adquirido
+[17:03:53] BBD -> 164.5 mm
+[17:03:55] Punto 117/213 adquirido
+[17:03:55] BBD -> 164.6 mm
+[17:03:57] Punto 118/213 adquirido
+[17:03:58] BBD -> 164.7 mm
+[17:04:00] Punto 119/213 adquirido
+[17:04:00] BBD -> 164.8 mm
+[17:04:02] Punto 120/213 adquirido
+[17:04:02] BBD -> 164.9 mm
+[17:04:04] Punto 121/213 adquirido
+[17:04:04] BBD -> 165.0 mm
+[17:04:06] Punto 122/213 adquirido
+[17:04:06] BBD -> 165.1 mm
+[17:04:08] Punto 123/213 adquirido
+[17:04:08] BBD -> 165.2 mm
+[17:04:10] Punto 124/213 adquirido
+[17:04:10] BBD -> 165.3 mm
+[17:04:12] Punto 125/213 adquirido
+[17:04:12] BBD -> 165.4 mm
+[17:04:14] Punto 126/213 adquirido
+[17:04:14] BBD -> 165.5 mm
+[17:04:16] Punto 127/213 adquirido
+[17:04:17] BBD -> 165.6 mm
+[17:04:19] Punto 128/213 adquirido
+[17:04:19] BBD -> 165.7 mm
+[17:04:21] Punto 129/213 adquirido
+[17:04:21] BBD -> 165.8 mm
+[17:04:23] Punto 130/213 adquirido
+[17:04:23] BBD -> 165.9 mm
+[17:04:25] Punto 131/213 adquirido
+[17:04:25] BBD -> 166.0 mm
+[17:04:27] Punto 132/213 adquirido
+[17:04:27] BBD -> 166.1 mm
+[17:04:29] Punto 133/213 adquirido
+[17:04:29] BBD -> 166.2 mm
+[17:04:31] Punto 134/213 adquirido
+[17:04:31] BBD -> 166.3 mm
+[17:04:33] Punto 135/213 adquirido
+[17:04:33] BBD -> 166.4 mm
+[17:04:35] Punto 136/213 adquirido
+[17:04:36] BBD -> 166.5 mm
+[17:04:38] Punto 137/213 adquirido
+[17:04:38] BBD -> 166.6 mm
+[17:04:40] Punto 138/213 adquirido
+[17:04:40] BBD -> 166.7 mm
+[17:04:42] Punto 139/213 adquirido
+[17:04:42] BBD -> 166.8 mm
+[17:04:44] Punto 140/213 adquirido
+[17:04:44] BBD -> 166.9 mm
+[17:04:46] Punto 141/213 adquirido
+[17:04:46] BBD -> 167.0 mm
+[17:04:48] Punto 142/213 adquirido
+[17:04:48] Repeticion 3 de 3
+[17:04:48] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:04:48] BBD -> 160.0 mm
+[17:04:49] Auto rango sensibilidad para lambda 650.0 nm
+[17:04:49] Sensibilidad Lock-in sin cambios
+[17:04:51] Punto 143/213 adquirido
+[17:04:51] BBD -> 160.1 mm
+[17:04:53] Punto 144/213 adquirido
+[17:04:53] BBD -> 160.2 mm
+[17:04:55] Punto 145/213 adquirido
+[17:04:55] BBD -> 160.3 mm
+[17:04:57] Punto 146/213 adquirido
+[17:04:57] BBD -> 160.4 mm
+[17:04:59] Punto 147/213 adquirido
+[17:04:59] BBD -> 160.5 mm
+[17:05:01] Punto 148/213 adquirido
+[17:05:01] BBD -> 160.6 mm
+[17:05:03] Punto 149/213 adquirido
+[17:05:03] BBD -> 160.7 mm
+[17:05:05] Punto 150/213 adquirido
+[17:05:05] BBD -> 160.8 mm
+[17:05:07] Punto 151/213 adquirido
+[17:05:07] BBD -> 160.9 mm
+[17:05:09] Punto 152/213 adquirido
+[17:05:10] BBD -> 161.0 mm
+[17:05:12] Punto 153/213 adquirido
+[17:05:12] BBD -> 161.1 mm
+[17:05:14] Punto 154/213 adquirido
+[17:05:14] BBD -> 161.2 mm
+[17:05:16] Punto 155/213 adquirido
+[17:05:16] BBD -> 161.3 mm
+[17:05:18] Punto 156/213 adquirido
+[17:05:18] BBD -> 161.4 mm
+[17:05:20] Punto 157/213 adquirido
+[17:05:20] BBD -> 161.5 mm
+[17:05:22] Punto 158/213 adquirido
+[17:05:22] BBD -> 161.6 mm
+[17:05:24] Punto 159/213 adquirido
+[17:05:24] BBD -> 161.7 mm
+[17:05:26] Punto 160/213 adquirido
+[17:05:26] BBD -> 161.8 mm
+[17:05:29] Punto 161/213 adquirido
+[17:05:29] BBD -> 161.9 mm
+[17:05:31] Punto 162/213 adquirido
+[17:05:31] BBD -> 162.0 mm
+[17:05:33] Punto 163/213 adquirido
+[17:05:33] BBD -> 162.1 mm
+[17:05:35] Punto 164/213 adquirido
+[17:05:35] BBD -> 162.2 mm
+[17:05:37] Punto 165/213 adquirido
+[17:05:37] BBD -> 162.3 mm
+[17:05:39] Punto 166/213 adquirido
+[17:05:39] BBD -> 162.4 mm
+[17:05:41] Punto 167/213 adquirido
+[17:05:41] BBD -> 162.5 mm
+[17:05:43] Punto 168/213 adquirido
+[17:05:43] BBD -> 162.6 mm
+[17:05:45] Punto 169/213 adquirido
+[17:05:45] BBD -> 162.7 mm
+[17:05:48] Punto 170/213 adquirido
+[17:05:48] BBD -> 162.8 mm
+[17:05:50] Punto 171/213 adquirido
+[17:05:50] BBD -> 162.9 mm
+[17:05:52] Punto 172/213 adquirido
+[17:05:52] BBD -> 163.0 mm
+[17:05:54] Punto 173/213 adquirido
+[17:05:54] BBD -> 163.1 mm
+[17:05:56] Punto 174/213 adquirido
+[17:05:56] BBD -> 163.2 mm
+[17:05:58] Punto 175/213 adquirido
+[17:05:58] BBD -> 163.3 mm
+[17:06:00] Punto 176/213 adquirido
+[17:06:00] BBD -> 163.4 mm
+[17:06:02] Punto 177/213 adquirido
+[17:06:02] BBD -> 163.5 mm
+[17:06:04] Punto 178/213 adquirido
+[17:06:04] BBD -> 163.6 mm
+[17:06:07] Punto 179/213 adquirido
+[17:06:07] BBD -> 163.7 mm
+[17:06:09] Punto 180/213 adquirido
+[17:06:09] BBD -> 163.8 mm
+[17:06:11] Punto 181/213 adquirido
+[17:06:11] BBD -> 163.9 mm
+[17:06:13] Punto 182/213 adquirido
+[17:06:13] BBD -> 164.0 mm
+[17:06:15] Punto 183/213 adquirido
+[17:06:15] BBD -> 164.1 mm
+[17:06:17] Punto 184/213 adquirido
+[17:06:17] BBD -> 164.2 mm
+[17:06:19] Punto 185/213 adquirido
+[17:06:19] BBD -> 164.3 mm
+[17:06:21] Punto 186/213 adquirido
+[17:06:21] BBD -> 164.4 mm
+[17:06:23] Punto 187/213 adquirido
+[17:06:23] BBD -> 164.5 mm
+[17:06:25] Punto 188/213 adquirido
+[17:06:26] BBD -> 164.6 mm
+[17:06:28] Punto 189/213 adquirido
+[17:06:28] BBD -> 164.7 mm
+[17:06:30] Punto 190/213 adquirido
+[17:06:30] BBD -> 164.8 mm
+[17:06:32] Punto 191/213 adquirido
+[17:06:32] BBD -> 164.9 mm
+[17:06:34] Punto 192/213 adquirido
+[17:06:34] BBD -> 165.0 mm
+[17:06:36] Punto 193/213 adquirido
+[17:06:36] BBD -> 165.1 mm
+[17:06:38] Punto 194/213 adquirido
+[17:06:38] BBD -> 165.2 mm
+[17:06:40] Punto 195/213 adquirido
+[17:06:40] BBD -> 165.3 mm
+[17:06:42] Punto 196/213 adquirido
+[17:06:42] BBD -> 165.4 mm
+[17:06:44] Punto 197/213 adquirido
+[17:06:45] BBD -> 165.5 mm
+[17:06:47] Punto 198/213 adquirido
+[17:06:47] BBD -> 165.6 mm
+[17:06:49] Punto 199/213 adquirido
+[17:06:49] BBD -> 165.7 mm
+[17:06:51] Punto 200/213 adquirido
+[17:06:51] BBD -> 165.8 mm
+[17:06:53] Punto 201/213 adquirido
+[17:06:53] BBD -> 165.9 mm
+[17:06:55] Punto 202/213 adquirido
+[17:06:55] BBD -> 166.0 mm
+[17:06:57] Punto 203/213 adquirido
+[17:06:57] BBD -> 166.1 mm
+[17:06:59] Punto 204/213 adquirido
+[17:06:59] BBD -> 166.2 mm
+[17:07:01] Punto 205/213 adquirido
+[17:07:01] BBD -> 166.3 mm
+[17:07:03] Punto 206/213 adquirido
+[17:07:04] BBD -> 166.4 mm
+[17:07:06] Punto 207/213 adquirido
+[17:07:06] BBD -> 166.5 mm
+[17:07:08] Punto 208/213 adquirido
+[17:07:08] BBD -> 166.6 mm
+[17:07:10] Punto 209/213 adquirido
+[17:07:10] BBD -> 166.7 mm
+[17:07:12] Punto 210/213 adquirido
+[17:07:12] BBD -> 166.8 mm
+[17:07:14] Punto 211/213 adquirido
+[17:07:14] BBD -> 166.9 mm
+[17:07:16] Punto 212/213 adquirido
+[17:07:16] BBD -> 167.0 mm
+[17:07:18] Punto 213/213 adquirido
+[17:07:18] Promedio calculado
+[17:07:18] Medicion finalizada
+[17:07:18] Resultado listo en memoria
+[17:07:37] Inicio solicitado
+[17:07:37] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:07:37] Inicio de medicion
+[17:07:37] Repeticion 1 de 3
+[17:07:37] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:07:37] BBD -> 160.0 mm
+[17:07:38] Auto rango sensibilidad para lambda 650.0 nm
+[17:07:38] Sensibilidad Lock-in sin cambios
+[17:07:39] Punto 1/87 adquirido
+[17:07:39] BBD -> 160.25 mm
+[17:07:41] Punto 2/87 adquirido
+[17:07:42] BBD -> 160.5 mm
+[17:07:44] Punto 3/87 adquirido
+[17:07:44] BBD -> 160.75 mm
+[17:07:44] Cancelacion solicitada
+[17:07:44] Medicion cancelada
+[17:07:44] Resultado parcial listo en memoria
+[17:07:51] Inicio solicitado
+[17:07:51] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:07:51] Inicio de medicion
+[17:07:51] Repeticion 1 de 3
+[17:07:51] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:07:52] BBD -> 160.0 mm
+[17:07:53] Auto rango sensibilidad para lambda 650.0 nm
+[17:07:53] Sensibilidad Lock-in: 12 -> 9 (R=2.17e-07)
+[17:07:56] Punto 1/87 adquirido
+[17:07:56] BBD -> 160.25 mm
+[17:07:58] Punto 2/87 adquirido
+[17:07:58] BBD -> 160.5 mm
+[17:08:00] Punto 3/87 adquirido
+[17:08:00] BBD -> 160.75 mm
+[17:08:02] Punto 4/87 adquirido
+[17:08:02] BBD -> 161.0 mm
+[17:08:04] Punto 5/87 adquirido
+[17:08:04] BBD -> 161.25 mm
+[17:08:06] Punto 6/87 adquirido
+[17:08:06] BBD -> 161.5 mm
+[17:08:08] Punto 7/87 adquirido
+[17:08:09] BBD -> 161.75 mm
+[17:08:10] Cancelacion solicitada
+[17:08:10] Medicion cancelada
+[17:08:10] Resultado parcial listo en memoria
+[17:09:56] Inicio solicitado
+[17:09:56] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:09:56] Inicio de medicion
+[17:09:56] Repeticion 1 de 3
+[17:09:56] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:09:56] BBD -> 160.0 mm
+[17:09:57] Auto rango sensibilidad para lambda 650.0 nm
+[17:09:57] Sensibilidad Lock-in sin cambios
+[17:09:58] Punto 1/87 adquirido
+[17:09:58] BBD -> 160.25 mm
+[17:10:00] Punto 2/87 adquirido
+[17:10:00] BBD -> 160.5 mm
+[17:10:02] Punto 3/87 adquirido
+[17:10:02] BBD -> 160.75 mm
+[17:10:04] Punto 4/87 adquirido
+[17:10:05] BBD -> 161.0 mm
+[17:10:07] Punto 5/87 adquirido
+[17:10:07] BBD -> 161.25 mm
+[17:10:09] Punto 6/87 adquirido
+[17:10:09] BBD -> 161.5 mm
+[17:10:11] Punto 7/87 adquirido
+[17:10:11] BBD -> 161.75 mm
+[17:10:13] Punto 8/87 adquirido
+[17:10:13] BBD -> 162.0 mm
+[17:10:15] Punto 9/87 adquirido
+[17:10:15] BBD -> 162.25 mm
+[17:10:17] Punto 10/87 adquirido
+[17:10:17] BBD -> 162.5 mm
+[17:10:19] Punto 11/87 adquirido
+[17:10:19] BBD -> 162.75 mm
+[17:10:21] Punto 12/87 adquirido
+[17:10:22] BBD -> 163.0 mm
+[17:10:24] Punto 13/87 adquirido
+[17:10:24] BBD -> 163.25 mm
+[17:10:26] Punto 14/87 adquirido
+[17:10:26] BBD -> 163.5 mm
+[17:10:28] Punto 15/87 adquirido
+[17:10:28] BBD -> 163.75 mm
+[17:10:30] Punto 16/87 adquirido
+[17:10:30] BBD -> 164.0 mm
+[17:10:32] Punto 17/87 adquirido
+[17:10:32] BBD -> 164.25 mm
+[17:10:34] Punto 18/87 adquirido
+[17:10:34] BBD -> 164.5 mm
+[17:10:36] Punto 19/87 adquirido
+[17:10:36] BBD -> 164.75 mm
+[17:10:38] Punto 20/87 adquirido
+[17:10:39] BBD -> 165.0 mm
+[17:10:41] Punto 21/87 adquirido
+[17:10:41] BBD -> 165.25 mm
+[17:10:43] Punto 22/87 adquirido
+[17:10:43] BBD -> 165.5 mm
+[17:10:45] Punto 23/87 adquirido
+[17:10:45] BBD -> 165.75 mm
+[17:10:47] Punto 24/87 adquirido
+[17:10:47] BBD -> 166.0 mm
+[17:10:49] Punto 25/87 adquirido
+[17:10:49] BBD -> 166.25 mm
+[17:10:51] Punto 26/87 adquirido
+[17:10:51] BBD -> 166.5 mm
+[17:10:53] Punto 27/87 adquirido
+[17:10:53] BBD -> 166.75 mm
+[17:10:55] Punto 28/87 adquirido
+[17:10:56] BBD -> 167.0 mm
+[17:10:58] Punto 29/87 adquirido
+[17:10:58] Repeticion 2 de 3
+[17:10:58] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:10:58] BBD -> 160.0 mm
+[17:10:59] Auto rango sensibilidad para lambda 650.0 nm
+[17:10:59] Sensibilidad Lock-in sin cambios
+[17:11:00] Punto 30/87 adquirido
+[17:11:00] BBD -> 160.25 mm
+[17:11:02] Punto 31/87 adquirido
+[17:11:02] BBD -> 160.5 mm
+[17:11:04] Punto 32/87 adquirido
+[17:11:04] BBD -> 160.75 mm
+[17:11:06] Punto 33/87 adquirido
+[17:11:06] BBD -> 161.0 mm
+[17:11:08] Punto 34/87 adquirido
+[17:11:08] BBD -> 161.25 mm
+[17:11:10] Punto 35/87 adquirido
+[17:11:11] BBD -> 161.5 mm
+[17:11:13] Punto 36/87 adquirido
+[17:11:13] BBD -> 161.75 mm
+[17:11:15] Punto 37/87 adquirido
+[17:11:15] BBD -> 162.0 mm
+[17:11:17] Punto 38/87 adquirido
+[17:11:17] BBD -> 162.25 mm
+[17:11:19] Punto 39/87 adquirido
+[17:11:19] BBD -> 162.5 mm
+[17:11:21] Punto 40/87 adquirido
+[17:11:21] BBD -> 162.75 mm
+[17:11:23] Punto 41/87 adquirido
+[17:11:23] BBD -> 163.0 mm
+[17:11:25] Punto 42/87 adquirido
+[17:11:25] BBD -> 163.25 mm
+[17:11:27] Punto 43/87 adquirido
+[17:11:28] BBD -> 163.5 mm
+[17:11:30] Punto 44/87 adquirido
+[17:11:30] BBD -> 163.75 mm
+[17:11:32] Punto 45/87 adquirido
+[17:11:32] BBD -> 164.0 mm
+[17:11:34] Punto 46/87 adquirido
+[17:11:34] BBD -> 164.25 mm
+[17:11:36] Punto 47/87 adquirido
+[17:11:36] BBD -> 164.5 mm
+[17:11:38] Punto 48/87 adquirido
+[17:11:38] BBD -> 164.75 mm
+[17:11:40] Punto 49/87 adquirido
+[17:11:40] BBD -> 165.0 mm
+[17:11:42] Punto 50/87 adquirido
+[17:11:42] BBD -> 165.25 mm
+[17:11:44] Punto 51/87 adquirido
+[17:11:45] BBD -> 165.5 mm
+[17:11:47] Punto 52/87 adquirido
+[17:11:47] BBD -> 165.75 mm
+[17:11:49] Punto 53/87 adquirido
+[17:11:49] BBD -> 166.0 mm
+[17:11:51] Punto 54/87 adquirido
+[17:11:51] BBD -> 166.25 mm
+[17:11:53] Punto 55/87 adquirido
+[17:11:53] BBD -> 166.5 mm
+[17:11:55] Punto 56/87 adquirido
+[17:11:55] BBD -> 166.75 mm
+[17:11:57] Punto 57/87 adquirido
+[17:11:57] BBD -> 167.0 mm
+[17:11:59] Punto 58/87 adquirido
+[17:11:59] Repeticion 3 de 3
+[17:11:59] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:12:00] BBD -> 160.0 mm
+[17:12:01] Auto rango sensibilidad para lambda 650.0 nm
+[17:12:01] Sensibilidad Lock-in sin cambios
+[17:12:02] Punto 59/87 adquirido
+[17:12:02] BBD -> 160.25 mm
+[17:12:04] Punto 60/87 adquirido
+[17:12:04] BBD -> 160.5 mm
+[17:12:06] Punto 61/87 adquirido
+[17:12:06] BBD -> 160.75 mm
+[17:12:08] Punto 62/87 adquirido
+[17:12:08] BBD -> 161.0 mm
+[17:12:10] Punto 63/87 adquirido
+[17:12:10] BBD -> 161.25 mm
+[17:12:12] Punto 64/87 adquirido
+[17:12:12] BBD -> 161.5 mm
+[17:12:14] Punto 65/87 adquirido
+[17:12:14] BBD -> 161.75 mm
+[17:12:17] Punto 66/87 adquirido
+[17:12:17] BBD -> 162.0 mm
+[17:12:19] Punto 67/87 adquirido
+[17:12:19] BBD -> 162.25 mm
+[17:12:21] Punto 68/87 adquirido
+[17:12:21] BBD -> 162.5 mm
+[17:12:23] Punto 69/87 adquirido
+[17:12:23] BBD -> 162.75 mm
+[17:12:25] Punto 70/87 adquirido
+[17:12:25] BBD -> 163.0 mm
+[17:12:27] Punto 71/87 adquirido
+[17:12:27] BBD -> 163.25 mm
+[17:12:29] Punto 72/87 adquirido
+[17:12:29] BBD -> 163.5 mm
+[17:12:31] Punto 73/87 adquirido
+[17:12:31] BBD -> 163.75 mm
+[17:12:34] Punto 74/87 adquirido
+[17:12:34] BBD -> 164.0 mm
+[17:12:36] Punto 75/87 adquirido
+[17:12:36] BBD -> 164.25 mm
+[17:12:38] Punto 76/87 adquirido
+[17:12:38] BBD -> 164.5 mm
+[17:12:40] Punto 77/87 adquirido
+[17:12:40] BBD -> 164.75 mm
+[17:12:42] Punto 78/87 adquirido
+[17:12:42] BBD -> 165.0 mm
+[17:12:44] Punto 79/87 adquirido
+[17:12:44] BBD -> 165.25 mm
+[17:12:46] Punto 80/87 adquirido
+[17:12:46] BBD -> 165.5 mm
+[17:12:48] Punto 81/87 adquirido
+[17:12:48] BBD -> 165.75 mm
+[17:12:51] Punto 82/87 adquirido
+[17:12:51] BBD -> 166.0 mm
+[17:12:53] Punto 83/87 adquirido
+[17:12:53] BBD -> 166.25 mm
+[17:12:55] Punto 84/87 adquirido
+[17:12:55] BBD -> 166.5 mm
+[17:12:57] Punto 85/87 adquirido
+[17:12:57] BBD -> 166.75 mm
+[17:12:59] Punto 86/87 adquirido
+[17:12:59] BBD -> 167.0 mm
+[17:13:01] Punto 87/87 adquirido
+[17:13:01] Promedio calculado
+[17:13:01] Medicion finalizada
+[17:13:01] Resultado listo en memoria
+[17:13:19] Inicio solicitado
+[17:13:19] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:13:19] Inicio de medicion
+[17:13:19] Repeticion 1 de 3
+[17:13:19] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:13:19] BBD -> 162.0 mm
+[17:13:20] Auto rango sensibilidad para lambda 650.0 nm
+[17:13:20] Sensibilidad Lock-in sin cambios
+[17:13:21] Punto 1/93 adquirido
+[17:13:21] BBD -> 162.1 mm
+[17:13:23] Punto 2/93 adquirido
+[17:13:23] BBD -> 162.2 mm
+[17:13:25] Punto 3/93 adquirido
+[17:13:25] BBD -> 162.3 mm
+[17:13:27] Punto 4/93 adquirido
+[17:13:28] BBD -> 162.4 mm
+[17:13:30] Punto 5/93 adquirido
+[17:13:30] BBD -> 162.5 mm
+[17:13:32] Punto 6/93 adquirido
+[17:13:32] BBD -> 162.6 mm
+[17:13:34] Punto 7/93 adquirido
+[17:13:34] BBD -> 162.7 mm
+[17:13:36] Punto 8/93 adquirido
+[17:13:36] BBD -> 162.8 mm
+[17:13:38] Punto 9/93 adquirido
+[17:13:38] BBD -> 162.9 mm
+[17:13:40] Punto 10/93 adquirido
+[17:13:40] BBD -> 163.0 mm
+[17:13:42] Punto 11/93 adquirido
+[17:13:42] BBD -> 163.1 mm
+[17:13:44] Punto 12/93 adquirido
+[17:13:44] BBD -> 163.2 mm
+[17:13:46] Punto 13/93 adquirido
+[17:13:47] BBD -> 163.3 mm
+[17:13:49] Punto 14/93 adquirido
+[17:13:49] BBD -> 163.4 mm
+[17:13:51] Punto 15/93 adquirido
+[17:13:51] BBD -> 163.5 mm
+[17:13:53] Punto 16/93 adquirido
+[17:13:53] BBD -> 163.6 mm
+[17:13:55] Punto 17/93 adquirido
+[17:13:55] BBD -> 163.7 mm
+[17:13:57] Punto 18/93 adquirido
+[17:13:57] BBD -> 163.8 mm
+[17:13:59] Punto 19/93 adquirido
+[17:13:59] BBD -> 163.9 mm
+[17:14:01] Punto 20/93 adquirido
+[17:14:01] BBD -> 164.0 mm
+[17:14:03] Punto 21/93 adquirido
+[17:14:03] BBD -> 164.1 mm
+[17:14:05] Punto 22/93 adquirido
+[17:14:06] BBD -> 164.2 mm
+[17:14:08] Punto 23/93 adquirido
+[17:14:08] BBD -> 164.3 mm
+[17:14:10] Punto 24/93 adquirido
+[17:14:10] BBD -> 164.4 mm
+[17:14:12] Punto 25/93 adquirido
+[17:14:12] BBD -> 164.5 mm
+[17:14:14] Punto 26/93 adquirido
+[17:14:14] BBD -> 164.6 mm
+[17:14:16] Punto 27/93 adquirido
+[17:14:16] BBD -> 164.7 mm
+[17:14:18] Punto 28/93 adquirido
+[17:14:18] BBD -> 164.8 mm
+[17:14:20] Punto 29/93 adquirido
+[17:14:20] BBD -> 164.9 mm
+[17:14:22] Punto 30/93 adquirido
+[17:14:22] BBD -> 165.0 mm
+[17:14:24] Punto 31/93 adquirido
+[17:14:24] Repeticion 2 de 3
+[17:14:24] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:14:25] BBD -> 162.0 mm
+[17:14:26] Auto rango sensibilidad para lambda 650.0 nm
+[17:14:26] Sensibilidad Lock-in sin cambios
+[17:14:27] Punto 32/93 adquirido
+[17:14:27] BBD -> 162.1 mm
+[17:14:29] Punto 33/93 adquirido
+[17:14:29] BBD -> 162.2 mm
+[17:14:31] Punto 34/93 adquirido
+[17:14:31] BBD -> 162.3 mm
+[17:14:33] Punto 35/93 adquirido
+[17:14:33] BBD -> 162.4 mm
+[17:14:35] Punto 36/93 adquirido
+[17:14:35] BBD -> 162.5 mm
+[17:14:37] Punto 37/93 adquirido
+[17:14:37] BBD -> 162.6 mm
+[17:14:39] Punto 38/93 adquirido
+[17:14:39] BBD -> 162.7 mm
+[17:14:42] Punto 39/93 adquirido
+[17:14:42] BBD -> 162.8 mm
+[17:14:44] Punto 40/93 adquirido
+[17:14:44] BBD -> 162.9 mm
+[17:14:46] Punto 41/93 adquirido
+[17:14:46] BBD -> 163.0 mm
+[17:14:48] Punto 42/93 adquirido
+[17:14:48] BBD -> 163.1 mm
+[17:14:50] Punto 43/93 adquirido
+[17:14:50] BBD -> 163.2 mm
+[17:14:52] Punto 44/93 adquirido
+[17:14:52] BBD -> 163.3 mm
+[17:14:54] Punto 45/93 adquirido
+[17:14:54] BBD -> 163.4 mm
+[17:14:56] Punto 46/93 adquirido
+[17:14:56] BBD -> 163.5 mm
+[17:14:58] Punto 47/93 adquirido
+[17:14:59] BBD -> 163.6 mm
+[17:15:01] Punto 48/93 adquirido
+[17:15:01] BBD -> 163.7 mm
+[17:15:03] Punto 49/93 adquirido
+[17:15:03] BBD -> 163.8 mm
+[17:15:05] Punto 50/93 adquirido
+[17:15:05] BBD -> 163.9 mm
+[17:15:07] Punto 51/93 adquirido
+[17:15:07] BBD -> 164.0 mm
+[17:15:09] Punto 52/93 adquirido
+[17:15:09] BBD -> 164.1 mm
+[17:15:11] Punto 53/93 adquirido
+[17:15:11] BBD -> 164.2 mm
+[17:15:13] Punto 54/93 adquirido
+[17:15:13] BBD -> 164.3 mm
+[17:15:15] Punto 55/93 adquirido
+[17:15:15] BBD -> 164.4 mm
+[17:15:17] Punto 56/93 adquirido
+[17:15:18] BBD -> 164.5 mm
+[17:15:20] Punto 57/93 adquirido
+[17:15:20] BBD -> 164.6 mm
+[17:15:22] Punto 58/93 adquirido
+[17:15:22] BBD -> 164.7 mm
+[17:15:24] Punto 59/93 adquirido
+[17:15:24] BBD -> 164.8 mm
+[17:15:26] Punto 60/93 adquirido
+[17:15:26] BBD -> 164.9 mm
+[17:15:28] Cancelacion solicitada
+[17:15:28] Medicion cancelada
+[17:15:28] Resultado parcial listo en memoria
+[17:16:13] Inicio solicitado
+[17:16:13] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:16:13] Inicio de medicion
+[17:16:13] Repeticion 1 de 3
+[17:16:13] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:16:13] BBD -> 162.0 mm
+[17:16:14] Auto rango sensibilidad para lambda 650.0 nm
+[17:16:14] Sensibilidad Lock-in sin cambios
+[17:16:15] Punto 1/93 adquirido
+[17:16:16] BBD -> 162.1 mm
+[17:16:18] Punto 2/93 adquirido
+[17:16:18] BBD -> 162.2 mm
+[17:16:20] Punto 3/93 adquirido
+[17:16:20] BBD -> 162.3 mm
+[17:16:22] Punto 4/93 adquirido
+[17:16:22] BBD -> 162.4 mm
+[17:16:24] Punto 5/93 adquirido
+[17:16:24] BBD -> 162.5 mm
+[17:16:26] Punto 6/93 adquirido
+[17:16:26] BBD -> 162.6 mm
+[17:16:28] Punto 7/93 adquirido
+[17:16:28] BBD -> 162.7 mm
+[17:16:30] Punto 8/93 adquirido
+[17:16:30] BBD -> 162.8 mm
+[17:16:32] Punto 9/93 adquirido
+[17:16:32] BBD -> 162.9 mm
+[17:16:34] Punto 10/93 adquirido
+[17:16:35] BBD -> 163.0 mm
+[17:16:37] Punto 11/93 adquirido
+[17:16:37] BBD -> 163.1 mm
+[17:16:39] Punto 12/93 adquirido
+[17:16:39] BBD -> 163.2 mm
+[17:16:41] Punto 13/93 adquirido
+[17:16:41] BBD -> 163.3 mm
+[17:16:43] Punto 14/93 adquirido
+[17:16:43] BBD -> 163.4 mm
+[17:16:45] Punto 15/93 adquirido
+[17:16:45] BBD -> 163.5 mm
+[17:16:47] Punto 16/93 adquirido
+[17:16:47] BBD -> 163.6 mm
+[17:16:49] Punto 17/93 adquirido
+[17:16:49] BBD -> 163.7 mm
+[17:16:51] Punto 18/93 adquirido
+[17:16:51] BBD -> 163.8 mm
+[17:16:53] Punto 19/93 adquirido
+[17:16:54] BBD -> 163.9 mm
+[17:16:56] Punto 20/93 adquirido
+[17:16:56] BBD -> 164.0 mm
+[17:16:58] Punto 21/93 adquirido
+[17:16:58] BBD -> 164.1 mm
+[17:17:00] Punto 22/93 adquirido
+[17:17:00] BBD -> 164.2 mm
+[17:17:02] Punto 23/93 adquirido
+[17:17:02] BBD -> 164.3 mm
+[17:17:04] Punto 24/93 adquirido
+[17:17:04] BBD -> 164.4 mm
+[17:17:06] Punto 25/93 adquirido
+[17:17:06] BBD -> 164.5 mm
+[17:17:08] Punto 26/93 adquirido
+[17:17:08] BBD -> 164.6 mm
+[17:17:10] Punto 27/93 adquirido
+[17:17:10] BBD -> 164.7 mm
+[17:17:12] Punto 28/93 adquirido
+[17:17:13] BBD -> 164.8 mm
+[17:17:15] Punto 29/93 adquirido
+[17:17:15] BBD -> 164.9 mm
+[17:17:17] Punto 30/93 adquirido
+[17:17:17] BBD -> 165.0 mm
+[17:17:19] Punto 31/93 adquirido
+[17:17:19] Repeticion 2 de 3
+[17:17:19] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:17:19] BBD -> 162.0 mm
+[17:17:20] Auto rango sensibilidad para lambda 650.0 nm
+[17:17:20] Sensibilidad Lock-in sin cambios
+[17:17:21] Punto 32/93 adquirido
+[17:17:21] BBD -> 162.1 mm
+[17:17:23] Punto 33/93 adquirido
+[17:17:23] BBD -> 162.2 mm
+[17:17:25] Punto 34/93 adquirido
+[17:17:25] BBD -> 162.3 mm
+[17:17:27] Punto 35/93 adquirido
+[17:17:27] BBD -> 162.4 mm
+[17:17:30] Punto 36/93 adquirido
+[17:17:30] BBD -> 162.5 mm
+[17:17:32] Punto 37/93 adquirido
+[17:17:32] BBD -> 162.6 mm
+[17:17:34] Punto 38/93 adquirido
+[17:17:34] BBD -> 162.7 mm
+[17:17:36] Punto 39/93 adquirido
+[17:17:36] BBD -> 162.8 mm
+[17:17:38] Punto 40/93 adquirido
+[17:17:38] BBD -> 162.9 mm
+[17:17:40] Punto 41/93 adquirido
+[17:17:40] BBD -> 163.0 mm
+[17:17:42] Punto 42/93 adquirido
+[17:17:42] BBD -> 163.1 mm
+[17:17:44] Punto 43/93 adquirido
+[17:17:44] BBD -> 163.2 mm
+[17:17:46] Punto 44/93 adquirido
+[17:17:46] BBD -> 163.3 mm
+[17:17:49] Punto 45/93 adquirido
+[17:17:49] BBD -> 163.4 mm
+[17:17:51] Punto 46/93 adquirido
+[17:17:51] BBD -> 163.5 mm
+[17:17:53] Punto 47/93 adquirido
+[17:17:53] BBD -> 163.6 mm
+[17:17:55] Punto 48/93 adquirido
+[17:17:55] BBD -> 163.7 mm
+[17:17:57] Punto 49/93 adquirido
+[17:17:57] BBD -> 163.8 mm
+[17:17:59] Punto 50/93 adquirido
+[17:17:59] BBD -> 163.9 mm
+[17:18:01] Punto 51/93 adquirido
+[17:18:01] BBD -> 164.0 mm
+[17:18:03] Punto 52/93 adquirido
+[17:18:03] BBD -> 164.1 mm
+[17:18:05] Punto 53/93 adquirido
+[17:18:05] BBD -> 164.2 mm
+[17:18:08] Punto 54/93 adquirido
+[17:18:08] BBD -> 164.3 mm
+[17:18:10] Punto 55/93 adquirido
+[17:18:10] BBD -> 164.4 mm
+[17:18:12] Punto 56/93 adquirido
+[17:18:12] BBD -> 164.5 mm
+[17:18:14] Punto 57/93 adquirido
+[17:18:14] BBD -> 164.6 mm
+[17:18:16] Punto 58/93 adquirido
+[17:18:16] BBD -> 164.7 mm
+[17:18:18] Punto 59/93 adquirido
+[17:18:18] BBD -> 164.8 mm
+[17:18:20] Punto 60/93 adquirido
+[17:18:20] BBD -> 164.9 mm
+[17:18:22] Punto 61/93 adquirido
+[17:18:22] BBD -> 165.0 mm
+[17:18:24] Punto 62/93 adquirido
+[17:18:24] Repeticion 3 de 3
+[17:18:24] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:18:25] BBD -> 162.0 mm
+[17:18:26] Auto rango sensibilidad para lambda 650.0 nm
+[17:18:26] Sensibilidad Lock-in sin cambios
+[17:18:27] Punto 63/93 adquirido
+[17:18:27] BBD -> 162.1 mm
+[17:18:29] Punto 64/93 adquirido
+[17:18:29] BBD -> 162.2 mm
+[17:18:31] Punto 65/93 adquirido
+[17:18:31] BBD -> 162.3 mm
+[17:18:33] Punto 66/93 adquirido
+[17:18:33] BBD -> 162.4 mm
+[17:18:35] Punto 67/93 adquirido
+[17:18:35] BBD -> 162.5 mm
+[17:18:37] Punto 68/93 adquirido
+[17:18:37] BBD -> 162.6 mm
+[17:18:39] Punto 69/93 adquirido
+[17:18:39] BBD -> 162.7 mm
+[17:18:42] Punto 70/93 adquirido
+[17:18:42] BBD -> 162.8 mm
+[17:18:44] Punto 71/93 adquirido
+[17:18:44] BBD -> 162.9 mm
+[17:18:46] Punto 72/93 adquirido
+[17:18:46] BBD -> 163.0 mm
+[17:18:48] Punto 73/93 adquirido
+[17:18:48] BBD -> 163.1 mm
+[17:18:50] Punto 74/93 adquirido
+[17:18:50] BBD -> 163.2 mm
+[17:18:52] Punto 75/93 adquirido
+[17:18:52] BBD -> 163.3 mm
+[17:18:54] Punto 76/93 adquirido
+[17:18:54] BBD -> 163.4 mm
+[17:18:56] Punto 77/93 adquirido
+[17:18:56] BBD -> 163.5 mm
+[17:18:58] Punto 78/93 adquirido
+[17:18:58] BBD -> 163.6 mm
+[17:19:01] Punto 79/93 adquirido
+[17:19:01] BBD -> 163.7 mm
+[17:19:03] Punto 80/93 adquirido
+[17:19:03] BBD -> 163.8 mm
+[17:19:05] Punto 81/93 adquirido
+[17:19:05] BBD -> 163.9 mm
+[17:19:07] Punto 82/93 adquirido
+[17:19:07] BBD -> 164.0 mm
+[17:19:09] Punto 83/93 adquirido
+[17:19:09] BBD -> 164.1 mm
+[17:19:11] Punto 84/93 adquirido
+[17:19:11] BBD -> 164.2 mm
+[17:19:13] Punto 85/93 adquirido
+[17:19:13] BBD -> 164.3 mm
+[17:19:15] Punto 86/93 adquirido
+[17:19:15] BBD -> 164.4 mm
+[17:19:17] Punto 87/93 adquirido
+[17:19:18] BBD -> 164.5 mm
+[17:19:20] Punto 88/93 adquirido
+[17:19:20] BBD -> 164.6 mm
+[17:19:22] Punto 89/93 adquirido
+[17:19:22] BBD -> 164.7 mm
+[17:19:24] Punto 90/93 adquirido
+[17:19:24] BBD -> 164.8 mm
+[17:19:26] Punto 91/93 adquirido
+[17:19:26] BBD -> 164.9 mm
+[17:19:28] Punto 92/93 adquirido
+[17:19:28] BBD -> 165.0 mm
+[17:19:30] Punto 93/93 adquirido
+[17:19:30] Promedio calculado
+[17:19:30] Medicion finalizada
+[17:19:30] Resultado listo en memoria
+[17:21:07] Inicio solicitado
+[17:21:07] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:21:07] Inicio de medicion
+[17:21:07] Repeticion 1 de 3
+[17:21:07] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:21:08] BBD -> 160.0 mm
+[17:21:09] Auto rango sensibilidad para lambda 650.0 nm
+[17:21:09] Sensibilidad Lock-in sin cambios
+[17:21:10] Punto 1/87 adquirido
+[17:21:10] BBD -> 160.25 mm
+[17:21:12] Punto 2/87 adquirido
+[17:21:12] BBD -> 160.5 mm
+[17:21:14] Punto 3/87 adquirido
+[17:21:14] BBD -> 160.75 mm
+[17:21:16] Punto 4/87 adquirido
+[17:21:16] BBD -> 161.0 mm
+[17:21:18] Punto 5/87 adquirido
+[17:21:18] BBD -> 161.25 mm
+[17:21:20] Punto 6/87 adquirido
+[17:21:20] BBD -> 161.5 mm
+[17:21:22] Punto 7/87 adquirido
+[17:21:22] BBD -> 161.75 mm
+[17:21:24] Punto 8/87 adquirido
+[17:21:25] BBD -> 162.0 mm
+[17:21:27] Punto 9/87 adquirido
+[17:21:27] BBD -> 162.25 mm
+[17:21:29] Punto 10/87 adquirido
+[17:21:29] BBD -> 162.5 mm
+[17:21:31] Punto 11/87 adquirido
+[17:21:31] BBD -> 162.75 mm
+[17:21:33] Punto 12/87 adquirido
+[17:21:33] BBD -> 163.0 mm
+[17:21:35] Punto 13/87 adquirido
+[17:21:35] BBD -> 163.25 mm
+[17:21:37] Punto 14/87 adquirido
+[17:21:37] BBD -> 163.5 mm
+[17:21:39] Punto 15/87 adquirido
+[17:21:39] BBD -> 163.75 mm
+[17:21:41] Punto 16/87 adquirido
+[17:21:42] BBD -> 164.0 mm
+[17:21:44] Punto 17/87 adquirido
+[17:21:44] BBD -> 164.25 mm
+[17:21:46] Punto 18/87 adquirido
+[17:21:46] BBD -> 164.5 mm
+[17:21:48] Punto 19/87 adquirido
+[17:21:48] BBD -> 164.75 mm
+[17:21:50] Punto 20/87 adquirido
+[17:21:50] BBD -> 165.0 mm
+[17:21:52] Punto 21/87 adquirido
+[17:21:52] BBD -> 165.25 mm
+[17:21:54] Punto 22/87 adquirido
+[17:21:54] BBD -> 165.5 mm
+[17:21:56] Punto 23/87 adquirido
+[17:21:56] BBD -> 165.75 mm
+[17:21:58] Punto 24/87 adquirido
+[17:21:59] BBD -> 166.0 mm
+[17:22:01] Punto 25/87 adquirido
+[17:22:01] BBD -> 166.25 mm
+[17:22:03] Punto 26/87 adquirido
+[17:22:03] BBD -> 166.5 mm
+[17:22:05] Punto 27/87 adquirido
+[17:22:05] BBD -> 166.75 mm
+[17:22:07] Punto 28/87 adquirido
+[17:22:07] BBD -> 167.0 mm
+[17:22:09] Punto 29/87 adquirido
+[17:22:09] Repeticion 2 de 3
+[17:22:09] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:22:09] BBD -> 160.0 mm
+[17:22:10] Auto rango sensibilidad para lambda 650.0 nm
+[17:22:10] Sensibilidad Lock-in sin cambios
+[17:22:11] Punto 30/87 adquirido
+[17:22:11] BBD -> 160.25 mm
+[17:22:14] Punto 31/87 adquirido
+[17:22:14] BBD -> 160.5 mm
+[17:22:16] Punto 32/87 adquirido
+[17:22:16] BBD -> 160.75 mm
+[17:22:18] Punto 33/87 adquirido
+[17:22:18] BBD -> 161.0 mm
+[17:22:20] Punto 34/87 adquirido
+[17:22:20] BBD -> 161.25 mm
+[17:22:22] Punto 35/87 adquirido
+[17:22:22] BBD -> 161.5 mm
+[17:22:24] Punto 36/87 adquirido
+[17:22:24] BBD -> 161.75 mm
+[17:22:26] Punto 37/87 adquirido
+[17:22:26] BBD -> 162.0 mm
+[17:22:28] Punto 38/87 adquirido
+[17:22:28] BBD -> 162.25 mm
+[17:22:30] Punto 39/87 adquirido
+[17:22:31] BBD -> 162.5 mm
+[17:22:33] Punto 40/87 adquirido
+[17:22:33] BBD -> 162.75 mm
+[17:22:35] Punto 41/87 adquirido
+[17:22:35] BBD -> 163.0 mm
+[17:22:37] Punto 42/87 adquirido
+[17:22:37] BBD -> 163.25 mm
+[17:22:39] Punto 43/87 adquirido
+[17:22:39] BBD -> 163.5 mm
+[17:22:41] Punto 44/87 adquirido
+[17:22:41] BBD -> 163.75 mm
+[17:22:43] Punto 45/87 adquirido
+[17:22:43] BBD -> 164.0 mm
+[17:22:45] Punto 46/87 adquirido
+[17:22:45] BBD -> 164.25 mm
+[17:22:48] Punto 47/87 adquirido
+[17:22:48] BBD -> 164.5 mm
+[17:22:50] Punto 48/87 adquirido
+[17:22:50] BBD -> 164.75 mm
+[17:22:52] Punto 49/87 adquirido
+[17:22:52] BBD -> 165.0 mm
+[17:22:54] Punto 50/87 adquirido
+[17:22:54] BBD -> 165.25 mm
+[17:22:56] Punto 51/87 adquirido
+[17:22:56] BBD -> 165.5 mm
+[17:22:58] Punto 52/87 adquirido
+[17:22:58] BBD -> 165.75 mm
+[17:23:00] Punto 53/87 adquirido
+[17:23:00] BBD -> 166.0 mm
+[17:23:02] Punto 54/87 adquirido
+[17:23:02] BBD -> 166.25 mm
+[17:23:05] Punto 55/87 adquirido
+[17:23:05] BBD -> 166.5 mm
+[17:23:07] Punto 56/87 adquirido
+[17:23:07] BBD -> 166.75 mm
+[17:23:09] Punto 57/87 adquirido
+[17:23:09] BBD -> 167.0 mm
+[17:23:11] Punto 58/87 adquirido
+[17:23:11] Repeticion 3 de 3
+[17:23:11] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:23:11] BBD -> 160.0 mm
+[17:23:12] Auto rango sensibilidad para lambda 650.0 nm
+[17:23:12] Sensibilidad Lock-in sin cambios
+[17:23:13] Punto 59/87 adquirido
+[17:23:13] BBD -> 160.25 mm
+[17:23:15] Punto 60/87 adquirido
+[17:23:15] BBD -> 160.5 mm
+[17:23:17] Punto 61/87 adquirido
+[17:23:18] BBD -> 160.75 mm
+[17:23:20] Punto 62/87 adquirido
+[17:23:20] BBD -> 161.0 mm
+[17:23:22] Punto 63/87 adquirido
+[17:23:22] BBD -> 161.25 mm
+[17:23:24] Punto 64/87 adquirido
+[17:23:24] BBD -> 161.5 mm
+[17:23:26] Punto 65/87 adquirido
+[17:23:26] BBD -> 161.75 mm
+[17:23:28] Punto 66/87 adquirido
+[17:23:28] BBD -> 162.0 mm
+[17:23:30] Punto 67/87 adquirido
+[17:23:30] BBD -> 162.25 mm
+[17:23:32] Punto 68/87 adquirido
+[17:23:32] BBD -> 162.5 mm
+[17:23:34] Punto 69/87 adquirido
+[17:23:35] BBD -> 162.75 mm
+[17:23:37] Punto 70/87 adquirido
+[17:23:37] BBD -> 163.0 mm
+[17:23:39] Punto 71/87 adquirido
+[17:23:39] BBD -> 163.25 mm
+[17:23:41] Punto 72/87 adquirido
+[17:23:41] BBD -> 163.5 mm
+[17:23:43] Punto 73/87 adquirido
+[17:23:43] BBD -> 163.75 mm
+[17:23:45] Punto 74/87 adquirido
+[17:23:45] BBD -> 164.0 mm
+[17:23:47] Punto 75/87 adquirido
+[17:23:47] BBD -> 164.25 mm
+[17:23:49] Punto 76/87 adquirido
+[17:23:49] BBD -> 164.5 mm
+[17:23:51] Punto 77/87 adquirido
+[17:23:52] BBD -> 164.75 mm
+[17:23:54] Punto 78/87 adquirido
+[17:23:54] BBD -> 165.0 mm
+[17:23:56] Punto 79/87 adquirido
+[17:23:56] BBD -> 165.25 mm
+[17:23:58] Punto 80/87 adquirido
+[17:23:58] BBD -> 165.5 mm
+[17:24:00] Punto 81/87 adquirido
+[17:24:00] BBD -> 165.75 mm
+[17:24:02] Punto 82/87 adquirido
+[17:24:02] BBD -> 166.0 mm
+[17:24:04] Punto 83/87 adquirido
+[17:24:04] BBD -> 166.25 mm
+[17:24:06] Punto 84/87 adquirido
+[17:24:06] BBD -> 166.5 mm
+[17:24:08] Punto 85/87 adquirido
+[17:24:09] BBD -> 166.75 mm
+[17:24:11] Punto 86/87 adquirido
+[17:24:11] BBD -> 167.0 mm
+[17:24:13] Punto 87/87 adquirido
+[17:24:13] Promedio calculado
+[17:24:13] Medicion finalizada
+[17:24:13] Resultado listo en memoria
+[17:26:51] Inicio solicitado
+[17:26:51] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:26:51] Inicio de medicion
+[17:26:51] Repeticion 1 de 3
+[17:26:51] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:26:51] BBD -> 160.0 mm
+[17:26:52] Auto rango sensibilidad para lambda 650.0 nm
+[17:26:52] Sensibilidad Lock-in sin cambios
+[17:26:54] Punto 1/87 adquirido
+[17:26:54] BBD -> 160.25 mm
+[17:26:56] Punto 2/87 adquirido
+[17:26:56] BBD -> 160.5 mm
+[17:26:58] Punto 3/87 adquirido
+[17:26:58] BBD -> 160.75 mm
+[17:27:00] Punto 4/87 adquirido
+[17:27:00] BBD -> 161.0 mm
+[17:27:02] Punto 5/87 adquirido
+[17:27:02] BBD -> 161.25 mm
+[17:27:04] Punto 6/87 adquirido
+[17:27:04] BBD -> 161.5 mm
+[17:27:06] Punto 7/87 adquirido
+[17:27:06] BBD -> 161.75 mm
+[17:27:08] Punto 8/87 adquirido
+[17:27:08] BBD -> 162.0 mm
+[17:27:11] Punto 9/87 adquirido
+[17:27:11] BBD -> 162.25 mm
+[17:27:13] Punto 10/87 adquirido
+[17:27:13] BBD -> 162.5 mm
+[17:27:15] Punto 11/87 adquirido
+[17:27:15] BBD -> 162.75 mm
+[17:27:17] Punto 12/87 adquirido
+[17:27:17] BBD -> 163.0 mm
+[17:27:19] Punto 13/87 adquirido
+[17:27:19] BBD -> 163.25 mm
+[17:27:21] Punto 14/87 adquirido
+[17:27:21] BBD -> 163.5 mm
+[17:27:23] Punto 15/87 adquirido
+[17:27:23] BBD -> 163.75 mm
+[17:27:25] Punto 16/87 adquirido
+[17:27:25] BBD -> 164.0 mm
+[17:27:28] Punto 17/87 adquirido
+[17:27:28] BBD -> 164.25 mm
+[17:27:30] Punto 18/87 adquirido
+[17:27:30] BBD -> 164.5 mm
+[17:27:32] Punto 19/87 adquirido
+[17:27:32] BBD -> 164.75 mm
+[17:27:34] Punto 20/87 adquirido
+[17:27:34] BBD -> 165.0 mm
+[17:27:36] Punto 21/87 adquirido
+[17:27:36] BBD -> 165.25 mm
+[17:27:38] Punto 22/87 adquirido
+[17:27:38] BBD -> 165.5 mm
+[17:27:40] Punto 23/87 adquirido
+[17:27:40] BBD -> 165.75 mm
+[17:27:42] Punto 24/87 adquirido
+[17:27:42] BBD -> 166.0 mm
+[17:27:44] Punto 25/87 adquirido
+[17:27:45] BBD -> 166.25 mm
+[17:27:47] Punto 26/87 adquirido
+[17:27:47] BBD -> 166.5 mm
+[17:27:49] Punto 27/87 adquirido
+[17:27:49] BBD -> 166.75 mm
+[17:27:51] Punto 28/87 adquirido
+[17:27:51] BBD -> 167.0 mm
+[17:27:53] Punto 29/87 adquirido
+[17:27:53] Repeticion 2 de 3
+[17:27:53] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:27:53] BBD -> 160.0 mm
+[17:27:54] Auto rango sensibilidad para lambda 650.0 nm
+[17:27:54] Sensibilidad Lock-in sin cambios
+[17:27:55] Punto 30/87 adquirido
+[17:27:55] BBD -> 160.25 mm
+[17:27:57] Punto 31/87 adquirido
+[17:27:58] BBD -> 160.5 mm
+[17:28:00] Punto 32/87 adquirido
+[17:28:00] BBD -> 160.75 mm
+[17:28:02] Punto 33/87 adquirido
+[17:28:02] BBD -> 161.0 mm
+[17:28:04] Punto 34/87 adquirido
+[17:28:04] BBD -> 161.25 mm
+[17:28:06] Punto 35/87 adquirido
+[17:28:06] BBD -> 161.5 mm
+[17:28:08] Punto 36/87 adquirido
+[17:28:08] BBD -> 161.75 mm
+[17:28:10] Punto 37/87 adquirido
+[17:28:10] BBD -> 162.0 mm
+[17:28:12] Punto 38/87 adquirido
+[17:28:12] BBD -> 162.25 mm
+[17:28:14] Punto 39/87 adquirido
+[17:28:15] BBD -> 162.5 mm
+[17:28:17] Punto 40/87 adquirido
+[17:28:17] BBD -> 162.75 mm
+[17:28:19] Punto 41/87 adquirido
+[17:28:19] BBD -> 163.0 mm
+[17:28:21] Punto 42/87 adquirido
+[17:28:21] BBD -> 163.25 mm
+[17:28:23] Punto 43/87 adquirido
+[17:28:23] BBD -> 163.5 mm
+[17:28:25] Punto 44/87 adquirido
+[17:28:25] BBD -> 163.75 mm
+[17:28:27] Punto 45/87 adquirido
+[17:28:27] BBD -> 164.0 mm
+[17:28:28] Cancelacion solicitada
+[17:28:28] Medicion cancelada
+[17:28:28] Resultado parcial listo en memoria
+[17:28:37] Inicio solicitado
+[17:28:37] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:28:37] Inicio de medicion
+[17:28:37] Repeticion 1 de 3
+[17:28:37] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:28:37] BBD -> 160.0 mm
+[17:28:38] Auto rango sensibilidad para lambda 650.0 nm
+[17:28:38] Sensibilidad Lock-in: 9 -> 10 (R=2.184e-06)
+[17:28:41] Punto 1/87 adquirido
+[17:28:41] BBD -> 160.25 mm
+[17:28:43] Punto 2/87 adquirido
+[17:28:43] BBD -> 160.5 mm
+[17:28:45] Punto 3/87 adquirido
+[17:28:45] BBD -> 160.75 mm
+[17:28:47] Punto 4/87 adquirido
+[17:28:48] BBD -> 161.0 mm
+[17:28:50] Punto 5/87 adquirido
+[17:28:50] BBD -> 161.25 mm
+[17:28:52] Punto 6/87 adquirido
+[17:28:52] BBD -> 161.5 mm
+[17:28:54] Punto 7/87 adquirido
+[17:28:54] BBD -> 161.75 mm
+[17:28:56] Punto 8/87 adquirido
+[17:28:56] BBD -> 162.0 mm
+[17:28:58] Punto 9/87 adquirido
+[17:28:58] BBD -> 162.25 mm
+[17:29:00] Punto 10/87 adquirido
+[17:29:00] BBD -> 162.5 mm
+[17:29:02] Punto 11/87 adquirido
+[17:29:02] BBD -> 162.75 mm
+[17:29:04] Punto 12/87 adquirido
+[17:29:05] BBD -> 163.0 mm
+[17:29:07] Punto 13/87 adquirido
+[17:29:07] BBD -> 163.25 mm
+[17:29:09] Punto 14/87 adquirido
+[17:29:09] BBD -> 163.5 mm
+[17:29:11] Punto 15/87 adquirido
+[17:29:11] BBD -> 163.75 mm
+[17:29:13] Punto 16/87 adquirido
+[17:29:13] BBD -> 164.0 mm
+[17:29:15] Punto 17/87 adquirido
+[17:29:15] BBD -> 164.25 mm
+[17:29:17] Punto 18/87 adquirido
+[17:29:17] BBD -> 164.5 mm
+[17:29:19] Punto 19/87 adquirido
+[17:29:19] BBD -> 164.75 mm
+[17:29:21] Punto 20/87 adquirido
+[17:29:21] BBD -> 165.0 mm
+[17:29:24] Punto 21/87 adquirido
+[17:29:24] BBD -> 165.25 mm
+[17:29:26] Punto 22/87 adquirido
+[17:29:26] BBD -> 165.5 mm
+[17:29:28] Punto 23/87 adquirido
+[17:29:28] BBD -> 165.75 mm
+[17:29:30] Cancelacion solicitada
+[17:29:30] Medicion cancelada
+[17:29:30] Resultado parcial listo en memoria
+[17:30:42] Inicio solicitado
+[17:30:42] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:30:42] Inicio de medicion
+[17:30:42] Repeticion 1 de 3
+[17:30:42] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:30:43] BBD -> 160.0 mm
+[17:30:44] Auto rango sensibilidad para lambda 650.0 nm
+[17:30:44] Sensibilidad Lock-in sin cambios
+[17:30:45] Punto 1/87 adquirido
+[17:30:45] BBD -> 160.25 mm
+[17:30:47] Punto 2/87 adquirido
+[17:30:47] BBD -> 160.5 mm
+[17:30:49] Punto 3/87 adquirido
+[17:30:49] BBD -> 160.75 mm
+[17:30:51] Punto 4/87 adquirido
+[17:30:51] BBD -> 161.0 mm
+[17:30:53] Punto 5/87 adquirido
+[17:30:53] BBD -> 161.25 mm
+[17:30:55] Punto 6/87 adquirido
+[17:30:55] BBD -> 161.5 mm
+[17:30:57] Punto 7/87 adquirido
+[17:30:58] BBD -> 161.75 mm
+[17:31:00] Punto 8/87 adquirido
+[17:31:00] BBD -> 162.0 mm
+[17:31:02] Punto 9/87 adquirido
+[17:31:02] BBD -> 162.25 mm
+[17:31:04] Punto 10/87 adquirido
+[17:31:04] BBD -> 162.5 mm
+[17:31:06] Punto 11/87 adquirido
+[17:31:06] BBD -> 162.75 mm
+[17:31:08] Punto 12/87 adquirido
+[17:31:08] BBD -> 163.0 mm
+[17:31:10] Punto 13/87 adquirido
+[17:31:10] BBD -> 163.25 mm
+[17:31:12] Punto 14/87 adquirido
+[17:31:12] BBD -> 163.5 mm
+[17:31:14] Punto 15/87 adquirido
+[17:31:15] BBD -> 163.75 mm
+[17:31:17] Punto 16/87 adquirido
+[17:31:17] BBD -> 164.0 mm
+[17:31:19] Punto 17/87 adquirido
+[17:31:19] BBD -> 164.25 mm
+[17:31:21] Punto 18/87 adquirido
+[17:31:21] BBD -> 164.5 mm
+[17:31:23] Punto 19/87 adquirido
+[17:31:23] BBD -> 164.75 mm
+[17:31:25] Punto 20/87 adquirido
+[17:31:25] BBD -> 165.0 mm
+[17:31:27] Punto 21/87 adquirido
+[17:31:27] BBD -> 165.25 mm
+[17:31:29] Punto 22/87 adquirido
+[17:31:29] BBD -> 165.5 mm
+[17:31:31] Punto 23/87 adquirido
+[17:31:31] BBD -> 165.75 mm
+[17:31:34] Punto 24/87 adquirido
+[17:31:34] BBD -> 166.0 mm
+[17:31:36] Punto 25/87 adquirido
+[17:31:36] BBD -> 166.25 mm
+[17:31:38] Punto 26/87 adquirido
+[17:31:38] BBD -> 166.5 mm
+[17:31:40] Punto 27/87 adquirido
+[17:31:40] BBD -> 166.75 mm
+[17:31:42] Punto 28/87 adquirido
+[17:31:42] BBD -> 167.0 mm
+[17:31:44] Punto 29/87 adquirido
+[17:31:44] Repeticion 2 de 3
+[17:31:44] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:31:44] BBD -> 160.0 mm
+[17:31:45] Auto rango sensibilidad para lambda 650.0 nm
+[17:31:45] Sensibilidad Lock-in sin cambios
+[17:31:46] Punto 30/87 adquirido
+[17:31:47] BBD -> 160.25 mm
+[17:31:49] Punto 31/87 adquirido
+[17:31:49] BBD -> 160.5 mm
+[17:31:51] Punto 32/87 adquirido
+[17:31:51] BBD -> 160.75 mm
+[17:31:53] Punto 33/87 adquirido
+[17:31:53] BBD -> 161.0 mm
+[17:31:55] Punto 34/87 adquirido
+[17:31:55] BBD -> 161.25 mm
+[17:31:57] Punto 35/87 adquirido
+[17:31:57] BBD -> 161.5 mm
+[17:31:59] Punto 36/87 adquirido
+[17:31:59] BBD -> 161.75 mm
+[17:32:01] Punto 37/87 adquirido
+[17:32:01] BBD -> 162.0 mm
+[17:32:03] Punto 38/87 adquirido
+[17:32:04] BBD -> 162.25 mm
+[17:32:06] Punto 39/87 adquirido
+[17:32:06] BBD -> 162.5 mm
+[17:32:08] Punto 40/87 adquirido
+[17:32:08] BBD -> 162.75 mm
+[17:32:10] Punto 41/87 adquirido
+[17:32:10] BBD -> 163.0 mm
+[17:32:12] Punto 42/87 adquirido
+[17:32:12] BBD -> 163.25 mm
+[17:32:14] Punto 43/87 adquirido
+[17:32:14] BBD -> 163.5 mm
+[17:32:16] Punto 44/87 adquirido
+[17:32:16] BBD -> 163.75 mm
+[17:32:18] Punto 45/87 adquirido
+[17:32:18] BBD -> 164.0 mm
+[17:32:20] Punto 46/87 adquirido
+[17:32:20] BBD -> 164.25 mm
+[17:32:23] Punto 47/87 adquirido
+[17:32:23] BBD -> 164.5 mm
+[17:32:25] Punto 48/87 adquirido
+[17:32:25] BBD -> 164.75 mm
+[17:32:27] Punto 49/87 adquirido
+[17:32:27] BBD -> 165.0 mm
+[17:32:29] Punto 50/87 adquirido
+[17:32:29] BBD -> 165.25 mm
+[17:32:31] Punto 51/87 adquirido
+[17:32:31] BBD -> 165.5 mm
+[17:32:33] Punto 52/87 adquirido
+[17:32:33] BBD -> 165.75 mm
+[17:32:35] Punto 53/87 adquirido
+[17:32:35] BBD -> 166.0 mm
+[17:32:37] Punto 54/87 adquirido
+[17:32:37] BBD -> 166.25 mm
+[17:32:39] Punto 55/87 adquirido
+[17:32:40] BBD -> 166.5 mm
+[17:32:42] Punto 56/87 adquirido
+[17:32:42] BBD -> 166.75 mm
+[17:32:44] Punto 57/87 adquirido
+[17:32:44] BBD -> 167.0 mm
+[17:32:46] Punto 58/87 adquirido
+[17:32:46] Repeticion 3 de 3
+[17:32:46] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:32:46] BBD -> 160.0 mm
+[17:32:47] Auto rango sensibilidad para lambda 650.0 nm
+[17:32:47] Sensibilidad Lock-in sin cambios
+[17:32:48] Punto 59/87 adquirido
+[17:32:48] BBD -> 160.25 mm
+[17:32:50] Punto 60/87 adquirido
+[17:32:50] BBD -> 160.5 mm
+[17:32:52] Punto 61/87 adquirido
+[17:32:52] BBD -> 160.75 mm
+[17:32:55] Punto 62/87 adquirido
+[17:32:55] BBD -> 161.0 mm
+[17:32:57] Punto 63/87 adquirido
+[17:32:57] BBD -> 161.25 mm
+[17:32:59] Punto 64/87 adquirido
+[17:32:59] BBD -> 161.5 mm
+[17:33:01] Punto 65/87 adquirido
+[17:33:01] BBD -> 161.75 mm
+[17:33:03] Punto 66/87 adquirido
+[17:33:03] BBD -> 162.0 mm
+[17:33:05] Punto 67/87 adquirido
+[17:33:05] BBD -> 162.25 mm
+[17:33:07] Punto 68/87 adquirido
+[17:33:07] BBD -> 162.5 mm
+[17:33:09] Punto 69/87 adquirido
+[17:33:09] BBD -> 162.75 mm
+[17:33:12] Punto 70/87 adquirido
+[17:33:12] BBD -> 163.0 mm
+[17:33:14] Punto 71/87 adquirido
+[17:33:14] BBD -> 163.25 mm
+[17:33:16] Punto 72/87 adquirido
+[17:33:16] BBD -> 163.5 mm
+[17:33:18] Punto 73/87 adquirido
+[17:33:18] BBD -> 163.75 mm
+[17:33:20] Punto 74/87 adquirido
+[17:33:20] BBD -> 164.0 mm
+[17:33:22] Punto 75/87 adquirido
+[17:33:22] BBD -> 164.25 mm
+[17:33:24] Punto 76/87 adquirido
+[17:33:24] BBD -> 164.5 mm
+[17:33:26] Punto 77/87 adquirido
+[17:33:26] BBD -> 164.75 mm
+[17:33:28] Punto 78/87 adquirido
+[17:33:29] BBD -> 165.0 mm
+[17:33:31] Punto 79/87 adquirido
+[17:33:31] BBD -> 165.25 mm
+[17:33:33] Punto 80/87 adquirido
+[17:33:33] BBD -> 165.5 mm
+[17:33:35] Punto 81/87 adquirido
+[17:33:35] BBD -> 165.75 mm
+[17:33:37] Punto 82/87 adquirido
+[17:33:37] BBD -> 166.0 mm
+[17:33:39] Punto 83/87 adquirido
+[17:33:39] BBD -> 166.25 mm
+[17:33:41] Punto 84/87 adquirido
+[17:33:41] BBD -> 166.5 mm
+[17:33:43] Punto 85/87 adquirido
+[17:33:43] BBD -> 166.75 mm
+[17:33:45] Punto 86/87 adquirido
+[17:33:46] BBD -> 167.0 mm
+[17:33:48] Punto 87/87 adquirido
+[17:33:48] Promedio calculado
+[17:33:48] Medicion finalizada
+[17:33:48] Resultado listo en memoria
+[17:35:08] Lock-in: tau = 3 s; espera por punto = 2.9999999999999996 s
+[17:35:16] Inicio solicitado
+[17:35:16] Lock-in: 1 constantes; espera por punto 2.9999999999999996 s
+[17:35:16] Inicio de medicion
+[17:35:16] Repeticion 1 de 3
+[17:35:16] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:35:16] BBD -> 160.0 mm
+[17:35:17] Auto rango sensibilidad para lambda 650.0 nm
+[17:35:17] Sensibilidad Lock-in sin cambios
+[17:35:20] Punto 1/87 adquirido
+[17:35:20] BBD -> 160.25 mm
+[17:35:24] Punto 2/87 adquirido
+[17:35:24] BBD -> 160.5 mm
+[17:35:28] Punto 3/87 adquirido
+[17:35:28] BBD -> 160.75 mm
+[17:35:32] Punto 4/87 adquirido
+[17:35:33] BBD -> 161.0 mm
+[17:35:37] Punto 5/87 adquirido
+[17:35:37] BBD -> 161.25 mm
+[17:35:41] Punto 6/87 adquirido
+[17:35:41] BBD -> 161.5 mm
+[17:35:45] Punto 7/87 adquirido
+[17:35:45] BBD -> 161.75 mm
+[17:35:49] Punto 8/87 adquirido
+[17:35:49] BBD -> 162.0 mm
+[17:35:53] Punto 9/87 adquirido
+[17:35:53] BBD -> 162.25 mm
+[17:35:57] Punto 10/87 adquirido
+[17:35:57] BBD -> 162.5 mm
+[17:36:01] Punto 11/87 adquirido
+[17:36:01] BBD -> 162.75 mm
+[17:36:05] Punto 12/87 adquirido
+[17:36:05] BBD -> 163.0 mm
+[17:36:09] Punto 13/87 adquirido
+[17:36:10] BBD -> 163.25 mm
+[17:36:14] Punto 14/87 adquirido
+[17:36:14] BBD -> 163.5 mm
+[17:36:18] Punto 15/87 adquirido
+[17:36:18] BBD -> 163.75 mm
+[17:36:22] Punto 16/87 adquirido
+[17:36:22] BBD -> 164.0 mm
+[17:36:26] Punto 17/87 adquirido
+[17:36:26] BBD -> 164.25 mm
+[17:36:30] Punto 18/87 adquirido
+[17:36:30] BBD -> 164.5 mm
+[17:36:34] Punto 19/87 adquirido
+[17:36:34] BBD -> 164.75 mm
+[17:36:38] Punto 20/87 adquirido
+[17:36:38] BBD -> 165.0 mm
+[17:36:42] Punto 21/87 adquirido
+[17:36:42] BBD -> 165.25 mm
+[17:36:47] Punto 22/87 adquirido
+[17:36:47] BBD -> 165.5 mm
+[17:36:51] Punto 23/87 adquirido
+[17:36:51] BBD -> 165.75 mm
+[17:36:55] Punto 24/87 adquirido
+[17:36:55] BBD -> 166.0 mm
+[17:36:59] Punto 25/87 adquirido
+[17:36:59] BBD -> 166.25 mm
+[17:37:03] Punto 26/87 adquirido
+[17:37:03] BBD -> 166.5 mm
+[17:37:07] Punto 27/87 adquirido
+[17:37:07] BBD -> 166.75 mm
+[17:37:11] Punto 28/87 adquirido
+[17:37:11] BBD -> 167.0 mm
+[17:37:15] Punto 29/87 adquirido
+[17:37:15] Repeticion 2 de 3
+[17:37:15] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:37:16] BBD -> 160.0 mm
+[17:37:17] Auto rango sensibilidad para lambda 650.0 nm
+[17:37:17] Sensibilidad Lock-in sin cambios
+[17:37:20] Punto 30/87 adquirido
+[17:37:20] BBD -> 160.25 mm
+[17:37:24] Punto 31/87 adquirido
+[17:37:24] BBD -> 160.5 mm
+[17:37:28] Punto 32/87 adquirido
+[17:37:28] BBD -> 160.75 mm
+[17:37:32] Punto 33/87 adquirido
+[17:37:32] BBD -> 161.0 mm
+[17:37:36] Punto 34/87 adquirido
+[17:37:36] BBD -> 161.25 mm
+[17:37:40] Punto 35/87 adquirido
+[17:37:40] BBD -> 161.5 mm
+[17:37:44] Punto 36/87 adquirido
+[17:37:44] BBD -> 161.75 mm
+[17:37:49] Punto 37/87 adquirido
+[17:37:49] BBD -> 162.0 mm
+[17:37:53] Punto 38/87 adquirido
+[17:37:53] BBD -> 162.25 mm
+[17:37:57] Punto 39/87 adquirido
+[17:37:57] BBD -> 162.5 mm
+[17:38:01] Punto 40/87 adquirido
+[17:38:01] BBD -> 162.75 mm
+[17:38:05] Punto 41/87 adquirido
+[17:38:05] BBD -> 163.0 mm
+[17:38:09] Punto 42/87 adquirido
+[17:38:09] BBD -> 163.25 mm
+[17:38:13] Punto 43/87 adquirido
+[17:38:13] BBD -> 163.5 mm
+[17:38:17] Punto 44/87 adquirido
+[17:38:17] BBD -> 163.75 mm
+[17:38:22] Punto 45/87 adquirido
+[17:38:22] BBD -> 164.0 mm
+[17:38:26] Punto 46/87 adquirido
+[17:38:26] BBD -> 164.25 mm
+[17:38:30] Punto 47/87 adquirido
+[17:38:30] BBD -> 164.5 mm
+[17:38:34] Punto 48/87 adquirido
+[17:38:34] BBD -> 164.75 mm
+[17:38:38] Punto 49/87 adquirido
+[17:38:38] BBD -> 165.0 mm
+[17:38:42] Punto 50/87 adquirido
+[17:38:42] BBD -> 165.25 mm
+[17:38:46] Punto 51/87 adquirido
+[17:38:46] BBD -> 165.5 mm
+[17:38:50] Punto 52/87 adquirido
+[17:38:50] BBD -> 165.75 mm
+[17:38:54] Punto 53/87 adquirido
+[17:38:55] BBD -> 166.0 mm
+[17:38:59] Punto 54/87 adquirido
+[17:38:59] BBD -> 166.25 mm
+[17:39:03] Punto 55/87 adquirido
+[17:39:03] BBD -> 166.5 mm
+[17:39:07] Punto 56/87 adquirido
+[17:39:07] BBD -> 166.75 mm
+[17:39:11] Punto 57/87 adquirido
+[17:39:11] BBD -> 167.0 mm
+[17:39:15] Punto 58/87 adquirido
+[17:39:15] Repeticion 3 de 3
+[17:39:15] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:39:15] BBD -> 160.0 mm
+[17:39:16] Auto rango sensibilidad para lambda 650.0 nm
+[17:39:16] Sensibilidad Lock-in sin cambios
+[17:39:19] Punto 59/87 adquirido
+[17:39:19] BBD -> 160.25 mm
+[17:39:23] Punto 60/87 adquirido
+[17:39:24] BBD -> 160.5 mm
+[17:39:28] Punto 61/87 adquirido
+[17:39:28] BBD -> 160.75 mm
+[17:39:32] Punto 62/87 adquirido
+[17:39:32] BBD -> 161.0 mm
+[17:39:36] Punto 63/87 adquirido
+[17:39:36] BBD -> 161.25 mm
+[17:39:40] Punto 64/87 adquirido
+[17:39:40] BBD -> 161.5 mm
+[17:39:44] Punto 65/87 adquirido
+[17:39:44] BBD -> 161.75 mm
+[17:39:48] Punto 66/87 adquirido
+[17:39:48] BBD -> 162.0 mm
+[17:39:52] Punto 67/87 adquirido
+[17:39:52] BBD -> 162.25 mm
+[17:39:56] Punto 68/87 adquirido
+[17:39:57] BBD -> 162.5 mm
+[17:40:01] Punto 69/87 adquirido
+[17:40:01] BBD -> 162.75 mm
+[17:40:05] Punto 70/87 adquirido
+[17:40:05] BBD -> 163.0 mm
+[17:40:09] Punto 71/87 adquirido
+[17:40:09] BBD -> 163.25 mm
+[17:40:13] Punto 72/87 adquirido
+[17:40:13] BBD -> 163.5 mm
+[17:40:17] Punto 73/87 adquirido
+[17:40:17] BBD -> 163.75 mm
+[17:40:21] Punto 74/87 adquirido
+[17:40:21] BBD -> 164.0 mm
+[17:40:25] Punto 75/87 adquirido
+[17:40:25] BBD -> 164.25 mm
+[17:40:29] Punto 76/87 adquirido
+[17:40:29] BBD -> 164.5 mm
+[17:40:34] Punto 77/87 adquirido
+[17:40:34] BBD -> 164.75 mm
+[17:40:38] Punto 78/87 adquirido
+[17:40:38] BBD -> 165.0 mm
+[17:40:42] Punto 79/87 adquirido
+[17:40:42] BBD -> 165.25 mm
+[17:40:46] Punto 80/87 adquirido
+[17:40:46] BBD -> 165.5 mm
+[17:40:50] Punto 81/87 adquirido
+[17:40:50] BBD -> 165.75 mm
+[17:40:54] Punto 82/87 adquirido
+[17:40:54] BBD -> 166.0 mm
+[17:40:58] Punto 83/87 adquirido
+[17:40:58] BBD -> 166.25 mm
+[17:41:02] Punto 84/87 adquirido
+[17:41:02] BBD -> 166.5 mm
+[17:41:06] Punto 85/87 adquirido
+[17:41:07] BBD -> 166.75 mm
+[17:41:11] Punto 86/87 adquirido
+[17:41:11] BBD -> 167.0 mm
+[17:41:15] Punto 87/87 adquirido
+[17:41:15] Promedio calculado
+[17:41:15] Medicion finalizada
+[17:41:15] Resultado listo en memoria
+[17:49:31] Lock-in: tau = 1 s; espera por punto = 0.9999999999999999 s
+[17:49:45] Inicio solicitado
+[17:49:45] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:49:45] Inicio de medicion
+[17:49:45] Repeticion 1 de 3
+[17:49:45] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:49:45] BBD -> 160.0 mm
+[17:49:46] Auto rango sensibilidad para lambda 650.0 nm
+[17:49:46] Sensibilidad Lock-in sin cambios
+[17:49:47] Punto 1/87 adquirido
+[17:49:47] BBD -> 160.25 mm
+[17:49:49] Punto 2/87 adquirido
+[17:49:49] BBD -> 160.5 mm
+[17:49:51] Punto 3/87 adquirido
+[17:49:51] BBD -> 160.75 mm
+[17:49:54] Punto 4/87 adquirido
+[17:49:54] BBD -> 161.0 mm
+[17:49:56] Punto 5/87 adquirido
+[17:49:56] BBD -> 161.25 mm
+[17:49:58] Punto 6/87 adquirido
+[17:49:58] BBD -> 161.5 mm
+[17:50:00] Punto 7/87 adquirido
+[17:50:00] BBD -> 161.75 mm
+[17:50:02] Punto 8/87 adquirido
+[17:50:02] BBD -> 162.0 mm
+[17:50:03] Cancelacion solicitada
+[17:50:03] Medicion cancelada
+[17:50:03] Resultado parcial listo en memoria
+[17:55:36] Inicio solicitado
+[17:55:37] Lock-in: 1 constantes; espera por punto 0.9999999999999999 s
+[17:55:37] Inicio de medicion
+[17:55:37] Repeticion 1 de 3
+[17:55:37] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:55:37] BBD -> 160.0 mm
+[17:55:38] Auto rango sensibilidad para lambda 650.0 nm
+[17:55:38] Sensibilidad Lock-in: 8 -> 9 (R=1.039e-06)
+[17:55:41] Punto 1/87 adquirido
+[17:55:41] BBD -> 160.25 mm
+[17:55:43] Punto 2/87 adquirido
+[17:55:43] BBD -> 160.5 mm
+[17:55:45] Punto 3/87 adquirido
+[17:55:45] BBD -> 160.75 mm
+[17:55:47] Punto 4/87 adquirido
+[17:55:47] BBD -> 161.0 mm
+[17:55:49] Punto 5/87 adquirido
+[17:55:49] BBD -> 161.25 mm
+[17:55:51] Punto 6/87 adquirido
+[17:55:52] BBD -> 161.5 mm
+[17:55:54] Punto 7/87 adquirido
+[17:55:54] BBD -> 161.75 mm
+[17:55:56] Punto 8/87 adquirido
+[17:55:56] BBD -> 162.0 mm
+[17:55:58] Punto 9/87 adquirido
+[17:55:58] BBD -> 162.25 mm
+[17:56:00] Punto 10/87 adquirido
+[17:56:00] BBD -> 162.5 mm
+[17:56:02] Punto 11/87 adquirido
+[17:56:02] BBD -> 162.75 mm
+[17:56:04] Punto 12/87 adquirido
+[17:56:04] BBD -> 163.0 mm
+[17:56:06] Punto 13/87 adquirido
+[17:56:07] BBD -> 163.25 mm
+[17:56:09] Punto 14/87 adquirido
+[17:56:09] BBD -> 163.5 mm
+[17:56:11] Punto 15/87 adquirido
+[17:56:11] BBD -> 163.75 mm
+[17:56:13] Punto 16/87 adquirido
+[17:56:13] BBD -> 164.0 mm
+[17:56:15] Punto 17/87 adquirido
+[17:56:15] BBD -> 164.25 mm
+[17:56:17] Punto 18/87 adquirido
+[17:56:17] BBD -> 164.5 mm
+[17:56:19] Punto 19/87 adquirido
+[17:56:19] BBD -> 164.75 mm
+[17:56:21] Punto 20/87 adquirido
+[17:56:21] BBD -> 165.0 mm
+[17:56:23] Punto 21/87 adquirido
+[17:56:23] BBD -> 165.25 mm
+[17:56:26] Punto 22/87 adquirido
+[17:56:26] BBD -> 165.5 mm
+[17:56:28] Punto 23/87 adquirido
+[17:56:28] BBD -> 165.75 mm
+[17:56:30] Punto 24/87 adquirido
+[17:56:30] BBD -> 166.0 mm
+[17:56:32] Punto 25/87 adquirido
+[17:56:32] BBD -> 166.25 mm
+[17:56:34] Punto 26/87 adquirido
+[17:56:34] BBD -> 166.5 mm
+[17:56:36] Punto 27/87 adquirido
+[17:56:36] BBD -> 166.75 mm
+[17:56:38] Punto 28/87 adquirido
+[17:56:38] BBD -> 167.0 mm
+[17:56:40] Punto 29/87 adquirido
+[17:56:40] Repeticion 2 de 3
+[17:56:40] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:56:41] BBD -> 160.0 mm
+[17:56:42] Auto rango sensibilidad para lambda 650.0 nm
+[17:56:42] Sensibilidad Lock-in sin cambios
+[17:56:43] Punto 30/87 adquirido
+[17:56:43] BBD -> 160.25 mm
+[17:56:45] Punto 31/87 adquirido
+[17:56:45] BBD -> 160.5 mm
+[17:56:47] Punto 32/87 adquirido
+[17:56:47] BBD -> 160.75 mm
+[17:56:49] Punto 33/87 adquirido
+[17:56:49] BBD -> 161.0 mm
+[17:56:51] Punto 34/87 adquirido
+[17:56:51] BBD -> 161.25 mm
+[17:56:53] Punto 35/87 adquirido
+[17:56:53] BBD -> 161.5 mm
+[17:56:55] Punto 36/87 adquirido
+[17:56:56] BBD -> 161.75 mm
+[17:56:58] Punto 37/87 adquirido
+[17:56:58] BBD -> 162.0 mm
+[17:57:00] Punto 38/87 adquirido
+[17:57:00] BBD -> 162.25 mm
+[17:57:02] Punto 39/87 adquirido
+[17:57:02] BBD -> 162.5 mm
+[17:57:04] Punto 40/87 adquirido
+[17:57:04] BBD -> 162.75 mm
+[17:57:06] Punto 41/87 adquirido
+[17:57:06] BBD -> 163.0 mm
+[17:57:08] Punto 42/87 adquirido
+[17:57:08] BBD -> 163.25 mm
+[17:57:10] Punto 43/87 adquirido
+[17:57:10] BBD -> 163.5 mm
+[17:57:12] Punto 44/87 adquirido
+[17:57:13] BBD -> 163.75 mm
+[17:57:15] Punto 45/87 adquirido
+[17:57:15] BBD -> 164.0 mm
+[17:57:17] Punto 46/87 adquirido
+[17:57:17] BBD -> 164.25 mm
+[17:57:19] Punto 47/87 adquirido
+[17:57:19] BBD -> 164.5 mm
+[17:57:21] Punto 48/87 adquirido
+[17:57:21] BBD -> 164.75 mm
+[17:57:23] Punto 49/87 adquirido
+[17:57:23] BBD -> 165.0 mm
+[17:57:25] Punto 50/87 adquirido
+[17:57:25] BBD -> 165.25 mm
+[17:57:27] Punto 51/87 adquirido
+[17:57:27] BBD -> 165.5 mm
+[17:57:29] Punto 52/87 adquirido
+[17:57:29] BBD -> 165.75 mm
+[17:57:32] Punto 53/87 adquirido
+[17:57:32] BBD -> 166.0 mm
+[17:57:34] Punto 54/87 adquirido
+[17:57:34] BBD -> 166.25 mm
+[17:57:36] Punto 55/87 adquirido
+[17:57:36] BBD -> 166.5 mm
+[17:57:38] Punto 56/87 adquirido
+[17:57:38] BBD -> 166.75 mm
+[17:57:40] Punto 57/87 adquirido
+[17:57:40] BBD -> 167.0 mm
+[17:57:42] Punto 58/87 adquirido
+[17:57:42] Repeticion 3 de 3
+[17:57:42] SMS desactivado: se usa lambda fija manual 650.0 nm
+[17:57:42] BBD -> 160.0 mm
+[17:57:43] Auto rango sensibilidad para lambda 650.0 nm
+[17:57:43] Sensibilidad Lock-in sin cambios
+[17:57:44] Punto 59/87 adquirido
+[17:57:45] BBD -> 160.25 mm
+[17:57:47] Punto 60/87 adquirido
+[17:57:47] BBD -> 160.5 mm
+[17:57:49] Punto 61/87 adquirido
+[17:57:49] BBD -> 160.75 mm
+[17:57:51] Punto 62/87 adquirido
+[17:57:51] BBD -> 161.0 mm
+[17:57:53] Punto 63/87 adquirido
+[17:57:53] BBD -> 161.25 mm
+[17:57:55] Punto 64/87 adquirido
+[17:57:55] BBD -> 161.5 mm
+[17:57:57] Punto 65/87 adquirido
+[17:57:57] BBD -> 161.75 mm
+[17:57:59] Punto 66/87 adquirido
+[17:57:59] BBD -> 162.0 mm
+[17:58:01] Punto 67/87 adquirido
+[17:58:02] BBD -> 162.25 mm
+[17:58:04] Punto 68/87 adquirido
+[17:58:04] BBD -> 162.5 mm
+[17:58:06] Punto 69/87 adquirido
+[17:58:06] BBD -> 162.75 mm
+[17:58:08] Punto 70/87 adquirido
+[17:58:08] BBD -> 163.0 mm
+[17:58:10] Punto 71/87 adquirido
+[17:58:10] BBD -> 163.25 mm
+[17:58:12] Punto 72/87 adquirido
+[17:58:12] BBD -> 163.5 mm
+[17:58:14] Punto 73/87 adquirido
+[17:58:14] BBD -> 163.75 mm
+[17:58:16] Punto 74/87 adquirido
+[17:58:16] BBD -> 164.0 mm
+[17:58:18] Punto 75/87 adquirido
+[17:58:19] BBD -> 164.25 mm
+[17:58:21] Punto 76/87 adquirido
+[17:58:21] BBD -> 164.5 mm
+[17:58:23] Punto 77/87 adquirido
+[17:58:23] BBD -> 164.75 mm
+[17:58:25] Punto 78/87 adquirido
+[17:58:25] BBD -> 165.0 mm
+[17:58:27] Punto 79/87 adquirido
+[17:58:27] BBD -> 165.25 mm
+[17:58:29] Punto 80/87 adquirido
+[17:58:29] BBD -> 165.5 mm
+[17:58:31] Punto 81/87 adquirido
+[17:58:31] BBD -> 165.75 mm
+[17:58:33] Punto 82/87 adquirido
+[17:58:33] BBD -> 166.0 mm
+[17:58:35] Punto 83/87 adquirido
+[17:58:35] BBD -> 166.25 mm
+[17:58:38] Punto 84/87 adquirido
+[17:58:38] BBD -> 166.5 mm
+[17:58:40] Punto 85/87 adquirido
+[17:58:40] BBD -> 166.75 mm
+[17:58:42] Punto 86/87 adquirido
+[17:58:42] BBD -> 167.0 mm
+[17:58:44] Punto 87/87 adquirido
+[17:58:44] Promedio calculado
+[17:58:44] Medicion finalizada
+[17:58:44] Resultado listo en memoria

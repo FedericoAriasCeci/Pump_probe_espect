@@ -68,7 +68,9 @@ class SimulatedLockIn:
         self.connected = False
         self.puerto = "SIM"
         self.numeroDeConstantesDeTiempo = 1
-        self.TiempoDeIntegracionTotal = 0.05
+        self.time_constant_index = 8  # SR830: 100 ms.
+        self.time_constant_s = 0.1
+        self.TiempoDeIntegracionTotal = self.time_constant_s
         self.noise = 0.01
 
     def AsignarPuerto(self, puerto):
@@ -83,7 +85,7 @@ class SimulatedLockIn:
 
     def SetearNumeroDeConstantesDeIntegracion(self, numero_de_constantes):
         self.numeroDeConstantesDeTiempo = numero_de_constantes
-        self.TiempoDeIntegracionTotal = max(0.01, 0.05 * float(numero_de_constantes))
+        self.TiempoDeIntegracionTotal = self.time_constant_s * float(numero_de_constantes)
 
     def Adquirir(self):
         row = self.acquire_row()
