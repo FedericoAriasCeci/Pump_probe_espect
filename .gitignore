@@ -1,0 +1,7 @@
+# Python (Caché y archivos compilados)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code (Configuraciones locales)
+.vscode/
