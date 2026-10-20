@@ -79,6 +79,7 @@ global offsetSMS          # 0.03125 (la inversa de 32, que es el multiplicador).
 offsetSMS = -87.0 # Es el 9913 que muestra el visor al calibrar el monocromador
 global fuente
 fuente = "Helvetica"
+
         
 # OBS: En el código se usa BBD y plataforma para referirse a lo mismo. Lo mismo pasa con el SMS y el monocromador.
 
