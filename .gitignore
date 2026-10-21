@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 *Mediciones/
+*Plots/
+*Validacion_hardware/
 
 # VS Code (Configuraciones locales)
 .vscode/
