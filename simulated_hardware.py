@@ -1,5 +1,6 @@
 import math
 import random
+from sr830_timing import filter_settings, settling_seconds
 
 
 class SimulatedBBD301:
@@ -68,7 +69,9 @@ class SimulatedLockIn:
         self.connected = False
         self.puerto = "SIM"
         self.numeroDeConstantesDeTiempo = 1
-        self.TiempoDeIntegracionTotal = 0.05
+        self.TiempoDeIntegracionTotal = 0.03
+        self.time_constant_index = 7  # 30 ms, from the real SR830 table.
+        self.slope_index = 0
         self.noise = 0.01
 
     def AsignarPuerto(self, puerto):
@@ -83,7 +86,12 @@ class SimulatedLockIn:
 
     def SetearNumeroDeConstantesDeIntegracion(self, numero_de_constantes):
         self.numeroDeConstantesDeTiempo = numero_de_constantes
-        self.TiempoDeIntegracionTotal = max(0.01, 0.05 * float(numero_de_constantes))
+        self.TiempoDeIntegracionTotal = settling_seconds(
+            numero_de_constantes, self.ConsultarFiltro()["time_constant_seconds"]
+        )
+
+    def ConsultarFiltro(self):
+        return filter_settings(self.time_constant_index, self.slope_index)
 
     def Adquirir(self):
         row = self.acquire_row()

@@ -1,0 +1,8 @@
+# Python (Caché y archivos compilados)
+__pycache__/
+*.py[cod]
+*$py.class
+*Mediciones/
+
+# VS Code (Configuraciones locales)
+.vscode/

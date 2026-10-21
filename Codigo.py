@@ -33,6 +33,7 @@ from decimal import Decimal
 import os # os_exit(00) restartea el núcleo.
 
 from acquisition_utils import AcquisitionDataManager, add_suffix_to_filename
+from horiba_monochromator import HoribaMonochromator
 
 CARPETA_CODIGO = os.path.dirname(os.path.abspath(__file__))
 
@@ -399,6 +400,12 @@ class SMS():
     
 # El LockIn está conectado a la PC via un cable USB que simula un GPIB.
     
+# The original one-file application creates ``SMS`` below in Experimento.
+# Replace only that binding with the Horiba bridge-backed implementation while
+# retaining the legacy serial class above as reference code.
+SMS = HoribaMonochromator
+
+
 class LockIn():
 
     def __init__(self):
@@ -1207,15 +1214,15 @@ class Configuracion():
         canvasRecuadros.pack(fill=BOTH)
 
         # Son solo textos.
-        labelPuertos = tk.Label(raizConfiguracion, text = 'Puertos', font=(fuente,15))
+        labelPuertos = tk.Label(raizConfiguracion, text = 'Equipos', font=(fuente,15))
         labelPuertos.place(x=350, y=5)
         labelConfiguracion = tk.Label(raizConfiguracion, text = 'Configuración', font=(fuente,15))
         labelConfiguracion.place(x=540, y=5)
-        labelCalibracion = tk.Label(raizConfiguracion, text = 'Calibración', font=(fuente,15))
+        labelCalibracion = tk.Label(raizConfiguracion, text = 'Estado', font=(fuente,15))
         labelCalibracion.place(x=740, y=5)
-        labelVelocidad = tk.Label(raizConfiguracion, text = 'Velocidad', font=(fuente,15))
+        labelVelocidad = tk.Label(raizConfiguracion, text = 'Movimiento', font=(fuente,15))
         labelVelocidad.place(x=890, y=5)
-        labelRedDeDifraccion = tk.Label(raizConfiguracion, text = 'Red de difracción', font=(fuente,15))
+        labelRedDeDifraccion = tk.Label(raizConfiguracion, text = 'Torreta/red', font=(fuente,15))
         labelRedDeDifraccion.place(x=1100, y=5)
 
         # SMC - PLATAFORMA DE RETARDO #
@@ -1290,17 +1297,13 @@ class Configuracion():
             textoVelocidadSMC["state"]="disabled"
         labelSMCInicializado.place(x=640, y=50)
         
-        # SMS - MONOCROMADOR #
+        # HORIBA iHR320 - MONOCROMADOR #
         def SetearPuertoSMS():
+            identificador = textoMono.get().strip() or 'Mono1'
             try:
-                puertoSMS = int(textoMono.get())
-            except ValueError:
-                Advertencia('Atención','El valor ingresado debe ser un número entero.')
-                return
-            try:
-                self.experimento.mono.AsignarPuerto('COM' + str(puertoSMS))
+                self.experimento.mono.AsignarPuerto(identificador)
             except Exception as error:
-                Advertencia('Atención','No se ha podido abrir COM' + str(puertoSMS) + '.\n' + str(error) + '\n\n' + TextoPuertosSerieDisponibles())
+                Advertencia('Atención','No se ha podido conectar al HORIBA iHR320 (ID ' + identificador + ').\n' + str(error))
                 return
             self.b2 = self.experimento.mono.Identificar() # Booleano
             if self.b2:
@@ -1312,29 +1315,19 @@ class Configuracion():
         def InicializarSMS():
             self.experimento.mono.Configurar()       
             self.c2 = True
-            labelSMSInicializado.config(text = 'Inicializado', font=(fuente,12))
-            botonCalibrarSMS['state'] = 'normal'
-            botonCambiarVelocidadSMS["state"]="normal"
-            textoVelocidadSMS["state"]="normal"
-            textoVelocidadSMS.config(text=str(self.experimento.mono.velocidadNmPorSegundo))
-            multiplicador = self.experimento.mono.multiplicador
-            if multiplicador == 32:
-                variable.set('1200')
-            if multiplicador == 16:
-                variable.set('600')
-            w["state"]="normal"
+            labelSMSInicializado.config(text = 'Listo', font=(fuente,12))
         def CambiarVelocidadSMS():
             self.experimento.mono.CambiarVelocidad(float(textoVelocidadSMS.get()))
         def CambiarRed():
             self.experimento.mono.CambiarRed(variable.get())
-        labelMono = tk.Label(raizConfiguracion, text = 'Red de difracción(SMS)', font=(fuente,15))
+        labelMono = tk.Label(raizConfiguracion, text = 'Espectrómetro HORIBA iHR320', font=(fuente,15))
         labelMono.place(x=5, y=95)
         textoMono = tk.Entry(raizConfiguracion, font=(fuente,15))
-        textoMono.place(x=280, y=95, height=30, width=30)
+        textoMono.place(x=280, y=95, height=30, width=70)
         textoMono.delete(0, tk.END)
-        textoMono.insert(0, str(puertoSMSDefault))
-        botonSetearPuertoSMS = tk.Button(raizConfiguracion, text = 'Setear', command = SetearPuertoSMS, font=(fuente,12))
-        botonSetearPuertoSMS.place(x=315,y=95)
+        textoMono.insert(0, 'Mono1')
+        botonSetearPuertoSMS = tk.Button(raizConfiguracion, text = 'Conectar', command = SetearPuertoSMS, font=(fuente,12))
+        botonSetearPuertoSMS.place(x=355,y=95)
         botonInicializarSMS = tk.Button(raizConfiguracion, text = 'Inicializar', command = InicializarSMS, font=(fuente,12))
         botonInicializarSMS.place(x=500,y=95)
         botonCalibrarSMS = tk.Button(raizConfiguracion, text = 'Calibrar', command = self.experimento.mono.Calibrar, font=(fuente,12))
@@ -1343,7 +1336,7 @@ class Configuracion():
         textoVelocidadSMS.place(x=860, y=95, height=30, width=50)
         botonCambiarVelocidadSMS = tk.Button(raizConfiguracion, text = 'Cambiar', command = CambiarVelocidadSMS, font=(fuente,12))
         botonCambiarVelocidadSMS.place(x=930, y=95)
-        labelRed = tk.Label(raizConfiguracion, text="ranuras/mm ", font=(fuente,15))
+        labelRed = tk.Label(raizConfiguracion, text="configurar en SinerJY", font=(fuente,11))
         labelRed.place(x=1145, y=95) 
         botonCambiarRed = tk.Button(raizConfiguracion, text = 'Cambiar', command = CambiarRed, font=(fuente,12))
         botonCambiarRed.place(x=1260, y=95)
@@ -1360,18 +1353,7 @@ class Configuracion():
             botonInicializarSMS["state"] = "disabled"             
         labelSMSReconocido.place(x=380, y=95)
         if self.c2:
-            labelSMSInicializado = tk.Label(raizConfiguracion, text = 'Inicializado', font=(fuente,12))
-            botonCalibrarSMS["state"] = "normal"    
-            botonCambiarVelocidadSMS["state"]="normal"
-            textoVelocidadSMS["state"]="normal"
-            textoVelocidadSMS.config(text=str(self.experimento.mono.velocidadNmPorSegundo))
-            w["state"] = "normal"
-            botonCambiarRed["state"] = "normal"
-            multiplicador = self.experimento.mono.multiplicador
-            if multiplicador == 32:
-                variable.set('1200')
-            if multiplicador == 16:
-                variable.set('600')
+            labelSMSInicializado = tk.Label(raizConfiguracion, text = 'Listo', font=(fuente,12))
         else:
             labelSMSInicializado = tk.Label(raizConfiguracion)
             botonCalibrarSMS["state"] = "disabled"  
@@ -1379,6 +1361,13 @@ class Configuracion():
             textoVelocidadSMS["state"]="disabled"
             w["state"]="disabled"
             botonCambiarRed["state"] = "disabled"  
+        # These SMS-only commands have no safe equivalent in the measurement
+        # bridge.  Calibrate/select the turret and grating in SinerJY instead.
+        botonCalibrarSMS["state"] = "disabled"
+        botonCambiarVelocidadSMS["state"]="disabled"
+        textoVelocidadSMS["state"]="disabled"
+        w["state"]="disabled"
+        botonCambiarRed["state"] = "disabled"
         labelSMSInicializado.place(x=640, y=95)
         
         # LOCK IN #

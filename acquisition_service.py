@@ -7,8 +7,14 @@ import numpy as np
 from matplotlib.colors import LogNorm, Normalize, SymLogNorm
 from matplotlib.figure import Figure
 
-from acquisition_utils import AcquisitionDataManager
+from acquisition_utils import AcquisitionDataManager, DATA_COLUMNS
+from dc_normalization import (
+    DC_CHANNEL_INDEX, DC_INPUT, DC_INSTANTANEOUS_COLUMN,
+    DC_EXTRA_COLUMNS, DC_SAMPLE_INTERVAL_SECONDS, DCStatistics,
+    normalize_by_dc, valid_dc, save_normalized_csv,
+)
 from session_manager import SessionManager
+from sr830_timing import settling_seconds
 
 
 MEASUREMENT_LAMBDA_FIXED = "lambda_fixed"
@@ -23,8 +29,9 @@ CHANNELS = [
     ("Y", 1),
     ("R", 2),
     ("theta", 3),
-    ("X/AUX", 4),
-    ("R/AUX", 5),
+    ("X/DC", 4),
+    ("R/DC", 5),
+    ("DC (AUX IN 1, V)", DC_CHANNEL_INDEX),
 ]
 
 RAW_CHANNEL_NAMES = ["X", "Y", "R", "theta", "AUX", "frecuencia"]
@@ -35,20 +42,20 @@ class MeasurementConfig:
         self.measurement_type = MEASUREMENT_LAMBDA_FIXED
         self.bbd_sections = list()
         self.lambda_sections = list()
-        self.channels = [1, 0, 1, 0, 0, 0]
-        self.plot_channels = [1, 0, 1, 0, 0, 0]
+        self.channels = [1, 0, 1, 0, 1, 1, 1]
+        self.plot_channels = [1, 0, 1, 0, 1, 1, 1]
         self.x_axis = "Distancia"
         self.plot_scale = PLOT_SCALE_LINEAR
         self.repetitions = 1
         self.average_repetitions = False
         self.auto_gain_enabled = True
-        self.average_aux = False
-        self.average_aux_seconds = 0
+        self.average_aux = True  # Per-point mean during the existing N*tau wait.
         self.notes = ""
         self.simulation_mode = True
         self.use_monochromator = True
         self.simulation_delay_scale = 0.05
         self.integration_time_override = None
+        self.lockin_settling_factor = None  # None: recommended for the actual slope.
         self.longitud_onda_fija_nm = 650.0
         self.posicion_fija_bbd_mm = 220.0
         self.session_path_preview = ""
@@ -81,11 +88,15 @@ class MeasurementConfig:
             "auto_gain_enabled": self.auto_gain_enabled,
             "auto_gain_mode": "manual_sens_only",
             "average_aux": self.average_aux,
-            "average_aux_seconds": self.average_aux_seconds,
+            "dc_input": DC_INPUT,
+            "dc_units": "V",
+            "dc_normalization_mode": "mean_during_settling_per_point" if self.average_aux else "point_by_point",
             "simulation_mode": self.simulation_mode,
             "use_monochromator": self.use_monochromator,
             "simulation_delay_scale": self.simulation_delay_scale,
             "integration_time_override": self.integration_time_override,
+            "lockin_settling_factor": self.lockin_settling_factor,
+            "lockin_settling_mode": "recommended" if self.lockin_settling_factor is None else "manual",
             "longitud_onda_fija_nm": self.longitud_onda_fija_nm,
             "posicion_fija_bbd_mm": self.posicion_fija_bbd_mm,
         }
@@ -120,7 +131,7 @@ def channel_label(index):
 
 
 def safe_channel_name(index):
-    names = ["X", "Y", "R", "theta", "X_AUX", "R_AUX"]
+    names = ["X", "Y", "R", "theta", "X_DC", "R_DC", "DC"]
     if index >= 0 and index < len(names):
         return names[index]
     return "canal"
@@ -177,8 +188,13 @@ def validate_measurement_config(config, hardware_status):
         errors.append("Seleccionar al menos un canal para graficar.")
     if config.repetitions < 1:
         errors.append("La cantidad de repeticiones debe ser mayor o igual a 1.")
-    if config.average_aux and config.average_aux_seconds <= 0:
-        errors.append("Promediar AUX requiere un tiempo mayor a cero.")
+    if config.lockin_settling_factor is not None:
+        try:
+            settling_seconds(config.lockin_settling_factor, 1.0)
+        except (ValueError, TypeError, OverflowError) as exc:
+            errors.append(str(exc))
+    if config.integration_time_override is not None and not config.simulation_mode:
+        errors.append("El tiempo de prueba solo se permite en simulacion; en hardware real se usa N x tau.")
 
     if config.measurement_type == MEASUREMENT_LAMBDA_FIXED:
         errors.extend(validate_sections(config.bbd_sections, "BBD"))
@@ -193,6 +209,8 @@ def validate_measurement_config(config, hardware_status):
     if not config.simulation_mode:
         if not hardware_status.get("bbd_connected", False):
             errors.append("La plataforma BBD no esta conectada.")
+        elif hardware_status.get("bbd_homed") is False:
+            errors.append("La plataforma BBD no tiene referencia: realizar Home antes de iniciar un barrido.")
         mono_required = True
         if config.measurement_type == MEASUREMENT_LAMBDA_FIXED and not config.use_monochromator:
             mono_required = False
@@ -220,6 +238,12 @@ def points_for_config(config):
 def estimate_seconds(config, hardware_status):
     bbd_points, lambda_points, point_count = points_for_config(config)
     integration_time = config.integration_time_override
+    settings = hardware_status.get("lockin_filter")
+    if integration_time is None and settings:
+        factor = config.lockin_settling_factor
+        if factor is None:
+            factor = settings["recommended_settling_factor"]
+        integration_time = settling_seconds(factor, settings["time_constant_seconds"])
     if integration_time is None:
         integration_time = hardware_status.get("integration_time", 0.0)
     try:
@@ -227,8 +251,6 @@ def estimate_seconds(config, hardware_status):
     except Exception:
         integration_time = 0.0
     seconds = point_count * integration_time * config.repetitions
-    if config.average_aux:
-        seconds = seconds + len(lambda_points) * config.average_aux_seconds * config.repetitions
     if getattr(config, "auto_gain_enabled", False):
         seconds = seconds + len(lambda_points) * 1.0 * config.repetitions
     if config.measurement_type in (MEASUREMENT_LAMBDA_FIXED, MEASUREMENT_DOUBLE):
@@ -264,19 +286,19 @@ def build_preview(config, hardware_status, session_manager=None):
         "bbd_puntos": len(bbd_points),
         "lambda_puntos": len(lambda_points),
         "carpeta_sesion": session_path,
-        "archivos": "raw.csv, metadata.json, notes.txt, log.txt, plots/*.png",
+        "archivos": "raw.csv, normalizado.csv, metadata.json, notes.txt, log.txt, plots/*.png",
     }
 
 
 def value_for_channel(row, channel_index, average_aux_enabled, average_aux_value):
+    if channel_index == DC_CHANNEL_INDEX:
+        return float(row[4])
     if channel_index < 4:
         return float(row[channel_index])
     aux = aux_for_row(row, average_aux_enabled, average_aux_value, None)
-    if aux == 0:
-        return float("nan")
     if channel_index == 4:
-        return float(row[0]) / aux
-    return float(row[2]) / aux
+        return normalize_by_dc(row[0], aux)
+    return normalize_by_dc(row[2], aux)
 
 
 def lambda_key(value):
@@ -287,9 +309,10 @@ def aux_for_row(row, average_aux_enabled, average_aux_value, average_aux_by_lamb
     if average_aux_enabled:
         try:
             row_aux = float(row[4])
-            if np.isfinite(row_aux) and row_aux != 0:
-                return row_aux
-        except Exception:
+            return row_aux  # A zero/NaN denominator must not fall back to old DC.
+        except (TypeError, ValueError):
+            return float("nan")
+        except IndexError:
             pass
         if average_aux_by_lambda is not None and len(row) >= 8:
             key = lambda_key(row[7])
@@ -300,14 +323,14 @@ def aux_for_row(row, average_aux_enabled, average_aux_value, average_aux_by_lamb
 
 
 def value_for_channel_with_aux_map(row, channel_index, config, average_aux_value, average_aux_by_lambda):
+    if channel_index == DC_CHANNEL_INDEX:
+        return float(row[4])
     if channel_index < 4:
         return float(row[channel_index])
     aux = aux_for_row(row, config.average_aux, average_aux_value, average_aux_by_lambda)
-    if aux == 0:
-        return float("nan")
     if channel_index == 4:
-        return float(row[0]) / aux
-    return float(row[2]) / aux
+        return normalize_by_dc(row[0], aux)
+    return normalize_by_dc(row[2], aux)
 
 
 def x_value_for_row(row, config):
@@ -438,7 +461,12 @@ class AcquisitionRunner:
         self.config = config
         self.callbacks = callbacks or {}
         self.cancel_requested = False
-        self.data_manager = AcquisitionDataManager(".")
+        self.data_manager = AcquisitionDataManager(".", DATA_COLUMNS + DC_EXTRA_COLUMNS)
+        self._settled_filter = None
+        self._settling_dc_stats = None
+        self._last_filter = None
+        self.lockin_filter_history = list()
+        self._acquired_points = 0
 
     def cancel(self):
         self.cancel_requested = True
@@ -452,28 +480,59 @@ class AcquisitionRunner:
         if callback is not None:
             callback(*args)
 
-    def sleep_cancellable(self, seconds):
+    def scaled_seconds(self, seconds):
         if seconds is None:
             seconds = 0
         seconds = max(0.0, float(seconds))
-        if self.config.simulation_mode:
+        if self.config.simulation_mode and self.hardware.simulation_mode:
             seconds = seconds * max(0.0, float(self.config.simulation_delay_scale))
-        end_time = time.time() + seconds
-        while time.time() < end_time:
+        return seconds
+
+    def sleep_cancellable(self, seconds):
+        return self.sleep_until(time.monotonic() + self.scaled_seconds(seconds))
+
+    def sleep_until(self, end_time):
+        """Wait to an absolute deadline, with no further simulation scaling."""
+        while time.monotonic() < end_time:
             if self.cancel_requested:
                 return False
-            remaining = end_time - time.time()
+            remaining = end_time - time.monotonic()
             if remaining > 0.05:
                 time.sleep(0.05)
             elif remaining > 0:
                 time.sleep(remaining)
         return not self.cancel_requested
 
+    def sample_dc_during_settling(self, seconds):
+        """Use the existing wait for AUX samples; never average transient X/Y/R.
+
+        A SNAP started before the deadline may finish after it. VISA latency
+        can extend this wait; it never starts a second averaging window.
+        Communication errors propagate so a partial mean is not used silently.
+        """
+        statistics = DCStatistics()
+        start_time = time.monotonic()
+        end_time = start_time + self.scaled_seconds(seconds)
+        while time.monotonic() < end_time:
+            if self.cancel_requested:
+                return False
+            sample_start = time.monotonic()
+            row = self.hardware.acquire_row()
+            statistics.add(row[4])
+            next_sample = min(end_time, sample_start + DC_SAMPLE_INTERVAL_SECONDS)
+            if not self.sleep_until(next_sample):
+                return False
+        if self.cancel_requested:
+            return False
+        self._settling_dc_stats = statistics.summary(time.monotonic() - start_time)
+        return True
+
     def move_bbd(self, position):
         if self.cancel_requested:
             return False
         delay = self.hardware.calculate_bbd_sleep(position)
         self.hardware.move_bbd(position)
+        self._settled_filter = None
         self.emit("status", "BBD -> " + str(round(float(position), 6)) + " mm")
         return self.sleep_cancellable(delay)
 
@@ -482,74 +541,96 @@ class AcquisitionRunner:
             return False
         delay = self.hardware.calculate_mono_sleep(wavelength)
         self.hardware.move_mono(wavelength)
+        self._settled_filter = None
         self.emit("status", "Lambda -> " + str(round(float(wavelength), 4)) + " nm")
         return self.sleep_cancellable(delay)
 
+    def wait_for_lockin(self):
+        """One settling period per perturbation, after mechanical completion.
+
+        Re-query before use and after waiting. A changed filter restarts settling;
+        The final point reuses a completed wait and its DC samples only if
+        no movement, sensitivity change or filter change has occurred.
+        """
+        while not self.cancel_requested:
+            settings = self.hardware.refresh_lockin_filter()
+            if self.cancel_requested:
+                return False
+            factor = self.config.lockin_settling_factor
+            if factor is None:
+                factor = settings["recommended_settling_factor"]
+            seconds = settling_seconds(factor, settings["time_constant_seconds"])
+            self.hardware.set_lockin_constants(factor)
+            settings = dict(settings, settling_factor=float(factor), settling_seconds=seconds)
+            if settings != self._last_filter:
+                self._last_filter = settings
+                self.lockin_filter_history.append(dict(settings, after_acquired_points=self._acquired_points))
+                self.emit("lockin_filter", dict(settings))
+                self.emit("log", "SR830: tau=" + str(settings["time_constant_seconds"])
+                          + " s, pendiente=" + str(settings["slope_db_oct"])
+                          + " dB/oct, N=" + str(factor) + ", espera=" + str(seconds) + " s")
+            signature = (settings["time_constant_index"], settings["slope_index"], float(factor))
+            if self._settled_filter == signature and (
+                not self.config.average_aux or self._settling_dc_stats is not None
+            ):
+                return True
+            # Retain the legacy override only for fast hardware-free tests.
+            if self.config.integration_time_override is not None:
+                if not self.config.simulation_mode or not self.hardware.simulation_mode:
+                    raise ValueError("El tiempo de prueba solo se permite en simulacion.")
+                seconds = float(self.config.integration_time_override)
+                if not math.isfinite(seconds) or seconds < 0:
+                    raise ValueError("El tiempo de prueba debe ser finito y no negativo.")
+            self.emit("status", "Estabilizando SR830: " + str(seconds) + " s (N x tau)")
+            self._settled_filter = None
+            self._settling_dc_stats = None
+            completed = self.sample_dc_during_settling(seconds) if self.config.average_aux else self.sleep_cancellable(seconds)
+            if not completed:
+                return False
+            self._settled_filter = signature
+        return False
+
     def acquire_point(self, result, repetition, point_index, total_points):
-        if self.cancel_requested:
-            return False
-        integration_time = self.config.integration_time_override
-        if integration_time is None:
-            integration_time = self.hardware.integration_time()
-        if not self.sleep_cancellable(integration_time):
+        if not self.wait_for_lockin():
             return False
         if self.cancel_requested:
             return False
-        row = self.hardware.acquire_row()
+        row = list(self.hardware.acquire_row())
+        if self.cancel_requested:
+            return False
+        instantaneous_dc = float(row[4])
         if self.config.measurement_type == MEASUREMENT_LAMBDA_FIXED and not self.config.use_monochromator:
             if len(row) < 8:
                 row = list(row) + [0.0] * (8 - len(row))
             row[7] = float(self.config.longitud_onda_fija_nm)
         if self.config.average_aux:
-            row = list(row)
-            row[4] = float(result.average_aux_value)
+            statistics = self._settling_dc_stats
+            row[4] = statistics["mean"]
+            result.average_aux_value = row[4]
+            self.emit("aux_average", row[4])
+            self.emit("log", "DC media por punto durante N x tau: " + str(row[4])
+                      + " V; muestras=" + str(statistics["count"])
+                      + "; desvio=" + str(statistics["std"]) + " V"
+                      + "; duracion=" + str(statistics["duration"]) + " s")
+            if statistics["count"] < 2:
+                self.emit("log", "DC: menos de 2 muestras durante N x tau; no se puede estimar la dispersion. No se extiende la ventana de promedio.")
+            if statistics["invalid_count"]:
+                self.emit("log", "DC: muestras no finitas o saturadas durante N x tau: "
+                          + str(statistics["invalid_count"]) + "; media invalida.")
+        else:
+            statistics = {"count": 0, "std": float("nan"), "duration": 0.0, "invalid_count": 0}
+        row = row[:8] + [instantaneous_dc, statistics["count"], statistics["std"],
+                         statistics["duration"], statistics["invalid_count"]]
+        if not valid_dc(row[4]):
+            self.emit("log", "DC de AUX IN 1 nula, no finita o fuera de rango: normalizacion NaN; se conservan los datos crudos.")
         self.data_manager.append_row(row)
+        # This window belongs to one point, even if the next point has no move.
+        self._settling_dc_stats = None
         result.acquired_points = result.acquired_points + 1
+        self._acquired_points = result.acquired_points
         self.emit("point", row, repetition, result.acquired_points, total_points)
         self.emit("progress", result.acquired_points, total_points)
         self.emit("log", "Punto " + str(result.acquired_points) + "/" + str(total_points) + " adquirido")
-        return True
-
-    def calculate_average_aux(self, wavelength=None):
-        if not self.config.average_aux:
-            return 0
-        duration = float(self.config.average_aux_seconds)
-        if duration <= 0:
-            return 0
-        measured = 0
-        accum = 0.0
-        if wavelength is None:
-            self.emit("log", "Promediando AUX")
-        else:
-            self.emit("log", "Promediando AUX para lambda " + str(round(float(wavelength), 4)) + " nm")
-        end_time = time.time() + duration
-        while time.time() < end_time:
-            if self.cancel_requested:
-                break
-            try:
-                row = self.hardware.acquire_row()
-                accum = accum + float(row[4])
-                measured = measured + 1
-            except Exception as exc:
-                self.emit("log", "Lectura AUX fallida durante promedio: " + str(exc))
-            if not self.sleep_cancellable(1.0 / 20.0):
-                break
-        if measured == 0:
-            return 0
-        return round(accum / measured, 6)
-
-    def update_average_aux_for_lambda(self, result, wavelength):
-        if not self.config.average_aux:
-            return True
-        if self.cancel_requested:
-            return False
-        average = self.calculate_average_aux(wavelength)
-        if self.cancel_requested:
-            return False
-        result.average_aux_value = average
-        result.average_aux_by_lambda[lambda_key(wavelength)] = average
-        self.emit("aux_average", average)
-        self.emit("log", "AUX promedio lambda " + str(round(float(wavelength), 4)) + " nm = " + str(average))
         return True
 
     def maybe_auto_gain_for_lambda(self, wavelength):
@@ -557,11 +638,9 @@ class AcquisitionRunner:
             return True
         if self.cancel_requested:
             return False
-        integration_time = self.hardware.integration_time()
-        try:
-            integration_time = float(integration_time)
-        except Exception:
-            integration_time = 0.0
+        # Autorange reads SNAP too, so its decision needs a settled input.
+        if not self.wait_for_lockin():
+            return False
         try:
             self.emit("log", "Auto rango sensibilidad para lambda " + str(round(float(wavelength), 4)) + " nm")
             result = self.hardware.autorange_lockin_sensitivity()
@@ -576,11 +655,13 @@ class AcquisitionRunner:
                     + str(round(float(result.get("r", 0.0)), 9))
                     + ")",
                 )
-                wait_time = max(0.2, min(2.0, 2.0 * integration_time))
-                return self.sleep_cancellable(wait_time)
+                # The next point waits and starts a new DC mean after this change.
+                self._settled_filter = None
+                return True
             self.emit("log", "Sensibilidad Lock-in sin cambios")
             return True
         except Exception as exc:
+            self._settled_filter = None
             self.emit("log", "Auto rango sensibilidad fallo y se continua: " + str(exc))
             return True
 
@@ -589,6 +670,10 @@ class AcquisitionRunner:
         result.started_at = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         try:
+            if self.config.lockin_settling_factor is not None:
+                settling_seconds(self.config.lockin_settling_factor, 1.0)
+            if not self.config.simulation_mode and self.config.integration_time_override is not None:
+                raise ValueError("El tiempo de prueba solo se permite en simulacion.")
             bbd_points, lambda_points, point_count = points_for_config(self.config)
             result.total_points = point_count * self.config.repetitions
             result.average_aux_value = 0
@@ -651,9 +736,6 @@ class AcquisitionRunner:
             if not self.maybe_auto_gain_for_lambda(self.config.longitud_onda_fija_nm):
                 self.cancel()
                 return
-            if not self.update_average_aux_for_lambda(result, self.config.longitud_onda_fija_nm):
-                self.cancel()
-                return
             for position in bbd_points:
                 if not self.move_bbd(position):
                     self.cancel()
@@ -672,9 +754,6 @@ class AcquisitionRunner:
                 if not self.maybe_auto_gain_for_lambda(wavelength):
                     self.cancel()
                     return
-                if not self.update_average_aux_for_lambda(result, wavelength):
-                    self.cancel()
-                    return
                 if not self.acquire_point(result, repetition, 0, result.total_points):
                     self.cancel()
                     return
@@ -684,9 +763,6 @@ class AcquisitionRunner:
                     self.cancel()
                     return
                 if not self.maybe_auto_gain_for_lambda(wavelength):
-                    self.cancel()
-                    return
-                if not self.update_average_aux_for_lambda(result, wavelength):
                     self.cancel()
                     return
                 for position in bbd_points:
@@ -703,6 +779,7 @@ class AcquisitionRunner:
             "version_gui": "pyqt_v1",
             "config": self.config.to_dict(),
             "hardware_status": status,
+            "lockin_filter_history": list(self.lockin_filter_history),
             "started_at": result.started_at,
             "finished_at": result.finished_at,
             "cancelled": result.cancelled,
@@ -711,7 +788,20 @@ class AcquisitionRunner:
             "acquired_points": result.acquired_points,
             "average_aux_value": result.average_aux_value,
             "average_aux_by_lambda": result.average_aux_by_lambda,
-            "aux_column_meaning": "AUX promedio usado para normalizacion" if self.config.average_aux else "AUX instantaneo leido en cada punto",
+            "aux_column_meaning": "DC media por punto durante N x tau usada para normalizacion (AUX IN 1, V)" if self.config.average_aux else "DC instantanea usada para normalizacion (AUX IN 1, V)",
+            "dc_instantaneous_column": DC_INSTANTANEOUS_COLUMN,
+            "dc_input": DC_INPUT,
+            "dc_normalization_formula": "X_DC=X/DC; Y_DC=Y/DC; R_DC=R/DC; DC=AUX de cada fila",
+            "dc_average": {
+                "enabled": self.config.average_aux,
+                "window": "Durante la espera N x tau, despues del margen mecanico",
+                "sample_interval_target_seconds": DC_SAMPLE_INTERVAL_SECONDS,
+                "sample_timing": "SNAP iniciado antes del fin de la ventana; limitado por latencia VISA",
+                "signal_reading": "X/Y/R/theta del SNAP final, despues de estabilizar",
+                "std_definition": "Desvio estandar muestral (ddof=1), NaN con menos de 2 muestras o muestras invalidas",
+                "invalid_samples": "Cualquier muestra no finita o con abs(DC) >= 10.5 V invalida la media",
+                "extra_columns": list(DC_EXTRA_COLUMNS),
+            },
         }
         return metadata
 
@@ -720,11 +810,15 @@ def save_measurement_result(result, notes, log_lines, selected_plot_channels=Non
     if session_manager is None:
         session_manager = SessionManager()
     paths = session_manager.create_session(preferred_path)
-    data_manager = AcquisitionDataManager(paths.root_path)
+    extra_count = max((len(row) - 8 for run in result.runs for row in run.get("rows", [])), default=0)
+    columns = DATA_COLUMNS + DC_EXTRA_COLUMNS[:extra_count]
+    data_manager = AcquisitionDataManager(paths.root_path, columns)
     metadata = dict(result.metadata)
     metadata["saved_at"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     metadata["session_path"] = paths.root_path
     raw_paths = data_manager.save_runs(result.runs, "raw.csv", metadata)
+    normalized_path = save_normalized_csv(os.path.join(paths.root_path, "normalizado.csv"), result.runs)
+    metadata["normalized_csv"] = normalized_path
     average_path = None
     average_rows = None
     if result.average_result is not None and result.average_result.get("ok", False):
@@ -739,6 +833,7 @@ def save_measurement_result(result, notes, log_lines, selected_plot_channels=Non
     return {
         "session_path": paths.root_path,
         "raw_paths": raw_paths,
+        "normalized_path": normalized_path,
         "average_path": average_path,
         "plot_paths": plot_paths,
         "metadata_path": paths.metadata_json,

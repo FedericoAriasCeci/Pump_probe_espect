@@ -30,8 +30,10 @@ def add_suffix_to_filename(nombre_archivo, suffix):
 
 
 class AcquisitionDataManager:
-    def __init__(self, carpeta_csv="CSVs"):
+    def __init__(self, carpeta_csv="CSVs", data_columns=None):
         self.carpeta_csv = carpeta_csv
+        self.data_columns = list(DATA_COLUMNS if data_columns is None else data_columns)
+        self.raw_columns = ["repeticion", "indice_punto"] + self.data_columns
         self._archivo_actual = None
         self._writer_actual = None
         self._filas_actuales = list()
@@ -59,7 +61,7 @@ class AcquisitionDataManager:
         self._repeticion_actual = repeticion
         self._metadata_actual = dict(metadata or {})
         self._write_metadata(self._metadata_actual)
-        self._writer_actual.writerow(RAW_COLUMNS)
+        self._writer_actual.writerow(self.raw_columns)
         self._archivo_actual.flush()
 
     def begin_memory_run(self, nombre_archivo, metadata=None, repeticion=1):
@@ -115,7 +117,7 @@ class AcquisitionDataManager:
         with open(ruta, "w", newline="", encoding="utf-8") as archivo:
             writer = csv.writer(archivo)
             self._write_metadata_to_writer(writer, metadata)
-            writer.writerow(RAW_COLUMNS)
+            writer.writerow(self.raw_columns)
             indice = 1
             for fila in run.get("rows", []):
                 writer.writerow([run.get("repeticion", ""), indice] + list(fila))
@@ -142,7 +144,7 @@ class AcquisitionDataManager:
         with open(ruta, "w", newline="", encoding="utf-8") as archivo:
             writer = csv.writer(archivo)
             self._write_metadata_to_writer(writer, metadata_crudo)
-            writer.writerow(RAW_COLUMNS)
+            writer.writerow(self.raw_columns)
             for run in runs:
                 indice = 1
                 repeticion = run.get("repeticion", "")
@@ -232,9 +234,9 @@ class AcquisitionDataManager:
 
     def _normalizar_fila(self, vector_de_datos):
         fila = [str(valor) for valor in vector_de_datos]
-        if len(fila) < len(DATA_COLUMNS):
-            fila = fila + [""] * (len(DATA_COLUMNS) - len(fila))
-        return fila[: len(DATA_COLUMNS)]
+        if len(fila) < len(self.data_columns):
+            fila = fila + [""] * (len(self.data_columns) - len(fila))
+        return fila[: len(self.data_columns)]
 
     def _format_metadata_value(self, valor):
         if isinstance(valor, (list, tuple)):

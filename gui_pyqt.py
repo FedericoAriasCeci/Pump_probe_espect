@@ -31,14 +31,16 @@ from acquisition_service import (
     x_label_for_config,
     x_value_for_row,
 )
-from hardware_adapter import create_hardware_adapter, guess_sms_port, list_serial_ports, normalize_sms_port
+from hardware_adapter import create_hardware_adapter
 from session_manager import SessionManager
+from sr830_timing import settling_seconds
+from dc_normalization import DC_CHANNEL_INDEX
 
 
 QT_IMPORT_ERROR = None
 
 try:
-    from PyQt5.QtCore import QObject, Qt, QThread, pyqtSignal
+    from PyQt5.QtCore import QObject, Qt, QThread, QSettings, pyqtSignal
     from PyQt5.QtWidgets import (
         QApplication,
         QCheckBox,
@@ -212,6 +214,7 @@ if QT_IMPORT_ERROR is None:
         log_message = pyqtSignal(str)
         progress_changed = pyqtSignal(int, int)
         aux_average_changed = pyqtSignal(float)
+        lockin_filter_changed = pyqtSignal(object)
         measurement_finished = pyqtSignal(object)
         measurement_cancelled = pyqtSignal(object)
         error_raised = pyqtSignal(str)
@@ -233,6 +236,7 @@ if QT_IMPORT_ERROR is None:
                     "progress": self.progress_changed.emit,
                     "error": self.error_raised.emit,
                     "aux_average": self.aux_average_changed.emit,
+                    "lockin_filter": self.lockin_filter_changed.emit,
                 }
                 self.runner = AcquisitionRunner(self.hardware, self.config, callbacks)
                 if self.cancel_requested:
@@ -258,16 +262,21 @@ if QT_IMPORT_ERROR is None:
 
 
     class PumpProbeWindow(QMainWindow):
-        def __init__(self):
+        def __init__(self, settings=None):
             QMainWindow.__init__(self)
             self.setWindowTitle("Pump-Probe PyQt V1")
             self.resize(1380, 860)
             self.session_manager = SessionManager()
+            self.settings = settings if settings is not None else QSettings(
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), "settling_settings.ini"),
+                QSettings.IniFormat,
+            )
             self.hardware = create_hardware_adapter(True)
             self.active_config = None
             self.current_result = None
             self.current_average_aux_value = 0.0
             self.current_average_aux_by_lambda = dict()
+            self.current_dc_value = None
             self.worker = None
             self.thread = None
             self.closing = False
@@ -284,7 +293,7 @@ if QT_IMPORT_ERROR is None:
             self.log("Aplicacion iniciada en modo simulacion")
 
         def read_default_ports(self):
-            mono_port = "COM3"
+            mono_port = "Mono1"
             lockin_port = "8"
             path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataPuertos.txt")
             if not os.path.isfile(path):
@@ -303,7 +312,9 @@ if QT_IMPORT_ERROR is None:
                     mono_port = parts[0]
             except Exception:
                 pass
-            return normalize_sms_port(mono_port), lockin_port
+            # The Horiba is discovered by SinerJY/ConfigBrowser; it has an ID,
+            # not a serial COM port.  Mono1 is the configured iHR320 here.
+            return "Mono1", lockin_port
 
         def build_ui(self):
             central = QWidget()
@@ -315,7 +326,7 @@ if QT_IMPORT_ERROR is None:
             splitter.addWidget(self.build_left_panel())
             splitter.addWidget(self.build_center_panel())
             splitter.addWidget(self.build_right_panel())
-            splitter.setSizes([390, 640, 330])
+            splitter.setSizes([440, 600, 330])
             main_layout.addWidget(splitter)
             self.setCentralWidget(central)
 
@@ -348,12 +359,12 @@ if QT_IMPORT_ERROR is None:
             self.simulation_check.toggled.connect(self.on_simulation_changed)
             layout.addWidget(self.simulation_check, 0, 0, 1, 2)
 
-            self.use_mono_check = QCheckBox("Usar SMS en lambda fija")
+            self.use_mono_check = QCheckBox("Usar HORIBA en lambda fija")
             self.use_mono_check.setChecked(True)
             self.use_mono_check.setToolTip("Si esta desactivado, en lambda fija no se exige ni se mueve el monocromador")
             layout.addWidget(self.use_mono_check, 1, 0, 1, 3)
 
-            layout.addWidget(QLabel("Puerto SMS"), 2, 0)
+            layout.addWidget(QLabel("ID HORIBA"), 2, 0)
             self.mono_port_edit = QComboBox()
             self.mono_port_edit.setEditable(True)
             layout.addWidget(self.mono_port_edit, 2, 1)
@@ -366,40 +377,64 @@ if QT_IMPORT_ERROR is None:
             self.lockin_port_edit = QLineEdit(self.default_lockin_port)
             layout.addWidget(self.lockin_port_edit, 3, 1, 1, 2)
 
-            layout.addWidget(QLabel("Constantes Lock-in"), 4, 0)
-            self.lockin_constants_spin = QSpinBox()
-            self.lockin_constants_spin.setRange(1, 100)
-            self.lockin_constants_spin.setValue(1)
+            settling_label = QLabel("Settling time (N × τ)")
+            settling_label.setWordWrap(True)
+            layout.addWidget(settling_label, 4, 0)
+            self.lockin_constants_spin = QDoubleSpinBox()
+            self.lockin_constants_spin.setDecimals(3)
+            self.lockin_constants_spin.setRange(0.001, 1000000.0)
+            self.lockin_constants_spin.setSingleStep(0.5)
+            self.lockin_constants_spin.setToolTip(
+                "N total de constantes de tiempo. Editarlo activa el modo manual. "
+                "Se usa tau real del SR830; no se multiplica por el orden del filtro."
+            )
+            try:
+                factor = self.settings.value("lockin/settling_factor", 5.0, type=float)
+                settling_seconds(factor, 1.0)
+            except (ValueError, TypeError, OverflowError):
+                factor = 5.0
+            self.lockin_constants_spin.setValue(factor)
             layout.addWidget(self.lockin_constants_spin, 4, 1, 1, 2)
+
+            self.lockin_recommended_check = QCheckBox("Usar N recomendado por pendiente")
+            self.lockin_recommended_check.setChecked(
+                self.settings.value("lockin/use_recommended", True, type=bool)
+            )
+            self.lockin_recommended_check.setToolTip(
+                "6/12/18/24 dB/oct: N = 5/7/9/10. Desactivar para conservar un N manual."
+            )
+            layout.addWidget(self.lockin_recommended_check, 5, 0, 1, 3)
+            self.lockin_constants_spin.valueChanged.connect(self.on_settling_factor_changed)
+            self.lockin_recommended_check.toggled.connect(self.on_settling_mode_changed)
 
             self.auto_gain_check = QCheckBox("Auto rango sensibilidad")
             self.auto_gain_check.setChecked(True)
             self.auto_gain_check.setToolTip("Ajusta solo SENS del SR830 al cambiar de lambda. No ejecuta Auto Phase.")
-            layout.addWidget(self.auto_gain_check, 5, 0, 1, 3)
+            layout.addWidget(self.auto_gain_check, 6, 0, 1, 3)
 
             self.connect_bbd_button = QPushButton("Conectar BBD")
             self.connect_bbd_button.clicked.connect(self.connect_bbd)
-            layout.addWidget(self.connect_bbd_button, 6, 0)
+            layout.addWidget(self.connect_bbd_button, 7, 0)
 
             self.home_bbd_button = QPushButton("Home BBD")
             self.home_bbd_button.clicked.connect(self.home_bbd)
-            layout.addWidget(self.home_bbd_button, 6, 1)
+            layout.addWidget(self.home_bbd_button, 7, 1)
 
-            self.connect_mono_button = QPushButton("Conectar SMS")
+            self.connect_mono_button = QPushButton("Conectar HORIBA")
             self.connect_mono_button.clicked.connect(self.connect_mono)
-            layout.addWidget(self.connect_mono_button, 7, 0)
+            layout.addWidget(self.connect_mono_button, 8, 0)
 
             self.connect_lockin_button = QPushButton("Conectar Lock-in")
             self.connect_lockin_button.clicked.connect(self.connect_lockin)
-            layout.addWidget(self.connect_lockin_button, 7, 1)
+            layout.addWidget(self.connect_lockin_button, 8, 1)
 
             self.connect_all_button = QPushButton("Conectar todo")
             self.connect_all_button.clicked.connect(self.connect_all_hardware)
-            layout.addWidget(self.connect_all_button, 8, 0, 1, 3)
+            layout.addWidget(self.connect_all_button, 9, 0, 1, 3)
 
             self.release_hardware_button = QPushButton("Liberar hardware")
             self.release_hardware_button.clicked.connect(self.release_hardware)
-            layout.addWidget(self.release_hardware_button, 9, 0, 1, 3)
+            layout.addWidget(self.release_hardware_button, 10, 0, 1, 3)
 
             return group
 
@@ -468,16 +503,18 @@ if QT_IMPORT_ERROR is None:
             layout.addWidget(self.average_repetitions_check)
 
             aux_row = QHBoxLayout()
-            self.average_aux_check = QCheckBox("Promediar AUX por lambda")
-            self.average_aux_check.setToolTip("Cada vez que cambia lambda mide AUX durante este tiempo y usa ese valor para X/AUX o R/AUX")
-            self.average_aux_seconds_spin = QDoubleSpinBox()
-            self.average_aux_seconds_spin.setRange(0.0, 9999.0)
-            self.average_aux_seconds_spin.setDecimals(2)
-            self.average_aux_seconds_spin.setValue(1.0)
+            self.average_aux_check = QCheckBox("Promediar DC por punto durante N x tau")
+            self.average_aux_check.setChecked(True)
+            self.average_aux_check.setToolTip(
+                "Promedia AUX IN 1 durante la espera de estabilizacion de cada punto y usa esa media para X/DC y R/DC. "
+                "X, Y y R se toman al terminar la espera. Desactivado: usa la DC del SNAP final. "
+                "Siempre conserva la DC instantanea y guarda la cantidad de muestras y su dispersion."
+            )
             aux_row.addWidget(self.average_aux_check)
-            aux_row.addWidget(self.average_aux_seconds_spin)
-            aux_row.addWidget(QLabel("s"))
             layout.addLayout(aux_row)
+            dc_average_help = QLabel("Usa la espera existente; no agrega otra ventana de promedio.")
+            dc_average_help.setWordWrap(True)
+            layout.addWidget(dc_average_help)
 
             layout.addWidget(QLabel("Secciones BBD (mm)"))
             self.bbd_table = self.create_sections_table([(219.0, 221.0, 0.25)])
@@ -503,7 +540,13 @@ if QT_IMPORT_ERROR is None:
                 layout.addWidget(QLabel(label), row + 1, 0)
                 view_check = QCheckBox()
                 view_check.setChecked(bool(defaults.channels[row]))
-                view_check.setToolTip("Mostrar este canal en un grafico interactivo")
+                if row in (4, 5):
+                    tooltip = "Senal final dividida por DC de AUX IN 1: media durante N x tau o lectura final, segun el modo elegido."
+                elif row == DC_CHANNEL_INDEX:
+                    tooltip = "DC usada para normalizar, en voltios: media por punto durante N x tau o lectura final."
+                else:
+                    tooltip = "Mostrar este canal en un grafico interactivo"
+                view_check.setToolTip(tooltip)
                 save_check = QCheckBox()
                 save_check.setChecked(bool(defaults.plot_channels[row]))
                 save_check.setToolTip("Guardar un PNG individual para este canal")
@@ -511,6 +554,12 @@ if QT_IMPORT_ERROR is None:
                 layout.addWidget(save_check, row + 1, 2, Qt.AlignCenter)
                 self.channel_checks.append(view_check)
                 self.save_channel_checks.append(save_check)
+            dc_help = QLabel(
+                "DC: conectar la senal DC del detector o preamplificador a AUX IN 1 "
+                "del SR830 (rango ±10.5 V). X/DC y R/DC se guardan tambien en normalizado.csv."
+            )
+            dc_help.setWordWrap(True)
+            layout.addWidget(dc_help, len(CHANNELS) + 1, 0, 1, 3)
             return group
 
         def build_actions_group(self):
@@ -564,10 +613,13 @@ if QT_IMPORT_ERROR is None:
             names = [
                 ("bbd_connected", "BBD"),
                 ("bbd_position", "BBD mm"),
-                ("mono_connected", "SMS"),
+                ("mono_connected", "HORIBA"),
                 ("mono_position", "Lambda nm"),
                 ("lockin_connected", "Lock-in"),
-                ("integration_time", "Integracion s"),
+                ("time_constant_seconds", "SR830 τ (s)"),
+                ("slope_db_oct", "Pendiente (dB/oct)"),
+                ("integration_time", "Espera N × τ (s)"),
+                ("dc_voltage", "DC usada ultimo punto (V)"),
             ]
             for row in range(0, len(names)):
                 key, label = names[row]
@@ -638,17 +690,45 @@ if QT_IMPORT_ERROR is None:
 
         def update_status_labels(self):
             status = self.hardware_status()
+            settings = status.get("lockin_filter") or {}
+            if settings and self.lockin_recommended_check.isChecked():
+                self.lockin_constants_spin.blockSignals(True)
+                self.lockin_constants_spin.setValue(settings["recommended_settling_factor"])
+                self.lockin_constants_spin.blockSignals(False)
+            tau = settings.get("time_constant_seconds")
+            wait_seconds = settling_seconds(self.lockin_constants_spin.value(), tau) if tau is not None else None
             values = {
                 "bbd_connected": self.yes_no(status.get("bbd_connected", False)),
                 "bbd_position": self.format_float(status.get("bbd_position", 0.0), 6),
                 "mono_connected": self.yes_no(status.get("mono_connected", False)),
                 "mono_position": self.format_float(status.get("mono_position", 0.0), 4),
                 "lockin_connected": self.yes_no(status.get("lockin_connected", False)),
-                "integration_time": self.format_float(status.get("integration_time", 0.0), 4),
+                "time_constant_seconds": format(tau, ".6g") if tau is not None else "Sin consultar",
+                "slope_db_oct": str(settings.get("slope_db_oct", "Sin consultar")),
+                "integration_time": format(wait_seconds, ".6g") if wait_seconds is not None else "Sin consultar",
+                "dc_voltage": self.format_float(self.current_dc_value, 6) if self.current_dc_value is not None else "Sin adquirir",
             }
             for key in values:
                 if key in self.status_labels:
                     self.status_labels[key].setText(values[key])
+
+        def on_settling_factor_changed(self, value):
+            # Any explicit edit selects manual mode, preserved across slope changes.
+            self.lockin_recommended_check.blockSignals(True)
+            self.lockin_recommended_check.setChecked(False)
+            self.lockin_recommended_check.blockSignals(False)
+            self.settings.setValue("lockin/use_recommended", False)
+            self.settings.setValue("lockin/settling_factor", value)
+            self.update_status_labels()
+
+        def on_settling_mode_changed(self, checked):
+            self.settings.setValue("lockin/use_recommended", checked)
+            self.settings.setValue("lockin/settling_factor", self.lockin_constants_spin.value())
+            self.update_status_labels()
+
+        def on_lockin_filter_changed(self, settings):
+            # Worker updated the adapter cache; status() performs no VISA queries.
+            self.update_status_labels()
 
         def current_mono_port(self):
             data = self.mono_port_edit.currentData()
@@ -663,49 +743,14 @@ if QT_IMPORT_ERROR is None:
             selected = self.default_mono_port
             if hasattr(self, "mono_port_edit"):
                 selected = self.current_mono_port() or self.default_mono_port
-            selected = normalize_sms_port(selected)
-            guessed = normalize_sms_port(guess_sms_port())
-            ports = list_serial_ports()
-
             self.mono_port_edit.blockSignals(True)
             self.mono_port_edit.clear()
-            devices = list()
-            for port in ports:
-                device = normalize_sms_port(port.get("device", ""))
-                description = str(port.get("description", "") or "")
-                if device == "":
-                    continue
-                devices.append(device)
-                display = device
-                if description:
-                    display = display + " - " + description
-                self.mono_port_edit.addItem(display, device)
-
-            if selected and selected not in devices:
-                self.mono_port_edit.addItem(selected, selected)
-                devices.append(selected)
-
-            chosen = guessed or selected
-            if chosen:
-                index = self.mono_port_edit.findData(chosen)
-                if index >= 0:
-                    self.mono_port_edit.setCurrentIndex(index)
-                else:
-                    self.mono_port_edit.setEditText(chosen)
+            selected = selected or "Mono1"
+            self.mono_port_edit.addItem(selected, selected)
+            self.mono_port_edit.setCurrentIndex(0)
             self.mono_port_edit.blockSignals(False)
-
             if show_log:
-                if len(ports) == 0:
-                    self.log("No se detectaron puertos serie con PySerial")
-                else:
-                    descriptions = list()
-                    for port in ports:
-                        device = normalize_sms_port(port.get("device", ""))
-                        description = str(port.get("description", "") or "")
-                        descriptions.append(device + (" (" + description + ")" if description else ""))
-                    self.log("Puertos serie detectados: " + ", ".join(descriptions))
-                if guessed:
-                    self.log("Candidato SMS detectado: " + guessed)
+                self.log("HORIBA usa el ID de ConfigBrowser: " + selected)
 
         def yes_no(self, value):
             if value:
@@ -744,7 +789,6 @@ if QT_IMPORT_ERROR is None:
             self.repetitions_spin.setEnabled(enabled)
             self.average_repetitions_check.setEnabled(enabled)
             self.average_aux_check.setEnabled(enabled)
-            self.average_aux_seconds_spin.setEnabled(enabled)
             self.bbd_table.setEnabled(enabled and self.measurement_type_combo.currentData() in (MEASUREMENT_LAMBDA_FIXED, MEASUREMENT_DOUBLE))
             self.lambda_table.setEnabled(enabled and self.measurement_type_combo.currentData() in (MEASUREMENT_POSITION_FIXED, MEASUREMENT_DOUBLE))
             self.connect_bbd_button.setEnabled(enabled)
@@ -755,6 +799,8 @@ if QT_IMPORT_ERROR is None:
             self.refresh_ports_button.setEnabled(enabled and not self.simulation_check.isChecked())
             self.release_hardware_button.setEnabled(enabled)
             self.auto_gain_check.setEnabled(enabled)
+            self.lockin_constants_spin.setEnabled(enabled)
+            self.lockin_recommended_check.setEnabled(enabled)
 
         def update_measurement_mode(self):
             mode = self.measurement_type_combo.currentData()
@@ -819,7 +865,7 @@ if QT_IMPORT_ERROR is None:
 
         def connect_mono(self):
             self.refresh_serial_ports(False)
-            port = self.current_mono_port()
+            port = self.current_mono_port() or "Mono1"
             if self.simulation_check.isChecked():
                 port = "SIM"
             try:
@@ -829,26 +875,19 @@ if QT_IMPORT_ERROR is None:
                         self.hardware.close_mono()
                     except Exception:
                         pass
-                    raise Exception("El puerto " + str(port) + " abrio, pero el SMS no respondio a la identificacion.")
+                    raise Exception("El HORIBA no confirmo el estado listo para el ID " + str(port) + ".")
                 self.hardware.configure_mono()
-                profile = getattr(self.hardware.bundle.mono, "serial_profile", "default")
-                self.log("SMS conectado en " + port + " (" + str(profile) + ")")
+                name = getattr(self.hardware.bundle.mono, "device_name", "iHR320")
+                self.log("HORIBA conectado: " + str(name) + " (ID " + str(port) + ")")
             except Exception as exc:
                 try:
                     if not self.simulation_check.isChecked():
                         self.hardware.close_mono()
                 except Exception:
                     pass
-                available = list()
-                for item in list_serial_ports():
-                    device = normalize_sms_port(item.get("device", ""))
-                    description = str(item.get("description", "") or "")
-                    available.append(device + (" - " + description if description else ""))
                 detail = str(exc)
-                if len(available) > 0:
-                    detail = detail + "\n\nPuertos detectados:\n" + "\n".join(available)
-                self.log("Error conectando SMS en " + str(port) + ": " + str(exc))
-                self.show_message("Error conectando SMS", detail, QMessageBox.Warning)
+                self.log("Error conectando HORIBA con ID " + str(port) + ": " + str(exc))
+                self.show_message("Error conectando HORIBA", detail, QMessageBox.Warning)
             self.update_status_labels()
 
         def connect_lockin(self):
@@ -862,9 +901,11 @@ if QT_IMPORT_ERROR is None:
                 self.log("Lock-in: identificando")
                 if not self.hardware.identify_lockin():
                     raise Exception("El recurso abrio, pero no respondio como SR830.")
-                self.log("Lock-in: configurando")
+                self.log("Lock-in: configurando entradas y referencia; se conserva la pendiente")
                 self.hardware.configure_lockin()
-                self.log("Lock-in: leyendo constante de tiempo")
+                self.log("Lock-in: consultando tau y pendiente reales")
+                self.hardware.refresh_lockin_filter()
+                self.update_status_labels()
                 self.hardware.set_lockin_constants(self.lockin_constants_spin.value())
                 self.log("Lock-in conectado en " + port)
             except Exception as exc:
@@ -878,7 +919,7 @@ if QT_IMPORT_ERROR is None:
                     "Error conectando Lock-in",
                     str(exc)
                     + "\n\nSi la ultima linea fue 'abriendo recurso', el programa todavia no envio comandos al SR830: el problema esta en la apertura VISA/GPIB o en que el instrumento no responde en el bus."
-                    + "\n\nSi esto aparece solo cuando AUX1 esta conectado, revise que AUX IN 1 no reciba mas de +/-10 V y que no se este cortocircuitando la salida del PMT/preamp a tierra.",
+                    + "\n\nSi esto aparece solo cuando AUX1 esta conectado, revise que AUX IN 1 no reciba mas de +/-10.5 V y que no se este cortocircuitando la salida del PMT/preamp a tierra.",
                     QMessageBox.Warning,
                 )
             self.update_status_labels()
@@ -889,7 +930,7 @@ if QT_IMPORT_ERROR is None:
             if self.mono_required_for_current_ui():
                 self.connect_mono()
             else:
-                self.log("SMS omitido para lambda fija manual")
+                self.log("HORIBA omitido para lambda fija manual")
             self.connect_lockin()
             self.log("Chequeo de conexion completo")
 
@@ -948,8 +989,10 @@ if QT_IMPORT_ERROR is None:
             config.repetitions = self.repetitions_spin.value()
             config.average_repetitions = self.average_repetitions_check.isChecked()
             config.auto_gain_enabled = self.auto_gain_check.isChecked()
+            config.lockin_settling_factor = (
+                None if self.lockin_recommended_check.isChecked() else self.lockin_constants_spin.value()
+            )
             config.average_aux = self.average_aux_check.isChecked()
-            config.average_aux_seconds = self.average_aux_seconds_spin.value()
             config.simulation_mode = self.simulation_check.isChecked()
             config.use_monochromator = self.mono_required_for_current_ui()
             config.simulation_delay_scale = self.simulation_scale_spin.value()
@@ -1008,7 +1051,10 @@ if QT_IMPORT_ERROR is None:
                 "Tiempo estimado: " + str(preview.get("tiempo_estimado_texto")),
                 "Monocromador: " + ("se usa" if config.use_monochromator else "omitido, lambda fija manual"),
                 "Auto rango sensibilidad: " + ("activado" if config.auto_gain_enabled else "desactivado"),
-                "AUX: " + ("promedio por lambda de " + str(config.average_aux_seconds) + " s" if config.average_aux else "lectura punto a punto"),
+                "Estabilizacion SR830: " + ("N recomendado segun pendiente real" if config.lockin_settling_factor is None
+                                            else "N manual = " + str(config.lockin_settling_factor))
+                + "; espera = N x tau real (consultados antes de adquirir)",
+                "DC (AUX IN 1): " + ("media por punto durante N x tau; X/Y/R finales" if config.average_aux else "lectura del SNAP final de cada punto"),
                 "Escala mapa 2D: " + str(config.plot_scale),
                 "Canales visibles: " + ", ".join(channel_names),
                 "PNGs a guardar: " + (", ".join(plot_names) if len(plot_names) > 0 else "ninguno"),
@@ -1045,6 +1091,7 @@ if QT_IMPORT_ERROR is None:
             self.current_result = None
             self.current_average_aux_value = 0.0
             self.current_average_aux_by_lambda = dict()
+            self.current_dc_value = None
             self.saved_paths = None
             self.reset_plots(config)
             self.center_tabs.setCurrentWidget(self.graph_tabs)
@@ -1064,6 +1111,7 @@ if QT_IMPORT_ERROR is None:
             self.worker.log_message.connect(self.log)
             self.worker.progress_changed.connect(self.on_progress_changed)
             self.worker.aux_average_changed.connect(self.on_aux_average_changed)
+            self.worker.lockin_filter_changed.connect(self.on_lockin_filter_changed)
             self.worker.error_raised.connect(self.on_worker_error)
             self.worker.measurement_finished.connect(self.on_measurement_finished)
             self.worker.measurement_cancelled.connect(self.on_measurement_cancelled)
@@ -1098,7 +1146,7 @@ if QT_IMPORT_ERROR is None:
         def on_aux_average_changed(self, value):
             self.current_average_aux_value = float(value)
             if self.active_config is not None and self.active_config.average_aux:
-                self.log("AUX promedio: " + str(round(float(value), 6)))
+                self.log("DC promedio (AUX IN 1): " + str(round(float(value), 6)) + " V")
 
         def on_progress_changed(self, acquired, total):
             if total <= 0:
@@ -1183,6 +1231,7 @@ if QT_IMPORT_ERROR is None:
                 )
                 self.saved_paths = paths
                 self.log("Datos guardados en " + paths.get("session_path", ""))
+                self.log("Normalizacion DC guardada en " + paths.get("normalized_path", ""))
                 for plot_path in paths.get("plot_paths", []):
                     self.log("PNG guardado: " + plot_path)
                 self.show_message("Guardado completo", "Datos guardados en:\n" + paths.get("session_path", ""), QMessageBox.Information)
@@ -1268,6 +1317,7 @@ if QT_IMPORT_ERROR is None:
         def on_point_acquired(self, row, repetition, acquired, total):
             if self.active_config is None:
                 return
+            self.current_dc_value = float(row[4])
             for channel_index in self.plot_views:
                 if self.active_config.measurement_type == MEASUREMENT_DOUBLE:
                     self.update_double_plot(channel_index, row)

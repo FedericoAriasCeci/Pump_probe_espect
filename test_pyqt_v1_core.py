@@ -1,4 +1,5 @@
 import json
+import math
 import os
 import shutil
 import tempfile
@@ -226,6 +227,7 @@ class SimulationRunnerTest(unittest.TestCase):
     def base_config(self):
         config = MeasurementConfig()
         config.simulation_mode = True
+        config.average_aux = False
         config.simulation_delay_scale = 0.0
         config.integration_time_override = 0.0
         config.channels = [1, 0, 1, 0, 0, 0]
@@ -257,22 +259,23 @@ class SimulationRunnerTest(unittest.TestCase):
         result = self.run_config(config)
         self.assertEqual(len(result.runs[0]["rows"]), 3)
 
-    def test_aux_average_is_updated_by_lambda(self):
+    def test_zero_simulated_window_has_no_dc_samples_and_no_stale_denominator(self):
         config = self.base_config()
         config.measurement_type = MEASUREMENT_POSITION_FIXED
         config.lambda_sections = [(640.0, 642.0, 2.0)]
         config.average_aux = True
-        config.average_aux_seconds = 0.01
         config.simulation_delay_scale = 0.0
         config.integration_time_override = 0.0
         result = self.run_config(config)
-        self.assertEqual(len(result.average_aux_by_lambda), 2)
+        self.assertEqual(len(result.average_aux_by_lambda), 0)
         first_row = result.runs[0]["rows"][0]
         second_row = result.runs[0]["rows"][1]
         self.assertEqual(round(first_row[7], 6), 640.0)
         self.assertEqual(round(second_row[7], 6), 642.0)
-        self.assertEqual(first_row[4], result.average_aux_by_lambda["640.0"])
-        self.assertEqual(second_row[4], result.average_aux_by_lambda["642.0"])
+        self.assertTrue(math.isnan(first_row[4]))
+        self.assertTrue(math.isnan(second_row[4]))
+        self.assertEqual(first_row[9], 0)
+        self.assertEqual(second_row[9], 0)
 
     def test_autorange_sensitivity_runs_once_per_lambda(self):
         class CountingHardware(SimulatedHardwareAdapter):

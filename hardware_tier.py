@@ -15,6 +15,7 @@
 
 import serial
 import pyvisa
+from sr830_timing import query_filter_settings, time_constant_seconds, settling_seconds
 import time
 from decimal import Decimal
 import os # os_exit(00) restartea el núcleo.
@@ -145,6 +146,8 @@ class BBD301:
                 motor_config = self.channel.LoadMotorConfiguration(self.channel.DeviceID)  # Device ID is the serial no + channel
                 print(self.channel.DeviceID)
                 device_settings = self.channel.MotorDeviceSettings
+                self.posicion = float(str(self.channel.Position))
+                self.homed = bool(self.channel.Status.IsHomed)
                 self.connected = True
                 print(self.connected)
                 #channel.UpdateConfiguration()
@@ -169,6 +172,7 @@ class BBD301:
                  self.channel.Home(60000)  # 60 second timeout
                  print("Channel Homed")
                  self.homed = True
+                 self.posicion = float(str(self.channel.Position))
                  print(self.homed)
                  
             except Exception:  # You shouldn't use a bare except:
@@ -221,14 +225,10 @@ class BBD301:
             self.channel.DevicePosition
             return 
 
-    def CalcularTiempoSleep(self, PosicionPlat_mm): # El código deja de ejecutarse hasta que el SMC se mueva.
-                                                   # Hay un tiempo agregado que podría reducirse/quitarse.
-        TiempoBBD = 0
-        if (PosicionPlat_mm-self.posicion) == 0:
-            time.sleep(0.1)
-        else:
-            TiempoBBD = abs(PosicionPlat_mm-self.posicion)/self.velocidadMmPorSegundo + tiempoAgregadoPlataforma
-        return TiempoBBD
+    def CalcularTiempoSleep(self, PosicionPlat_mm):
+        # MoveTo(..., timeout) already waits for completion. Keep only the
+        # existing mechanical margin, without counting the travel time twice.
+        return tiempoAgregadoPlataforma if PosicionPlat_mm != self.posicion else 0.0
 
 
     def Cerrar(self): 
@@ -237,7 +237,7 @@ class BBD301:
         self.connected = False
         
 
-class SMS():
+class SMSSerialLegacy():
 
     def __init__(self):
         self.address = serial.Serial( # Crea el puerto, no lo abre. Los valores están en el manual.
@@ -382,6 +382,12 @@ class SMS():
         a = a.split('!!')[0]
         multiplicador = float(a)
         return multiplicador
+
+
+# ``logic_tier.py`` and the original Tk interface still instantiate ``SMS``.
+# Keep their public API, but route every real monochromator operation through
+# HoribaBridge.exe instead of the disconnected LambdaScan serial controller.
+from horiba_monochromator import HoribaMonochromator as SMS
         
 #%%%
     
@@ -415,8 +421,7 @@ class LockIn():
         time.sleep(0.2)
         self.address.write("RMOD0") #Reserva dinamica 0=HR, 1=Normal, 2=LN
         time.sleep(0.2)
-        self.address.write("OFSL0") #Setea Low Pass Filter Slope en 0=6, 1=12, 2=18 y 3=24 DB/octava
-        time.sleep(0.2)
+        # Preserve the slope chosen on the SR830; acquisition queries OFSL?.
         self.address.write("SYNC0") #Synchronous Filter off=0 or on below 200hz=1
         time.sleep(0.2)
         self.address.write("OVRM1") #Setea Remote Control Override en on=1, off=0
@@ -426,15 +431,10 @@ class LockIn():
         self.SetearNumeroDeConstantesDeIntegracion(1)
 
     def ConstanteDeIntegracion(self): # Le pregunta la constante de integración al Lock In.
-        constanteDeIntegracion = 0
-        a = self.address.query("OFLT?")
-        a = a.replace('\n','')
-        a = int(a)
-        if (a % 2) == 0:
-            constanteDeIntegracion = 10*(10**(-6))*(10**(a/2))
-        else:
-            constanteDeIntegracion = 30*(10**(-6))*(10**((a-1)/2))
-        return constanteDeIntegracion
+        return time_constant_seconds(self.address.query("OFLT?"))
+
+    def ConsultarFiltro(self):
+        return query_filter_settings(self.address)
 
     def SetearNumeroDeConstantesDeIntegracion(self, numeroDeConstantesDeTiempo): # El número de constantes de tiempo
         # es un número por el que se multiplica la constate de tiempo del lock in para tener mayor libertad.
@@ -443,7 +443,7 @@ class LockIn():
 
     def CalcularTiempoDeIntegracion(self): 
         constanteDeIntegracion = self.ConstanteDeIntegracion()
-        TiempoDeIntegracionTotal = constanteDeIntegracion*self.numeroDeConstantesDeTiempo
+        TiempoDeIntegracionTotal = settling_seconds(self.numeroDeConstantesDeTiempo, constanteDeIntegracion)
         return TiempoDeIntegracionTotal
 
     def Identificar(self):

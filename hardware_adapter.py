@@ -1,6 +1,7 @@
 import time
 
 from simulated_hardware import SimulatedHardwareBundle
+from sr830_timing import query_filter_settings, settling_seconds
 
 
 SR830_SENSITIVITY_VALUES = [
@@ -110,6 +111,7 @@ def list_visa_resources():
 class BaseHardwareAdapter:
     def __init__(self, simulation_mode=False):
         self.simulation_mode = simulation_mode
+        self._lockin_filter = None
 
     def connect_bbd(self):
         self.bundle.bbd.Conectar()
@@ -244,6 +246,7 @@ class BaseHardwareAdapter:
         self.bundle.mono.Configurar()
 
     def connect_lockin(self, port):
+        self._lockin_filter = None
         lockin = self.bundle.lockin
         address = getattr(lockin, "address", None)
         try:
@@ -305,7 +308,33 @@ class BaseHardwareAdapter:
         self.bundle.lockin.Configurar()
 
     def set_lockin_constants(self, constants):
-        self.bundle.lockin.SetearNumeroDeConstantesDeIntegracion(constants)
+        # Software delay only: no instrument I/O from this UI-facing method.
+        constants = float(constants)
+        settling_seconds(constants, 1.0)
+        self.bundle.lockin.numeroDeConstantesDeTiempo = constants
+        if self._lockin_filter is not None:
+            self.bundle.lockin.TiempoDeIntegracionTotal = settling_seconds(
+                constants, self._lockin_filter["time_constant_seconds"]
+            )
+
+    def refresh_lockin_filter(self):
+        lockin = self.bundle.lockin
+        try:
+            if hasattr(lockin, "ConsultarFiltro"):
+                settings = lockin.ConsultarFiltro()
+            else:
+                settings = query_filter_settings(lockin.address)
+            seconds = settling_seconds(
+                getattr(lockin, "numeroDeConstantesDeTiempo", settings["recommended_settling_factor"]),
+                settings["time_constant_seconds"],
+            )
+        except Exception as exc:
+            self._lockin_filter = None
+            lockin.TiempoDeIntegracionTotal = 0.0
+            raise RuntimeError("No se pudo consultar el filtro del SR830: " + str(exc)) from exc
+        self._lockin_filter = dict(settings)
+        lockin.TiempoDeIntegracionTotal = seconds
+        return dict(settings)
 
     def auto_gain_lockin(self):
         return self.autorange_lockin_sensitivity()
@@ -421,6 +450,7 @@ class BaseHardwareAdapter:
             pass
 
     def close_lockin(self):
+        self._lockin_filter = None
         lockin = self.bundle.lockin
         address = getattr(lockin, "address", None)
         try:
@@ -513,6 +543,7 @@ class BaseHardwareAdapter:
             "mono_position": float(getattr(mono, "posicion", 0.0)),
             "lockin_connected": bool(lockin_connected),
             "integration_time": self.integration_time(),
+            "lockin_filter": dict(self._lockin_filter) if self._lockin_filter is not None else None,
             "simulation_mode": self.simulation_mode,
         }
 
@@ -522,14 +553,16 @@ class SimulatedHardwareAdapter(BaseHardwareAdapter):
         BaseHardwareAdapter.__init__(self, True)
         self.bundle = SimulatedHardwareBundle()
         self.bundle.connect_all()
+        self.refresh_lockin_filter()
 
 
 class RealHardwareBundle:
     def __init__(self):
-        from hardware_tier import BBD301, SMS, LockIn
+        from hardware_tier import BBD301, LockIn
+        from horiba_monochromator import HoribaMonochromator
 
         self.bbd = BBD301()
-        self.mono = SMS()
+        self.mono = HoribaMonochromator()
         self.lockin = LockIn()
 
     def close(self):
@@ -544,9 +577,7 @@ class RealHardwareBundle:
         except Exception:
             pass
         try:
-            address = getattr(self.mono, "address", None)
-            if address is not None and getattr(address, "is_open", False):
-                address.close()
+            self.mono.CerrarPuerto()
         except Exception:
             pass
         try:
@@ -561,6 +592,18 @@ class RealHardwareAdapter(BaseHardwareAdapter):
     def __init__(self):
         BaseHardwareAdapter.__init__(self, False)
         self.bundle = RealHardwareBundle()
+
+    def connect_mono(self, device_id):
+        return self.bundle.mono.AsignarPuerto(device_id)
+
+    def identify_mono(self):
+        return self.bundle.mono.Identificar()
+
+    def configure_mono(self):
+        self.bundle.mono.Configurar()
+
+    def close_mono(self):
+        self.bundle.mono.CerrarPuerto()
 
 
 def create_hardware_adapter(simulation_mode):
