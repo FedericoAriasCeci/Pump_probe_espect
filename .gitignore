@@ -1,10 +1,17 @@
-# Python (Caché y archivos compilados)
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-*Mediciones/
-*Plots/
-*Validacion_hardware/
 
-# VS Code (Configuraciones locales)
-.vscode/
+# Mediciones y plots: se guardan solo en disco, no se versionan.
+# Se conserva unicamente el LEEME que explica la carpeta.
+/mediciones/*
+!/mediciones/LEEME.md
+
+# Salidas de pruebas de hardware
+/software/Validacion_hardware/
+horiba_scan_*.csv
+
+# VS Code: solo se versiona la configuracion compartida
+.vscode/*
+!.vscode/settings.json

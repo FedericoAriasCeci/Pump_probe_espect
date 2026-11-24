@@ -12,7 +12,7 @@ from acquisition_service import MeasurementConfig, validate_measurement_config
 
 class BBDStateTest(unittest.TestCase):
     def make_bbd(self, homed):
-        with open(os.path.join(os.path.dirname(__file__), "hardware_tier.py"), encoding="utf-8") as source:
+        with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "hardware_tier.py"), encoding="utf-8") as source:
             tree = ast.parse(source.read())
         definition = next(node for node in tree.body if isinstance(node, ast.ClassDef) and node.name == "BBD301")
         channel = Mock()

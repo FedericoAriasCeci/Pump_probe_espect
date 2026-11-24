@@ -9,6 +9,14 @@ def RutaEnCarpetaDelCodigo(nombre):
     return os.path.join(CARPETA_CODIGO, nombre)
 
 
+# Las mediciones y graficos se guardan fuera del software: <repositorio>/mediciones
+CARPETA_MEDICIONES = os.path.join(os.path.dirname(CARPETA_CODIGO), "mediciones")
+
+
+def RutaEnCarpetaDeMediciones(nombre):
+    return os.path.join(CARPETA_MEDICIONES, nombre)
+
+
 def VerificarDataManagerActualizado(data_manager):
     metodos_necesarios = [
         "begin_memory_run",
@@ -43,7 +51,7 @@ class Experimento():
         self.bbd = BBD301()
         self.mono = SMS()
         self.lockin = LockIn()
-        self.data_manager = AcquisitionDataManager(RutaEnCarpetaDelCodigo("CSVs"))
+        self.data_manager = AcquisitionDataManager(RutaEnCarpetaDeMediciones("CSVs"))
         self.cancelarMedicion = False
         self.actualizarInterfazDuranteEspera = None
 
@@ -605,7 +613,7 @@ class Grafico():
         self.ActualizarFiguraEnInterfaz()
 
     def GuardarGrafico(self, nombreArchivo):
-        carpetaPlots = RutaEnCarpetaDelCodigo("Plots")
+        carpetaPlots = RutaEnCarpetaDeMediciones("Plots")
         if not os.path.isdir(carpetaPlots):
             os.makedirs(carpetaPlots)
         if os.path.splitext(nombreArchivo)[1] == "":
@@ -616,7 +624,7 @@ class Grafico():
         rutas = list()
         if indicesGraficos is None or len(indicesGraficos) == 0:
             return rutas
-        carpetaPlots = RutaEnCarpetaDelCodigo("Plots")
+        carpetaPlots = RutaEnCarpetaDeMediciones("Plots")
         if not os.path.isdir(carpetaPlots):
             os.makedirs(carpetaPlots)
         nombreBase = os.path.splitext(os.path.basename(nombreArchivo))[0]

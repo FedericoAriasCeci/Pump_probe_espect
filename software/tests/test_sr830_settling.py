@@ -26,7 +26,7 @@ class SR830ParametersTest(unittest.TestCase):
     def test_real_driver_preserves_filter_and_queries_all_indices(self):
         # Load the actual driver class without importing the Thorlabs/.NET stack.
         # Instrument I/O and configuration sleeps are replaced with mocks.
-        path = os.path.join(os.path.dirname(__file__), "hardware_tier.py")
+        path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "hardware_tier.py")
         with open(path, encoding="utf-8") as handle:
             tree = ast.parse(handle.read())
         lockin_class = next(node for node in tree.body if isinstance(node, ast.ClassDef) and node.name == "LockIn")

@@ -2,7 +2,7 @@
 setlocal
 set "HORIBA_PYTHON=%USERPROFILE%\.conda\envs\EzSpecSdk\python.exe"
 if not exist "%HORIBA_PYTHON%" (
-    echo No se encontro el entorno EzSpecSdk. Consulte HORIBA_EZSPEC.md.
+    echo No se encontro el entorno EzSpecSdk. Consulte docs\HORIBA_EZSPEC.md.
     exit /b 2
 )
 "%HORIBA_PYTHON%" -B "%~dp0probar_horiba_ezspec.py" %*

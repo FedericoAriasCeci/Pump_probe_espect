@@ -4,6 +4,8 @@ import os
 
 
 CARPETA_CODIGO = os.path.dirname(os.path.abspath(__file__))
+# Las mediciones se guardan fuera del software: <repositorio>/mediciones
+CARPETA_MEDICIONES = os.path.join(os.path.dirname(CARPETA_CODIGO), "mediciones")
 
 
 class SessionPaths:
@@ -20,7 +22,7 @@ class SessionPaths:
 class SessionManager:
     def __init__(self, base_dir=None):
         if base_dir is None:
-            base_dir = os.path.join(CARPETA_CODIGO, "Mediciones")
+            base_dir = CARPETA_MEDICIONES
         self.base_dir = base_dir
 
     def ensure_base_dir(self):

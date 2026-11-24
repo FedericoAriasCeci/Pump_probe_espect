@@ -7,7 +7,7 @@ import math
 DC_INPUT = "SR830 AUX IN 1"
 DC_INSTANTANEOUS_COLUMN = "DC_instantanea_V"
 DC_CHANNEL_INDEX = 6
-DC_SAMPLE_INTERVAL_SECONDS = 0.05
+DC_SAMPLE_INTERVAL_SECONDS = 0.01
 DC_EXTRA_COLUMNS = [
     DC_INSTANTANEOUS_COLUMN, "DC_muestras", "DC_desvio_V",
     "DC_duracion_s", "DC_muestras_invalidas",
