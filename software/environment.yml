@@ -48,5 +48,6 @@ dependencies:
     - importlib-metadata==6.7.0
     - pyvisa==1.12.0
     - typing-extensions==4.7.1
+    - websocket-client==1.6.1
     - zipp==3.15.0
 prefix: C:\Users\LEC\.conda\envs\pump_probe_gui

@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 
 from acquisition_service import (
-    AcquisitionRunner, MeasurementConfig, MEASUREMENT_POSITION_FIXED,
+    AcquisitionRunner, EXTRA_COLUMNS, MeasurementConfig, MEASUREMENT_POSITION_FIXED, MONO_READ_COLUMN,
     aux_for_row, save_measurement_result, value_for_channel_with_aux_map,
 )
 from acquisition_utils import AcquisitionDataManager, DATA_COLUMNS
@@ -78,7 +78,7 @@ class DCNormalizationTest(unittest.TestCase):
         self.assertEqual(result.error_message, "")
         self.assertEqual(acquire.call_count, result.acquired_points)
         for row in result.runs[0]["rows"]:
-            self.assertEqual(len(row), 8 + len(DC_EXTRA_COLUMNS))
+            self.assertEqual(len(row), 8 + len(EXTRA_COLUMNS))
             self.assertEqual(row[4], 2)
             self.assertEqual(measured_dc(row), 2)
             self.assertEqual(value_for_channel_with_aux_map(row, 4, config, 0, {}), 1.5)
@@ -138,9 +138,11 @@ class DCNormalizationTest(unittest.TestCase):
                     ))
             with open(paths["raw_paths"][0], encoding="utf-8", newline="") as handle:
                 raw = [row for row in csv.reader(handle) if row and not row[0].startswith("#")]
-            self.assertEqual(raw[0][-5:], DC_EXTRA_COLUMNS)
+            # repeticion, indice_punto, 8 columnas, 5 de DC y la lambda leida por ICL.
+            self.assertEqual(raw[0][10:15], DC_EXTRA_COLUMNS)
+            self.assertEqual(raw[0][-1], MONO_READ_COLUMN)
             self.assertEqual(len(raw[0]), len(raw[1]))
-            self.assertEqual(float(raw[1][-5]), 2)
+            self.assertEqual(float(raw[1][10]), 2)
             with open(paths["metadata_path"], encoding="utf-8") as handle:
                 metadata = json.load(handle)
             self.assertEqual(metadata["dc_input"], "SR830 AUX IN 1")

@@ -13,6 +13,7 @@ from dc_normalization import (
     DC_EXTRA_COLUMNS, DC_SAMPLE_INTERVAL_SECONDS, DCStatistics,
     normalize_by_dc, valid_dc, save_normalized_csv,
 )
+from horiba_icl import HoribaCancelled
 from session_manager import SessionManager
 from sr830_timing import settling_seconds
 
@@ -36,6 +37,14 @@ CHANNELS = [
 
 RAW_CHANNEL_NAMES = ["X", "Y", "R", "theta", "AUX", "frecuencia"]
 
+# Despues de las columnas DC: lambda informada por ICL tras confirmar el
+# movimiento. longitud_onda_nm (columna 8) conserva la lambda solicitada.
+MONO_READ_COLUMN = "longitud_onda_leida_nm"
+MONO_EXTRA_COLUMNS = [MONO_READ_COLUMN]
+EXTRA_COLUMNS = DC_EXTRA_COLUMNS + MONO_EXTRA_COLUMNS
+MONO_READ_INDEX = 8 + len(DC_EXTRA_COLUMNS)
+MAX_SLIT_MM = 7.0
+
 
 class MeasurementConfig:
     def __init__(self):
@@ -58,7 +67,14 @@ class MeasurementConfig:
         self.lockin_settling_factor = None  # None: recommended for the actual slope.
         self.longitud_onda_fija_nm = 650.0
         self.posicion_fija_bbd_mm = 220.0
+        # HORIBA iHR320: aperturas que se aplican y confirman antes del primer punto.
+        self.apply_slits = True
+        self.slit_entrance_mm = 1.0
+        self.slit_exit_mm = 1.0
         self.session_path_preview = ""
+
+    def monochromator_used(self):
+        return self.measurement_type != MEASUREMENT_LAMBDA_FIXED or bool(self.use_monochromator)
 
     def selected_channel_indices(self):
         indices = list()
@@ -99,6 +115,9 @@ class MeasurementConfig:
             "lockin_settling_mode": "recommended" if self.lockin_settling_factor is None else "manual",
             "longitud_onda_fija_nm": self.longitud_onda_fija_nm,
             "posicion_fija_bbd_mm": self.posicion_fija_bbd_mm,
+            "horiba_ajustar_rendijas": bool(self.apply_slits) and self.monochromator_used(),
+            "horiba_rendija_entrada_mm": self.slit_entrance_mm,
+            "horiba_rendija_salida_mm": self.slit_exit_mm,
         }
 
 
@@ -116,6 +135,7 @@ class MeasurementResult:
         self.acquired_points = 0
         self.average_aux_value = 0
         self.average_aux_by_lambda = dict()
+        self.horiba = dict()
 
     def has_data(self):
         for run in self.runs:
@@ -196,6 +216,17 @@ def validate_measurement_config(config, hardware_status):
     if config.integration_time_override is not None and not config.simulation_mode:
         errors.append("El tiempo de prueba solo se permite en simulacion; en hardware real se usa N x tau.")
 
+    mono_required = config.monochromator_used()
+    if mono_required and config.apply_slits:
+        for label, value in (("entrada", config.slit_entrance_mm), ("salida", config.slit_exit_mm)):
+            try:
+                value = float(value)
+                valid = math.isfinite(value) and 0.0 <= value <= MAX_SLIT_MM
+            except (TypeError, ValueError):
+                valid = False
+            if not valid:
+                errors.append("Rendija de " + label + ": la apertura debe estar entre 0 y " + str(MAX_SLIT_MM) + " mm.")
+
     if config.measurement_type == MEASUREMENT_LAMBDA_FIXED:
         errors.extend(validate_sections(config.bbd_sections, "BBD"))
     elif config.measurement_type == MEASUREMENT_POSITION_FIXED:
@@ -211,13 +242,19 @@ def validate_measurement_config(config, hardware_status):
             errors.append("La plataforma BBD no esta conectada.")
         elif hardware_status.get("bbd_homed") is False:
             errors.append("La plataforma BBD no tiene referencia: realizar Home antes de iniciar un barrido.")
-        mono_required = True
-        if config.measurement_type == MEASUREMENT_LAMBDA_FIXED and not config.use_monochromator:
-            mono_required = False
         if mono_required and not hardware_status.get("mono_connected", False):
-            errors.append("El monocromador no esta conectado.")
+            errors.append("El monocromador HORIBA no esta conectado (Conectar HORIBA).")
+        elif mono_required and hardware_status.get("mono_initialized") is False:
+            errors.append("El monocromador HORIBA no esta inicializado: pulse Inicializar HORIBA.")
         if not hardware_status.get("lockin_connected", False):
             errors.append("El Lock-in no esta conectado.")
+    limits = hardware_status.get("mono_limits_nm")
+    if mono_required and limits and len(errors) == 0:
+        bbd_points, lambda_points, point_count = points_for_config(config)
+        outside = [value for value in lambda_points if not float(limits[0]) <= value <= float(limits[1])]
+        if outside:
+            errors.append("Lambda fuera de los limites del HORIBA (" + str(limits[0]) + "-" + str(limits[1])
+                          + " nm): " + ", ".join(str(value) for value in outside[:5]))
     return errors
 
 
@@ -287,6 +324,10 @@ def build_preview(config, hardware_status, session_manager=None):
         "lambda_puntos": len(lambda_points),
         "carpeta_sesion": session_path,
         "archivos": "raw.csv, normalizado.csv, metadata.json, notes.txt, log.txt, plots/*.png",
+        "horiba_usado": config.monochromator_used(),
+        "rendijas_a_aplicar_mm": [config.slit_entrance_mm, config.slit_exit_mm]
+        if config.monochromator_used() and config.apply_slits else None,
+        "rendijas_leidas_mm": [hardware_status.get("mono_slit_entrance_mm"), hardware_status.get("mono_slit_exit_mm")],
     }
 
 
@@ -461,7 +502,7 @@ class AcquisitionRunner:
         self.config = config
         self.callbacks = callbacks or {}
         self.cancel_requested = False
-        self.data_manager = AcquisitionDataManager(".", DATA_COLUMNS + DC_EXTRA_COLUMNS)
+        self.data_manager = AcquisitionDataManager(".", DATA_COLUMNS + EXTRA_COLUMNS)
         self._settled_filter = None
         self._settling_dc_stats = None
         self._last_filter = None
@@ -537,13 +578,70 @@ class AcquisitionRunner:
         return self.sleep_cancellable(delay)
 
     def move_mono(self, wavelength):
+        """Mueve el iHR320 y espera su confirmacion por relectura (ICL).
+
+        La cancelacion abandona la espera; el movimiento ya enviado puede
+        continuar y el punto no se adquiere.
+        """
         if self.cancel_requested:
             return False
         delay = self.hardware.calculate_mono_sleep(wavelength)
-        self.hardware.move_mono(wavelength)
         self._settled_filter = None
+        try:
+            self.hardware.move_mono(wavelength)
+        except HoribaCancelled as exc:
+            self.emit("log", "HORIBA: " + str(exc))
+            return False
         self.emit("status", "Lambda -> " + str(round(float(wavelength), 4)) + " nm")
         return self.sleep_cancellable(delay)
+
+    def prepare_monochromator(self, result):
+        """Antes del primer punto: estado inicial y, si se pidio, rendijas.
+
+        Las rendijas se confirman por relectura de ICL. Una falla detiene la
+        medicion antes de adquirir; no se reintenta ni se revierte.
+        """
+        info = dict()
+        result.horiba = info
+        self.emit("status", "HORIBA: leyendo estado inicial")
+        info["estado_inicial"] = self.hardware.read_mono_state()
+        if self.config.apply_slits:
+            entrance = float(self.config.slit_entrance_mm)
+            exit_ = float(self.config.slit_exit_mm)
+            self.emit("status", "HORIBA: ajustando rendijas a entrada=" + str(entrance)
+                      + " mm, salida=" + str(exit_) + " mm")
+            try:
+                report = self.hardware.apply_mono_slits(entrance, exit_)
+            except HoribaCancelled as exc:
+                info["rendijas_error"] = str(exc)
+                self.emit("log", "HORIBA: " + str(exc))
+                return False
+            info["rendijas"] = report
+            actual = report.get("actual_mm") or {}
+            if report.get("state") == "unchanged":
+                self.emit("log", "Rendijas ya estaban en entrada=" + str(actual.get("slit_in_mm"))
+                          + " mm, salida=" + str(actual.get("slit_out_mm")) + " mm (sin mover)")
+            else:
+                source = "simulador" if report.get("simulado") else "ICL"
+                self.emit("log", "Rendijas confirmadas por " + source + ": entrada=" + str(actual.get("slit_in_mm"))
+                          + " mm, salida=" + str(actual.get("slit_out_mm")) + " mm")
+        else:
+            state = info["estado_inicial"] or {}
+            self.emit("log", "Rendijas sin modificar: entrada=" + str(state.get("rendija_entrada_mm"))
+                      + " mm, salida=" + str(state.get("rendija_salida_mm")) + " mm (leidas)")
+        return True
+
+    def record_final_monochromator_state(self, result):
+        try:
+            result.horiba["estado_final"] = self.hardware.read_mono_state()
+        except Exception as exc:
+            # Tras cancelar un movimiento el equipo puede seguir ocupado.
+            result.horiba["estado_final_error"] = str(exc)
+            self.emit("log", "HORIBA: no se pudo leer el estado final: " + str(exc))
+        try:
+            result.horiba["configuracion"] = self.hardware.mono_description()
+        except Exception as exc:
+            result.horiba["configuracion_error"] = str(exc)
 
     def wait_for_lockin(self):
         """One settling period per perturbation, after mechanical completion.
@@ -619,8 +717,12 @@ class AcquisitionRunner:
                           + str(statistics["invalid_count"]) + "; media invalida.")
         else:
             statistics = {"count": 0, "std": float("nan"), "duration": 0.0, "invalid_count": 0}
+        if self.config.monochromator_used():
+            read_wavelength = self.hardware.mono_read_wavelength()
+        else:
+            read_wavelength = float("nan")
         row = row[:8] + [instantaneous_dc, statistics["count"], statistics["std"],
-                         statistics["duration"], statistics["invalid_count"]]
+                         statistics["duration"], statistics["invalid_count"], read_wavelength]
         if not valid_dc(row[4]):
             self.emit("log", "DC de AUX IN 1 nula, no finita o fuera de rango: normalizacion NaN; se conservan los datos crudos.")
         self.data_manager.append_row(row)
@@ -668,6 +770,11 @@ class AcquisitionRunner:
     def run(self):
         result = MeasurementResult(self.config)
         result.started_at = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        mono_used = self.config.monochromator_used()
+        mono_prepared = False
+        if mono_used and hasattr(self.hardware, "reset_mono_cancel"):
+            # Una cancelacion anterior no debe abortar esta medicion.
+            self.hardware.reset_mono_cancel()
 
         try:
             if self.config.lockin_settling_factor is not None:
@@ -678,6 +785,10 @@ class AcquisitionRunner:
             result.total_points = point_count * self.config.repetitions
             result.average_aux_value = 0
             self.emit("aux_average", result.average_aux_value)
+            if not self.cancel_requested and mono_used and hasattr(self.hardware, "read_mono_state"):
+                mono_prepared = True
+                if not self.prepare_monochromator(result):
+                    self.cancel()
             if self.cancel_requested:
                 result.cancelled = True
             else:
@@ -715,6 +826,8 @@ class AcquisitionRunner:
                 pass
             result.error_message = str(exc)
             self.emit("error", str(exc))
+        if mono_prepared:
+            self.record_final_monochromator_state(result)
         result.finished_at = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         result.metadata = self.build_metadata(result)
         if result.cancelled:
@@ -732,7 +845,7 @@ class AcquisitionRunner:
                     self.cancel()
                     return
             else:
-                self.emit("log", "SMS desactivado: se usa lambda fija manual " + str(self.config.longitud_onda_fija_nm) + " nm")
+                self.emit("log", "HORIBA desactivado: se usa lambda fija manual " + str(self.config.longitud_onda_fija_nm) + " nm")
             if not self.maybe_auto_gain_for_lambda(self.config.longitud_onda_fija_nm):
                 self.cancel()
                 return
@@ -788,6 +901,11 @@ class AcquisitionRunner:
             "acquired_points": result.acquired_points,
             "average_aux_value": result.average_aux_value,
             "average_aux_by_lambda": result.average_aux_by_lambda,
+            "horiba": dict(result.horiba),
+            "lambda_columns": {
+                "longitud_onda_nm": "lambda solicitada y confirmada por ICL dentro de la tolerancia",
+                MONO_READ_COLUMN: "lambda informada por ICL tras el movimiento (NaN si no se usa el HORIBA)",
+            },
             "aux_column_meaning": "DC media por punto durante N x tau usada para normalizacion (AUX IN 1, V)" if self.config.average_aux else "DC instantanea usada para normalizacion (AUX IN 1, V)",
             "dc_instantaneous_column": DC_INSTANTANEOUS_COLUMN,
             "dc_input": DC_INPUT,
@@ -811,7 +929,7 @@ def save_measurement_result(result, notes, log_lines, selected_plot_channels=Non
         session_manager = SessionManager()
     paths = session_manager.create_session(preferred_path)
     extra_count = max((len(row) - 8 for run in result.runs for row in run.get("rows", [])), default=0)
-    columns = DATA_COLUMNS + DC_EXTRA_COLUMNS[:extra_count]
+    columns = DATA_COLUMNS + EXTRA_COLUMNS[:extra_count]
     data_manager = AcquisitionDataManager(paths.root_path, columns)
     metadata = dict(result.metadata)
     metadata["saved_at"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")

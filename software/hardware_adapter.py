@@ -35,60 +35,6 @@ SR830_SENSITIVITY_VALUES = [
 ]
 
 
-def normalize_sms_port(port):
-    text = str(port).strip()
-    if text == "":
-        return text
-    upper = text.upper()
-    if upper.startswith("\\\\.\\"):
-        return text
-    if upper.startswith("COM"):
-        return upper
-    if text.isdigit():
-        return "COM" + text
-    return text
-
-
-def list_serial_ports():
-    ports = list()
-    try:
-        from serial.tools import list_ports
-        available = list_ports.comports()
-    except Exception:
-        return ports
-    for item in available:
-        device = str(getattr(item, "device", "") or "")
-        description = str(getattr(item, "description", "") or "")
-        hwid = str(getattr(item, "hwid", "") or "")
-        ports.append(
-            {
-                "device": normalize_sms_port(device),
-                "description": description,
-                "hwid": hwid,
-            }
-        )
-    return ports
-
-
-def guess_sms_port():
-    ports = list_serial_ports()
-    preferred_words = ["CH340", "USB-SERIAL", "USB SERIAL", "WCH.CN", "WCH"]
-    for port in ports:
-        text = (
-            str(port.get("device", ""))
-            + " "
-            + str(port.get("description", ""))
-            + " "
-            + str(port.get("hwid", ""))
-        ).upper()
-        for word in preferred_words:
-            if word in text:
-                return port.get("device", "")
-    if len(ports) == 1:
-        return ports[0].get("device", "")
-    return ""
-
-
 def normalize_gpib_address(port):
     text = str(port).strip()
     upper = text.upper()
@@ -119,131 +65,64 @@ class BaseHardwareAdapter:
     def home_bbd(self):
         self.bundle.bbd.Home()
 
-    def _close_serial_address(self, address):
+    # ------------------------------------------------------------ HORIBA iHR320
+    # Todas estas llamadas pueden tardar (ICL, homing, motores): usarlas desde
+    # un hilo de trabajo. cancel_mono_wait() es la unica segura desde la GUI.
+    def connect_mono(self, index=None):
+        return self.bundle.mono.Conectar(index)
+
+    def initialize_mono(self):
+        return self.bundle.mono.Inicializar()
+
+    def read_mono_state(self):
+        return self.bundle.mono.LeerEstado()
+
+    def apply_mono_slits(self, entrance_mm=None, exit_mm=None):
+        return self.bundle.mono.AjustarRendijas(entrance_mm, exit_mm)
+
+    def cancel_mono_wait(self):
         try:
-            if address is not None:
-                try:
-                    if hasattr(address, "reset_input_buffer"):
-                        address.reset_input_buffer()
-                except Exception:
-                    pass
-                try:
-                    if hasattr(address, "reset_output_buffer"):
-                        address.reset_output_buffer()
-                except Exception:
-                    pass
-                try:
-                    if hasattr(address, "setDTR"):
-                        address.setDTR(False)
-                except Exception:
-                    pass
-                try:
-                    if hasattr(address, "setRTS"):
-                        address.setRTS(False)
-                except Exception:
-                    pass
-                if getattr(address, "is_open", False):
-                    address.close()
+            self.bundle.mono.CancelarEspera()
         except Exception:
             pass
 
-    def _create_serial_address(self):
-        import serial
-
-        return serial.Serial()
-
-    def _open_fresh_mono_serial(self, mono, normalized_port, profile_name, settings):
-        address = self._create_serial_address()
-        address.port = normalized_port
-        for key in settings:
-            try:
-                setattr(address, key, settings[key])
-            except Exception:
-                pass
-        try:
-            address.open()
-        except Exception:
-            self._close_serial_address(address)
-            raise
-        mono.address = address
-        mono.puerto = normalized_port
-        setattr(mono, "serial_profile", profile_name)
-        return normalized_port
-
-    def connect_mono(self, port):
-        normalized_port = normalize_sms_port(port)
-        mono = self.bundle.mono
-        address = getattr(self.bundle.mono, "address", None)
-        if address is not None:
-            try:
-                if getattr(address, "is_open", False):
-                    if normalize_sms_port(getattr(address, "port", "")) == normalized_port:
-                        return normalized_port
-                    address.close()
-            except Exception:
-                pass
-
-        attempts = list()
-        try:
-            mono.AsignarPuerto(normalized_port)
-            setattr(mono, "serial_profile", "heredado")
-            return normalized_port
-        except Exception as first_exc:
-            attempts.append(("heredado", first_exc))
-            self._close_serial_address(getattr(mono, "address", None))
-
-        profiles = [
-            (
-                "minimo",
-                {
-                    "baudrate": 9600,
-                    "timeout": 3,
-                    "write_timeout": 3,
-                },
-            ),
-            (
-                "sin control de lineas",
-                {
-                    "baudrate": 9600,
-                    "bytesize": 8,
-                    "stopbits": 1,
-                    "parity": "N",
-                    "timeout": 3,
-                    "write_timeout": 3,
-                    "xonxoff": False,
-                    "rtscts": False,
-                    "dsrdtr": False,
-                    "dtr": False,
-                    "rts": False,
-                },
-            ),
-        ]
-        for profile_name, settings in profiles:
-            try:
-                return self._open_fresh_mono_serial(mono, normalized_port, profile_name, settings)
-            except Exception as exc:
-                attempts.append((profile_name, exc))
-
-        parts = ["No se pudo abrir " + str(normalized_port) + "."]
-        for profile_name, exc in attempts:
-            parts.append("Perfil " + str(profile_name) + ": " + str(exc))
-        parts.append("Sugerencias: cerrar otros programas que puedan usar el puerto, reconectar el USB, probar otro cable/puerto USB, o reinstalar el driver CH340.")
-        raise Exception(" ".join(parts))
+    def reset_mono_cancel(self):
+        self.bundle.mono.RearmarCancelacion()
 
     def identify_mono(self):
-        if hasattr(self.bundle.mono, "Identificar"):
-            return bool(self.bundle.mono.Identificar())
-        return True
+        return bool(self.bundle.mono.Identificar())
 
     def close_mono(self):
-        mono = self.bundle.mono
-        address = getattr(mono, "address", None)
-        self._close_serial_address(address)
-        if hasattr(mono, "connected"):
-            mono.connected = False
+        self.bundle.mono.CerrarPuerto()
 
-    def configure_mono(self):
-        self.bundle.mono.Configurar()
+    def set_mono_tolerance(self, tolerance_nm):
+        """Diferencia maxima entre lambda pedida y leida; rige desde el proximo movimiento."""
+        settings = getattr(self.bundle.mono, "settings", None)
+        if settings is None:
+            return  # Simulador: no hay diferencia entre pedida y leida.
+        value = float(tolerance_nm)
+        if not value > 0:
+            raise ValueError("La tolerancia de lambda debe ser mayor que 0 nm.")
+        settings.tolerance_nm = value
+
+    def mono_state(self):
+        """Ultimo estado conocido del iHR320, sin comunicacion."""
+        mono = self.bundle.mono
+        if hasattr(mono, "estado"):
+            return dict(mono.estado())
+        return {"conectado": bool(getattr(mono, "connected", False))}
+
+    def mono_description(self):
+        mono = self.bundle.mono
+        if hasattr(mono, "describe"):
+            return mono.describe()
+        return {}
+
+    def mono_read_wavelength(self):
+        value = getattr(self.bundle.mono, "posicion_leida", None)
+        if value is None:
+            return float("nan")
+        return float(value)
 
     def connect_lockin(self, port):
         self._lockin_filter = None
@@ -430,6 +309,8 @@ class BaseHardwareAdapter:
             self.bundle.bbd.Detener()
         except Exception:
             pass
+        # El iHR320 no expone una parada: se abandona la espera de ICL.
+        self.cancel_mono_wait()
 
     def close_bbd(self):
         bbd = self.bundle.bbd
@@ -522,15 +403,12 @@ class BaseHardwareAdapter:
         raise Exception("No se pudo leer el Lock-in despues de reintentos: " + str(last_error))
 
     def status(self):
+        """Estado en cache, sin E/S: se llama desde la GUI durante la medicion."""
         bbd = self.bundle.bbd
         mono = self.bundle.mono
         lockin = self.bundle.lockin
-        mono_connected = getattr(mono, "connected", False)
-        if not mono_connected and hasattr(mono, "address"):
-            try:
-                mono_connected = bool(mono.address.is_open)
-            except Exception:
-                mono_connected = False
+        mono_state = self.mono_state()
+        mono_read = mono_state.get("lambda_leida_nm")
         lockin_connected = getattr(lockin, "connected", False)
         if not lockin_connected:
             address = getattr(lockin, "address", None)
@@ -539,8 +417,21 @@ class BaseHardwareAdapter:
             "bbd_connected": bool(getattr(bbd, "connected", False)),
             "bbd_homed": bool(getattr(bbd, "homed", False)),
             "bbd_position": float(getattr(bbd, "posicion", 0.0)),
-            "mono_connected": bool(mono_connected),
-            "mono_position": float(getattr(mono, "posicion", 0.0)),
+            "mono_connected": bool(mono_state.get("conectado", False)),
+            "mono_initialized": mono_state.get("inicializado"),
+            "mono_position": float(mono_read if mono_read is not None else getattr(mono, "posicion", 0.0)),
+            "mono_commanded_nm": mono_state.get("lambda_comandada_nm"),
+            "mono_read_nm": mono_read,
+            "mono_slit_entrance_mm": mono_state.get("rendija_entrada_mm"),
+            "mono_slit_exit_mm": mono_state.get("rendija_salida_mm"),
+            "mono_grating": mono_state.get("red"),
+            "mono_grating_grooves_mm": mono_state.get("red_lineas_mm"),
+            "mono_output": mono_state.get("salida_optica"),
+            "mono_limits_nm": mono_state.get("limites_nm"),
+            "mono_state": mono_state.get("estado"),
+            "mono_detail": mono_state.get("detalle"),
+            "mono_index": mono_state.get("indice"),
+            "mono_serial": mono_state.get("serie"),
             "lockin_connected": bool(lockin_connected),
             "integration_time": self.integration_time(),
             "lockin_filter": dict(self._lockin_filter) if self._lockin_filter is not None else None,
@@ -557,12 +448,12 @@ class SimulatedHardwareAdapter(BaseHardwareAdapter):
 
 
 class RealHardwareBundle:
-    def __init__(self):
+    def __init__(self, horiba_settings=None):
         from hardware_tier import BBD301, LockIn
         from horiba_monochromator import HoribaMonochromator
 
         self.bbd = BBD301()
-        self.mono = HoribaMonochromator()
+        self.mono = HoribaMonochromator(horiba_settings)
         self.lockin = LockIn()
 
     def close(self):
@@ -589,24 +480,12 @@ class RealHardwareBundle:
 
 
 class RealHardwareAdapter(BaseHardwareAdapter):
-    def __init__(self):
+    def __init__(self, horiba_settings=None):
         BaseHardwareAdapter.__init__(self, False)
-        self.bundle = RealHardwareBundle()
-
-    def connect_mono(self, device_id):
-        return self.bundle.mono.AsignarPuerto(device_id)
-
-    def identify_mono(self):
-        return self.bundle.mono.Identificar()
-
-    def configure_mono(self):
-        self.bundle.mono.Configurar()
-
-    def close_mono(self):
-        self.bundle.mono.CerrarPuerto()
+        self.bundle = RealHardwareBundle(horiba_settings)
 
 
-def create_hardware_adapter(simulation_mode):
+def create_hardware_adapter(simulation_mode, horiba_settings=None):
     if simulation_mode:
         return SimulatedHardwareAdapter()
-    return RealHardwareAdapter()
+    return RealHardwareAdapter(horiba_settings)

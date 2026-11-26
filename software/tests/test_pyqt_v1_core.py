@@ -19,7 +19,7 @@ from acquisition_service import (
     save_measurement_result,
     validate_measurement_config,
 )
-from hardware_adapter import BaseHardwareAdapter, SimulatedHardwareAdapter, normalize_gpib_address, normalize_sms_port
+from hardware_adapter import BaseHardwareAdapter, SimulatedHardwareAdapter, normalize_gpib_address
 from session_manager import SessionManager
 
 
@@ -55,55 +55,9 @@ class SessionManagerTest(TempDirTestCase):
 
 
 class HardwareAdapterTest(unittest.TestCase):
-    def test_normalizes_sms_port_number(self):
-        self.assertEqual(normalize_sms_port("5"), "COM5")
-        self.assertEqual(normalize_sms_port(" COM7 "), "COM7")
-        self.assertEqual(normalize_sms_port("COM12"), "COM12")
-        self.assertEqual(normalize_sms_port("SIM"), "SIM")
-
     def test_normalizes_gpib_address(self):
         self.assertEqual(normalize_gpib_address("8"), "GPIB0::8::INSTR")
         self.assertEqual(normalize_gpib_address(" GPIB0::8::INSTR "), "GPIB0::8::INSTR")
-
-    def test_mono_connection_falls_back_without_dsrdtr(self):
-        class FakeAddress:
-            def __init__(self):
-                self.is_open = False
-                self.port = None
-                self.dsrdtr = True
-
-            def open(self):
-                if self.dsrdtr:
-                    raise Exception("Cannot configure port")
-                self.is_open = True
-
-            def close(self):
-                self.is_open = False
-
-        class FakeMono:
-            def __init__(self):
-                self.address = FakeAddress()
-                self.puerto = None
-
-            def AsignarPuerto(self, port):
-                self.address.port = port
-                self.puerto = port
-                self.address.open()
-
-        class FakeBundle:
-            def __init__(self):
-                self.mono = FakeMono()
-
-        class TestAdapter(BaseHardwareAdapter):
-            def _create_serial_address(self):
-                return FakeAddress()
-
-        adapter = TestAdapter(False)
-        adapter.bundle = FakeBundle()
-        port = adapter.connect_mono("9")
-        self.assertEqual(port, "COM9")
-        self.assertTrue(adapter.bundle.mono.address.is_open)
-        self.assertEqual(adapter.bundle.mono.serial_profile, "sin control de lineas")
 
     def test_lockin_autorange_changes_only_sens(self):
         class FakeAddress:

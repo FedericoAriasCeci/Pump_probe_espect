@@ -1,3 +1,5 @@
+> **Reemplazado.** La medición usa el HORIBA por ICL directo (WebSocket, Python 3.7), como el software de calibración: ver [HORIBA_iHR320.md](HORIBA_iHR320.md). Este documento y los archivos que describe quedan sólo como referencia.
+
 # Control independiente HORIBA iHR320 con EzSpec-SDK
 
 Los archivos de esta entrega se agregan junto al proyecto CodigoV4. El controlador anterior basado en HoribaBridge, la GUI, hardware_adapter.py y las rutinas pump-probe conservan su contenido original. La conexión de este controlador a la medición queda para una etapa posterior.

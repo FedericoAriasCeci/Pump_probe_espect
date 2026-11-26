@@ -7,6 +7,7 @@ import numpy as np
 
 from acquisition_service import (
     CHANNELS,
+    MAX_SLIT_MM,
     MEASUREMENT_DOUBLE,
     MEASUREMENT_LAMBDA_FIXED,
     MEASUREMENT_POSITION_FIXED,
@@ -32,6 +33,10 @@ from acquisition_service import (
     x_value_for_row,
 )
 from hardware_adapter import create_hardware_adapter
+from horiba_icl import HoribaSettings
+
+MIN_TOLERANCE_NM = 0.001
+MAX_TOLERANCE_NM = 1.0
 from session_manager import SessionManager
 from sr830_timing import settling_seconds
 from dc_normalization import DC_CHANNEL_INDEX
@@ -261,10 +266,29 @@ if QT_IMPORT_ERROR is None:
                     pass
 
 
+    class HardwareTaskWorker(QObject):
+        """Ejecuta una operacion de equipo (HORIBA por ICL) fuera del hilo de la GUI."""
+        succeeded = pyqtSignal(object)
+        failed = pyqtSignal(str)
+        finished = pyqtSignal()
+
+        def __init__(self, function):
+            QObject.__init__(self)
+            self.function = function
+
+        def run(self):
+            try:
+                result = self.function()
+                self.succeeded.emit(result)
+            except Exception as exc:
+                self.failed.emit(str(exc) or exc.__class__.__name__)
+            self.finished.emit()
+
+
     class PumpProbeWindow(QMainWindow):
         def __init__(self, settings=None):
             QMainWindow.__init__(self)
-            self.setWindowTitle("Pump-Probe PyQt V1")
+            self.setWindowTitle("Pump-Probe PyQt V1 - HORIBA iHR320")
             self.resize(1380, 860)
             self.session_manager = SessionManager()
             self.settings = settings if settings is not None else QSettings(
@@ -279,42 +303,41 @@ if QT_IMPORT_ERROR is None:
             self.current_dc_value = None
             self.worker = None
             self.thread = None
+            self.task_worker = None
+            self.task_thread = None
+            self.task_name = ""
+            self.task_on_success = None
+            self.task_cancellable = False
+            self.task_outcome = None
             self.closing = False
             self.log_lines = list()
             self.plot_views = dict()
             self.saved_paths = None
-            self.default_mono_port, self.default_lockin_port = self.read_default_ports()
+            self.default_lockin_port = self.read_default_lockin_port()
             self.build_ui()
             self.setStyleSheet(APP_STYLE)
-            self.refresh_serial_ports(False)
             self.update_measurement_mode()
             self.update_hardware_visibility()
             self.update_status_labels()
             self.log("Aplicacion iniciada en modo simulacion")
 
-        def read_default_ports(self):
-            mono_port = "Mono1"
+        def read_default_lockin_port(self):
             lockin_port = "8"
             path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataPuertos.txt")
             if not os.path.isfile(path):
-                return mono_port, lockin_port
+                return lockin_port
             try:
                 with open(path, "r") as handle:
                     line = handle.readline().strip()
                 parts = [part.strip() for part in line.split(",") if part.strip()]
+                # Formato heredado: [BBD,]SMS,LockIn. El HORIBA usa un indice ICL, no COM.
                 if len(parts) >= 3:
-                    mono_port = parts[1]
                     lockin_port = parts[2]
-                elif len(parts) >= 2:
-                    mono_port = parts[0]
+                elif len(parts) == 2:
                     lockin_port = parts[1]
-                elif len(parts) == 1:
-                    mono_port = parts[0]
             except Exception:
                 pass
-            # The Horiba is discovered by SinerJY/ConfigBrowser; it has an ID,
-            # not a serial COM port.  Mono1 is the configured iHR320 here.
-            return "Mono1", lockin_port
+            return lockin_port
 
         def build_ui(self):
             central = QWidget()
@@ -341,6 +364,7 @@ if QT_IMPORT_ERROR is None:
             layout.setSpacing(8)
 
             layout.addWidget(self.build_hardware_group())
+            layout.addWidget(self.build_horiba_group())
             layout.addWidget(self.build_sweep_group())
             layout.addWidget(self.build_channels_group())
             layout.addWidget(self.build_actions_group())
@@ -364,22 +388,13 @@ if QT_IMPORT_ERROR is None:
             self.use_mono_check.setToolTip("Si esta desactivado, en lambda fija no se exige ni se mueve el monocromador")
             layout.addWidget(self.use_mono_check, 1, 0, 1, 3)
 
-            layout.addWidget(QLabel("ID HORIBA"), 2, 0)
-            self.mono_port_edit = QComboBox()
-            self.mono_port_edit.setEditable(True)
-            layout.addWidget(self.mono_port_edit, 2, 1)
-
-            self.refresh_ports_button = QPushButton("Refrescar")
-            self.refresh_ports_button.clicked.connect(self.refresh_serial_ports)
-            layout.addWidget(self.refresh_ports_button, 2, 2)
-
-            layout.addWidget(QLabel("Puerto Lock-in"), 3, 0)
+            layout.addWidget(QLabel("Puerto Lock-in"), 2, 0)
             self.lockin_port_edit = QLineEdit(self.default_lockin_port)
-            layout.addWidget(self.lockin_port_edit, 3, 1, 1, 2)
+            layout.addWidget(self.lockin_port_edit, 2, 1, 1, 2)
 
             settling_label = QLabel("Settling time (N × τ)")
             settling_label.setWordWrap(True)
-            layout.addWidget(settling_label, 4, 0)
+            layout.addWidget(settling_label, 3, 0)
             self.lockin_constants_spin = QDoubleSpinBox()
             self.lockin_constants_spin.setDecimals(3)
             self.lockin_constants_spin.setRange(0.001, 1000000.0)
@@ -394,7 +409,7 @@ if QT_IMPORT_ERROR is None:
             except (ValueError, TypeError, OverflowError):
                 factor = 5.0
             self.lockin_constants_spin.setValue(factor)
-            layout.addWidget(self.lockin_constants_spin, 4, 1, 1, 2)
+            layout.addWidget(self.lockin_constants_spin, 3, 1, 1, 2)
 
             self.lockin_recommended_check = QCheckBox("Usar N recomendado por pendiente")
             self.lockin_recommended_check.setChecked(
@@ -403,40 +418,156 @@ if QT_IMPORT_ERROR is None:
             self.lockin_recommended_check.setToolTip(
                 "6/12/18/24 dB/oct: N = 5/7/9/10. Desactivar para conservar un N manual."
             )
-            layout.addWidget(self.lockin_recommended_check, 5, 0, 1, 3)
+            layout.addWidget(self.lockin_recommended_check, 4, 0, 1, 3)
             self.lockin_constants_spin.valueChanged.connect(self.on_settling_factor_changed)
             self.lockin_recommended_check.toggled.connect(self.on_settling_mode_changed)
 
             self.auto_gain_check = QCheckBox("Auto rango sensibilidad")
             self.auto_gain_check.setChecked(True)
             self.auto_gain_check.setToolTip("Ajusta solo SENS del SR830 al cambiar de lambda. No ejecuta Auto Phase.")
-            layout.addWidget(self.auto_gain_check, 6, 0, 1, 3)
+            layout.addWidget(self.auto_gain_check, 5, 0, 1, 3)
 
             self.connect_bbd_button = QPushButton("Conectar BBD")
             self.connect_bbd_button.clicked.connect(self.connect_bbd)
-            layout.addWidget(self.connect_bbd_button, 7, 0)
+            layout.addWidget(self.connect_bbd_button, 6, 0)
 
             self.home_bbd_button = QPushButton("Home BBD")
             self.home_bbd_button.clicked.connect(self.home_bbd)
-            layout.addWidget(self.home_bbd_button, 7, 1)
-
-            self.connect_mono_button = QPushButton("Conectar HORIBA")
-            self.connect_mono_button.clicked.connect(self.connect_mono)
-            layout.addWidget(self.connect_mono_button, 8, 0)
+            layout.addWidget(self.home_bbd_button, 6, 1)
 
             self.connect_lockin_button = QPushButton("Conectar Lock-in")
             self.connect_lockin_button.clicked.connect(self.connect_lockin)
-            layout.addWidget(self.connect_lockin_button, 8, 1)
+            layout.addWidget(self.connect_lockin_button, 6, 2)
 
             self.connect_all_button = QPushButton("Conectar todo")
+            self.connect_all_button.setToolTip("BBD, Home, Lock-in y luego HORIBA (si el tipo de medicion lo usa)")
             self.connect_all_button.clicked.connect(self.connect_all_hardware)
-            layout.addWidget(self.connect_all_button, 9, 0, 1, 3)
+            layout.addWidget(self.connect_all_button, 7, 0, 1, 3)
 
             self.release_hardware_button = QPushButton("Liberar hardware")
             self.release_hardware_button.clicked.connect(self.release_hardware)
-            layout.addWidget(self.release_hardware_button, 10, 0, 1, 3)
+            layout.addWidget(self.release_hardware_button, 8, 0, 1, 3)
 
             return group
+
+        def build_horiba_group(self):
+            group = QGroupBox("Espectrometro HORIBA iHR320 (ICL)")
+            layout = QGridLayout(group)
+            layout.setColumnStretch(1, 1)
+
+            layout.addWidget(QLabel("Indice ICL"), 0, 0)
+            self.horiba_index_spin = QSpinBox()
+            self.horiba_index_spin.setRange(0, 99)
+            self.horiba_index_spin.setValue(self.settings_int("horiba/index", 0, 0, 99))
+            self.horiba_index_spin.setToolTip(
+                "Indice del iHR320 en mono_list de ICL (0 con un solo equipo). "
+                "ICL (icl.exe de EzSpec-SDK) debe estar abierto; no use SynerJY ni el software de calibracion a la vez."
+            )
+            self.horiba_index_spin.valueChanged.connect(lambda value: self.settings.setValue("horiba/index", value))
+            layout.addWidget(self.horiba_index_spin, 0, 1, 1, 2)
+
+            self.connect_mono_button = QPushButton("Conectar")
+            self.connect_mono_button.setToolTip("Abre la sesion ICL y lee el estado. Nunca hace homing.")
+            self.connect_mono_button.clicked.connect(self.connect_mono)
+            layout.addWidget(self.connect_mono_button, 1, 0)
+
+            self.initialize_mono_button = QPushButton("Inicializar")
+            self.initialize_mono_button.setToolTip(
+                "Homing solo si ICL informa que falta (mono_init force=false). Puede mover red y rendijas."
+            )
+            self.initialize_mono_button.clicked.connect(self.initialize_mono)
+            layout.addWidget(self.initialize_mono_button, 1, 1)
+
+            self.read_mono_button = QPushButton("Leer estado")
+            self.read_mono_button.setToolTip("Consulta lambda, red, salida optica y rendijas sin mover nada.")
+            self.read_mono_button.clicked.connect(self.read_mono_state)
+            layout.addWidget(self.read_mono_button, 1, 2)
+
+            layout.addWidget(QLabel("Rendija entrada (mm)"), 2, 0)
+            self.slit_entrance_spin = self.create_slit_spin("horiba/slit_entrance_mm")
+            layout.addWidget(self.slit_entrance_spin, 2, 1, 1, 2)
+
+            layout.addWidget(QLabel("Rendija salida (mm)"), 3, 0)
+            self.slit_exit_spin = self.create_slit_spin("horiba/slit_exit_mm")
+            layout.addWidget(self.slit_exit_spin, 3, 1, 1, 2)
+
+            layout.addWidget(QLabel("Tolerancia lambda (nm)"), 4, 0)
+            self.horiba_tolerance_spin = QDoubleSpinBox()
+            self.horiba_tolerance_spin.setRange(MIN_TOLERANCE_NM, MAX_TOLERANCE_NM)
+            self.horiba_tolerance_spin.setDecimals(3)
+            self.horiba_tolerance_spin.setSingleStep(0.005)
+            self.horiba_tolerance_spin.setSuffix(" nm")
+            self.horiba_tolerance_spin.setValue(
+                self.settings_float("horiba/tolerance_nm", HoribaSettings().tolerance_nm, MIN_TOLERANCE_NM, MAX_TOLERANCE_NM)
+            )
+            self.horiba_tolerance_spin.setToolTip(
+                "Diferencia maxima aceptada entre la lambda pedida y la que informa ICL despues de cada movimiento. "
+                "Si se excede, la medicion se detiene. La lambda leida se guarda en longitud_onda_leida_nm."
+            )
+            self.horiba_tolerance_spin.valueChanged.connect(self.on_horiba_tolerance_changed)
+            layout.addWidget(self.horiba_tolerance_spin, 4, 1, 1, 2)
+
+            self.apply_slits_check = QCheckBox("Ajustar rendijas al iniciar la medicion")
+            self.apply_slits_check.setChecked(self.settings.value("horiba/apply_slits_on_start", True, type=bool))
+            self.apply_slits_check.setToolTip(
+                "Antes del primer punto se aplican estas aperturas y se confirman por relectura de ICL. "
+                "Desactivado: se miden con las rendijas actuales, que igual quedan registradas en metadata.json."
+            )
+            self.apply_slits_check.toggled.connect(
+                lambda checked: self.settings.setValue("horiba/apply_slits_on_start", checked)
+            )
+            layout.addWidget(self.apply_slits_check, 5, 0, 1, 3)
+
+            self.apply_slits_button = QPushButton("Aplicar rendijas ahora")
+            self.apply_slits_button.setToolTip("Mueve las rendijas a los valores pedidos y confirma la lectura.")
+            self.apply_slits_button.clicked.connect(self.apply_slits_now)
+            layout.addWidget(self.apply_slits_button, 6, 0, 1, 3)
+
+            self.horiba_state_label = QLabel("Desconectado.")
+            self.horiba_state_label.setWordWrap(True)
+            layout.addWidget(self.horiba_state_label, 7, 0, 1, 3)
+
+            help_label = QLabel(
+                "Los valores pedidos no son lecturas: el estado de arriba es lo que informa ICL. "
+                "Cancelar abandona la espera; no frena un motor que ya recibio la orden."
+            )
+            help_label.setWordWrap(True)
+            help_label.setStyleSheet("color: #5d6f6b; font-size: 9pt;")
+            layout.addWidget(help_label, 8, 0, 1, 3)
+            return group
+
+        def on_horiba_tolerance_changed(self, value):
+            value = round(float(value), 6)
+            self.settings.setValue("horiba/tolerance_nm", value)
+            # Rige desde el proximo movimiento, sin reconectar.
+            self.hardware.set_mono_tolerance(value)
+
+        def settings_int(self, key, default, minimum, maximum):
+            try:
+                value = int(self.settings.value(key, default))
+            except (TypeError, ValueError):
+                return default
+            return min(max(value, minimum), maximum)
+
+        def settings_float(self, key, default, minimum, maximum):
+            try:
+                value = float(self.settings.value(key, default))
+            except (TypeError, ValueError):
+                return default
+            if value != value:
+                return default
+            return min(max(value, minimum), maximum)
+
+        def create_slit_spin(self, key):
+            spin = QDoubleSpinBox()
+            spin.setRange(0.0, MAX_SLIT_MM)
+            spin.setDecimals(4)
+            spin.setSingleStep(0.05)
+            spin.setSuffix(" mm")
+            spin.setValue(self.settings_float(key, 1.0, 0.0, MAX_SLIT_MM))
+            spin.setToolTip("Apertura pedida, 0 a 7 mm. ICL la cuantiza en pasos de 6.25 um.")
+            spin.valueChanged.connect(lambda value: self.settings.setValue(key, round(float(value), 6)))
+            return spin
 
         def build_sweep_group(self):
             group = QGroupBox("Barrido")
@@ -614,7 +745,9 @@ if QT_IMPORT_ERROR is None:
                 ("bbd_connected", "BBD"),
                 ("bbd_position", "BBD mm"),
                 ("mono_connected", "HORIBA"),
-                ("mono_position", "Lambda nm"),
+                ("mono_position", "Lambda leida (nm)"),
+                ("mono_slits", "Rendijas E / S (mm)"),
+                ("mono_grating", "Red / salida"),
                 ("lockin_connected", "Lock-in"),
                 ("time_constant_seconds", "SR830 τ (s)"),
                 ("slope_db_oct", "Pendiente (dB/oct)"),
@@ -700,8 +833,11 @@ if QT_IMPORT_ERROR is None:
             values = {
                 "bbd_connected": self.yes_no(status.get("bbd_connected", False)),
                 "bbd_position": self.format_float(status.get("bbd_position", 0.0), 6),
-                "mono_connected": self.yes_no(status.get("mono_connected", False)),
-                "mono_position": self.format_float(status.get("mono_position", 0.0), 4),
+                "mono_connected": self.horiba_connection_text(status),
+                "mono_position": self.format_float(status.get("mono_read_nm"), 4),
+                "mono_slits": self.format_float(status.get("mono_slit_entrance_mm"), 4)
+                + " / " + self.format_float(status.get("mono_slit_exit_mm"), 4),
+                "mono_grating": self.horiba_grating_text(status),
                 "lockin_connected": self.yes_no(status.get("lockin_connected", False)),
                 "time_constant_seconds": format(tau, ".6g") if tau is not None else "Sin consultar",
                 "slope_db_oct": str(settings.get("slope_db_oct", "Sin consultar")),
@@ -711,6 +847,54 @@ if QT_IMPORT_ERROR is None:
             for key in values:
                 if key in self.status_labels:
                     self.status_labels[key].setText(values[key])
+            if hasattr(self, "horiba_state_label"):
+                self.horiba_state_label.setText(self.horiba_summary_text(status))
+
+        def horiba_connection_text(self, status):
+            if not status.get("mono_connected", False):
+                return "No"
+            if self.task_thread is not None:
+                return "Operando"
+            if status.get("mono_state") == "busy":
+                return "Ocupado"
+            if status.get("mono_initialized") is False:
+                return "Sin inicializar"
+            return "OK"
+
+        def horiba_grating_text(self, status):
+            grating = status.get("mono_grating")
+            if not grating:
+                return "-"
+            text = str(grating)
+            grooves = status.get("mono_grating_grooves_mm")
+            if grooves:
+                text = text + " (" + self.format_float(grooves, 0).replace(".0", "") + " l/mm)"
+            if status.get("mono_output"):
+                text = text + " / " + str(status.get("mono_output"))
+            return text
+
+        def horiba_summary_text(self, status):
+            if self.task_thread is not None and self.task_name:
+                return self.task_name + "..."
+            detail = str(status.get("mono_detail") or "")
+            if not status.get("mono_connected", False):
+                if detail and detail not in ("Simulado.", "Listo.", "Sin sesión con el instrumento."):
+                    return "Desconectado. " + detail
+                return "Desconectado."
+            parts = [self.horiba_connection_text(status)]
+            if status.get("mono_serial"):
+                parts.append("serie " + str(status.get("mono_serial")))
+            if status.get("mono_read_nm") is not None:
+                parts.append("lambda " + self.format_float(status.get("mono_read_nm"), 4) + " nm")
+            if status.get("mono_grating"):
+                parts.append(self.horiba_grating_text(status))
+            if status.get("mono_slit_entrance_mm") is not None:
+                parts.append("rendijas " + self.format_float(status.get("mono_slit_entrance_mm"), 4) + " / "
+                             + self.format_float(status.get("mono_slit_exit_mm"), 4) + " mm")
+            text = " - ".join(parts)
+            if detail and detail not in ("Listo.", "Simulado."):
+                text = text + "\n" + detail
+            return text
 
         def on_settling_factor_changed(self, value):
             # Any explicit edit selects manual mode, preserved across slope changes.
@@ -730,28 +914,6 @@ if QT_IMPORT_ERROR is None:
             # Worker updated the adapter cache; status() performs no VISA queries.
             self.update_status_labels()
 
-        def current_mono_port(self):
-            data = self.mono_port_edit.currentData()
-            if data is not None and str(data).strip() != "":
-                return str(data).strip()
-            text = self.mono_port_edit.currentText().strip()
-            if " - " in text:
-                text = text.split(" - ")[0].strip()
-            return text
-
-        def refresh_serial_ports(self, show_log=True):
-            selected = self.default_mono_port
-            if hasattr(self, "mono_port_edit"):
-                selected = self.current_mono_port() or self.default_mono_port
-            self.mono_port_edit.blockSignals(True)
-            self.mono_port_edit.clear()
-            selected = selected or "Mono1"
-            self.mono_port_edit.addItem(selected, selected)
-            self.mono_port_edit.setCurrentIndex(0)
-            self.mono_port_edit.blockSignals(False)
-            if show_log:
-                self.log("HORIBA usa el ID de ConfigBrowser: " + selected)
-
         def yes_no(self, value):
             if value:
                 return "OK"
@@ -759,23 +921,38 @@ if QT_IMPORT_ERROR is None:
 
         def format_float(self, value, decimals):
             try:
+                if value is None:
+                    return "-"
                 return str(round(float(value), decimals))
             except Exception:
                 return "-"
 
         def update_hardware_visibility(self):
             real_mode = not self.simulation_check.isChecked()
-            self.mono_port_edit.setEnabled(real_mode)
             self.lockin_port_edit.setEnabled(real_mode)
+            self.horiba_index_spin.setEnabled(real_mode)
             self.connect_all_button.setEnabled(True)
             self.connect_bbd_button.setEnabled(True)
             self.home_bbd_button.setEnabled(True)
-            self.connect_mono_button.setEnabled(True)
             self.connect_lockin_button.setEnabled(True)
-            self.refresh_ports_button.setEnabled(real_mode)
             self.release_hardware_button.setEnabled(True)
             self.auto_gain_check.setEnabled(True)
             self.simulation_scale_spin.setEnabled(not real_mode)
+            self.set_horiba_controls_enabled(True)
+
+        def set_horiba_controls_enabled(self, enabled):
+            for widget in (
+                self.connect_mono_button,
+                self.initialize_mono_button,
+                self.read_mono_button,
+                self.apply_slits_button,
+                self.slit_entrance_spin,
+                self.slit_exit_spin,
+                self.horiba_tolerance_spin,
+                self.apply_slits_check,
+            ):
+                widget.setEnabled(enabled)
+            self.horiba_index_spin.setEnabled(enabled and not self.simulation_check.isChecked())
 
         def set_controls_busy(self, busy):
             enabled = not busy
@@ -793,10 +970,9 @@ if QT_IMPORT_ERROR is None:
             self.lambda_table.setEnabled(enabled and self.measurement_type_combo.currentData() in (MEASUREMENT_POSITION_FIXED, MEASUREMENT_DOUBLE))
             self.connect_bbd_button.setEnabled(enabled)
             self.home_bbd_button.setEnabled(enabled)
-            self.connect_mono_button.setEnabled(enabled)
             self.connect_lockin_button.setEnabled(enabled)
             self.connect_all_button.setEnabled(enabled)
-            self.refresh_ports_button.setEnabled(enabled and not self.simulation_check.isChecked())
+            self.set_horiba_controls_enabled(enabled)
             self.release_hardware_button.setEnabled(enabled)
             self.auto_gain_check.setEnabled(enabled)
             self.lockin_constants_spin.setEnabled(enabled)
@@ -833,7 +1009,7 @@ if QT_IMPORT_ERROR is None:
                 self.log("Modo simulacion activo")
             else:
                 try:
-                    self.hardware = create_hardware_adapter(False)
+                    self.hardware = self.create_adapter(False)
                     self.log("Modo hardware real activo")
                 except Exception as exc:
                     self.show_message("No pude iniciar hardware real", str(exc), QMessageBox.Warning)
@@ -844,6 +1020,25 @@ if QT_IMPORT_ERROR is None:
                     self.log("Vuelvo a modo simulacion")
             self.update_hardware_visibility()
             self.update_status_labels()
+
+        def horiba_settings(self):
+            settings = HoribaSettings()
+            settings.index = self.horiba_index_spin.value()
+            settings.tolerance_nm = round(self.horiba_tolerance_spin.value(), 6)
+            settings.move_timeout_s = self.settings_float("horiba/move_timeout_s", settings.move_timeout_s, 1.0, 3600.0)
+            settings.initialize_timeout_s = self.settings_float(
+                "horiba/initialize_timeout_s", settings.initialize_timeout_s, 1.0, 3600.0)
+            settings.slit_timeout_s = self.settings_float("horiba/slit_timeout_s", settings.slit_timeout_s, 1.0, 3600.0)
+            settings.minimum_nm = self.settings_float("horiba/minimum_nm", settings.minimum_nm, 0.001, 5000.0)
+            settings.maximum_nm = self.settings_float("horiba/maximum_nm", settings.maximum_nm, 0.002, 5000.0)
+            settings.slit_in = self.settings_int("horiba/slit_in", 0, 0, 2)
+            settings.slit_out = self.settings_int("horiba/slit_out", 0, 0, 4)
+            return settings.validate()
+
+        def create_adapter(self, simulation):
+            if simulation:
+                return create_hardware_adapter(True)
+            return create_hardware_adapter(False, self.horiba_settings())
 
         def connect_bbd(self):
             try:
@@ -863,32 +1058,171 @@ if QT_IMPORT_ERROR is None:
                 self.show_message("Error en Home BBD", str(exc), QMessageBox.Warning)
             self.update_status_labels()
 
-        def connect_mono(self):
-            self.refresh_serial_ports(False)
-            port = self.current_mono_port() or "Mono1"
-            if self.simulation_check.isChecked():
-                port = "SIM"
+        # ------------------------------------------------------------ HORIBA iHR320
+        def run_hardware_task(self, description, function, on_success=None, cancellable=False):
+            """Corre una operacion del HORIBA en un QThread; la GUI sigue respondiendo."""
+            if self.worker is not None or self.task_thread is not None:
+                self.show_message("Equipo ocupado", "Espere a que termine la operacion en curso.", QMessageBox.Information)
+                return False
             try:
-                port = self.hardware.connect_mono(port)
-                if not self.hardware.identify_mono():
-                    try:
-                        self.hardware.close_mono()
-                    except Exception:
-                        pass
-                    raise Exception("El HORIBA no confirmo el estado listo para el ID " + str(port) + ".")
-                self.hardware.configure_mono()
-                name = getattr(self.hardware.bundle.mono, "device_name", "iHR320")
-                self.log("HORIBA conectado: " + str(name) + " (ID " + str(port) + ")")
-            except Exception as exc:
-                try:
-                    if not self.simulation_check.isChecked():
-                        self.hardware.close_mono()
-                except Exception:
-                    pass
-                detail = str(exc)
-                self.log("Error conectando HORIBA con ID " + str(port) + ": " + str(exc))
-                self.show_message("Error conectando HORIBA", detail, QMessageBox.Warning)
+                self.hardware.reset_mono_cancel()
+            except Exception:
+                pass
+            self.task_name = description
+            self.task_on_success = on_success
+            self.task_cancellable = cancellable
+            self.task_outcome = None
+            self.task_thread = QThread()
+            self.task_worker = HardwareTaskWorker(function)
+            self.task_worker.moveToThread(self.task_thread)
+            self.task_thread.started.connect(self.task_worker.run)
+            self.task_worker.succeeded.connect(self.on_task_succeeded)
+            self.task_worker.failed.connect(self.on_task_failed)
+            self.task_worker.finished.connect(self.task_thread.quit)
+            self.task_worker.finished.connect(self.task_worker.deleteLater)
+            self.task_thread.finished.connect(self.task_thread.deleteLater)
+            self.task_thread.finished.connect(self.on_task_thread_finished)
+            self.set_controls_busy(True)
+            self.start_button.setEnabled(False)
+            self.preview_button.setEnabled(False)
+            self.cancel_button.setEnabled(cancellable)
+            self.log(description)
             self.update_status_labels()
+            self.task_thread.start()
+            return True
+
+        def on_task_succeeded(self, result):
+            self.task_outcome = ("ok", result)
+
+        def on_task_failed(self, message):
+            self.task_outcome = ("error", message)
+
+        def on_task_thread_finished(self):
+            name = self.task_name
+            outcome = self.task_outcome
+            callback = self.task_on_success
+            self.task_thread = None
+            self.task_worker = None
+            self.task_name = ""
+            self.task_on_success = None
+            self.task_cancellable = False
+            self.task_outcome = None
+            if self.worker is None:
+                self.start_button.setEnabled(True)
+                self.preview_button.setEnabled(True)
+                self.cancel_button.setEnabled(False)
+                self.set_controls_busy(False)
+                self.update_measurement_mode()
+                self.update_hardware_visibility()
+            self.update_status_labels()
+            if outcome is None:
+                return
+            if outcome[0] == "error":
+                self.log("Error en " + name + ": " + str(outcome[1]))
+                if not self.closing:
+                    self.show_message("HORIBA iHR320", str(outcome[1]), QMessageBox.Warning)
+                return
+            if callback is not None and not self.closing:
+                callback(outcome[1])
+
+        def describe_mono_state(self, state):
+            state = state or {}
+            parts = list()
+            if state.get("lambda_leida_nm") is not None:
+                parts.append("lambda=" + self.format_float(state.get("lambda_leida_nm"), 4) + " nm")
+            if state.get("red"):
+                parts.append("red " + str(state.get("red")))
+            if state.get("salida_optica"):
+                parts.append("salida " + str(state.get("salida_optica")))
+            if state.get("rendija_entrada_mm") is not None:
+                parts.append("rendijas " + self.format_float(state.get("rendija_entrada_mm"), 4) + " / "
+                             + self.format_float(state.get("rendija_salida_mm"), 4) + " mm")
+            return ", ".join(parts)
+
+        def connect_mono(self):
+            index = self.horiba_index_spin.value()
+            hardware = self.hardware
+            return self.run_hardware_task(
+                "HORIBA: conectando por ICL (indice " + str(index) + ")",
+                lambda: hardware.connect_mono(index),
+                self.on_mono_connected,
+            )
+
+        def on_mono_connected(self, state):
+            state = state or {}
+            if state.get("inicializado") is False:
+                self.log("HORIBA conectado (serie " + str(state.get("serie")) + "), sin inicializar")
+                reply = QMessageBox.question(
+                    self,
+                    "HORIBA sin inicializar",
+                    "El iHR320 respondio por ICL pero no esta inicializado.\n\n"
+                    "Inicializar ahora? El homing mueve la red y las rendijas y puede tardar varios minutos.",
+                    QMessageBox.Yes | QMessageBox.No,
+                    QMessageBox.Yes,
+                )
+                if reply == QMessageBox.Yes:
+                    self.start_mono_initialization()
+                return
+            self.log("HORIBA conectado (serie " + str(state.get("serie")) + "): " + self.describe_mono_state(state))
+
+        def initialize_mono(self):
+            status = self.hardware_status()
+            if status.get("mono_connected") and status.get("mono_initialized"):
+                self.log("HORIBA ya inicializado: no se envia homing")
+                self.read_mono_state()
+                return
+            reply = QMessageBox.question(
+                self,
+                "Inicializar HORIBA",
+                "Si ICL informa que falta, se envia el homing (mono_init, sin forzar). "
+                "Mueve la red y las rendijas y puede tardar varios minutos.\n\nContinuar?",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No,
+            )
+            if reply == QMessageBox.Yes:
+                self.start_mono_initialization()
+
+        def start_mono_initialization(self):
+            hardware = self.hardware
+            index = self.horiba_index_spin.value()
+
+            def job():
+                if not hardware.mono_state().get("conectado"):
+                    hardware.connect_mono(index)
+                return hardware.initialize_mono()
+            self.run_hardware_task(
+                "HORIBA: inicializando (homing solo si ICL lo pide)",
+                job,
+                lambda state: self.log("HORIBA inicializado: " + self.describe_mono_state(state)),
+                cancellable=True,
+            )
+
+        def read_mono_state(self):
+            hardware = self.hardware
+            self.run_hardware_task(
+                "HORIBA: leyendo estado (sin mover)",
+                hardware.read_mono_state,
+                lambda state: self.log("HORIBA: " + self.describe_mono_state(state)),
+            )
+
+        def apply_slits_now(self):
+            entrance = round(self.slit_entrance_spin.value(), 6)
+            exit_ = round(self.slit_exit_spin.value(), 6)
+            hardware = self.hardware
+            self.run_hardware_task(
+                "HORIBA: ajustando rendijas a " + str(entrance) + " / " + str(exit_) + " mm",
+                lambda: hardware.apply_mono_slits(entrance, exit_),
+                self.on_slits_applied,
+                cancellable=True,
+            )
+
+        def on_slits_applied(self, report):
+            actual = (report or {}).get("actual_mm") or {}
+            text = self.format_float(actual.get("slit_in_mm"), 4) + " / " + self.format_float(actual.get("slit_out_mm"), 4) + " mm"
+            if (report or {}).get("state") == "unchanged":
+                self.log("Rendijas ya estaban en " + text + " (sin mover)")
+            else:
+                self.log("Rendijas confirmadas por " + ("simulador" if (report or {}).get("simulado") else "ICL") + ": " + text)
 
         def connect_lockin(self):
             port = self.lockin_port_edit.text().strip()
@@ -925,17 +1259,21 @@ if QT_IMPORT_ERROR is None:
             self.update_status_labels()
 
         def connect_all_hardware(self):
+            if self.worker is not None or self.task_thread is not None:
+                self.show_message("Equipo ocupado", "Espere a que termine la operacion en curso.", QMessageBox.Information)
+                return
             self.connect_bbd()
             self.home_bbd()
+            self.connect_lockin()
             if self.mono_required_for_current_ui():
                 self.connect_mono()
+                self.log("BBD y Lock-in revisados; HORIBA conectandose en segundo plano")
             else:
                 self.log("HORIBA omitido para lambda fija manual")
-            self.connect_lockin()
-            self.log("Chequeo de conexion completo")
+                self.log("Chequeo de conexion completo")
 
         def release_hardware(self):
-            if self.worker is not None:
+            if self.worker is not None or self.task_thread is not None:
                 self.show_message(
                     "Medicion activa",
                     "Primero cancele la medicion antes de liberar hardware.",
@@ -948,7 +1286,7 @@ if QT_IMPORT_ERROR is None:
             except Exception as exc:
                 self.log("Error liberando hardware: " + str(exc))
             try:
-                self.hardware = create_hardware_adapter(self.simulation_check.isChecked())
+                self.hardware = self.create_adapter(self.simulation_check.isChecked())
             except Exception as exc:
                 self.log("No pude recrear adaptador de hardware: " + str(exc))
             self.update_status_labels()
@@ -996,6 +1334,9 @@ if QT_IMPORT_ERROR is None:
             config.simulation_mode = self.simulation_check.isChecked()
             config.use_monochromator = self.mono_required_for_current_ui()
             config.simulation_delay_scale = self.simulation_scale_spin.value()
+            config.apply_slits = self.apply_slits_check.isChecked()
+            config.slit_entrance_mm = round(self.slit_entrance_spin.value(), 6)
+            config.slit_exit_mm = round(self.slit_exit_spin.value(), 6)
             config.notes = self.notes_text.toPlainText()
 
             config.channels = list()
@@ -1049,7 +1390,9 @@ if QT_IMPORT_ERROR is None:
                 "Repeticiones: " + str(preview.get("repeticiones")),
                 "Puntos totales: " + str(preview.get("puntos_totales")),
                 "Tiempo estimado: " + str(preview.get("tiempo_estimado_texto")),
-                "Monocromador: " + ("se usa" if config.use_monochromator else "omitido, lambda fija manual"),
+                "HORIBA iHR320: " + ("se usa" if config.monochromator_used() else "omitido, lambda fija manual"),
+                "Rendijas: " + self.preview_slits_text(preview, config),
+                "Tolerancia lambda pedida/leida: " + self.format_float(self.horiba_tolerance_spin.value(), 6) + " nm",
                 "Auto rango sensibilidad: " + ("activado" if config.auto_gain_enabled else "desactivado"),
                 "Estabilizacion SR830: " + ("N recomendado segun pendiente real" if config.lockin_settling_factor is None
                                             else "N manual = " + str(config.lockin_settling_factor))
@@ -1069,7 +1412,21 @@ if QT_IMPORT_ERROR is None:
                 lines.append("promedio.csv")
             return "\n".join(lines)
 
+        def preview_slits_text(self, preview, config):
+            read = preview.get("rendijas_leidas_mm") or [None, None]
+            read_text = self.format_float(read[0], 4) + " / " + self.format_float(read[1], 4) + " mm"
+            if not config.monochromator_used():
+                return "no se modifican"
+            if config.apply_slits:
+                return ("se ajustan a " + self.format_float(config.slit_entrance_mm, 4) + " / "
+                        + self.format_float(config.slit_exit_mm, 4) + " mm (entrada / salida) antes del primer punto; "
+                        + "ultima lectura " + read_text)
+            return "no se modifican; ultima lectura " + read_text
+
         def start_measurement(self):
+            if self.task_thread is not None:
+                self.show_message("Equipo ocupado", "Espere a que termine la operacion del HORIBA.", QMessageBox.Information)
+                return
             config, preview, errors = self.prepare_preview(True)
             if len(errors) > 0:
                 return
@@ -1127,6 +1484,10 @@ if QT_IMPORT_ERROR is None:
                 self.log("Cancelacion solicitada")
                 self.cancel_button.setEnabled(False)
                 self.worker.cancel()
+            elif self.task_thread is not None and self.task_cancellable:
+                self.log("Cancelacion solicitada: se abandona la espera del HORIBA; un motor en movimiento termina su recorrido")
+                self.cancel_button.setEnabled(False)
+                self.hardware.cancel_mono_wait()
 
         def on_thread_finished(self):
             self.thread = None
@@ -1461,6 +1822,24 @@ if QT_IMPORT_ERROR is None:
             box.exec_()
 
         def closeEvent(self, event):
+            if self.task_thread is not None:
+                self.closing = True
+                self.log("Cierre solicitado: esperando la operacion del HORIBA")
+                self.hardware.cancel_mono_wait()
+                # quit() directo: worker.finished -> thread.quit es una senal encolada que
+                # no se entrega mientras este hilo espera en wait().
+                self.task_thread.quit()
+                if not self.task_thread.wait(15000):
+                    self.closing = False
+                    self.show_message(
+                        "Cierre en espera",
+                        "La operacion del HORIBA todavia no termino. Espere unos segundos y vuelva a cerrar.",
+                        QMessageBox.Warning,
+                    )
+                    event.ignore()
+                    return
+                self.task_thread = None
+                self.task_worker = None
             if self.worker is not None:
                 reply = QMessageBox.question(
                     self,
@@ -1476,6 +1855,7 @@ if QT_IMPORT_ERROR is None:
                 self.log("Cierre solicitado: cancelando medicion y liberando hardware")
                 self.worker.cancel()
                 if self.thread is not None:
+                    self.thread.quit()
                     finished = self.thread.wait(15000)
                     if not finished:
                         self.log("El hilo de medicion no termino aun; se mantiene la ventana abierta")
